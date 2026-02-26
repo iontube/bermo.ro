@@ -1,0 +1,117 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import CookieBanner from '../components/CookieBanner.astro';
+
+// Get all article pages
+const allPages = await Astro.glob('./*.astro');
+
+// Filter only articles (exclude index and legal pages)
+const excludedPages = ['index', 'contact', 'politica-de-confidentialitate', 'termeni-si-conditii', 'politica-cookies'];
+const articles = allPages
+  .filter(page => {
+    const url = page.url?.replace(/^\/|\/$/g, '') || '';
+    return page.frontmatter && page.frontmatter.title && !excludedPages.includes(url) && !url.includes('/');
+  })
+  .sort((a, b) => {
+    const dateA = new Date(a.frontmatter?.date || 0);
+    const dateB = new Date(b.frontmatter?.date || 0);
+    return dateB.getTime() - dateA.getTime();
+  })
+  .slice(0, 15);
+
+// Categories with descriptions for SEO
+const categories = [
+  {
+    name: 'Electrocasnice Premium',
+    slug: 'electrocasnice-premium',
+    icon: '☕',
+    description: 'Espressoare automate, aspiratoare robot si alte electrocasnice de top pentru locuinta ta. Recenzii detaliate cu preturi, specificatii tehnice si comparatii intre modelele disponibile pe piata romaneasca de la branduri precum DeLonghi, Philips, Jura si Saeco.'
+  },
+  {
+    name: 'IT si Electronice',
+    slug: 'it-electronice',
+    icon: '💻',
+    description: 'Laptopuri gaming, ultrabook-uri si componente PC de performanta. Analizez procesoare, placi video si configuratii complete pentru gaming, editare video sau munca de birou. Modele de la ASUS, Lenovo, HP si Dell cu preturi din magazinele romanesti.'
+  },
+  {
+    name: 'Mobilier si Dormitor',
+    slug: 'mobilier-dormitor',
+    icon: '🛏️',
+    description: 'Saltele memory foam, paturi tapitate si mobilier premium pentru un somn odihnitor. Testez personal saltele de la Emma, Dormeo si alte branduri, masurand confortul, durabilitatea si raportul calitate-pret pentru investitii pe termen lung.'
+  },
+  {
+    name: 'Fitness si Sport',
+    slug: 'fitness-sport',
+    icon: '🚴',
+    description: 'Biciclete spinning, benzi de alergat si echipamente fitness profesionale pentru antrenamente acasa. Compar modele Schwinn, NordicTrack si Kettler, analizand stabilitatea, programele de antrenament si zgomotul in functionare.'
+  }
+];
+---
+
+<Layout
+  title="Recenzii Produse Premium - Electrocasnice, IT, Mobilier, Fitness"
+  description="Bermo.ro - Recenzii oneste pentru produse premium 500+ lei. Electrocasnice de lux, laptopuri gaming, saltele memory foam si echipamente fitness profesionale."
+>
+  <Header />
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Recenzii pentru Produse Premium</h1>
+          <p>Te ajutam sa faci investitii inteligente in produse de calitate. Testam si comparam electrocasnice, laptopuri, mobilier si echipamente fitness pentru a-ti oferi cele mai bune recomandari.</p>
+        </div>
+      </div>
+    </section>
+
+    {articles.length > 0 && (
+      <section class="container" style="padding: var(--space-3xl) 0;">
+        <div class="section-header">
+          <h2 class="section-title">Ultimele Articole</h2>
+        </div>
+        <div class="articles-grid">
+          {articles.map(article => (
+            <ArticleCard
+              title={article.frontmatter.title}
+              slug={article.url?.replace(/^\/|\/$/g, '') || ''}
+              excerpt={article.frontmatter.excerpt}
+              image={article.frontmatter.image}
+              category={article.frontmatter.category}
+              categorySlug={article.frontmatter.categorySlug}
+              date={article.frontmatter.date}
+            />
+          ))}
+        </div>
+      </section>
+    )}
+
+    <section class="categories-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Exploreaza Categoriile</h2>
+        </div>
+        <div class="categories-grid">
+          {categories.map(cat => (
+            <a href={`/${cat.slug}/`} class="category-card">
+              <div class="category-icon">{cat.icon}</div>
+              <h3 class="category-card-title">{cat.name}</h3>
+              <p class="category-card-desc">{cat.description}</p>
+              <span class="category-card-count">
+                Vezi articolele
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="16" height="16">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <CookieBanner />
+</Layout>

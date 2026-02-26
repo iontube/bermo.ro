@@ -1,0 +1,237 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SimilarArticles from '../components/SimilarArticles.astro';
+import CookieBanner from '../components/CookieBanner.astro';
+
+export const frontmatter = {
+  title: "Laptop ultrabook business",
+  excerpt: "Laptop ultrabook business: Ce cauti, ce primesti si ce preturi gasesti in Romania. Experienta mea de 15 ani, fara floricele.",
+  image: "/images/articles/laptop-ultrabook-business.webp",
+  category: "IT si Electronice",
+  categorySlug: "it-electronice",
+  date: "2026-01-13T13:59:37.000Z",
+  author: "Radu Petre",
+  authorRole: "Specialist IT & Gaming",
+  authorBio: "Inginer IT si gamer pasionat, Radu analizeaza laptopuri si componente din perspectiva performantei reale in jocuri si aplicatii profesionale."
+};
+
+const faq = [{"question":"Merita sa cumpar un ultrabook business second-hand?","answer":"Depinde foarte mult de model, de starea lui si de unde il cumperi. Daca gasesti un model premium, bine intretinut, cu garantie ramasa, poate fi o afacere buna. Dar fii atent la uzura bateriei, la zgarieturi si la functionalitatea generala. Nu recomand daca nu ai posibilitatea sa il verifici personal."},{"question":"Ce inseamna garantie pentru un laptop business?","answer":"Laptopurile business vin adesea cu garantii extinse, de 2-3 ani, uneori cu servicii de reparatie rapida la fata locului. Verifica ce include garantia producatorului si daca se potriveste nevoilor tale."},{"question":"Sunt suficiente 8GB RAM pentru un ultrabook business?","answer":"Pentru sarcini de baza (mail, browsing, Office), da. Dar pentru multitasking serios, cu multe taburi, aplicatii deschise sau masini virtuale, 16GB RAM face o diferenta uriasa in fluiditatea sistemului."},{"question":"Ce procesor aleg: Intel Core i5 sau i7?","answer":"Pentru majoritatea utilizatorilor de business, un i5 de generatie recenta e perfect. Un i7 este necesar daca lucrezi cu aplicatii foarte solicitante (editare video, randare 3D, baze de date mari)."},{"question":"Cat de importanta e placa video dedicata intr-un ultrabook business?","answer":"Pentru majoritatea sarcinilor de business, placa video integrata (Intel Iris Xe, AMD Radeon Graphics) e suficienta. Doar daca lucrezi cu aplicatii grafice intensive, gaming sau design 3D, vei avea nevoie de o placa dedicata (Nvidia GeForce sau Quadro, AMD Radeon Pro)."}];
+---
+
+<Layout
+  title="Laptop ultrabook business"
+  description="Laptop ultrabook business: Ce cauti, ce primesti si ce preturi gasesti in Romania. Experienta mea de 15 ani, fara floricele."
+  image="/images/articles/laptop-ultrabook-business.webp"
+  type="article"
+  publishedDate="2026-01-13T13:59:37.000Z"
+  modifiedDate="2026-01-30T13:59:37.000Z"
+  category="IT si Electronice"
+  categorySlug="it-electronice"
+  author="Radu Petre"
+  faq={faq}
+>
+  <Header />
+
+  <main class="article-page">
+    <div class="container">
+      <article class="article-container">
+        <nav class="breadcrumb">
+          <a href="/">Acasa</a>
+          <span class="breadcrumb-sep">/</span>
+          <a href="/it-electronice/">IT si Electronice</a>
+          <span class="breadcrumb-sep">/</span>
+          <span>Laptop ultrabook business</span>
+        </nav>
+
+        <header class="article-header">
+          <a href="/it-electronice/" class="article-category-badge">
+            IT si Electronice
+          </a>
+          <h1 class="article-title">Laptop ultrabook business</h1>
+          <div class="article-meta">
+            <div class="article-author">
+              <div class="author-avatar">RP</div>
+              <div class="author-info">
+                <span class="author-name">Radu Petre</span>
+                <span class="author-role">Specialist IT & Gaming</span>
+              </div>
+            </div>
+            <div class="article-date">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+              25 ianuarie 2026
+            </div>
+          </div>
+        </header>
+
+        <div class="article-image">
+          <img src="/images/articles/laptop-ultrabook-business.webp" alt="Laptop ultrabook business" width="800" height="600" loading="eager" fetchpriority="high" decoding="async">
+        </div>
+
+        <div class="toc">
+          <div class="toc-title">
+            Cuprins
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </div>
+          <ol class="toc-list">
+            <li><a href="#de-ce-un-ultrabook-business-si-nu-un-laptop-obisnuit">De ce un ultrabook business si nu un laptop obisnuit?</a></li>
+            <li><a href="#ce-cauti-la-un-ultrabook-business-specificatii-si-dotari-esentiale">Ce cauti la un ultrabook business: Specificatii si Dotari Esentiale</a></li>
+            <li><a href="#modele-recomandate-si-preturi-in-romania-la-momentul-scrierii">Modele Recomandate si Preturi in Romania (La Momentul Scrierii)</a></li>
+            <li><a href="#ce-inseamna-autonomie-reala-si-cum-o-obtii">Ce inseamna autonomie reala si cum o obtii?</a></li>
+            <li><a href="#tastatura-si-touchpad-centrul-de-comanda-al-productivitatii">Tastatura si Touchpad: Centrul de Comanda al Productivitatii</a></li>
+            <li><a href="#sistemul-de-racire-si-zgomotul-un-factor-adesea-neglijat">Sistemul de racire si zgomotul: Un factor adesea neglijat</a></li>
+            <li><a href="#faq">Intrebari Frecvente</a></li>
+          </ol>
+        </div>
+
+        <div class="prose-article">
+          
+<h2 id="de-ce-un-ultrabook-business-si-nu-un-laptop-obisnuit">De ce un ultrabook business si nu un laptop obisnuit?</h2>
+<p>Dupa 15 ani de testat tot felul de gadgeturi, pot sa spun clar: pentru cine face treaba serioasa, un ultrabook business nu e moft, e unealta. Am vazut colegi care s-au chinuit ani de zile cu laptopuri grele, cu baterii care mureau la pranz, cu finisaje ieftine care aratau rau dupa cateva luni. Un ultrabook business e construit altfel.</p>
+        <p>Se vede in materiale - aluminiu, magneziu, nu plastic ieftin. Se simte in greutate - il iei cu tine zilnic fara sa te plangi. Si cel mai important, in performanta si fiabilitate.</p>
+        <p>Nu te lasa balta cand ai cel mai mult nevoie. Am testat modele de la Dell, Lenovo, HP, Asus, si diferentele sunt clare. Un laptop obisnuit poate fi bun pentru navigat pe net sau vazut filme, dar pentru prezentari, Excel greu, sau multe taburi deschise, te vei lovi de limite.</p>
+        <p>Ultrabook-ul business e gandit sa ruleze eficient aplicatii profesionale, sa aiba o autonomie decenta si sa reziste la transport zilnic. E ca diferenta dintre o masina de oras si un SUV. Ambele te duc unde vrei, dar cu experiente total diferite pe drum.</p>
+
+<p>Ce ma scoate din sarite la laptopurile ieftine? Tastatura. Taste care se blocheaza, zgomotoase, fara cursa. Sau ecranul.</p>
+        <p>Culori spalacite, luminozitate mica, unghiuri de vizualizare sub orice critica. La un ultrabook business, astea sunt de obicei rezolvate. Tastatura e placuta, touchpad-ul e precis, ecranul e bun pentru ochi, chiar si in lumina puternica.</p>
+        <p>Si cand zic bun, ma refer la culori corecte, contrast bun, si o rezolutie decenta, Full HD minim, ideal QHD sau chiar 4K daca bugetul permite si ai nevoie de detalii fine. Nu te lasa pacalit de specificatii pe hartie. Experienta de utilizare e mult mai mult decat un procesor si RAM.</p>
+        <p>La un ultrabook business, fiecare componenta e gandita sa lucreze impreuna pentru a-ti usura munca.</p>
+
+<p>Am avut ocazia sa lucrez pe modele care aratau impecabil, dar care se incingeau ca un radiator la prima sarcina mai grea. Sau care aveau ventilatoare zgomotoase. Asta nu e acceptabil pentru un business tool.</p>
+        <p>Un ultrabook bun mentine o temperatura rezonabila si un nivel de zgomot minim, chiar si sub sarcina. Asta inseamna ca poti lucra ore in sir fara sa te deranjeze, si fara sa-ti ingrijorezi vecinii de birou sau pe cei din avion. Ambele aspecte conteaza enorm in experienta zilnica.</p>
+        <p>Si nu uita de conectivitate. Porturi suficiente, si mai ales, porturi rapide. USB-C cu Thunderbolt e deja un standard pe modelele bune, si face o diferenta uriasa cand conectezi monitoare externe, dock-uri sau SSD-uri rapide.</p>
+<h2 id="ce-cauti-la-un-ultrabook-business-specificatii-si-dotari-esentiale">Ce cauti la un ultrabook business: Specificatii si Dotari Esentiale</h2>
+<p>Cand vine vorba de specificatii, hai sa fim directi. Procesorul conteaza, dar nu e singurul lucru. Pentru majoritatea sarcinilor de business, un Intel Core i5 sau i7 de generatie recenta (verificati generatia, diferentele sunt mari intre un 11th gen si un 13th gen, de exemplu) e suficient.</p>
+        <p>Daca lucrezi cu aplicatii foarte solicitante, grafice, editare video sau baze de date mari, atunci un i7 sau chiar un i9, daca gasesti, sau un AMD Ryzen 7 sau 9 e de preferat. Dar pentru email, browsing, Office, si chiar cateva masini virtuale, i5-ul e rege. RAM: 8GB e minimul absolut, dar iti recomand din suflet 16GB.</p>
+        <p>Diferenta e uriasa in multitasking. Am testat laptopuri cu 8GB si simteam cum se chinuie cand deschideam 10 taburi in Chrome, Excel si un document Word. Cu 16GB, totul zboara.</p>
+        <p>Stocare: SSD e obligatoriu. Nu cumpara laptopuri cu HDD in 2024 pentru sistem. Un SSD de 256GB e minim, dar 512GB sau 1TB iti da liniste sufleteasca.</p>
+        <p>Viteza SSD-ului conteaza si ea, cauta NVMe, nu SATA.</p>
+
+<p>Ecranul e crucial. Rezolutie Full HD (1920x1080) e standardul. Daca iti permiti, 2K (QHD, 2560x1440) sau 4K (3840x2160) ofera o claritate mult mai buna, dar consuma mai multa baterie si necesita o placa video mai puternica.</p>
+        <p>Luminozitatea peste 300 nits e recomandata pentru a lucra confortabil in medii luminoase. Si nu uita de finisajul ecranului. Mat (anti-glare) e ideal pentru a evita reflexiile.</p>
+        <p>Aspectul fizic: greutate sub 1.5kg si o grosime de sub 1.8cm sunt puncte forte. Tastatura si touchpad-ul trebuie sa fie confortabile pentru utilizare indelungata. Backlight la tastatura e un must-have pentru lucrul pe seara sau in conditii de lumina slaba.</p>
+        <p>Autonomia bateriei: cauta minim 8-10 ore de utilizare reala. Asta variaza mult in functie de model, procesor si cum il folosesti, dar producatorii promit de obicei cifre optimiste. Verificati review-uri independente pentru autonomie reala.</p>
+
+<p>Conectivitatea e un capitol pe care multi il ignora. Ai nevoie de porturi USB-A pentru perifericele vechi, dar USB-C cu Thunderbolt 3 sau 4 e viitorul. Iti permite sa conectezi monitoare externe de rezolutie mare, dock-uri, si SSD-uri externe la viteze incredibile.</p>
+        <p>Un cititor de carduri SD e util pentru fotografi sau cei care lucreaza cu dispozitive de pe carduri. Wi-Fi 6 sau 6E e standardul actual, ofera viteze mai mari si o conexiune mai stabila. Bluetooth 5.0 sau mai nou e de asemenea important.</p>
+        <p>Camera web: 720p e minim, 1080p e preferabil pentru conferinte video clare. Senzorul de amprenta sau recunoasterea faciala (Windows Hello) adauga un strat de securitate si comoditate. Si nu neglija calitatea constructiei.</p>
+        <p>Un laptop care se simte solid, fara flex in sasiu sau ecran, e mai placut in utilizare si, teoretic, mai durabil.</p>
+<h2 id="modele-recomandate-si-preturi-in-romania-la-momentul-scrierii">Modele Recomandate si Preturi in Romania (La Momentul Scrierii)</h2>
+<p>Hai sa vorbim concret. Am testat si am recomandat multe modele de-a lungul timpului, si stiu ce cauta romanii cand vine vorba de ultrabookuri business, tinand cont de buget. Sa zicem ca ai un buget decent, pana in 5000-6000 RON.</p>
+        <p>Aici intra in discutie modele precum Dell XPS 13 sau 15 (uneori gasesti oferte bune la generatii anterioare, de ex. XPS 13 cu i5, 16GB RAM, 512GB SSD pe la 5500-6000 RON pe eMAG sau Altex). Sunt elegante, performante, cu ecrane excelente.</p>
+        <p>Am observat ca finisajul lor e de top, si ecranul, chiar si cel Full HD, e foarte luminos si colorat. Un alt candidat puternic e Lenovo ThinkPad X1 Carbon. Acestea sunt legendare pentru tastatura lor si fiabilitate.</p>
+        <p>Un model din generatii mai noi, cu i5, 16GB, 512GB, poate ajunge pe la 6000-7000 RON, dar uneori gasesti oferte la modelele din anul precedent, cu mici reduceri, pe PCGarage sau Altex. Sunt mai sobre ca design, dar in interior lucreaza ca niste motoare. Am testat un X1 Carbon si am ramas impresionat de cat de usor e, si cat de bine se simte tastatura sub degete, chiar si dupa ore de scris.</p>
+
+<p>Daca bugetul e un pic mai flexibil, spre 7000-10000 RON, te poti uita la Apple MacBook Air M2 sau M3. Stiu, nu e Windows, dar pentru multi din zona de creatie sau pentru cei care vor un ecosistem integrat, e o optiune excelenta. Performanta cu chip-urile Apple e de top, autonomia e fenomenala, iar ecranul Retina e superb.</p>
+        <p>Un MacBook Air M2 cu 16GB RAM si 512GB SSD se invarte in jurul valorii de 7000-8000 RON pe eMAG. La fel, HP Spectre x360 e o alta clasa. Design premium, ecran tactil, 2-in-1, foarte versatil.</p>
+        <p>Un model bun cu i7, 16GB, 512GB SSD poate fi gasit pe la 7000-8500 RON. Am testat un Spectre si mi-a placut la nebunie cum se simte cand il transformi in tableta, si cum ruleaza rapid aplicatiile. E ca si cum ai avea doua dispozitive intr-unul singur.</p>
+
+<p>Pentru cei care cauta ceva premium, dar poate un pic mai accesibil, Asus Zenbook S 13 OLED e o minune. Ecran OLED, ultra-usor, performanta buna pentru sarcini obisnuite. L-am testat si am ramas uimit de cat de vibrant e ecranul, si cat de subtire si usor e.</p>
+        <p>Un model cu i7, 16GB, 512GB SSD poate fi gasit pe la 5500-6500 RON. Si nu uita de Dell Latitude sau HP EliteBook. Sunt modele business dedicate, cu optiuni de securitate avansate, si adesea mai rezistente.</p>
+        <p>Pretul lor poate varia mult, dar un Latitude 7400 cu specificatii bune poate fi pe la 6000-8000 RON. Am observat ca aceste serii sunt construite sa reziste la teste de uzura (MIL-STD 810G), ceea ce inseamna ca sunt facute sa tina. Va recomand sa verificati constant Altex, eMAG, si PCGarage pentru oferte, preturile fluctueaza mult, mai ales la generatiile anterioare sau in perioadele de reduceri.</p>
+<h2 id="ce-inseamna-autonomie-reala-si-cum-o-obtii">Ce inseamna autonomie reala si cum o obtii?</h2>
+<p>Autonomia bateriei e un mit pentru multi. Producatorii promit 10, 12, 15 ore. In realitate, din experienta mea, rar atingi cifrele astea.</p>
+        <p>De ce? Pentru ca testele lor se fac in conditii ideale: luminozitate minima, Wi-Fi oprit, task-uri usoare. Eu cand lucrez pe un ultrabook, am 15 taburi deschise, muzica pe YouTube, Word, Excel, si poate un client de email. Si ecranul e setat la 50-60% luminozitate.</p>
+        <p>In conditiile astea, un laptop care promite 10 ore, ajunge la 6-7 ore. Si asta e deja bine pentru mine. Ce poti face ca sa maximizezi autonomia? Primul lucru: ajusteaza-ti setarile de energie.</p>
+        <p>In Windows, exista moduri de economisire a bateriei. Foloseste-le cand nu ai nevoie de toata puterea. Redu luminozitatea ecranului cat de mult poti, dar sa fie confortabil pentru tine.</p>
+        <p>Fiecare procent de luminozitate conteaza. Inchide aplicatiile pe care nu le folosesti. Fiecare proces care ruleaza in background consuma resurse si energie.</p>
+
+<p>Dezactiveaza Wi-Fi si Bluetooth daca nu le folosesti. Cand esti intr-un avion sau intr-o zona fara semnal, nu are rost sa le tii pornite. Actualizeaza driverele.</p>
+        <p>Producatorii lanseaza constant actualizari care imbunatatesc performanta si eficienta energetica. Nu lasa laptopul in modul sleep pentru perioade lungi, mai bine il inchizi complet daca nu il vei folosi cateva ore. Am observat ca multe ultrabookuri business au acum procesoare cu eficienta energetica mult imbunatatita, cum ar fi cele din seria Intel Core U sau P, sau AMD Ryzen cu arhitectura Zen.</p>
+        <p>Acestea sunt optimizate pentru a consuma cat mai putin cand nu sunt solicitate. De asemenea, tehnologia ecranului conteaza. Ecranele OLED sunt spectaculoase, dar pot consuma mai mult daca afiseaza continut alb masiv.</p>
+        <p>Ecranele IPS sunt in general mai echilibrate din punct de vedere al consumului. Si nu uita de hardware-ul conectat. Daca ai multe periferice conectate prin USB, acestea consuma si ele energie.</p>
+        <p>Deconecteaza ce nu folosesti.</p>
+<h2 id="tastatura-si-touchpad-centrul-de-comanda-al-productivitatii">Tastatura si Touchpad: Centrul de Comanda al Productivitatii</h2>
+<p>Pentru mine, tastatura si touchpad-ul sunt la fel de importante ca procesorul sau ecranul, mai ales la un ultrabook business. Petreci ore intregi tastand, navigand, facand click-uri. Daca aceste elemente sunt proaste, munca devine un chin.</p>
+        <p>Am testat laptopuri cu taste prea moi, fara cursa, care te faceau sa tastezi gresit constant. Sau cu touchpad-uri care nu raspundeau precis la comenzi, te faceau sa dai click-uri aiurea. Un ultrabook business bun are o tastatura cu taste bine definite, cu o cursa suficienta, si un feedback tactil placut.</p>
+        <p>Zgomotul tastelor e subiectiv, dar prefer unul discret. Backlight-ul e esential, si trebuie sa fie reglabil. Am avut modele unde puteai seta intensitatea, sau chiar sa se aprinda automat la miscare.</p>
+        <p>Asta e un plus mare.</p>
+
+<p>Touchpad-ul e un alt punct critic. Nu ma intereseaza sa aiba 10 butoane fizice. Ma intereseaza sa fie precis, sa raspunda rapid la gesturi (pinch-to-zoom, scroll cu doua degete etc.), si sa fie suficient de mare.</p>
+        <p>Suprafetele din sticla sunt cele mai placute, dar si cele din plastic de buna calitate pot fi excelente. Am observat ca multe ultrabookuri business de la Dell (XPS, Latitude), Lenovo (ThinkPad, Yoga) si HP (Spectre, EliteBook) exceleaza la acest capitol. Tastele sunt bine distantate, au o cursa satisfacatoare, iar touchpad-ul e precis si fluid.</p>
+        <p>Nu strica sa mergi intr-un magazin si sa le simti, daca ai ocazia. E ca si cum ai proba o pereche de pantofi. Trebuie sa ti se potriveasca.</p>
+        <p>Daca tastatura e incomoda, vei regreta investitia. Nu te lasa pacalit de designul superb daca tastatura e un compromis. E ca o masina frumoasa, dar cu volanul stramb.</p>
+<h2 id="sistemul-de-racire-si-zgomotul-un-factor-adesea-neglijat">Sistemul de racire si zgomotul: Un factor adesea neglijat</h2>
+<p>Un ultrabook business nu trebuie sa fie un avion la decolare. Am testat multe modele care, la cea mai mica solicitare, incepeau sa ventilatorizeze zgomotos. Asta nu e doar enervant pentru tine, dar si pentru colegii din jur, sau pentru clientii cu care ai o intalnire.</p>
+        <p>Un sistem de racire eficient, dar silentios, e un semn al unui laptop bine proiectat. Producatorii de top investesc mult in optimizarea fluxului de aer si a ventilatoarelor. Am observat ca modelele cu procesoare cu consum redus (cum ar fi cele din familia Intel Core U sau P) sunt mai usor de racit si implicit mai silentioase.</p>
+        <p>Insa, si procesoarele mai puternice pot fi integrate in sisteme de racire performante, cum am vazut la unele modele Dell XPS sau HP Spectre. Daca lucrezi in medii linistite, sau daca ai nevoie sa te concentrezi, zgomotul poate fi un factor decisiv. Un laptop care sta la 40-50 dB sub sarcina e mult mai acceptabil decat unul care sare de 60-70 dB.</p>
+        <p>Unele ultrabookuri business vin si cu optiuni de moduri de performanta, unde poti alege intre performanta maxima (cu zgomot mai mare) si silentiozitate (cu performanta usor redusa). E o chestie de echilibru. Am avut ocazia sa lucrez pe un Lenovo ThinkPad X1 Carbon si am fost impresionat de cat de silentios e, chiar si cand rulez mai multe aplicatii solicitante.</p>
+        <p>Pare sa fie un punct forte al seriei.</p>
+
+<p>Ce poti face tu ca utilizator? Curata periodic ventilatoarele. Praful acumulat poate bloca fluxul de aer si face sistemul de racire sa lucreze mai greu si mai zgomotos. Poti folosi un spray cu aer comprimat.</p>
+        <p>Evita sa folosesti laptopul pe suprafete moi (pat, canapea) care pot bloca gurile de aerisire. Foloseste-l pe o masa sau pe un birou. Daca observi ca se incinge excesiv si zgomotul e deranjant, verifica daca exista update-uri de BIOS sau drivere de la producator, uneori rezolva problemele de management termic.</p>
+        <p>In cele din urma, daca zgomotul e o problema majora pentru tine, cauta review-uri specifice despre nivelul de zgomot al modelului care te intereseaza. E un aspect pe care multi review-eri il mentioneaza.</p>
+        </div>
+
+        <section class="faq-section" id="faq">
+          <h2 class="faq-title">Intrebari Frecvente</h2>
+          
+      <div class="faq-item">
+        <div class="faq-question">
+          Merita sa cumpar un ultrabook business second-hand?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Depinde foarte mult de model, de starea lui si de unde il cumperi. Daca gasesti un model premium, bine intretinut, cu garantie ramasa, poate fi o afacere buna. Dar fii atent la uzura bateriei, la zgarieturi si la functionalitatea generala. Nu recomand daca nu ai posibilitatea sa il verifici personal.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Ce inseamna garantie pentru un laptop business?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Laptopurile business vin adesea cu garantii extinse, de 2-3 ani, uneori cu servicii de reparatie rapida la fata locului. Verifica ce include garantia producatorului si daca se potriveste nevoilor tale.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Sunt suficiente 8GB RAM pentru un ultrabook business?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Pentru sarcini de baza (mail, browsing, Office), da. Dar pentru multitasking serios, cu multe taburi, aplicatii deschise sau masini virtuale, 16GB RAM face o diferenta uriasa in fluiditatea sistemului.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Ce procesor aleg: Intel Core i5 sau i7?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Pentru majoritatea utilizatorilor de business, un i5 de generatie recenta e perfect. Un i7 este necesar daca lucrezi cu aplicatii foarte solicitante (editare video, randare 3D, baze de date mari).</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Cat de importanta e placa video dedicata intr-un ultrabook business?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Pentru majoritatea sarcinilor de business, placa video integrata (Intel Iris Xe, AMD Radeon Graphics) e suficienta. Doar daca lucrezi cu aplicatii grafice intensive, gaming sau design 3D, vei avea nevoie de o placa dedicata (Nvidia GeForce sau Quadro, AMD Radeon Pro).</div>
+      </div>
+        </section>
+
+        <div class="author-box">
+          <div class="author-box-avatar">RP</div>
+          <div class="author-box-info">
+            <h4>Radu Petre</h4>
+            <p>Specialist IT & Gaming</p>
+            <p class="author-box-bio">Inginer IT si gamer pasionat, Radu analizeaza laptopuri si componente din perspectiva performantei reale in jocuri si aplicatii profesionale.</p>
+          </div>
+        </div>
+
+        <SimilarArticles currentSlug="laptop-ultrabook-business" categorySlug="it-electronice" />
+      </article>
+    </div>
+  </main>
+
+  <Footer />
+  <CookieBanner />
+</Layout>

@@ -1,0 +1,576 @@
+{
+  "pending": [
+    {
+      "keyword": "masina de paine premium",
+      "category": "Electrocasnice Premium",
+      "categorySlug": "electrocasnice-premium"
+    },
+    {
+      "keyword": "blender profesional vitamix",
+      "category": "Electrocasnice Premium",
+      "categorySlug": "electrocasnice-premium"
+    },
+    {
+      "keyword": "storcator fructe slow juicer",
+      "category": "Electrocasnice Premium",
+      "categorySlug": "electrocasnice-premium"
+    },
+    {
+      "keyword": "aparat vidat alimente profesional",
+      "category": "Electrocasnice Premium",
+      "categorySlug": "electrocasnice-premium"
+    },
+    {
+      "keyword": "masina tocat carne inox",
+      "category": "Electrocasnice Premium",
+      "categorySlug": "electrocasnice-premium"
+    },
+    {
+      "keyword": "aparat waffle profesional",
+      "category": "Electrocasnice Premium",
+      "categorySlug": "electrocasnice-premium"
+    },
+    {
+      "keyword": "statie de calcat cu abur",
+      "category": "Electrocasnice Premium",
+      "categorySlug": "electrocasnice-premium"
+    },
+    {
+      "keyword": "masina de cusut computerizata",
+      "category": "Electrocasnice Premium",
+      "categorySlug": "electrocasnice-premium"
+    },
+    {
+      "keyword": "masina de spalat vase slim",
+      "category": "Electrocasnice Premium",
+      "categorySlug": "electrocasnice-premium"
+    },
+    {
+      "keyword": "uscator rufe pompa caldura",
+      "category": "Electrocasnice Premium",
+      "categorySlug": "electrocasnice-premium"
+    },
+    {
+      "keyword": "combina frigorifica no frost",
+      "category": "Electrocasnice Premium",
+      "categorySlug": "electrocasnice-premium"
+    },
+    {
+      "keyword": "congelator vertical eficient",
+      "category": "Electrocasnice Premium",
+      "categorySlug": "electrocasnice-premium"
+    },
+    {
+      "keyword": "air fryer xxl digital",
+      "category": "Electrocasnice Premium",
+      "categorySlug": "electrocasnice-premium"
+    },
+    {
+      "keyword": "multicooker instant pot",
+      "category": "Electrocasnice Premium",
+      "categorySlug": "electrocasnice-premium"
+    },
+    {
+      "keyword": "espressor philips series 5000",
+      "category": "Electrocasnice Premium",
+      "categorySlug": "electrocasnice-premium"
+    },
+    {
+      "keyword": "espressor jura e8",
+      "category": "Electrocasnice Premium",
+      "categorySlug": "electrocasnice-premium"
+    },
+    {
+      "keyword": "oala electrica multicooker",
+      "category": "Electrocasnice Premium",
+      "categorySlug": "electrocasnice-premium"
+    },
+    {
+      "keyword": "casti gaming hyperx",
+      "category": "IT si Electronice",
+      "categorySlug": "it-electronice"
+    },
+    {
+      "keyword": "camera web 4k streaming",
+      "category": "IT si Electronice",
+      "categorySlug": "it-electronice"
+    },
+    {
+      "keyword": "microfon podcast usb",
+      "category": "IT si Electronice",
+      "categorySlug": "it-electronice"
+    },
+    {
+      "keyword": "ssd nvme samsung 2tb",
+      "category": "IT si Electronice",
+      "categorySlug": "it-electronice"
+    },
+    {
+      "keyword": "router wifi 6 mesh",
+      "category": "IT si Electronice",
+      "categorySlug": "it-electronice"
+    },
+    {
+      "keyword": "ups apc pentru gaming",
+      "category": "IT si Electronice",
+      "categorySlug": "it-electronice"
+    },
+    {
+      "keyword": "laptop ecran oled 4k",
+      "category": "IT si Electronice",
+      "categorySlug": "it-electronice"
+    },
+    {
+      "keyword": "monitor ultrawide 34 inch",
+      "category": "IT si Electronice",
+      "categorySlug": "it-electronice"
+    },
+    {
+      "keyword": "docking station thunderbolt",
+      "category": "IT si Electronice",
+      "categorySlug": "it-electronice"
+    },
+    {
+      "keyword": "hard extern 4tb backup",
+      "category": "IT si Electronice",
+      "categorySlug": "it-electronice"
+    },
+    {
+      "keyword": "webcam elgato facecam",
+      "category": "IT si Electronice",
+      "categorySlug": "it-electronice"
+    },
+    {
+      "keyword": "tableta grafica wacom",
+      "category": "IT si Electronice",
+      "categorySlug": "it-electronice"
+    },
+    {
+      "keyword": "nas synology ds220",
+      "category": "IT si Electronice",
+      "categorySlug": "it-electronice"
+    },
+    {
+      "keyword": "laptop 2 in 1 lenovo",
+      "category": "IT si Electronice",
+      "categorySlug": "it-electronice"
+    },
+    {
+      "keyword": "monitor editare foto",
+      "category": "IT si Electronice",
+      "categorySlug": "it-electronice"
+    },
+    {
+      "keyword": "laptop ryzen 7 performant",
+      "category": "IT si Electronice",
+      "categorySlug": "it-electronice"
+    },
+    {
+      "keyword": "placa de baza am5",
+      "category": "IT si Electronice",
+      "categorySlug": "it-electronice"
+    },
+    {
+      "keyword": "cooler cpu noctua",
+      "category": "IT si Electronice",
+      "categorySlug": "it-electronice"
+    },
+    {
+      "keyword": "dulap usi glisante",
+      "category": "Mobilier si Dormitor",
+      "categorySlug": "mobilier-dormitor"
+    },
+    {
+      "keyword": "comoda dormitor stejar",
+      "category": "Mobilier si Dormitor",
+      "categorySlug": "mobilier-dormitor"
+    },
+    {
+      "keyword": "noptiera moderna minimalist",
+      "category": "Mobilier si Dormitor",
+      "categorySlug": "mobilier-dormitor"
+    },
+    {
+      "keyword": "oglinda dormitor led",
+      "category": "Mobilier si Dormitor",
+      "categorySlug": "mobilier-dormitor"
+    },
+    {
+      "keyword": "topper saltea latex",
+      "category": "Mobilier si Dormitor",
+      "categorySlug": "mobilier-dormitor"
+    },
+    {
+      "keyword": "perna ergonomica cervicala",
+      "category": "Mobilier si Dormitor",
+      "categorySlug": "mobilier-dormitor"
+    },
+    {
+      "keyword": "pilota puf gasca naturala",
+      "category": "Mobilier si Dormitor",
+      "categorySlug": "mobilier-dormitor"
+    },
+    {
+      "keyword": "lenjerie bumbac percale",
+      "category": "Mobilier si Dormitor",
+      "categorySlug": "mobilier-dormitor"
+    },
+    {
+      "keyword": "covor living lana naturala",
+      "category": "Mobilier si Dormitor",
+      "categorySlug": "mobilier-dormitor"
+    },
+    {
+      "keyword": "masa dining extensibila",
+      "category": "Mobilier si Dormitor",
+      "categorySlug": "mobilier-dormitor"
+    },
+    {
+      "keyword": "biblioteca living modulara",
+      "category": "Mobilier si Dormitor",
+      "categorySlug": "mobilier-dormitor"
+    },
+    {
+      "keyword": "canapea coltar piele",
+      "category": "Mobilier si Dormitor",
+      "categorySlug": "mobilier-dormitor"
+    },
+    {
+      "keyword": "pat cu lada depozitare",
+      "category": "Mobilier si Dormitor",
+      "categorySlug": "mobilier-dormitor"
+    },
+    {
+      "keyword": "dressing walk in sistem",
+      "category": "Mobilier si Dormitor",
+      "categorySlug": "mobilier-dormitor"
+    },
+    {
+      "keyword": "scaun gaming secretlab",
+      "category": "Mobilier si Dormitor",
+      "categorySlug": "mobilier-dormitor"
+    },
+    {
+      "keyword": "masuta cafea marmura",
+      "category": "Mobilier si Dormitor",
+      "categorySlug": "mobilier-dormitor"
+    },
+    {
+      "keyword": "etajera perete industrial",
+      "category": "Mobilier si Dormitor",
+      "categorySlug": "mobilier-dormitor"
+    },
+    {
+      "keyword": "raft biblioteca lemn masiv",
+      "category": "Mobilier si Dormitor",
+      "categorySlug": "mobilier-dormitor"
+    },
+    {
+      "keyword": "puf living xxl",
+      "category": "Mobilier si Dormitor",
+      "categorySlug": "mobilier-dormitor"
+    },
+    {
+      "keyword": "minge fitness antiburst",
+      "category": "Fitness si Sport",
+      "categorySlug": "fitness-sport"
+    },
+    {
+      "keyword": "trx suspension original",
+      "category": "Fitness si Sport",
+      "categorySlug": "fitness-sport"
+    },
+    {
+      "keyword": "kettlebell set profesional",
+      "category": "Fitness si Sport",
+      "categorySlug": "fitness-sport"
+    },
+    {
+      "keyword": "bara tractiuni multifunctionala",
+      "category": "Fitness si Sport",
+      "categorySlug": "fitness-sport"
+    },
+    {
+      "keyword": "saltea yoga cauciuc natural",
+      "category": "Fitness si Sport",
+      "categorySlug": "fitness-sport"
+    },
+    {
+      "keyword": "role spuma masaj trigger",
+      "category": "Fitness si Sport",
+      "categorySlug": "fitness-sport"
+    },
+    {
+      "keyword": "coarda sarit crossfit",
+      "category": "Fitness si Sport",
+      "categorySlug": "fitness-sport"
+    },
+    {
+      "keyword": "greutati glezne reglabile",
+      "category": "Fitness si Sport",
+      "categorySlug": "fitness-sport"
+    },
+    {
+      "keyword": "centura powerlifting piele",
+      "category": "Fitness si Sport",
+      "categorySlug": "fitness-sport"
+    },
+    {
+      "keyword": "manusi sala profesionale",
+      "category": "Fitness si Sport",
+      "categorySlug": "fitness-sport"
+    },
+    {
+      "keyword": "rack squat reglabil",
+      "category": "Fitness si Sport",
+      "categorySlug": "fitness-sport"
+    },
+    {
+      "keyword": "bara olimpica 20kg",
+      "category": "Fitness si Sport",
+      "categorySlug": "fitness-sport"
+    },
+    {
+      "keyword": "discuri bumper cauciuc",
+      "category": "Fitness si Sport",
+      "categorySlug": "fitness-sport"
+    },
+    {
+      "keyword": "aparat abdomene profesional",
+      "category": "Fitness si Sport",
+      "categorySlug": "fitness-sport"
+    },
+    {
+      "keyword": "step aerobic profesional",
+      "category": "Fitness si Sport",
+      "categorySlug": "fitness-sport"
+    },
+    {
+      "keyword": "benzi elastice set latex",
+      "category": "Fitness si Sport",
+      "categorySlug": "fitness-sport"
+    },
+    {
+      "keyword": "roata abdomen ab roller",
+      "category": "Fitness si Sport",
+      "categorySlug": "fitness-sport"
+    },
+    {
+      "keyword": "minge medicinala slam ball",
+      "category": "Fitness si Sport",
+      "categorySlug": "fitness-sport"
+    },
+    {
+      "keyword": "laptop pentru programatori",
+      "category": "IT si Electronice",
+      "categorySlug": "it-electronice"
+    },
+    {
+      "keyword": "aspirator robot premium",
+      "category": "Electrocasnice Premium",
+      "categorySlug": "electrocasnice-premium"
+    },
+    {
+      "keyword": "banca forta inclinata",
+      "category": "Fitness si Sport",
+      "categorySlug": "fitness-sport"
+    },
+    {
+      "keyword": "birou reglabil standing desk",
+      "category": "Mobilier si Dormitor",
+      "categorySlug": "mobilier-dormitor"
+    },
+    {
+      "keyword": "aparat vaslit concept2",
+      "category": "Fitness si Sport",
+      "categorySlug": "fitness-sport"
+    },
+    {
+      "keyword": "umidificator ultrasonic premium",
+      "category": "Electrocasnice Premium",
+      "categorySlug": "electrocasnice-premium"
+    },
+    {
+      "keyword": "tastatura mecanica gaming",
+      "category": "IT si Electronice",
+      "categorySlug": "it-electronice"
+    }
+  ],
+  "completed": [
+    {
+      "keyword": "espressor automat de lux",
+      "category": "Electrocasnice Premium",
+      "categorySlug": "electrocasnice-premium",
+      "date": "2026-01-09T18:08:04.000Z",
+      "modifiedDate": "2026-01-28T18:08:04.000Z"
+    },
+    {
+      "keyword": "laptop gaming performant",
+      "category": "IT si Electronice",
+      "categorySlug": "it-electronice",
+      "date": "2026-01-12T10:42:06.000Z",
+      "modifiedDate": "2026-01-29T10:42:06.000Z"
+    },
+    {
+      "keyword": "saltea memory foam premium",
+      "category": "Mobilier si Dormitor",
+      "categorySlug": "mobilier-dormitor",
+      "date": "2026-01-21T06:58:14.000Z",
+      "modifiedDate": "2026-02-02T06:58:14.000Z"
+    },
+    {
+      "keyword": "bicicleta spinning profesionala",
+      "category": "Fitness si Sport",
+      "categorySlug": "fitness-sport",
+      "date": "2026-01-07T12:34:02.000Z",
+      "modifiedDate": "2026-01-27T12:34:02.000Z"
+    },
+    {
+      "keyword": "espressor profesional barista",
+      "category": "Electrocasnice Premium",
+      "categorySlug": "electrocasnice-premium",
+      "date": "2026-01-11T07:25:35.000Z",
+      "modifiedDate": "2026-01-29T07:25:35.000Z"
+    },
+    {
+      "keyword": "laptop ultrabook business",
+      "category": "IT si Electronice",
+      "categorySlug": "it-electronice",
+      "date": "2026-01-13T13:59:37.000Z",
+      "modifiedDate": "2026-01-30T13:59:37.000Z"
+    },
+    {
+      "keyword": "pat matrimonial tapitat",
+      "category": "Mobilier si Dormitor",
+      "categorySlug": "mobilier-dormitor",
+      "date": "2026-01-16T08:50:10.000Z",
+      "modifiedDate": "2026-01-31T08:50:10.000Z"
+    },
+    {
+      "keyword": "banda alergat pliabila",
+      "category": "Fitness si Sport",
+      "categorySlug": "fitness-sport",
+      "date": "2026-01-05T06:00:00.000Z",
+      "modifiedDate": "2026-01-27T06:00:00.000Z"
+    },
+    {
+      "keyword": "masina de cafea delonghi",
+      "category": "Electrocasnice Premium",
+      "categorySlug": "electrocasnice-premium",
+      "date": "2026-01-14T16:16:08.000Z",
+      "modifiedDate": "2026-01-30T16:16:08.000Z"
+    },
+    {
+      "keyword": "monitor gaming 144hz",
+      "category": "IT si Electronice",
+      "categorySlug": "it-electronice",
+      "date": "2026-01-15T19:33:39.000Z",
+      "modifiedDate": "2026-01-31T19:33:39.000Z"
+    },
+    {
+      "keyword": "saltea ortopedica latex",
+      "category": "Mobilier si Dormitor",
+      "categorySlug": "mobilier-dormitor",
+      "date": "2026-01-22T09:15:45.000Z",
+      "modifiedDate": "2026-02-02T09:15:45.000Z"
+    },
+    {
+      "keyword": "bicicleta eliptica magnetica",
+      "category": "Fitness si Sport",
+      "categorySlug": "fitness-sport",
+      "date": "2026-01-06T09:17:31.000Z",
+      "modifiedDate": "2026-01-27T09:17:31.000Z"
+    },
+    {
+      "keyword": "robot de bucatarie bosch",
+      "category": "Electrocasnice Premium",
+      "categorySlug": "electrocasnice-premium",
+      "date": "2026-01-20T17:41:43.000Z",
+      "modifiedDate": "2026-02-01T17:41:43.000Z"
+    },
+    {
+      "keyword": "canapea extensibila living",
+      "category": "Mobilier si Dormitor",
+      "categorySlug": "mobilier-dormitor",
+      "date": "2026-01-08T15:51:33.000Z",
+      "modifiedDate": "2026-01-28T15:51:33.000Z"
+    },
+    {
+      "keyword": "aparat multifunctional forta",
+      "category": "Fitness si Sport",
+      "categorySlug": "fitness-sport"
+    },
+    {
+      "keyword": "gantere reglabile bowflex",
+      "category": "Fitness si Sport",
+      "categorySlug": "fitness-sport"
+    },
+    {
+      "keyword": "placa video rtx 4070",
+      "category": "IT si Electronice",
+      "categorySlug": "it-electronice"
+    },
+    {
+      "keyword": "fotoliu relaxare recliner",
+      "category": "Mobilier si Dormitor",
+      "categorySlug": "mobilier-dormitor"
+    },
+    {
+      "keyword": "friteuza fara ulei xl",
+      "category": "Electrocasnice Premium",
+      "categorySlug": "electrocasnice-premium"
+    },
+    {
+      "keyword": "procesor intel core i7",
+      "category": "IT si Electronice",
+      "categorySlug": "it-electronice"
+    },
+    {
+      "keyword": "purificator aer camera",
+      "category": "Electrocasnice Premium",
+      "categorySlug": "electrocasnice-premium"
+    },
+    {
+      "keyword": "scaun ergonomic herman miller",
+      "category": "Mobilier si Dormitor",
+      "categorySlug": "mobilier-dormitor"
+    },
+    {
+      "keyword": "stepper fitness hidraulic",
+      "category": "Fitness si Sport",
+      "categorySlug": "fitness-sport"
+    },
+    {
+      "keyword": "aparat sous vide profesional",
+      "category": "Electrocasnice Premium",
+      "categorySlug": "electrocasnice-premium"
+    },
+    {
+      "keyword": "mouse gaming wireless logitech",
+      "category": "IT si Electronice",
+      "categorySlug": "it-electronice"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Mihai Florescu",
+      "role": "Expert Electrocasnice",
+      "bio": "Cu peste 12 ani in industria electrocasnicelor, Mihai testeaza personal fiecare aparat si ofera recenzii bazate pe utilizare reala, nu doar specificatii din catalog."
+    },
+    {
+      "name": "Radu Petre",
+      "role": "Specialist IT & Gaming",
+      "bio": "Inginer IT si gamer pasionat, Radu analizeaza laptopuri si componente din perspectiva performantei reale in jocuri si aplicatii profesionale."
+    },
+    {
+      "name": "Elena Stanescu",
+      "role": "Consultant Home & Living",
+      "bio": "Designer de interior cu experienta in alegerea mobilierului de calitate, Elena te ajuta sa investesti inteligent in piese care iti vor transforma locuinta."
+    },
+    {
+      "name": "Dan Iordan",
+      "role": "Antrenor Fitness Certificat",
+      "bio": "Antrenor personal cu certificari internationale, Dan testeaza echipamente fitness si recomanda doar cele care ofera rezultate reale pentru antrenamente de acasa."
+    }
+  ]
+}

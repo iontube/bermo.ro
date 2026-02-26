@@ -1,0 +1,45 @@
+---
+const categories = [
+  { name: 'Electrocasnice', slug: 'electrocasnice-premium' },
+  { name: 'IT & Electronice', slug: 'it-electronice' },
+  { name: 'Mobilier', slug: 'mobilier-dormitor' },
+  { name: 'Fitness', slug: 'fitness-sport' }
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <span class="logo-text">bermo<span class="logo-dot">.</span></span>
+      </a>
+
+      <nav class="nav-desktop">
+        <a href="/" class:list={["nav-link", { active: currentPath === '/' }]}>Acasa</a>
+        {categories.map(cat => (
+          <a
+            href={`/${cat.slug}/`}
+            class:list={["nav-link", { active: currentPath.includes(cat.slug) }]}
+          >
+            {cat.name}
+          </a>
+        ))}
+      </nav>
+
+      <button class="mobile-menu-btn" aria-label="Meniu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="mobile-menu">
+      <a href="/" class="mobile-nav-link">Acasa</a>
+      {categories.map(cat => (
+        <a href={`/${cat.slug}/`} class="mobile-nav-link">{cat.name}</a>
+      ))}
+    </div>
+  </div>
+</header>

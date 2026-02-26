@@ -1,0 +1,55 @@
+---
+const categories = [
+  { name: 'Electrocasnice Premium', slug: 'electrocasnice-premium' },
+  { name: 'IT si Electronice', slug: 'it-electronice' },
+  { name: 'Mobilier si Dormitor', slug: 'mobilier-dormitor' },
+  { name: 'Fitness si Sport', slug: 'fitness-sport' }
+];
+
+const legalPages = [
+  { name: 'Politica de Confidentialitate', slug: 'politica-de-confidentialitate' },
+  { name: 'Termeni si Conditii', slug: 'termeni-si-conditii' },
+  { name: 'Politica Cookies', slug: 'politica-cookies' },
+  { name: 'Contact', slug: 'contact' },
+  { name: 'Sitemap', slug: 'sitemap' }
+];
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">
+          <span class="footer-logo-text">bermo<span class="footer-logo-dot">.</span></span>
+        </a>
+        <p class="footer-desc">
+          Recenzii oneste si comparatii detaliate pentru produse premium. Te ajutam sa faci investitii inteligente.
+        </p>
+      </div>
+
+      <div class="footer-column">
+        <h4>Categorii</h4>
+        <ul class="footer-links">
+          {categories.map(cat => (
+            <li><a href={`/${cat.slug}/`}>{cat.name}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Legal</h4>
+        <ul class="footer-links">
+          {legalPages.map(page => (
+            <li><a href={`/${page.slug}/`}>{page.name}</a></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copyright">&copy; {currentYear} Bermo.ro</p>
+    </div>
+  </div>
+</footer>

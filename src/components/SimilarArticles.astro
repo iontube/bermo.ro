@@ -1,0 +1,64 @@
+---
+import ArticleCard from './ArticleCard.astro';
+
+interface Props {
+  currentSlug: string;
+  categorySlug: string;
+  limit?: number;
+}
+
+const { currentSlug, categorySlug, limit = 3 } = Astro.props;
+
+// Get all article pages
+const allPages = await Astro.glob('../pages/*.astro');
+
+const excludedPages = ['index', 'contact', 'politica-de-confidentialitate', 'termeni-si-conditii', 'politica-cookies'];
+
+// Filter valid articles, exclude current and system pages
+const allArticles = allPages
+  .filter(page => {
+    const url = page.url?.replace(/^\/|\/$/g, '') || '';
+    const frontmatter = page.frontmatter;
+    return frontmatter &&
+           frontmatter.title &&
+           !excludedPages.includes(url) &&
+           !url.includes('/') &&
+           !url.includes(currentSlug);
+  })
+  .sort((a, b) => {
+    const dateA = new Date(a.frontmatter?.date || 0);
+    const dateB = new Date(b.frontmatter?.date || 0);
+    return dateB.getTime() - dateA.getTime();
+  });
+
+// First try same category
+let similarArticles = allArticles.filter(page => page.frontmatter?.categorySlug === categorySlug);
+
+// If not enough, add from other categories
+if (similarArticles.length < limit) {
+  const otherArticles = allArticles.filter(page => page.frontmatter?.categorySlug !== categorySlug);
+  similarArticles = [...similarArticles, ...otherArticles].slice(0, limit);
+}
+
+similarArticles = similarArticles.slice(0, limit);
+---
+
+{similarArticles.length > 0 && (
+  <section class="similar-articles">
+    <h2 class="similar-articles-title">Articole Recomandate</h2>
+    <div class="articles-grid">
+      {similarArticles.map(article => (
+        <ArticleCard
+          title={article.frontmatter.title}
+          slug={article.url?.replace(/^\/|\/$/g, '') || ''}
+          excerpt={article.frontmatter.excerpt}
+          image={article.frontmatter.image}
+          category={article.frontmatter.category}
+          categorySlug={article.frontmatter.categorySlug}
+          date={article.frontmatter.date}
+          showExcerpt={false}
+        />
+      ))}
+    </div>
+  </section>
+)}

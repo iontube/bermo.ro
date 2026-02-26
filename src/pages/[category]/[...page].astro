@@ -1,0 +1,144 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import CookieBanner from '../../components/CookieBanner.astro';
+
+export async function getStaticPaths({ paginate }) {
+  const ARTICLES_PER_PAGE = 12;
+
+  const categories = [
+    {
+      slug: 'electrocasnice-premium',
+      name: 'Electrocasnice Premium',
+      description: 'Espressoare automate, aspiratoare robot si alte electrocasnice de top pentru locuinta ta. Recenzii detaliate cu preturi si comparatii.'
+    },
+    {
+      slug: 'it-electronice',
+      name: 'IT si Electronice',
+      description: 'Laptopuri gaming, ultrabook-uri si componente PC de performanta pentru gaming si munca profesionala.'
+    },
+    {
+      slug: 'mobilier-dormitor',
+      name: 'Mobilier si Dormitor',
+      description: 'Saltele memory foam, paturi tapitate si mobilier premium pentru un somn odihnitor si o locuinta confortabila.'
+    },
+    {
+      slug: 'fitness-sport',
+      name: 'Fitness si Sport',
+      description: 'Biciclete spinning, benzi de alergat si echipamente fitness profesionale pentru antrenamente acasa.'
+    }
+  ];
+
+  // Get all article pages
+  const allPages = await import.meta.glob('../*.astro', { eager: true });
+
+  const excludedPages = ['index', 'contact', 'politica-de-confidentialitate', 'termeni-si-conditii', 'politica-cookies'];
+
+  const paths = [];
+
+  for (const category of categories) {
+    const categoryArticles = Object.entries(allPages)
+      .filter(([path, page]) => {
+        const url = path.replace('../', '').replace('.astro', '');
+        const frontmatter = page.frontmatter;
+        return frontmatter &&
+               frontmatter.categorySlug === category.slug &&
+               !excludedPages.includes(url);
+      })
+      .map(([path, page]) => ({
+        url: path.replace('../', '').replace('.astro', ''),
+        frontmatter: page.frontmatter
+      }))
+      .sort((a, b) => {
+        const dateA = new Date(a.frontmatter?.date || 0);
+        const dateB = new Date(b.frontmatter?.date || 0);
+        return dateB.getTime() - dateA.getTime();
+      });
+
+    const paginatedPaths = paginate(categoryArticles, {
+      params: { category: category.slug },
+      props: { categoryName: category.name, categoryDescription: category.description },
+      pageSize: ARTICLES_PER_PAGE
+    });
+
+    paths.push(...paginatedPaths);
+  }
+
+  return paths;
+}
+
+const { page, categoryName, categoryDescription } = Astro.props;
+const { category } = Astro.params;
+---
+
+<Layout
+  title={`${categoryName} - Recenzii si Comparatii`}
+  description={categoryDescription}
+>
+  <Header />
+
+  <main class="category-page">
+    <div class="container">
+      <div class="category-header">
+        <h1>{categoryName}</h1>
+        <p>{categoryDescription}</p>
+      </div>
+
+      {page.data.length > 0 ? (
+        <>
+          <div class="articles-grid">
+            {page.data.map(article => (
+              <ArticleCard
+                title={article.frontmatter.title}
+                slug={article.url}
+                excerpt={article.frontmatter.excerpt}
+                image={article.frontmatter.image}
+                category={article.frontmatter.category}
+                categorySlug={article.frontmatter.categorySlug}
+                date={article.frontmatter.date}
+              />
+            ))}
+          </div>
+
+          {page.lastPage > 1 && (
+            <nav class="pagination">
+              {page.url.prev && (
+                <a href={page.url.prev}>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="18" height="18">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                  </svg>
+                </a>
+              )}
+
+              {Array.from({ length: page.lastPage }, (_, i) => i + 1).map(num => (
+                <a
+                  href={num === 1 ? `/${category}/` : `/${category}/${num}/`}
+                  class:list={{ active: num === page.currentPage }}
+                >
+                  {num}
+                </a>
+              ))}
+
+              {page.url.next && (
+                <a href={page.url.next}>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="18" height="18">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              )}
+            </nav>
+          )}
+        </>
+      ) : (
+        <p class="text-center" style="padding: var(--space-3xl) 0; color: var(--color-gray-500);">
+          Nu exista inca articole in aceasta categorie. Revino curand!
+        </p>
+      )}
+    </div>
+  </main>
+
+  <Footer />
+  <CookieBanner />
+</Layout>

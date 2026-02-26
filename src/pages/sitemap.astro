@@ -1,0 +1,216 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CookieBanner from '../components/CookieBanner.astro';
+
+// Get all article pages
+const allPages = await Astro.glob('./*.astro');
+
+// Categories
+const categories = [
+  { name: 'Electrocasnice Premium', slug: 'electrocasnice-premium', icon: '☕' },
+  { name: 'IT si Electronice', slug: 'it-electronice', icon: '💻' },
+  { name: 'Mobilier si Dormitor', slug: 'mobilier-dormitor', icon: '🛏️' },
+  { name: 'Fitness si Sport', slug: 'fitness-sport', icon: '🚴' }
+];
+
+// Legal pages
+const legalPages = [
+  { name: 'Politica de Confidentialitate', slug: 'politica-de-confidentialitate' },
+  { name: 'Termeni si Conditii', slug: 'termeni-si-conditii' },
+  { name: 'Politica Cookies', slug: 'politica-cookies' },
+  { name: 'Contact', slug: 'contact' }
+];
+
+// Filter only articles
+const excludedPages = ['index', 'contact', 'politica-de-confidentialitate', 'termeni-si-conditii', 'politica-cookies', 'sitemap'];
+
+const articles = allPages
+  .filter(page => {
+    const url = page.url?.replace(/^\/|\/$/g, '') || '';
+    return page.frontmatter && page.frontmatter.title && !excludedPages.includes(url) && !url.includes('/');
+  })
+  .sort((a, b) => {
+    const dateA = new Date(a.frontmatter?.date || 0);
+    const dateB = new Date(b.frontmatter?.date || 0);
+    return dateB.getTime() - dateA.getTime();
+  });
+
+// Group articles by category
+const articlesByCategory: Record<string, typeof articles> = {};
+categories.forEach(cat => {
+  articlesByCategory[cat.slug] = articles.filter(
+    article => article.frontmatter?.categorySlug === cat.slug
+  );
+});
+---
+
+<Layout
+  title="Sitemap - Harta Site"
+  description="Harta completa a site-ului Bermo.ro. Gaseste rapid toate articolele, categoriile si paginile de pe site."
+>
+  <Header />
+
+  <main class="sitemap-page">
+    <div class="container">
+      <h1>Sitemap</h1>
+      <p class="sitemap-intro">Harta completa a site-ului Bermo.ro. Navigheaza rapid catre orice pagina.</p>
+
+      <div class="sitemap-grid">
+        <section class="sitemap-section">
+          <h2>Pagina Principala</h2>
+          <ul class="sitemap-list">
+            <li><a href="/">Acasa - Bermo.ro</a></li>
+          </ul>
+        </section>
+
+        <section class="sitemap-section">
+          <h2>Categorii</h2>
+          <ul class="sitemap-list">
+            {categories.map(cat => (
+              <li>
+                <a href={`/${cat.slug}/`}>
+                  <span class="sitemap-icon">{cat.icon}</span>
+                  {cat.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {categories.map(cat => (
+          articlesByCategory[cat.slug].length > 0 && (
+            <section class="sitemap-section">
+              <h2>{cat.icon} {cat.name}</h2>
+              <ul class="sitemap-list sitemap-articles">
+                {articlesByCategory[cat.slug].map(article => (
+                  <li>
+                    <a href={`/${article.url?.replace(/^\/|\/$/g, '')}/`}>
+                      {article.frontmatter?.title}
+                    </a>
+                    <span class="sitemap-date">
+                      {new Date(article.frontmatter?.date).toLocaleDateString('ro-RO', {
+                        day: 'numeric',
+                        month: 'short',
+                        year: 'numeric'
+                      })}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )
+        ))}
+
+        <section class="sitemap-section">
+          <h2>Informatii Legale</h2>
+          <ul class="sitemap-list">
+            {legalPages.map(page => (
+              <li><a href={`/${page.slug}/`}>{page.name}</a></li>
+            ))}
+          </ul>
+        </section>
+
+        <section class="sitemap-section">
+          <h2>Sitemap XML</h2>
+          <ul class="sitemap-list">
+            <li><a href="/sitemap-index.xml" target="_blank" rel="noopener">sitemap-index.xml</a></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+  <CookieBanner />
+</Layout>
+
+<style>
+  .sitemap-page {
+    padding: var(--space-2xl) 0 var(--space-3xl);
+  }
+
+  .sitemap-page h1 {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--color-gray-900);
+    margin-bottom: var(--space-md);
+  }
+
+  .sitemap-intro {
+    font-size: 18px;
+    color: var(--color-gray-600);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .sitemap-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  @media (min-width: 768px) {
+    .sitemap-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .sitemap-section {
+    background: white;
+    border: 1px solid var(--color-gray-100);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+  }
+
+  .sitemap-section h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-gray-900);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
+    border-bottom: 2px solid var(--color-primary-100);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .sitemap-list {
+    list-style: none;
+  }
+
+  .sitemap-list li {
+    margin-bottom: 10px;
+  }
+
+  .sitemap-list a {
+    color: var(--color-gray-700);
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .sitemap-list a:hover {
+    color: var(--color-primary-600);
+  }
+
+  .sitemap-icon {
+    font-size: 18px;
+  }
+
+  .sitemap-articles li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .sitemap-date {
+    font-size: 12px;
+    color: var(--color-gray-400);
+  }
+</style>

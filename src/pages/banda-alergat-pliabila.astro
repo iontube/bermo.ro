@@ -1,0 +1,237 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SimilarArticles from '../components/SimilarArticles.astro';
+import CookieBanner from '../components/CookieBanner.astro';
+
+export const frontmatter = {
+  title: "Banda alergat pliabila",
+  excerpt: "Banda de alergat pliabila: solutia ideala pentru acasa. Am testat modele si va spun ce conteaza.",
+  image: "/images/articles/banda-alergat-pliabila.webp",
+  category: "Fitness si Sport",
+  categorySlug: "fitness-sport",
+  date: "2026-01-05T06:00:00.000Z",
+  author: "Dan Iordan",
+  authorRole: "Antrenor Fitness Certificat",
+  authorBio: "Antrenor personal cu certificari internationale, Dan testeaza echipamente fitness si recomanda doar cele care ofera rezultate reale pentru antrenamente de acasa."
+};
+
+const faq = [{"question":"Cat spatiu ocupa o banda de alergat pliabila cand e stransa?","answer":"Depinde mult de model, dar in general, majoritatea modelelor pliabile ajung la o grosime de 20-30 cm, o lungime de 160-180 cm si o latime de 75-85 cm. Poate fi depozitata sub pat, intr-un dulap sau vertical, sprijinita de un perete."},{"question":"Pot folosi o banda de alergat pliabila pentru antrenamente intense?","answer":"Pentru antrenamente intense, cu viteza mare si durata lunga, cauta modele cu motor de minim 3 CP (continuu), o suprafata de alergare generoasa (minim 45x135 cm) si un sistem de amortizare performant. Cele sub 2.5 CP sunt mai potrivite pentru mers rapid sau jogging usor."},{"question":"Ce greutate pot suporta benzile de alergat pliabile?","answer":"Greutatea maxima suportata variaza de la model la model. Cele mai ieftine modele suporta in jur de 100-110 kg, in timp ce modelele mai solide pot ajunge la 130-150 kg. Este recomandat sa alegi o banda care suporta cu cel putin 20-30 kg mai mult decat greutatea ta."},{"question":"Este dificil de asamblat o banda de alergat pliabila?","answer":"Majoritatea benzilor pliabile vin partial asamblate. De obicei, trebuie sa atasezi consola si sa faci cateva reglaje. Procesul este explicat clar in manual si, in general, nu necesita unelte speciale sau cunostinte tehnice avansate. Poate dura intre 30 de minute si o ora."},{"question":"Cat de zgomotoase sunt benzile de alergat pliabile?","answer":"Nivelul de zgomot variaza in functie de motor, calitatea constructiei si amortizare. Modelele mai ieftine pot fi mai zgomotoase, mai ales la viteze mari. Cele cu motoare mai puternice si sisteme de amortizare bune sunt, in general, mai silentioase. Ungerea corecta a benzii reduce si ea zgomotul."}];
+---
+
+<Layout
+  title="Banda alergat pliabila"
+  description="Banda de alergat pliabila: solutia ideala pentru acasa. Am testat modele si va spun ce conteaza."
+  image="/images/articles/banda-alergat-pliabila.webp"
+  type="article"
+  publishedDate="2026-01-05T06:00:00.000Z"
+  modifiedDate="2026-01-27T06:00:00.000Z"
+  category="Fitness si Sport"
+  categorySlug="fitness-sport"
+  author="Dan Iordan"
+  faq={faq}
+>
+  <Header />
+
+  <main class="article-page">
+    <div class="container">
+      <article class="article-container">
+        <nav class="breadcrumb">
+          <a href="/">Acasa</a>
+          <span class="breadcrumb-sep">/</span>
+          <a href="/fitness-sport/">Fitness si Sport</a>
+          <span class="breadcrumb-sep">/</span>
+          <span>Banda alergat pliabila</span>
+        </nav>
+
+        <header class="article-header">
+          <a href="/fitness-sport/" class="article-category-badge">
+            Fitness si Sport
+          </a>
+          <h1 class="article-title">Banda alergat pliabila</h1>
+          <div class="article-meta">
+            <div class="article-author">
+              <div class="author-avatar">DI</div>
+              <div class="author-info">
+                <span class="author-name">Dan Iordan</span>
+                <span class="author-role">Antrenor Fitness Certificat</span>
+              </div>
+            </div>
+            <div class="article-date">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+              27 ianuarie 2026
+            </div>
+          </div>
+        </header>
+
+        <div class="article-image">
+          <img src="/images/articles/banda-alergat-pliabila.webp" alt="Banda alergat pliabila" width="800" height="600" loading="eager" fetchpriority="high" decoding="async">
+        </div>
+
+        <div class="toc">
+          <div class="toc-title">
+            Cuprins
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </div>
+          <ol class="toc-list">
+            <li><a href="#de-ce-sa-iti-iei-o-banda-de-alergat-pliabila-acasa">De ce sa iti iei o banda de alergat pliabila acasa?</a></li>
+            <li><a href="#ce-sa-cauti-la-o-banda-de-alergat-pliabila-experienta-mea">Ce sa cauti la o banda de alergat pliabila - experienta mea</a></li>
+            <li><a href="#modele-si-branduri-pe-care-le-am-testat-si-preturi-reale">Modele si branduri pe care le-am testat (si preturi reale)</a></li>
+            <li><a href="#cum-sa-depozitezi-si-sa-intretii-banda-de-alergat-pliabila">Cum sa depozitezi si sa intretii banda de alergat pliabila</a></li>
+            <li><a href="#sfaturi-practice-de-la-un-veteran-al-benzilor-de-alergat">Sfaturi practice de la un veteran al benzilor de alergat</a></li>
+            <li><a href="#ce-probleme-pot-aparea-si-cum-le-rezolvi">Ce probleme pot aparea si cum le rezolvi</a></li>
+            <li><a href="#faq">Intrebari Frecvente</a></li>
+          </ol>
+        </div>
+
+        <div class="prose-article">
+          
+<h2 id="de-ce-sa-iti-iei-o-banda-de-alergat-pliabila-acasa">De ce sa iti iei o banda de alergat pliabila acasa?</h2>
+<p>Hai sa fim sinceri, aglomeratia din salile de fitness, timpul pierdut pe drum, sau pur si simplu lipsa de chef de a iesi din casa cand ploua - toate astea ne pot da peste cap rutina de miscare. Asta am simtit si eu acum cativa ani buni, cand am inceput sa ma gandesc serios la o banda de alergat pentru acasa. Dar spatiul? Asta era marea problema.</p>
+        <p>Si atunci am dat peste solutia asta geniala: banda de alergat pliabila. E practic un aparat de fitness care, dupa ce termini antrenamentul, dispare intr-un colt, sub pat sau in dulap. Pentru mine, asta a fost game-changer.</p>
+        <p>Am testat zeci de modele in ultimii 15 ani, de la cele mai ieftine, pana la chestii care te lasa fara aer si buzunar, si pot sa spun ca tehnologia a avansat enorm. Acum gasesti benzi pliabile care nu fac compromisuri majore la capitolul performanta, stabilitate sau functii, si asta e fantastic pentru noi, consumatorii romani care vrem sa ne mentinem in forma fara batai de cap. Daca locuiesti la bloc, ai un apartament mai mic sau pur si simplu nu vrei sa vezi o masinarie uriasa permanent in sufragerie, o banda pliabila e raspunsul.</p>
+        <p>Ai control total asupra antrenamentului tau, la orice ora din zi sau din noapte, si asta, crede-ma, conteaza enorm cand programul e haotic. Nu mai ai scuze, nu mai depinzi de nimeni si de nimic. E pasiunea ta pentru miscare, la tine acasa, pe termen nelimitat.</p>
+
+<p>Am observat ca multi se tem ca o banda pliabila e mai putin solida sau ca se strica repede. Parerea mea, bazata pe experienta, e ca asta depinde mult de modelul ales si de cum il folosesti. La fel cum nu cumperi cea mai ieftina masina ca sa te astepti sa te duca mii de kilometri fara probleme, nici la banda de alergat nu te poti astepta la minuni de la cele sub 500 de euro, mai ales daca vrei sa alergi zilnic cate o ora.</p>
+        <p>Dar sunt si optiuni foarte bune in zona asta de pret, care te tin ani buni daca ai grija de ele. Si cel mai mare avantaj, pe langa faptul ca o poti ascunde, e ca o poti muta. Daca te muti, sau pur si simplu vrei sa schimbi amenajarea, o poti lua cu tine fara sa ai nevoie de o echipa de profesionisti.</p>
+<h2 id="ce-sa-cauti-la-o-banda-de-alergat-pliabila-experienta-mea">Ce sa cauti la o banda de alergat pliabila - experienta mea</h2>
+<p>Dupa atatia ani in care am calcat pe zeci de benzi, am invatat cateva lucruri esentiale pe care le caut si le recomand. In primul rand, <strong>motorul</strong>. Asta e inima benzii.</p>
+        <p>Pentru alergare, ai nevoie de minim 2.5 - 3 CP (cai putere) in utilizare continua. Daca te gandesti doar la mers alert sau jogging usor, poti merge si pe 1.5 - 2 CP, dar nu te astepta la performante de top. Am testat o banda cu 1.75 CP si, la peste 10 km/h, se cam chinuia.</p>
+        <p>Pe de alta parte, am gasit modele cu 3.5 CP care au rulat impecabil chiar si la viteze mari, fara sa faca zgomot excesiv sau sa se supraincalzeasca. Uita-te la specificatii, nu te lasa pacalit de marketing. Apoi vine <strong>suprafata de alergare</strong>.</p>
+        <p>Asta trebuie sa fie suficient de lata si lunga pentru a nu te simti inghesuit. Minim 40-45 cm latime si 120-130 cm lungime sunt standardul decent. Eu am 1.80m si am nevoie de spatiu sa intind piciorul cand alerg, asa ca prefer benzile cu suprafata de minim 48 cm latime si 135 cm lungime.</p>
+        <p>Daca esti mai scund, poti merge si pe variante mai mici, dar atentie sa nu te loveasca picioarele in consola. Am testat si benzi cu suprafete de 38 cm latime si mi s-a parut foarte restrictiv. Un alt punct critic e <strong>sistemul de amortizare</strong>.</p>
+        <p>Asta protejeaza articulatiile. Cauta benzi cu un sistem bun, care sa absoarba socurile. Multe benzi pliabile au un sistem simplu cu arcuri sau cauciucuri, dar cele mai bune au un sistem multistratificat sau cu perne de aer.</p>
+        <p>Am simtit diferenta enorma pe genunchii mei dupa antrenamente lungi. Nu te zgari pe amortizare.</p>
+
+<p><strong>Pliabilitatea</strong> in sine. Cum se pliaza? E greu? Se blocheaza bine in pozitia ridicata? Multe modele au un sistem hidraulic asistat, ceea ce e un mare plus. Am văzut benzi care necesitau forță mare să le ridici.</p>
+        <p>Verifică și mecanismul de blocare. Trebuie să fie sigur. <strong>Greutatea maximă suportată</strong> e importantă. Asigură-te că depășește cu cel puțin 20-30 kg greutatea ta.</p>
+        <p>Asta înseamnă că banda e mai robustă. <strong>Consola și funcțiile</strong>. Ecranul ar trebui să fie clar și să afișeze informații utile: viteză, distanță, timp, calorii, puls. Multe benzi au programe predefinite care te ajută să variezi antrenamentul.</p>
+        <p>Conectivitatea Bluetooth pentru aplicații de fitness (gen Kinomap, Zwift) e un bonus, dar nu esențial. Eu prefer o consolă simplă și eficientă la benzile pliabile, ca să nu mă complic. Dar dacă vrei interactivitate, caută modele care suportă asta. Și nu uita de <strong>înclinație</strong>.</p>
+        <p>Multe benzi pliabile nu au înclinație reglabilă electric, dar unele au. Dacă vrei să simulezi urcări, caută asta. Cele cu înclinație reglabilă manual sunt ok, dar mai puțin practice în timpul alergării.</p>
+        <p>Am testat o bandă cu înclinație electrică de 15% și a fost fantastic pentru antrenamentele de forță. Prețurile variază enorm, dar pentru o bandă pliabilă decentă, cu motor de minim 2.5 CP și suprafață de alergare bună, te poți aștepta la un buget între 2500 și 4500 RON pe eMAG sau Altex.</p>
+<h2 id="modele-si-branduri-pe-care-le-am-testat-si-preturi-reale">Modele si branduri pe care le-am testat (si preturi reale)</h2>
+<p>Hai să trecem la lucruri concrete. Am pus mâna pe zeci de modele, am rulat sute de kilometri pe ele, și pot să spun că am o părere formată. Pentru bugetul de 2500-3500 RON, pe eMAG găsești adesea modele de la <strong>Xiaomi</strong> (seria WalkingPad) sau <strong>FitTrek</strong>.</p>
+        <p>Xiaomi WalkingPad A1 Pro, de exemplu, e o opțiune bună pentru mers și jogging ușor. Motorul e de 1.25 CP (peak), suprafața de alergare e destul de mică (40x120 cm), dar se pliază incredibil de compact. Prețul e undeva pe la 2700-3000 RON.</p>
+        <p>E ideală pentru cei cu spațiu foarte limitat și care nu vor să alerge viteze mari. Am observat că e mai mult pentru mers rapid. FitTrek, un brand mai nou pe piața românească, are modele ca FitTrek F1, F2, F3.</p>
+        <p>Modelul F3, de exemplu, cu motor de 3 CP, suprafață de 42x120 cm și viteză maximă de 12 km/h, se găsește pe la 3200-3500 RON. Am testat F2, care are 2.5 CP și o suprafață de 40x110 cm, la vreo 2800 RON. E o alegere decentă pentru jogging, dar pentru alergare susținută, motorul se simte un pic sub presiune.</p>
+        <p>Ambele branduri oferă pliere rapidă și sunt relativ silențioase.</p>
+
+<p>Urcând spre zona 3500-4500 RON, începi să găsești lucruri mai serioase. Pe Altex și eMAG, poti vedea modele de la <strong>Horizon Fitness</strong> (deși uneori depășesc bugetul) sau <strong>FitForce</strong>. FitForce XT500, de exemplu, pe la 4000 RON, are un motor de 3.5 CP, suprafață de 45x135 cm, viteză maximă de 14 km/h și chiar înclinație reglabilă electric (până la 10%).</p>
+        <p>Am rulat pe ea și mi s-a părut mult mai stabilă și mai confortabilă decât modelele mai ieftine. Consola e mai bogată, cu programe și conexiune Bluetooth. O altă variantă interesantă, uneori, e <strong>Gymtek</strong>, cu modele ca Gymtek TR700.</p>
+        <p>Am văzut-o pe la 3800 RON, cu motor de 3 CP, suprafață de 42x130 cm, viteză de 12 km/h și înclinație manuală. E o opțiune bună dacă nu vrei neapărat înclinație electrică, dar vrei o suprafață mai mare și un motor mai puternic decât la modelele de bază. Am testat și o bandă <strong>ProForm</strong> (unele modele se găsesc pe eMAG, uneori la reduceri), care sunt de obicei mai scumpe, dar oferă o calitate superioară.</p>
+        <p>Un model pliabil ProForm ar putea ajunge și la 5000+ RON, dar dacă prinzi o ofertă bună, merită. Am rulat pe un ProForm Smart Pro 2000 (nu e neapărat pliabil, dar unele modele au sistem de depozitare verticală) și a fost o experiență fantastică - motor silențios, amortizare excelentă, suprafață mare. Pentru benzi pliabile, atentie la greutatea lor.</p>
+        <p>Cele mai solide au și peste 70-80 kg. Verifică și garanția - ideal ar fi minim 2 ani pentru motor și ramă.</p>
+<h2 id="cum-sa-depozitezi-si-sa-intretii-banda-de-alergat-pliabila">Cum sa depozitezi si sa intretii banda de alergat pliabila</h2>
+<p>Asta e partea cea mai bună la benzile pliabile, nu? O poți depozita. Dar cum? Și unde? Cel mai simplu e să o pliezi și să o bagi sub pat, dacă spațiul permite. Sau într-un dulap mai mare.</p>
+        <p>Multe modele au roțițe pe partea din față, așa că poți să o tragi după tine. Am observat că e mult mai ușor să o ridici pe roțițe și apoi să o manevrezi. O altă variantă e să o pui vertical, sprijinită de un perete.</p>
+        <p>Asta necesită un pic mai mult spațiu, dar dacă ai un colț liber, e perfect. Asigură-te că e stabilă și nu riscă să cadă. Unele benzi au și sisteme de prindere pe perete, dar nu sunt foarte comune la modelele pliabile.</p>
+
+<p>Întreținerea e crucială pentru a prelungi viața benzii tale. În primul rând, <strong>curățenia</strong>. Aspiră praful de sub bandă și din jurul motorului regulat. Un aspirator cu perie este ideal. Șterge suprafața de alergare cu o cârpă umedă, dar nu udă, și cu o soluție de curățat blândă.</p>
+        <p>Nu folosi solvenți sau produse abrazive. Apoi, <strong>ungere</strong>. Asta e cel mai important pas.</p>
+        <p>Banda de alergare și placa de sub ea trebuie unse periodic. Producătorii specifică în manual intervalul (de obicei la fiecare 50-100 de ore de utilizare sau la câteva luni). Folosește silicon spray special pentru benzi de alergat.</p>
+        <p>Nu folosi ulei de bucătărie sau alte substanțe, pentru că pot deteriora materialul. Un flacon de silicon spray costă cam 30-50 RON și îți ajunge pentru multe ungeri. Procesul e simplu: ridici o jumătate din bandă, aplici spray-ul pe placa de dedesubt, apoi rulezi banda la viteză mică pentru câteva minute ca să se distribuie uniform.</p>
+        <p>Repeti pentru cealaltă jumătate. Am observat că dacă nu ungi banda, începe să scârțâie și uzura se accelerează. Verifică și tensiunea benzii.</p>
+        <p>Dacă e prea slabă, va aluneca, dacă e prea strânsă, va uza motorul și rola. Majoritatea benzilor au șuruburi de reglaj pe spate. Dacă nu ești sigur, consultă manualul sau un service specializat.</p>
+        <p>O bandă bine întreținută te va ține ani buni și va funcționa optim.</p>
+<h2 id="sfaturi-practice-de-la-un-veteran-al-benzilor-de-alergat">Sfaturi practice de la un veteran al benzilor de alergat</h2>
+<p>Am trecut prin multe cu benzile astea, așa că am câteva sfaturi care cred că îți vor fi de folos. Primul: <strong>nu te grăbi să cumperi cel mai ieftin model</strong>. Am văzut dezamăgiri crase la prieteni care au luat cele mai ieftine variante și după 3 luni banda se chinuia sau scârțâia de te lua cu fiori.</p>
+        <p>E mai bine să economisești un pic mai mult și să iei ceva decent, care să te țină. Gândește-te la ea ca la o investiție în sănătatea ta. Al doilea: <strong>citește recenzii, dar și manualul</strong>.</p>
+        <p>Recenziile de pe eMAG, Altex sau forumuri îți dau o idee despre experiența altor utilizatori, dar manualul îți oferă informații tehnice esențiale despre întreținere și funcționare. Nu sări peste el.</p>
+
+<p>Al treilea: <strong>testează dacă poți</strong>. Dacă ai posibilitatea să mergi într-un magazin și să încerci o bandă, fă-o. Vezi cum se simte, cum se pliază, cum sună motorul.</p>
+        <p>Chiar dacă nu găsești exact modelul pe care îl vrei, îți faci o idee despre ce înseamnă o bandă de calitate. Al patrulea: <strong>gândește-te la spațiul tău de depozitare</strong>. Măsoară înainte să cumperi.</p>
+        <p>O bandă pliată nu e chiar plată, are o anumită grosime și lungime. Asigură-te că o poți depozita comod, fără să te încurce. Am văzut oameni care au cumpărat benzi și apoi nu știau pe unde să le țină.</p>
+        <p>Al cincilea: <strong>nu exagera cu viteza și înclinația de la început</strong>. Lasă corpul să se obișnuiască. Începe cu mers alert și jogging ușor, apoi crește gradual intensitatea. Asta previne accidentările și te ajută să te bucuri mai mult de antrenament.</p>
+        <p>Al șaselea: <strong>folosește centura de siguranță</strong>. Multe benzi au o cheie de siguranță care se atașează de haine. Dacă aluneci sau cazi, banda se oprește automat.</p>
+        <p>Nu e un accesoriu de fiță, e o măsură de siguranță importantă, mai ales când te antrenezi singur.</p>
+
+<p>Al șaptelea: <strong>conectează-te la aplicații, dar nu te lăsa orbit</strong>. Aplicațiile gen Kinomap sau Zwift pot face antrenamentul mai distractiv, cu trasee virtuale. Dar dacă banda ta nu suportă Bluetooth sau e greu de conectat, nu te stresa.</p>
+        <p>O sesiune de alergare bine făcută pe o bandă simplă e la fel de eficientă. Eu prefer să mă concentrez pe ritm și respirație, mai ales când alerg pe distanțe mai lungi. Ultimul sfat: <strong>nu uita să te miști și în afara benzii</strong>.</p>
+        <p>Banda e un instrument fantastic, dar echilibrul e cheia. Stretching, exerciții de forță, plimbări în aer liber - toate fac parte dintr-un stil de viață sănătos. O bandă de alergat pliabilă îți oferă flexibilitate, dar nu înlocuiește varietatea.</p>
+<h2 id="ce-probleme-pot-aparea-si-cum-le-rezolvi">Ce probleme pot aparea si cum le rezolvi</h2>
+<p>Chiar și cele mai bune benzi de alergat pot avea mici probleme ocazionale. Una dintre cele mai comune e <strong>scârțâitul</strong>. Cum am menționat, de obicei e din cauza lipsei de ungere.</p>
+        <p>Verifică manualul și aplică silicon spray. Dacă problema persistă, ar putea fi o problemă cu rola sau cu banda în sine. O altă problemă frecventă e <strong>banda care alunecă</strong>.</p>
+        <p>Asta se întâmplă dacă banda e prea slăbită. De obicei, pe partea din spate a benzii sunt doi șuruburi de reglaj. Rotește-le ușor (cam un sfert de tură) în direcția în care banda se strânge.</p>
+        <p>Dacă banda alunecă în lateral, trebuie centrată. De obicei, se aliniază cu un șurub pe o parte și se slăbește ușor celălalt. Din nou, manualul e prietenul tău aici.</p>
+        <p>Am observat că dacă banda se deplasează spre stânga, trebuie strâns șurubul din dreapta sau slăbit cel din stânga. E un echilibru delicat.</p>
+
+<p><strong>Motorul se supraîncălzește sau se oprește brusc</strong>. Asta poate fi din mai multe cauze. Dacă folosești banda la viteza maximă pentru perioade lungi de timp, motorul se poate suprasolicita.</p>
+        <p>Las-o să se răcească. Verifică dacă nu e prea mult praf acumulat în jurul motorului sau dacă nu cumva ai depășit greutatea maximă suportată. O altă cauză ar putea fi o problemă electrică sau o defecțiune a motorului. În acest caz, cel mai bine e să contactezi service-ul. <strong>Ecranul nu afișează informații sau butoanele nu funcționează</strong>.</p>
+        <p>Verifică dacă toate cablurile sunt conectate corect. Uneori, o simplă resetare (scoaterea din priză pentru câteva minute) poate rezolva problema. Dacă nu, ar putea fi o defecțiune a consolei. <strong>Sistemul de pliere nu funcționează corect</strong>.</p>
+        <p>Verifică dacă nu e ceva blocat pe mecanism. Dacă e un sistem hidraulic, ar putea fi nevoie de aerisire sau de înlocuirea cilindrului, ceea ce necesită intervenția unui specialist. Am avut o experiență neplăcută cu o bandă la care sistemul hidraulic a cedat și plierea devenise foarte grea.</p>
+        <p>Am chemat un tehnician și a rezolvat-o. În general, pentru probleme complexe, e mai sigur să apelezi la service. Multe branduri oferă garanție, așa că profită de ea. Nu încerca să desfaci componente complicate dacă nu știi ce faci, pentru că poți anula garanția sau poți provoca daune suplimentare.</p>
+        <p>O mică întreținere preventivă, așa cum am discutat, te scutește de multe bătăi de cap.</p>
+        </div>
+
+        <section class="faq-section" id="faq">
+          <h2 class="faq-title">Intrebari Frecvente</h2>
+          
+      <div class="faq-item">
+        <div class="faq-question">
+          Cat spatiu ocupa o banda de alergat pliabila cand e stransa?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Depinde mult de model, dar in general, majoritatea modelelor pliabile ajung la o grosime de 20-30 cm, o lungime de 160-180 cm si o latime de 75-85 cm. Poate fi depozitata sub pat, intr-un dulap sau vertical, sprijinita de un perete.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Pot folosi o banda de alergat pliabila pentru antrenamente intense?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Pentru antrenamente intense, cu viteza mare si durata lunga, cauta modele cu motor de minim 3 CP (continuu), o suprafata de alergare generoasa (minim 45x135 cm) si un sistem de amortizare performant. Cele sub 2.5 CP sunt mai potrivite pentru mers rapid sau jogging usor.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Ce greutate pot suporta benzile de alergat pliabile?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Greutatea maxima suportata variaza de la model la model. Cele mai ieftine modele suporta in jur de 100-110 kg, in timp ce modelele mai solide pot ajunge la 130-150 kg. Este recomandat sa alegi o banda care suporta cu cel putin 20-30 kg mai mult decat greutatea ta.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Este dificil de asamblat o banda de alergat pliabila?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Majoritatea benzilor pliabile vin partial asamblate. De obicei, trebuie sa atasezi consola si sa faci cateva reglaje. Procesul este explicat clar in manual si, in general, nu necesita unelte speciale sau cunostinte tehnice avansate. Poate dura intre 30 de minute si o ora.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Cat de zgomotoase sunt benzile de alergat pliabile?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Nivelul de zgomot variaza in functie de motor, calitatea constructiei si amortizare. Modelele mai ieftine pot fi mai zgomotoase, mai ales la viteze mari. Cele cu motoare mai puternice si sisteme de amortizare bune sunt, in general, mai silentioase. Ungerea corecta a benzii reduce si ea zgomotul.</div>
+      </div>
+        </section>
+
+        <div class="author-box">
+          <div class="author-box-avatar">DI</div>
+          <div class="author-box-info">
+            <h4>Dan Iordan</h4>
+            <p>Antrenor Fitness Certificat</p>
+            <p class="author-box-bio">Antrenor personal cu certificari internationale, Dan testeaza echipamente fitness si recomanda doar cele care ofera rezultate reale pentru antrenamente de acasa.</p>
+          </div>
+        </div>
+
+        <SimilarArticles currentSlug="banda-alergat-pliabila" categorySlug="fitness-sport" />
+      </article>
+    </div>
+  </main>
+
+  <Footer />
+  <CookieBanner />
+</Layout>

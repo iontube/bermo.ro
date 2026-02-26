@@ -1,0 +1,38 @@
+---
+interface Props {
+  title: string;
+  slug: string;
+  excerpt: string;
+  image: string;
+  category: string;
+  categorySlug: string;
+  date: string;
+  showExcerpt?: boolean;
+}
+
+const { title, slug, excerpt, image, category, categorySlug, date, showExcerpt = true } = Astro.props;
+
+const cleanExcerpt = excerpt?.replace(/<[^>]*>/g, '') || '';
+
+const formattedDate = new Date(date).toLocaleDateString('ro-RO', {
+  day: 'numeric',
+  month: 'short'
+});
+---
+
+<article class="article-card">
+  <a href={`/${slug}/`} class="article-card-image">
+    <img src={image} alt={title} loading="lazy" width="800" height="500">
+  </a>
+
+  <div class="article-card-body">
+    <a href={`/${categorySlug}/`} class="article-card-tag">{category}</a>
+    <h3 class="article-card-title">
+      <a href={`/${slug}/`}>{title}</a>
+    </h3>
+    {showExcerpt && excerpt && (
+      <p class="article-card-excerpt">{cleanExcerpt}</p>
+    )}
+    <span class="article-card-date">{formattedDate}</span>
+  </div>
+</article>

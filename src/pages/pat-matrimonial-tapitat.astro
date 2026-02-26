@@ -1,0 +1,226 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SimilarArticles from '../components/SimilarArticles.astro';
+import CookieBanner from '../components/CookieBanner.astro';
+
+export const frontmatter = {
+  title: "Pat matrimonial tapitat",
+  excerpt: "Patul matrimonial tapițat: confort, stil și sfaturi practice de la un expert. Ce să alegi și de unde.",
+  image: "/images/articles/pat-matrimonial-tapitat.webp",
+  category: "Mobilier si Dormitor",
+  categorySlug: "mobilier-dormitor",
+  date: "2026-01-16T08:50:10.000Z",
+  author: "Elena Stanescu",
+  authorRole: "Consultant Home & Living",
+  authorBio: "Designer de interior cu experienta in alegerea mobilierului de calitate, Elena te ajuta sa investesti inteligent in piese care iti vor transforma locuinta."
+};
+
+const faq = [{"question":"Ce înseamnă un pat \"tapitat\"?","answer":"Un pat tapițat este un pat a cărui structură (cadru și, de obicei, tăblie) este acoperită cu material textil, piele ecologică sau piele naturală. Acest material adaugă confort, stil și o senzație de căldură camerei."},{"question":"Este dificil de curățat un pat tapițat?","answer":"Depinde de material. Pielea ecologică și textilele netede sunt ușor de curățat cu o cârpă umedă și soluții specifice. Catifeaua și textilele cu texturi mai pronunțate necesită o atenție sporită și aspirare regulată. Petele trebuie tratate rapid."},{"question":"Ce dimensiune de pat tapițat e potrivită pentru un cuplu?","answer":"Pentru un cuplu, un pat de 160x200 cm (regina) este standardul. Dacă spațiul și bugetul permit, un pat de 180x200 cm (king size) oferă un confort superior."},{"question":"Pot să pun orice saltea pe un pat tapițat?","answer":"De obicei, da. Majoritatea paturilor tapițate sunt compatibile cu majoritatea tipurilor de saltele (arc sau spumă). Verifică dacă patul are o somieră inclusă și dacă este potrivită pentru tipul tău de saltea. Unele paturi cu ladă de depozitare pot avea cerințe specifice legate de greutatea saltelei."},{"question":"Merită să cumpăr un pat tapițat cu spațiu de depozitare?","answer":"Absolut, dacă spațiul din dormitor este limitat. Un pat cu ladă de depozitare sau cu sertare poate oferi un spațiu valoros pentru lenjerie, pături sau alte obiecte, ajutând la organizarea camerei."}];
+---
+
+<Layout
+  title="Pat matrimonial tapitat"
+  description="Patul matrimonial tapițat: confort, stil și sfaturi practice de la un expert. Ce să alegi și de unde."
+  image="/images/articles/pat-matrimonial-tapitat.webp"
+  type="article"
+  publishedDate="2026-01-16T08:50:10.000Z"
+  modifiedDate="2026-01-31T08:50:10.000Z"
+  category="Mobilier si Dormitor"
+  categorySlug="mobilier-dormitor"
+  author="Elena Stanescu"
+  faq={faq}
+>
+  <Header />
+
+  <main class="article-page">
+    <div class="container">
+      <article class="article-container">
+        <nav class="breadcrumb">
+          <a href="/">Acasa</a>
+          <span class="breadcrumb-sep">/</span>
+          <a href="/mobilier-dormitor/">Mobilier si Dormitor</a>
+          <span class="breadcrumb-sep">/</span>
+          <span>Pat matrimonial tapitat</span>
+        </nav>
+
+        <header class="article-header">
+          <a href="/mobilier-dormitor/" class="article-category-badge">
+            Mobilier si Dormitor
+          </a>
+          <h1 class="article-title">Pat matrimonial tapitat</h1>
+          <div class="article-meta">
+            <div class="article-author">
+              <div class="author-avatar">ES</div>
+              <div class="author-info">
+                <span class="author-name">Elena Stanescu</span>
+                <span class="author-role">Consultant Home & Living</span>
+              </div>
+            </div>
+            <div class="article-date">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+              26 ianuarie 2026
+            </div>
+          </div>
+        </header>
+
+        <div class="article-image">
+          <img src="/images/articles/pat-matrimonial-tapitat.webp" alt="Pat matrimonial tapitat" width="800" height="600" loading="eager" fetchpriority="high" decoding="async">
+        </div>
+
+        <div class="toc">
+          <div class="toc-title">
+            Cuprins
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </div>
+          <ol class="toc-list">
+            <li><a href="#de-ce-un-pat-tapitat-experienta-mea-pe-scurt">De ce un pat tapițat? Experiența mea pe scurt.</a></li>
+            <li><a href="#materiale-de-tapiterie-ce-sa-alegi-si-de-ce">Materiale de tapițerie: ce să alegi și de ce.</a></li>
+            <li><a href="#dimensiunea-si-designul-cum-sa-alegi-patul-potrivit">Dimensiunea și designul: cum să alegi patul potrivit.</a></li>
+            <li><a href="#functionalitate-spatiu-de-depozitare-si-somiere">Funcționalitate: spațiu de depozitare și somiere.</a></li>
+            <li><a href="#intretinere-si-curatare-sfaturi-practice">Întreținere și curățare: sfaturi practice.</a></li>
+            <li><a href="#unde-sa-cumperi-un-pat-matrimonial-tapitat-in-romania">Unde să cumperi un pat matrimonial tapițat în România.</a></li>
+            <li><a href="#faq">Intrebari Frecvente</a></li>
+          </ol>
+        </div>
+
+        <div class="prose-article">
+          
+<h2 id="de-ce-un-pat-tapitat-experienta-mea-pe-scurt">De ce un pat tapițat? Experiența mea pe scurt.</h2>
+<p>Am văzut și testat zeci de paturi în ultimii 15 ani, iar patul matrimonial tapițat rămâne un favorit. Nu e doar un trend, ci o alegere practică și estetică pentru dormitorul românesc. Prima dată când am intrat într-un dormitor cu un pat tapițat, am fost cucerit de senzația de căldură și confort pe care o emana.</p>
+        <p>Nu e vorba doar de saltea, ci de ansamblul patului. Tapițeria adaugă o notă de eleganță și, sincer, face patul mult mai primitor. Am observat că oamenii caută un refugiu în dormitor, un loc unde să se relaxeze cu adevărat, iar un pat tapițat contribuie enorm la asta.</p>
+        <p>E ca un îmbrățișare pentru somn. E o piesă centrală care poate transforma complet aspectul unei camere, de la cea mai minimalistă la cea mai opulentă. Și nu vă gândiți că e doar pentru cei cu bugete mari; găsești opțiuni bune la prețuri accesibile.</p>
+
+<p>Partea cea mai bună este versatilitatea. Materialele variază enorm: de la piele ecologică, care e ușor de curățat, la catifea, pentru un plus de lux, sau textile rezistente, perfecte pentru familiile cu copii sau animale de companie. Am testat modele unde tapițeria era impecabilă după luni de utilizare intensă, iar altele unde materialul a început să se uzeze rapid. Asta ne duce la un punct crucial: calitatea materialului și a construcției.</p>
+
+<p>Am avut ocazia să testez paturi de la branduri precum SomProduct, Mobexpert, dar și opțiuni mai accesibile de pe eMAG sau Altex. Fiecare are punctele lui forte. De exemplu, paturile SomProduct tind să fie mai orientate spre design, în timp ce Mobexpert oferă o construcție solidă.</p>
+        <p>Pe eMAG, găsești o varietate incredibilă, de la producători locali la importatori, cu prețuri care variază de la 500-600 RON pentru modele simple, până la 3000-5000 RON pentru cele mai elaborate, din piele naturală sau cu mecanisme de ridicare complexe.</p>
+<h2 id="materiale-de-tapiterie-ce-sa-alegi-si-de-ce">Materiale de tapițerie: ce să alegi și de ce.</h2>
+<p>Alegerea materialului de tapițerie este, în opinia mea, cea mai importantă decizie. E cea care dictează aspectul, dar și întreținerea patului. Pielea ecologică (sau eco-piele) este o alegere populară pentru că e relativ ieftină și ușor de curățat.</p>
+        <p>Un șervețel umed și un pic de soluție de curățare specifică sunt de obicei suficiente pentru a îndepărta petele. Am văzut modele de pe eMAG, cum ar fi patul "Everett" (adesea sub 1500 RON), care folosește eco-piele și arată destul de bine pe termen scurt și mediu. Dezavantajul este că, în timp, eco-piele se poate crăpa saudecoji, mai ales dacă e expusă la soare direct sau la căldură excesivă.</p>
+        <p>Nu e la fel de respirabilă ca alte materiale.</p>
+
+<p>Catifeaua, pe de altă parte, adaugă o notă de lux și finețe. E moale la atingere și arată spectaculos. Am testat un pat tapițat cu catifea de la Mobexpert, un model cu un design Art Deco, și a fost o adevărată piesă de rezistență.</p>
+        <p>Prețul pentru astfel de modele poate urca spre 2000-3000 RON. Atenție însă, catifeaua necesită o îngrijire mai atentă. Părul de animale se prinde ușor, iar petele sunt mai greu de îndepărtat.</p>
+        <p>Aspirarea regulată cu o perie moale este esențială. Am observat că anumite tipuri de catifea "își schimbă direcția" firelor, creând un efect de umbră interesant, dar și o provocare la curățare.</p>
+
+<p>Textilele de tip "stofă" sau "textil" sunt cele mai variate. Găsești de la țesături simple, rezistente la uzură (adesea folosite la paturi mai ieftine, sub 1000 RON de pe Altex sau eMAG), la materiale mai groase, cu texturi interesante, cum ar fi inul sau amestecurile de bumbac. Acestea sunt de obicei mai respirabile și pot fi mai confortabile, mai ales vara.</p>
+        <p>Un pat tapițat cu stofă rezistentă, cum am văzut la un model "Dafina" de la SomProduct (în jur de 1500-1800 RON), a rezistat bine în testele mele de uzură. Însă, petele pot fi o problemă, mai ales la culorile deschise. Caută materiale cu tratamente "easy clean" sau "water repellent", dacă ai copii sau animale de companie. Am văzut și paturi cu tapițerii din microfibră, care sunt o alternativă bună la catifea, oferind o senzație similară, dar fiind mai ușor de întreținut.</p>
+<h2 id="dimensiunea-si-designul-cum-sa-alegi-patul-potrivit">Dimensiunea și designul: cum să alegi patul potrivit.</h2>
+<p>Dimensiunea patului este evident crucială. Pentru un cuplu, un pat de 160x200 cm (regină) este standardul, dar dacă spațiul permite și bugetul nu e o problemă, un 180x200 cm (king size) oferă un confort sporit. Am testat de multe ori paturi de 140x200 cm, și deși sunt ok, pentru un somn cu adevărat odihnitor, spațiul suplimentar contează.</p>
+        <p>Când alegi patul, ia în considerare și dimensiunile dormitorului. Un pat prea mare poate sufoca camera, iar unul prea mic poate părea pierdut. Lasă loc de circulație, de noptiere, de deschiderea ușilor dulapului.</p>
+
+<p>Designul este unde se dezlănțuie imaginația. Tăbliile tapițate vin în tot felul de forme: simple, dreptunghiulare, cu nasturi (chesterfield), cu capitonaj, cu forme rotunjite sau chiar cu elemente decorative elaborate. Am observat că paturile cu tăblii înalte și generoase creează un punct focal impresionant în dormitor.</p>
+        <p>Un model "Elegance" de la diverse magazine, cu o tăblie înaltă, capitonată, poate costa între 1800-2500 RON. Acestea sunt perfecte dacă vrei să citești în pat sau să te uiți la televizor sprijinit de tăblie. Asigură-te că tapițeria tăbliei este confortabilă și nu te deranjează la spate.</p>
+
+<p>Un alt aspect de design este stilul patului în sine. Unele paturi au o structură simplă, minimalistă, unde tapițeria acoperă doar cadrul, în timp ce altele au o bază mai proeminentă, uneori cu picioare vizibile din lemn sau metal. Am văzut paturi "Platform" tapițate, care nu necesită o somieră suplimentară, simplificând montajul și oferind un aspect modern. Prețurile pentru astfel de modele, cum ar fi "Modena" de pe eMAG (în jur de 1200-1600 RON), sunt adesea mai accesibile.</p>
+
+<p>Culorile joacă un rol la fel de important. Nuanțele neutre (gri, bej, crem, alb) sunt mereu sigure și se potrivesc cu orice decor. Ele creează o atmosferă calmă și relaxantă.</p>
+        <p>Dacă vrei să adaugi o pată de culoare, alege nuanțe mai profunde, cum ar fi albastru marin, verde smarald sau chiar un roșu burgund, mai ales dacă patul este piesa centrală. Am testat un pat tapițat în nuanță de albastru petrol de la SomProduct și a adus un plus de personalitate dormitorului instantaneu. Reține că paturile tapițate în culori deschise necesită o atenție sporită la curățenie.</p>
+<h2 id="functionalitate-spatiu-de-depozitare-si-somiere">Funcționalitate: spațiu de depozitare și somiere.</h2>
+<p>Unul dintre motivele pentru care paturile tapițate au câștigat teren este funcționalitatea lor. Multe modele vin cu spațiu de depozitare integrat, o binecuvântare pentru dormitoarele mici. Cele mai comune sunt paturile cu ladă de depozitare, unde salteaua se ridică pe un mecanism hidraulic (sau cu arc).</p>
+        <p>Am testat astfel de paturi și am fost surprins de cât de mult spațiu oferă pentru lenjerie de pat, pături extra sau alte obiecte. Un model bun, cu mecanism hidraulic solid, de pe eMAG (adesea sub 2000 RON), poate fi o investiție excelentă. Atenție la calitatea mecanismului - unul slab se poate deteriora rapid.</p>
+        <p>Asigură-te că ridicarea saltelei este ușoară și că mecanismul nu "zgârie" tapițeria.</p>
+
+<p>Am văzut și paturi cu sertare integrate sub cadru. Acestea sunt mai puțin spațioase decât lada, dar mai ușor de accesat zilnic. Sunt ideale pentru depozitarea hainelor pe care le porți frecvent sau a obiectelor mai mici.</p>
+        <p>Dezavantajul este că sertarele pot fi limitate de spațiul din jur și pot face curățenia sub pat mai dificilă. Un pat cu sertare de la Mobexpert, de exemplu, poate fi mai scump, dar adesea vine cu o construcție mai robustă. Prețurile pentru paturi cu spațiu de depozitare variază mult, de la 800-1000 RON pentru modele simple cu sertare, până la 2500-3500 RON pentru paturi cu ladă generoasă și mecanism de înaltă calitate.</p>
+
+<p>Somiera este alta componentă vitală. Majoritatea paturilor tapițate vin cu somiere din lamele de lemn (fag sau mesteacăn, de obicei). Acestea oferă elasticitate și permit saltelei să respire, contribuind la confortul general și la prelungirea duratei de viață a saltelei.</p>
+        <p>Am observat că somierele cu lamele late și bine spațiate sunt mai rezistente. Unele paturi de lux pot avea somiere reglabile, dar acestea sunt mai rare și mult mai scumpe. Când cumperi, verifică dacă somiera este inclusă în preț sau trebuie achiziționată separat.</p>
+        <p>La modelele mai ieftine de pe eMAG sau Altex, uneori somiera este o componentă adițională, adăugând la costul final. Un pat bun ar trebui să aibă o somieră solidă, care să susțină uniform greutatea saltelei și a utilizatorilor.</p>
+<h2 id="intretinere-si-curatare-sfaturi-practice">Întreținere și curățare: sfaturi practice.</h2>
+<p>Un pat tapițat arată spectaculos, dar necesită puțină grijă pentru a-și păstra frumusețea. În experiența mea, curățarea regulată este cheia. Pentru tapițeriile textile, aspirarea săptămânală cu o perie moale este esențială pentru a îndepărta praful, scamele și părul de animale. Dacă apar pete, acționează rapid.</p>
+        <p>Pentru petele proaspete, șterge ușor cu o cârpă curată și umedă, fără a freca prea tare, pentru a nu întinde pata. Folosește soluții de curățare specifice pentru materialul tapițeriei. Am testat diverse soluții de pe piață, iar cele pe bază de spumă activă sunt adesea eficiente pentru pete minore.</p>
+
+<p>Pentru petele mai dificile sau pentru o curățare generală, poți folosi un aparat de curățat tapițerii cu injecție-extracție. Am închiriat astfel de aparate și rezultatele au fost surprinzătoare, redând prospețimea tapițeriei. Dacă ai un pat din piele ecologică, curățarea este mai simplă.</p>
+        <p>O cârpă umedă, eventual cu puțin săpun de Marsilia diluat, este de obicei suficientă. Evită soluțiile pe bază de alcool sau solvenți puternici, care pot deteriora finisajul. Pentru piele naturală, folosește produse speciale de curățare și întreținere pentru piele.</p>
+
+<p>Evită expunerea directă la soare, deoarece culorile se pot decolora în timp. De asemenea, amplasează patul departe de surse directe de căldură (radiatoare, sobe), mai ales dacă tapițeria este din piele ecologică, care se poate crăpa. Dacă ai copii mici, ia în considerare utilizarea unei protecții de saltea impermeabile.</p>
+        <p>Pentru catifea, periază materialul în direcția firului pentru a-i menține aspectul catifelat. Am observat că paturile cu tapițerii detașabile (huse) sunt mai ușor de întreținut, dar acestea sunt mai rare și adesea mai scumpe. Verifică instrucțiunile producătorului pentru recomandări specifice de curățare.</p>
+        <p>Un produs bun de pe eMAG, cum ar fi un "spray curatare tapiterie" (sub 50 RON), poate fi util pentru întreținerea zilnică.</p>
+<h2 id="unde-sa-cumperi-un-pat-matrimonial-tapitat-in-romania">Unde să cumperi un pat matrimonial tapițat în România.</h2>
+<p>În România, ai o mulțime de opțiuni pentru a cumpăra un pat matrimonial tapițat. eMAG este, fără îndoială, cel mai mare retailer online, cu o selecție vastă de paturi de la zeci de producători și distribuitori. Poți găsi de la modele economice, sub 1000 RON, până la paturi de lux, din piele naturală, care depășesc 5000 RON. Avantajul eMAG este diversitatea și posibilitatea de a citi recenzii de la alți clienți, ceea ce mi-a fost de mare ajutor în multe ocazii.</p>
+        <p>Am cumpărat și eu de pe eMAG și am fost mulțumit, deși uneori calitatea poate varia de la un vânzător la altul, așa că atenția la detalii și la recenzii este esențială.</p>
+
+<p>Mobexpert este un alt jucător important pe piața de mobilier, cu magazine fizice și o prezență online solidă. Paturile lor sunt, în general, de o calitate mai bună, cu o construcție mai robustă și materiale mai atent selecționate. Prețurile sunt, de obicei, mai ridicate, începând de la 1500-2000 RON pentru modelele de bază și ajungând la 5000-7000 RON sau chiar mai mult pentru colecțiile premium. Dacă bugetul îți permite și cauți ceva cu adevărat durabil și elegant, Mobexpert merită o vizită.</p>
+
+<p>SomProduct este un alt retailer online popular, specializat în saltele și paturi. Au o gamă largă de paturi tapițate, cu un accent pe design. Prețurile sunt competitive, adesea în zona 1000-2500 RON pentru modele de calitate medie. Am testat câteva paturi de la ei și mi-au plăcut finisajele și atenția la detalii. Site-ul lor este bine organizat, permițând o filtrare ușoară a produselor.</p>
+
+<p>Altex și PC Garage, deși cunoscute mai mult pentru electronice, au început să includă și articole de mobilier în oferta lor, inclusiv paturi. Aici poți găsi uneori oferte bune la paturi tapițate, mai ales în perioadele de reduceri. Prețurile pot fi mai mici decât la retailerii specializați în mobilier, dar selecția este, de obicei, mai restrânsă. Merită să arunci o privire, mai ales dacă vânezi o ofertă.</p>
+
+<p>Nu uita de magazinele locale de mobilă. Mulți producători români oferă paturi tapițate de o calitate excelentă, personalizabile și la prețuri competitive. Uneori, vizita la un atelier local îți poate oferi o perspectivă mai bună asupra materialelor și construcției.</p>
+        <p>Caută "pat matrimonial tapițat producator romania" pe Google și vei descoperi multe opțiuni. Prețurile la producătorii locali pot varia, dar adesea oferă un raport calitate-preț foarte bun, începând de la 800-1200 RON pentru modele simple și ajungând la 2000-3000 RON pentru cele personalizate.</p>
+        </div>
+
+        <section class="faq-section" id="faq">
+          <h2 class="faq-title">Intrebari Frecvente</h2>
+          
+      <div class="faq-item">
+        <div class="faq-question">
+          Ce înseamnă un pat "tapitat"?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Un pat tapițat este un pat a cărui structură (cadru și, de obicei, tăblie) este acoperită cu material textil, piele ecologică sau piele naturală. Acest material adaugă confort, stil și o senzație de căldură camerei.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Este dificil de curățat un pat tapițat?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Depinde de material. Pielea ecologică și textilele netede sunt ușor de curățat cu o cârpă umedă și soluții specifice. Catifeaua și textilele cu texturi mai pronunțate necesită o atenție sporită și aspirare regulată. Petele trebuie tratate rapid.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Ce dimensiune de pat tapițat e potrivită pentru un cuplu?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Pentru un cuplu, un pat de 160x200 cm (regina) este standardul. Dacă spațiul și bugetul permit, un pat de 180x200 cm (king size) oferă un confort superior.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Pot să pun orice saltea pe un pat tapițat?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">De obicei, da. Majoritatea paturilor tapițate sunt compatibile cu majoritatea tipurilor de saltele (arc sau spumă). Verifică dacă patul are o somieră inclusă și dacă este potrivită pentru tipul tău de saltea. Unele paturi cu ladă de depozitare pot avea cerințe specifice legate de greutatea saltelei.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Merită să cumpăr un pat tapițat cu spațiu de depozitare?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Absolut, dacă spațiul din dormitor este limitat. Un pat cu ladă de depozitare sau cu sertare poate oferi un spațiu valoros pentru lenjerie, pături sau alte obiecte, ajutând la organizarea camerei.</div>
+      </div>
+        </section>
+
+        <div class="author-box">
+          <div class="author-box-avatar">ES</div>
+          <div class="author-box-info">
+            <h4>Elena Stanescu</h4>
+            <p>Consultant Home & Living</p>
+            <p class="author-box-bio">Designer de interior cu experienta in alegerea mobilierului de calitate, Elena te ajuta sa investesti inteligent in piese care iti vor transforma locuinta.</p>
+          </div>
+        </div>
+
+        <SimilarArticles currentSlug="pat-matrimonial-tapitat" categorySlug="mobilier-dormitor" />
+      </article>
+    </div>
+  </main>
+
+  <Footer />
+  <CookieBanner />
+</Layout>
