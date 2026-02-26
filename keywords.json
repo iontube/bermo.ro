@@ -86,11 +86,6 @@
       "categorySlug": "electrocasnice-premium"
     },
     {
-      "keyword": "casti gaming hyperx",
-      "category": "IT si Electronice",
-      "categorySlug": "it-electronice"
-    },
-    {
       "keyword": "camera web 4k streaming",
       "category": "IT si Electronice",
       "categorySlug": "it-electronice"
@@ -547,6 +542,11 @@
     },
     {
       "keyword": "mouse gaming wireless logitech",
+      "category": "IT si Electronice",
+      "categorySlug": "it-electronice"
+    },
+    {
+      "keyword": "casti gaming hyperx",
       "category": "IT si Electronice",
       "categorySlug": "it-electronice"
     }
