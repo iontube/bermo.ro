@@ -261,11 +261,6 @@
       "categorySlug": "mobilier-dormitor"
     },
     {
-      "keyword": "minge fitness antiburst",
-      "category": "Fitness si Sport",
-      "categorySlug": "fitness-sport"
-    },
-    {
       "keyword": "trx suspension original",
       "category": "Fitness si Sport",
       "categorySlug": "fitness-sport"
@@ -549,6 +544,11 @@
       "keyword": "dulap usi glisante",
       "category": "Mobilier si Dormitor",
       "categorySlug": "mobilier-dormitor"
+    },
+    {
+      "keyword": "minge fitness antiburst",
+      "category": "Fitness si Sport",
+      "categorySlug": "fitness-sport"
     }
   ],
   "authors": [
