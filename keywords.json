@@ -1,11 +1,6 @@
 {
   "pending": [
     {
-      "keyword": "masina de paine premium",
-      "category": "Electrocasnice Premium",
-      "categorySlug": "electrocasnice-premium"
-    },
-    {
       "keyword": "blender profesional vitamix",
       "category": "Electrocasnice Premium",
       "categorySlug": "electrocasnice-premium"
@@ -549,6 +544,11 @@
       "keyword": "minge fitness antiburst",
       "category": "Fitness si Sport",
       "categorySlug": "fitness-sport"
+    },
+    {
+      "keyword": "masina de paine premium",
+      "category": "Electrocasnice Premium",
+      "categorySlug": "electrocasnice-premium"
     }
   ],
   "authors": [
