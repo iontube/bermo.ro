@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bermo.ro/sitemap-index.xml
+Sitemap: https://bermo.ro/sitemap_index.xml
