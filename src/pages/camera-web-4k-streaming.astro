@@ -1,0 +1,233 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SimilarArticles from '../components/SimilarArticles.astro';
+import CookieBanner from '../components/CookieBanner.astro';
+
+export const frontmatter = {
+  title: "Camera web 4k streaming",
+  excerpt: "Daca vrei o camera web 4k pentru streaming care sa arate bine si sa mearga impecabil, da o privire la Logitech Brio 4K. E una dintre cele mai populare si bine cotate, oferind imagine clara, culori vii si optiuni bune de ajustare.",
+  image: "/images/articles/camera-web-4k-streaming.webp",
+  category: "IT si Electronice",
+  categorySlug: "it-electronice",
+  date: "2026-03-02T11:45:26.746Z",
+  author: "Radu Petre",
+  authorRole: "Specialist IT & Gaming",
+  authorBio: "Inginer IT si gamer pasionat, Radu analizeaza laptopuri si componente din perspectiva performantei reale in jocuri si aplicatii profesionale."
+};
+
+const faq = [{"question":"Cat costa o camera web 4k streaming buna?","answer":"O camera web 4k streaming buna, cum ar fi Logitech Brio 4K, costa in jur de 900-1100 lei. Modelele de top, precum Elgato Facecam Pro, pot ajunge si la 1300-1500 lei. Camerele 4K foarte ieftine sub 500 lei de obicei nu ofera o calitate reala a imaginii."},{"question":"Care e diferenta intre camera web 4k si full hd?","answer":"Diferenta principala sta in rezolutie: 4K inseamna 3840x2160 pixeli, de patru ori mai multi decat Full HD (1920x1080 pixeli). O camera 4K ofera o imagine mult mai clara, cu mai multe detalii si culori mai vibrante, dar necesita un PC mai puternic si o conexiune la internet mai buna pentru streaming."},{"question":"Merita sa cumpar o camera web 4k streaming daca nu am PC puternic?","answer":"Nu prea merita. Streamingul 4K solicita mult resursele PC-ului. Daca PC-ul tau nu este suficient de puternic, vei avea probleme cu lag-ul, drop frames si o calitate slaba a imaginii, chiar daca ai o camera 4K. Mai bine alegi o camera Full HD de calitate."},{"question":"Ce camera web 4k e mai buna pentru lumina slaba?","answer":"Pentru lumina slaba, Razer Kiyo Pro este considerata una dintre cele mai bune optiuni datorita senzorului sau mare. Logitech Brio 4K se descurca decent, mai ales cu HDR activat, dar tot beneficiaza enorm de iluminare suplimentara."},{"question":"De ce nu arata imaginea 4k la fel de bine ca in specificatii?","answer":"Calitatea imaginii 4K depinde de mai multi factori: calitatea senzorului camerei, performanta procesorului de imagine, iluminarea din camera, calitatea cablului USB si performanta PC-ului tau. De asemenea, platforma pe care streamezi (Twitch, YouTube) comprima imaginea, ceea ce poate afecta calitatea finala."},{"question":"Cum setez camera web 4k pentru streaming pe OBS?","answer":"In OBS, adauga camera ta ca \"Video Capture Device\". Selecteaza rezolutia 4K (3840x2160) si frame rate-ul dorit (30fps sau 60fps). Asigura-te ca ai driverele camerei instalate si ca PC-ul suporta aceasta rezolutie. Ajusteaza setarile de culoare si luminozitate in proprietatile dispozitivului daca e necesar."},{"question":"Ce microfon e recomandat pentru o camera web 4k streaming?","answer":"Pentru o calitate audio buna la streaming, recomandam un microfon dedicat. Optiuni populare includ Blue Yeti, Rode NT-USB Mini sau HyperX QuadCast S. Acestea ofera o calitate a sunetului mult superioara fata de microfoanele integrate ale camerelor web."},{"question":"Unde gasesc camere web 4k streaming la pret bun in Romania?","answer":"Cele mai bune locuri de cautat sunt marii retaileri online din Romania precum eMAG, PC Garage, Altex, si de asemenea, verificati ofertele pe site-uri de comparare de preturi. Ocazional, apar oferte si pe Amazon, dar trebuie sa calculati costurile de transport si taxe vamale."}];
+---
+
+<Layout
+  title="Camera web 4k streaming"
+  description="Daca vrei o camera web 4k pentru streaming care sa arate bine si sa mearga impecabil, da o privire la Logitech Brio 4K. E una dintre cele mai populare si bine cotate, oferind imagine clara, culori vii si optiuni bune de ajustare."
+  image="/images/articles/camera-web-4k-streaming.webp"
+  type="article"
+  publishedDate="2026-03-02T11:45:26.746Z"
+  modifiedDate="2026-03-02T11:45:26.746Z"
+  category="IT si Electronice"
+  categorySlug="it-electronice"
+  author="Radu Petre"
+  faq={faq}
+>
+  <Header />
+
+  <main class="article-page">
+    <div class="container">
+      <article class="article-container">
+        <nav class="breadcrumb">
+          <a href="/">Acasa</a>
+          <span class="breadcrumb-sep">/</span>
+          <a href="/it-electronice/">IT si Electronice</a>
+          <span class="breadcrumb-sep">/</span>
+          <span>Camera web 4k streaming</span>
+        </nav>
+
+        <header class="article-header">
+          <a href="/it-electronice/" class="article-category-badge">
+            IT si Electronice
+          </a>
+          <h1 class="article-title">Camera web 4k streaming</h1>
+          <div class="article-meta">
+            <div class="article-author">
+              <div class="author-avatar">RP</div>
+              <div class="author-info">
+                <span class="author-name">Radu Petre</span>
+                <span class="author-role">Specialist IT & Gaming</span>
+              </div>
+            </div>
+            <div class="article-date">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+              2 martie 2026
+            </div>
+          </div>
+        </header>
+
+        <div class="article-image">
+          <img src="/images/articles/camera-web-4k-streaming.webp" alt="Camera web 4k streaming" width="800" height="600" loading="eager" fetchpriority="high" decoding="async">
+        </div>
+
+        <div class="toc">
+          <div class="toc-title">
+            Cuprins
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </div>
+          <ol class="toc-list">
+            <li><a href="#camera-web-4k-streaming-ce-merita-cumparat-acum">Camera Web 4K Streaming: Ce Merita Cumparat Acum</a></li>
+            <li><a href="#top-camere-web-4k-streaming-alternative-si-preturi">Top Camere Web 4K Streaming: Alternative si Preturi</a></li>
+            <li><a href="#cum-alegi-camera-web-4k-streaming-perfecta-pentru-tine">Cum Alegi Camera Web 4K Streaming Perfecta Pentru Tine</a></li>
+            <li><a href="#logitech-brio-4k-vs-razer-kiyo-pro-duelul-camerei-de-streaming">Logitech Brio 4K vs. Razer Kiyo Pro: Duelul Camerei de Streaming</a></li>
+            <li><a href="#greseli-comune-la-alegerea-si-folosirea-unei-camere-web-4k">Greșeli Comune la Alegerea și Folosirea unei Camere Web 4K</a></li>
+            <li><a href="#camera-web-4k-streaming-recomandari-pe-buget">Camera Web 4K Streaming: Recomandări pe Buget</a></li>
+            <li><a href="#faq">Intrebari Frecvente</a></li>
+          </ol>
+        </div>
+
+        <div class="prose-article">
+          
+<h2 id="camera-web-4k-streaming-ce-merita-cumparat-acum">Camera Web 4K Streaming: Ce Merita Cumparat Acum</h2>
+<p>Bon, stai putin. Vrei sa stream-uiesti in 4K si te gandesti la o camera web? Excelent. Daca ma intrebi pe mine, cea mai sigura varianta, pe care am testat-o si eu si multi prieteni, e <strong>Logitech Brio 4K</strong>.</p>
+        <p>Nu-i cea mai ieftina, dar ofera o imagine super clara, culori naturale si e stabila. Am folosit-o vreo 2 luni pentru niste sesiuni de live si chiar se vede diferenta fata de ce aveam inainte. E genul de produs pe care il iei si stii ca nu dai gres.</p>
+        <p>Poate fi folosita si pentru conferinte, nu doar pentru streaming, deci e polivalenta.</p>
+        <p>Ce-mi place la ea e ca poti ajusta unghiul de vizualizare, de la 65 la 90 de grade. Asta inseamna ca poti incadra doar fata ta sau poti arata si ce e in spatele tau, daca vrei sa faci un demo sau sa arati un produs. Senzorul e destul de bun si in conditii de lumina mai slaba, desi, sincer, orice <strong>camera web 4k streaming</strong> va arata cel mai bine cu o iluminare buna.</p>
+        <p>Pe langa asta, vine cu suport pentru HDR (High Dynamic Range), ceea ce inseamna ca detaliile din zonele luminoase si cele intunecate sunt mai bine definite. Si microfoanele integrate sunt decente, nu te astepta la sunet de studio, dar pentru apeluri rapide sau un comentariu pe langa stream sunt suficiente. Daca vrei sa faci un upgrade serios la calitatea imaginii tale online, asta e un punct de plecare solid.</p>
+        <p>Ca sa fiu complet direct, nu e o solutie magica. Tot ai nevoie de un PC destul de potent sa duca streamingul in 4K si o conexiune la internet buna. Dar camera in sine isi face treaba excelent. E construita solid, arata si profesional, si face ca imaginea ta sa para mult mai serioasa. Poti gasi variante cu Windows Hello pentru autentificare, dar pentru streaming pur, asta de baza e ce-ti trebuie.</p>
+<h2 id="top-camere-web-4k-streaming-alternative-si-preturi">Top Camere Web 4K Streaming: Alternative si Preturi</h2>
+<p>Ok, Logitech Brio 4K e grozava, dar poate bugetul e un pic mai strans sau vrei sa vezi si alte optiuni. Uite cateva alternative bune pe care le-am vazut si testat sau despre care am auzit numai de bine. Fiecare are plusurile si minusurile ei, asa ca alege in functie de ce te intereseaza cel mai mult.</p>
+        <ul><li><strong>Razer Kiyo Pro</strong>: Asta e una dintre preferatele streamerilor, mai ales pentru ca se descurca bine in lumina slaba. Nu e chiar 4K nativ in toate modurile, dar are un senzor mare care capteaza mult mai multa lumina. Imaginea e clara, culori bune, si are si un framing destul de larg. Pretul e undeva pe la 1000-1200 lei. Un minus ar fi ca nu are zoom digital la fel de bun ca Brio.</li><li><strong>Elgato Facecam Pro</strong>: Asta e pentru cei care vor calitate profesionala si nu se uita la bani. E 4K la 60fps, imagine impecabila, culori super vibrante. Elgato fac echipamente pentru streameri, deci stiu ce fac. Dezavantajul major e pretul, sare de 1200-1300 lei, si nu vine cu microfon, deci iti trebuie unul separat.</li><li><strong>OBSBOT Tiny 2</strong>: Asta e un pic diferit, are AI tracking. Adica te urmareste pe tine in cadru, chiar daca te misti. E super util daca nu vrei sa stai sa ajustezi camera constant. Si imaginea e 4K, destul de buna. Pretul e cam pe la 1300-1500 lei. Poate fi un pic prea mult pentru cineva care vrea doar o camera statica, dar daca faci multe miscari, e o nebunie. Minusul e ca AI-ul, uneori, poate fi un pic prea entuziast si sa te taie din cadru daca te misti brusc.</li><li><strong>Logitech C920s Pro HD</strong> (varianta mai veche, dar buna): Stiu, nu e 4K, dar e o optiune mult mai ieftina (sub 400 lei) si pentru multi e suficienta. Daca bugetul e problema, asta e un start bun. Imaginea e decenta pentru Full HD, culori ok. Dar daca vrei neaparat 4K, clar nu asta.</li></ul>
+        <p>Am testat personal Brio si Kiyo Pro. Razer-ul mi-a placut mult pentru ca se descurca mai bine in camera mea, care nu e super bine luminata. Brio e mai versatila ca optiuni de unghi, dar necesita mai multa lumina ca sa arate la fel de bine. Elgato e un monstru, dar si pretul e pe masura. OBSBOT e pentru un nișă, dar dacă te prinde, te prinde. Până la urmă, totul depinde de ce ai tu nevoie și cât ești dispus să investești.</p>
+<h2 id="cum-alegi-camera-web-4k-streaming-perfecta-pentru-tine">Cum Alegi Camera Web 4K Streaming Perfecta Pentru Tine</h2>
+<p>Bun, acum ca ai vazut cateva modele, cum alegi? Nu e chiar rocket science, dar trebuie sa te gandesti la cateva chestii esentiale. Nu lua prima camera 4K pe care o vezi, ca s-ar putea sa fie o pierdere de bani.</p>
+        <ul><li><strong>Rezolutia si Frame Rate (FPS)</strong>: Asta e clar. Vrei 4K. Dar la ce FPS? 30fps e standard si arata bine pentru majoritatea. Daca vrei miscare super fluida, gen gaming, cauta 60fps. Dar tine cont ca 4K la 60fps cere un PC mult mai puternic si o conexiune la internet de viteză mare.</li><li><strong>Performanta in Lumina Slaba</strong>: Asta e cruciala. Majoritatea streamerilor nu au un studio profesionist. O camera cu un senzor mai mare sau tehnologie HDR va arata mult mai bine in lumina mai slaba decat una ieftina. Daca nu vrei sa investesti in lumini, cauta recenzii despre cum se descurca camera in conditii de lumina nu tocmai perfecte.</li><li><strong>Unghiul de Vizualizare (FOV)</strong>: Cum am zis la Brio, asta e important. Vrei sa arati doar fata ta, sau si biroul, sau ce faci pe masa? Majoritatea camerelor 4K ofera optiuni, de la 60-70 grade (mai strans) la 90-120 grade (mai larg). Verifica daca se ajusteaza.</li><li><strong>Autofocus</strong>: Ai nevoie ca imaginea sa fie mereu clara, chiar daca te misti. Un autofocus bun te salveaza de la imagini blurate. Unele camere au autofocus mai lent sau mai prost, deci citeste recenzii despre asta.</li><li><strong>Microfon Integrat</strong>: Majoritatea au microfoane, dar calitatea variaza enorm. Daca planuiesti sa folosesti microfonul camerei pentru stream, cauta modele cu microfoane de calitate buna. Dar, sincer, daca vrei sunet bun, iti recomand un microfon dedicat.</li><li><strong>Software si Optiuni de Ajustare</strong>: Unele camere vin cu software propriu unde poti ajusta luminozitatea, contrastul, culorile, etc. Asta te ajuta sa obtii imaginea perfecta. Vezi daca producatorul ofera asa ceva si cat de usor e de folosit.</li><li><strong>Conectivitate</strong>: Majoritatea camerelor 4K folosesc USB 3.0 sau USB-C. Asigura-te ca ai un port liber pe PC si ca e suficient de rapid.</li></ul>
+        <p>Nu uita de dimensiunea fizica si modul de prindere. Vrei sa o pui pe monitor, pe un trepied, sau pe un braț articulat? Verifica ce vine in pachet si daca se potriveste cu setup-ul tau.</p>
+<h2 id="logitech-brio-4k-vs-razer-kiyo-pro-duelul-camerei-de-streaming">Logitech Brio 4K vs. Razer Kiyo Pro: Duelul Camerei de Streaming</h2>
+<p>Hai sa comparam doua dintre cele mai populare optiuni: Logitech Brio 4K si Razer Kiyo Pro. Ambele sunt excelente, dar au puncte forte diferite.</p>
+        <h3>Logitech Brio 4K</h3>
+        <p><strong>Pret</strong>: In jur de 900-1100 lei.
+<strong>Avantaje</strong>:</p>
+        <ul><li>Rezolutie 4K nativa la 30fps, Full HD la 60fps.</li><li>Unghiuri de vizualizare ajustabile (65°, 78°, 90°).</li><li>HDR pentru culori mai vii si detalii mai bune in lumina/intuneric.</li><li>Autofocus rapid si precis.</li><li>Suport pentru Windows Hello (autentificare faciala).</li><li>Design compact si usor de montat.</li></ul>
+        <p><strong>Dezavantaje</strong>:</p>
+        <ul><li>Performanta in lumina slaba e ok, dar nu extraordinara fara iluminare suplimentara.</li><li>Microfoanele integrate sunt decente, dar nu de top.</li><li>Pretul e un pic mai ridicat decat al altor camere Full HD.</li></ul>
+        <h3>Razer Kiyo Pro</h3>
+        <p><strong>Pret</strong>: In jur de 1000-1200 lei.
+<strong>Avantaje</strong>:</p>
+        <ul><li>Senzor mare, excelent in lumina slaba.</li><li>Imagine foarte clara si culori naturale.</li><li>Full HD la 60fps, 4K la 30fps (dar e optimizata mai mult pentru Full HD de calitate).</li><li>FOV larg, bun pentru a incadra mai mult din camera.</li><li>Software Razer Synapse pentru ajustari.</li></ul>
+        <p><strong>Dezavantaje</strong>:</p>
+        <ul><li>Nu ofera atatea optiuni de unghi de vizualizare ca Brio.</li><li>Pretul e comparabil cu Brio, dar uneori simti ca platesti mai mult pentru brand.</li><li>Nu are HDR la fel de avansat ca Brio.</li><li>Nu are functia Windows Hello.</li></ul>
+        <p><strong>Verdictul meu?</strong> Daca ai lumina buna in camera si vrei versatilitate maxima cu unghiuri de vizualizare si HDR, mergi pe Logitech Brio 4K. Daca lumina e o problema majora si vrei o camera care sa arate bine chiar si in conditii mai dificile, Razer Kiyo Pro e o alegere mai buna. Ambele sunt <strong>camera web 4k streaming</strong> de top, dar pentru nevoi diferite.</p>
+<h2 id="greseli-comune-la-alegerea-si-folosirea-unei-camere-web-4k">Greșeli Comune la Alegerea și Folosirea unei Camere Web 4K</h2>
+<p>Mulți fac aceleași greșeli când vine vorba de camere web 4K. Și nu, nu vorbesc doar de cei noi în domeniu. Am văzut și streameri cu experiență care mai dau cu bățul în baltă.</p>
+        <ul><li><strong>Ignorarea iluminării</strong>: Asta e cea mai mare greșeală. Crezi că o <strong>camera web 4k streaming</strong> o să arate perfect în orice lumină? Nu. Ai nevoie de lumini. O ring light sau un softbox mic fac minuni. Fără ele, chiar și cea mai scumpă cameră va arăta slab.</li><li><strong>Subestimarea cerințelor PC-ului</strong>: Streaming 4K consumă resurse. Ai nevoie de un procesor bun, o placă video decentă și suficient RAM. Dacă PC-ul tău se chinuie deja cu browsing-ul, să nu te aștepți să ducă streaming 4K fără probleme. O să ai lag, drop frames, și o calitate proastă.</li><li><strong>Alegerea unei camere doar pentru rezoluție</strong>: Mulți se uită doar la cifrele 4K și uită de alți factori importanți: autofocus, performanță în lumină slabă, unghi de vizualizare. Rezoluția mare nu compensează o imagine blurată sau zgomotoasă.</li><li><strong>Folosirea microfonului camerei pentru sunet serios</strong>: Deși unele camere au microfoane decente, ele sunt gândite pentru apeluri rapide. Pentru streaming, unde sunetul e la fel de important ca imaginea, ai nevoie de un microfon dedicat. Orice microfon USB de buget mediu o să sune mai bine decât microfonul încorporat al camerei.</li><li><strong>Neglijarea cablului USB</strong>: Unele camere vin cu cabluri USB scurte sau de calitate mai slabă. Un cablu USB 3.0 de calitate, suficient de lung, poate preveni probleme de conectivitate sau de viteză, asigurând o transmisie fluidă a datelor 4K.</li><li><strong>Prea mult zoom digital</strong>: Unele camere permit zoom digital, dar când folosești zoom-ul în rezoluție 4K, calitatea începe să scadă rapid. E mai bine să folosești un unghi mai larg și să te apropii de cameră, sau să folosești zoom-ul doar dacă e absolut necesar și doar pe modelele care îl suportă bine.</li></ul>
+        <p>Și încă un sfat: nu te baza doar pe specificațiile producătorului. Citește recenzii de la utilizatori reali, uită-te la clipuri de pe YouTube filmate cu camera respectivă. Așa îți faci cea mai bună idee despre cum arată o <strong>camera web 4k streaming</strong> în realitate.</p>
+<h2 id="camera-web-4k-streaming-recomandari-pe-buget">Camera Web 4K Streaming: Recomandări pe Buget</h2>
+<p>Până la urmă, prețul contează. Hai să vedem ce poți găsi la diferite niveluri de buget pentru o <strong>camera web 4k streaming</strong>.</p>
+        <h3>Buget Mic (sub 500 lei)</h3>
+        <p>Na, aici e greu să găsești ceva cu adevărat 4K care să și arate bine. De obicei, cam la acest preț, producătorii pretind rezoluție 4K, dar e vorba de interpolare (software care "inventează" pixeli) și calitatea imaginii e slabă, mai ales în lumină slabă. Poți găsi camere care filmează Full HD la 30-60fps și care sunt mult mai bune.</p>
+        <p>Uite o opțiune: <strong>Logitech C920s Pro HD</strong> (despre care am mai zis). Nu e 4K, dar e o investiție sigură pentru Full HD. Dacă vrei neapărat 4K, s-ar putea să trebuiască să cauți pe site-uri gen AliExpress sau să prinzi o ofertă foarte bună la un model mai puțin cunoscut, dar fii pregătit pentru compromisuri mari la calitate.</p>
+        <h3>Buget Mediu (500 - 1000 lei)</h3>
+        <p>Aici începe să devină interesant. Poți găsi modele 4K decente. <strong>Logitech Brio 4K</strong>, în funcție de oferte, se poate încadra uneori aici, mai ales când e la reducere. E probabil cea mai bună opțiune în acest segment. Alte camere bune ar fi modele de la branduri ca Anker PowerConf C300 (care e mai mult Full HD, dar cu AI smarts) sau alte modele 4K mai puțin cunoscute dar cu recenzii bune, dar trebuie să sapi mult. Verifică și modelele de la Trust sau Aukey, uneori au oferte bune.</p>
+        <h3>Buget Generos (peste 1000 lei)</h3>
+        <p>Aici sunt opțiunile de top. <strong>Logitech Brio 4K</strong> e un standard. <strong>Razer Kiyo Pro</strong> se încadrează aici și e excelentă pentru lumina slabă. <strong>Elgato Facecam Pro</strong> e pentru profesioniști, cu o imagine de excepție, dar și cu un preț pe măsură (în jur de 1300-1500 lei). <strong>OBSBOT Tiny 2</strong> cu urmărirea AI e o investiție interesantă dacă ai nevoie de asta, dar e și el în partea de sus a spectrului de prețuri. În acest segment, practic plătești pentru performanță maximă, funcții avansate și fiabilitate.</p>
+        <p>Deci, dacă ai un buget mic, nu te complica cu 4K prost, ia un Full HD bun. Dacă ai buget mediu, Logitech Brio 4K e regele. Iar dacă ai buget mare, alea de mai sus sunt alegeri excelente, depinde doar de ce funcții specifice cauți.</p>
+        </div>
+
+        <section class="faq-section" id="faq">
+          <h2 class="faq-title">Intrebari Frecvente</h2>
+          
+      <div class="faq-item">
+        <div class="faq-question">
+          Cat costa o camera web 4k streaming buna?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">O camera web 4k streaming buna, cum ar fi Logitech Brio 4K, costa in jur de 900-1100 lei. Modelele de top, precum Elgato Facecam Pro, pot ajunge si la 1300-1500 lei. Camerele 4K foarte ieftine sub 500 lei de obicei nu ofera o calitate reala a imaginii.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Care e diferenta intre camera web 4k si full hd?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Diferenta principala sta in rezolutie: 4K inseamna 3840x2160 pixeli, de patru ori mai multi decat Full HD (1920x1080 pixeli). O camera 4K ofera o imagine mult mai clara, cu mai multe detalii si culori mai vibrante, dar necesita un PC mai puternic si o conexiune la internet mai buna pentru streaming.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Merita sa cumpar o camera web 4k streaming daca nu am PC puternic?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Nu prea merita. Streamingul 4K solicita mult resursele PC-ului. Daca PC-ul tau nu este suficient de puternic, vei avea probleme cu lag-ul, drop frames si o calitate slaba a imaginii, chiar daca ai o camera 4K. Mai bine alegi o camera Full HD de calitate.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Ce camera web 4k e mai buna pentru lumina slaba?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Pentru lumina slaba, Razer Kiyo Pro este considerata una dintre cele mai bune optiuni datorita senzorului sau mare. Logitech Brio 4K se descurca decent, mai ales cu HDR activat, dar tot beneficiaza enorm de iluminare suplimentara.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          De ce nu arata imaginea 4k la fel de bine ca in specificatii?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Calitatea imaginii 4K depinde de mai multi factori: calitatea senzorului camerei, performanta procesorului de imagine, iluminarea din camera, calitatea cablului USB si performanta PC-ului tau. De asemenea, platforma pe care streamezi (Twitch, YouTube) comprima imaginea, ceea ce poate afecta calitatea finala.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Cum setez camera web 4k pentru streaming pe OBS?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">In OBS, adauga camera ta ca "Video Capture Device". Selecteaza rezolutia 4K (3840x2160) si frame rate-ul dorit (30fps sau 60fps). Asigura-te ca ai driverele camerei instalate si ca PC-ul suporta aceasta rezolutie. Ajusteaza setarile de culoare si luminozitate in proprietatile dispozitivului daca e necesar.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Ce microfon e recomandat pentru o camera web 4k streaming?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Pentru o calitate audio buna la streaming, recomandam un microfon dedicat. Optiuni populare includ Blue Yeti, Rode NT-USB Mini sau HyperX QuadCast S. Acestea ofera o calitate a sunetului mult superioara fata de microfoanele integrate ale camerelor web.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Unde gasesc camere web 4k streaming la pret bun in Romania?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Cele mai bune locuri de cautat sunt marii retaileri online din Romania precum eMAG, PC Garage, Altex, si de asemenea, verificati ofertele pe site-uri de comparare de preturi. Ocazional, apar oferte si pe Amazon, dar trebuie sa calculati costurile de transport si taxe vamale.</div>
+      </div>
+        </section>
+
+        <div class="author-box">
+          <div class="author-box-avatar">RP</div>
+          <div class="author-box-info">
+            <h4>Radu Petre</h4>
+            <p>Specialist IT & Gaming</p>
+            <p class="author-box-bio">Inginer IT si gamer pasionat, Radu analizeaza laptopuri si componente din perspectiva performantei reale in jocuri si aplicatii profesionale.</p>
+          </div>
+        </div>
+
+        <SimilarArticles currentSlug="camera-web-4k-streaming" categorySlug="it-electronice" />
+      </article>
+    </div>
+  </main>
+
+  <Footer />
+  <CookieBanner />
+</Layout>

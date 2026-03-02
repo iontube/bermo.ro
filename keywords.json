@@ -81,11 +81,6 @@
       "categorySlug": "electrocasnice-premium"
     },
     {
-      "keyword": "camera web 4k streaming",
-      "category": "IT si Electronice",
-      "categorySlug": "it-electronice"
-    },
-    {
       "keyword": "microfon podcast usb",
       "category": "IT si Electronice",
       "categorySlug": "it-electronice"
@@ -549,6 +544,11 @@
       "keyword": "masina de paine premium",
       "category": "Electrocasnice Premium",
       "categorySlug": "electrocasnice-premium"
+    },
+    {
+      "keyword": "camera web 4k streaming",
+      "category": "IT si Electronice",
+      "categorySlug": "it-electronice"
     }
   ],
   "authors": [
