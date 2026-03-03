@@ -161,11 +161,6 @@
       "categorySlug": "it-electronice"
     },
     {
-      "keyword": "comoda dormitor stejar",
-      "category": "Mobilier si Dormitor",
-      "categorySlug": "mobilier-dormitor"
-    },
-    {
       "keyword": "noptiera moderna minimalist",
       "category": "Mobilier si Dormitor",
       "categorySlug": "mobilier-dormitor"
@@ -549,6 +544,11 @@
       "keyword": "camera web 4k streaming",
       "category": "IT si Electronice",
       "categorySlug": "it-electronice"
+    },
+    {
+      "keyword": "comoda dormitor stejar",
+      "category": "Mobilier si Dormitor",
+      "categorySlug": "mobilier-dormitor"
     }
   ],
   "authors": [
