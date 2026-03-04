@@ -4,6 +4,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SimilarArticles from '../components/SimilarArticles.astro';
 import CookieBanner from '../components/CookieBanner.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import keywordsData from '../../keywords.json';
 
 export const frontmatter = {
   title: "Trx suspension original",
@@ -18,6 +20,17 @@ export const frontmatter = {
 };
 
 const faq = [{"question":"cat costa un trx suspension original","answer":"Un trx suspension original de la TRX Training costa, in general, intre 700 si 1200 de lei. Modelul TRX HOME2 este mai accesibil, situandu-se in jur de 700-900 lei, in timp ce modelele PRO4 sau FORCE pot ajunge la 1000-1200 lei sau chiar mai mult, in functie de oferta."},{"question":"care e diferenta intre trx suspension original si cel ieftin","answer":"Diferenta majora sta in calitatea materialelor, siguranta si durabilitate. Un trx suspension original are curele rezistente, cusaturi solide si carabine testate, garantand siguranta. Imitatiile ieftine folosesc materiale inferioare care se pot rupe, punandu-ti sanatatea in pericol."},{"question":"cat de rezistent e un trx suspension original","answer":"Un trx suspension original este proiectat pentru a rezista la uzura intensa si la greutatea corpului. Modelele TRX sunt testate riguros pentru a suporta sute de kilograme, asigurand durabilitate pe termen lung, chiar si cu utilizare zilnica intensiva."},{"question":"merita sa cumpar un trx suspension original daca sunt incepator","answer":"Da, merita sa cumperi un trx suspension original chiar daca esti incepator, dar alege modelul potrivit, cum ar fi TRX HOME2. Aceste sisteme sunt versatile si pot fi adaptate nivelului tau, oferind o baza solida pentru progres si prevenind accidentarile cauzate de echipamente inferioare."},{"question":"ce imi trebuie pentru a monta un trx suspension original acasa","answer":"Majoritatea modelelor trx suspension original vin cu o prindere speciala pentru usa, care nu necesita gaurirea peretilor. Daca doresti o fixare mai permanenta, poti opta pentru un ancoraj de tavan sau perete, care se achizitioneaza separat si necesita montaj profesional."},{"question":"cum intretin un trx suspension original","answer":"Intretinerea unui trx suspension original este simpla. Sterge curelele si manerele cu o carpa umeda, eventual cu putin sapun neutru, dupa fiecare utilizare, mai ales daca ai transpirat. Verifica periodic cusaturile si carabinele pentru a te asigura ca sunt in stare buna."},{"question":"de unde cumpar un trx suspension original in romania","answer":"Cel mai sigur este sa cumperi un trx suspension original direct de pe site-ul oficial TRX Training sau de la distribuitori autorizati din Romania. Verifica sectiunea 'Where to Buy' de pe site-ul TRX sau cauta magazine online de sport cunoscute care mentioneaza explicit ca sunt parteneri autorizati."},{"question":"ce exercitii pot face cu un trx suspension original","answer":"Cu un trx suspension original poti face sute de exercitii pentru tot corpul: flotari, ramat, genuflexiuni, fandari, abdomene, exercitii pentru spate, umeri, brate si picioare. Versatilitatea sa permite adaptarea pentru toate nivelurile de fitness, de la incepatori la avansati."}];
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
 ---
 
 <Layout
@@ -93,7 +106,7 @@ const faq = [{"question":"cat costa un trx suspension original","answer":"Un trx
           
 <h2 id="cum-sa-stii-ca-ai-un-trx-suspension-original-in-fata">Cum sa stii ca ai un TRX Suspension Original in fata</h2>
 <p>Bon, stai putin. Vrei un <strong>trx suspension original</strong>, nu o chinezaraie care te lasa balta dupa doua saptamani. Pe bune, am vazut destule cazuri. Partea cea mai buna la un TRX original e ca stii exact la ce sa te astepti: calitate, durabilitate si un sistem de prindere sigur. Nu te joci cu sanatatea ta, asa ca merita sa investesti in ceva ce stii ca e facut cum trebuie.</p>
-        <p>Pe scurt, un <strong>trx suspension original</strong> de la TRX Training vine, de obicei, cu o curea principala solida, manere ergonomice, si un sistem de prindere reglabil usor. Ai si o cheie de acces la aplicatia lor cu antrenamente, ceea ce e un bonus fain. Nu te lua dupa pretul mic, ca acolo e tepa.</p>
+        <p>Pe scurt, un <strong>trx suspension original</strong> de la TRX Training vine, de obicei, cu o curea principala solida, manere ergonomice, si un sistem de prindere <a href="/rack-squat-reglabil/" class="interlink">reglabil</a> usor. Ai si o cheie de acces la aplicatia lor cu antrenamente, ceea ce e un bonus fain. Nu te lua dupa pretul mic, ca acolo e tepa.</p>
         <p>Unul dintre plusurile majore e ca aceste sisteme sunt testate la greu. Vorbim de mii de ore de antrenament, de oameni care se tin de ele cu toata greutatea corpului. Si la cum sunt construite, chiar rezista. Materialele sunt premium, cusaturile sunt duble sau triple, iar carabina de prindere e de zeci de ori mai solida decat la imitatii.</p>
         <p>Un prieten si-a luat o chestie 'foarte asemanatoare' la jumatate de pret. Prima data i-a pocnit o maneca. Apoi s-a desprins un regulator de la o curea. Poti sa-ti imaginezi panica. Asa ca da, cand zici <strong>trx suspension original</strong>, zici TRX Training. Nu ai cum sa compari.</p>
         <p>Chiar si instructiunile si ambalajul sunt la alt nivel. Totul e pus la punct, sa stii ca ai in fata un produs de top. Daca vezi cutii mototolite, instruciuni scrise prost sau lipsa oricarui logo de autenticitate, fugi de el. E simplu.</p>
@@ -105,11 +118,11 @@ Asta e pentru cei seriosi, fie ca esti acasa sau in sala. E construit sa reziste
         <p>Manerele sunt din cauciuc mai dur, usor de curatat. Se prinde de orice, de la o usa la un copac. Pretul e undeva pe la 1000-1200 lei, depinde de unde-l iei.</p>
         <ul><li><strong>Avantaje:</strong> Super durabil, manere igienice, vine cu prindere pentru usa si extensie pentru locatii mai inalte. E un pachet complet.</li><li><strong>Dezavantaje:</strong> E mai scump. Daca il folosesti doar ocazional acasa, poate e un pic overkill.</li></ul>
         <p><strong>2. TRX HOME2 Trainer</strong>
-Asta e modelul mai accesibil pentru acasa. E la fel de eficient, dar materialele sunt un pic mai putin 'heavy-duty' decat la PRO4. Totusi, pentru un antrenament acasa, e mai mult decat suficient. Il gasesti pe la 700-900 lei.</p>
+Asta e modelul mai accesibil pentru acasa. E la fel de <a href="/congelator-vertical-eficient/" class="interlink">eficient</a>, dar materialele sunt un pic mai putin 'heavy-duty' decat la PRO4. Totusi, pentru un antrenament acasa, e mai mult decat suficient. Il gasesti pe la 700-900 lei.</p>
         <ul><li><strong>Avantaje:</strong> Pret mai bun, totusi calitate TRX, perfect pentru uz casnic. Vine si el cu prindere de usa.</li><li><strong>Dezavantaje:</strong> Manerele nu sunt din cauciuc, ci dintr-un material textil mai gros, care poate fi un pic mai putin confortabil pentru unii. Nu e gandit pentru uz comercial.</li></ul>
         <p><strong>3. TRX FORCE Tactical Trainer</strong>
 Asta e varianta 'militara'. E construit sa reziste in conditii extreme. Daca vrei ceva indestructibil si nu te intereseaza aspectul cel mai fancy, asta e. Pretul e similar cu PRO4, poate un pic mai sus. Am avut un prieten care l-a folosit ani de zile pe toate traseele de munte, si a tinut brici.</p>
-        <ul><li><strong>Avantaje:</strong> Extrem de rezistent, minimalist, ideal pentru conditii grele.</li><li><strong>Dezavantaje:</strong> Poate fi mai greu de reglat pentru incepatori, iar aspectul e mai 'brut'.</li></ul>
+        <ul><li><strong>Avantaje:</strong> Extrem de rezistent, <a href="/noptiera-moderna-minimalist/" class="interlink">minimalist</a>, ideal pentru conditii grele.</li><li><strong>Dezavantaje:</strong> Poate fi mai greu de reglat pentru incepatori, iar aspectul e mai 'brut'.</li></ul>
         <p>Fiecare dintre aceste modele reprezinta un <strong>trx suspension original</strong>. Diferentele sunt mai mult la finisaje si la destinatia de uz. Pentru majoritatea, HOME2 e suficient. Daca vrei ceva premium si pe termen lung, PRO4 e alegerea.</p>
 <h2 id="cum-sa-alegi-trx-suspensionul-potrivit-pentru-tine-ghid-simplu">Cum sa alegi TRX Suspensionul potrivit pentru tine: Ghid simplu</h2>
 <p>Na, asta e partea cea mai importanta: sa nu dai banii pe ceva ce nu ti se potriveste. Un <strong>trx suspension original</strong> e o investitie, asa ca merita sa te gandesti bine. Uite la ce trebuie sa te uiti, ca sa nu ai surprize.</p>
@@ -123,12 +136,12 @@ Asta e varianta 'militara'. E construit sa reziste in conditii extreme. Daca vre
         <p>Asta tine mult de preferinta personala. Manerele din cauciuc (PRO4) sunt mai igienice si mai rezistente la transpiratie. Cele din material textil (HOME2) sunt OK, dar pot absorbi mai multa transpiratie si devin un pic alunecoase cand te apuci sa transpiri tare. Verifica si cum sunt cusaturile. La un produs original, sunt impecabile, solide.</p>
         <p><strong>5. Accesorii incluse</strong></p>
         <p>Vezi ce vine in cutie. Majoritatea au prinderea de usa. Unele au si o curea de extensie. Si cel mai important: accesul la aplicatia TRX. Acolo gasesti programe de antrenament, exercitii explicate, tot tacamul. Daca nu vine cu asta, poate nu e chiar atat de 'original' cum pretinde vanzatorul.</p>
-        <p>Eu, daca ar fi sa ma decid acum pentru acasa, m-as duce pe HOME2. E un echilibru bun intre pret si performanta. Daca as avea un studio mic, as lua PRO4, fara discutie. Pana la urma, conteaza sa fie sigur si eficient pentru tine.</p>
+        <p>Eu, daca ar fi sa ma decid acum pentru acasa, m-as duce pe HOME2. E un echilibru bun intre pret si <a href="/laptop-gaming-performant/">performant</a>a. Daca as avea un studio mic, as lua PRO4, fara discutie. Pana la urma, conteaza sa fie sigur si eficient pentru tine.</p>
 <h2 id="trx-suspension-original-vs-imitatii-diferentele-care-conteaza">TRX Suspension Original vs. Imitatii: Diferentele care conteaza</h2>
 <p>Uite care-i treaba cu imitatia. E tentant, stiu. Vezi un sistem de suspensie pe la 150-200 lei si zici 'pff, super'. Dar pe bune, nu te lasa pacalit. Un <strong>trx suspension original</strong> e o investitie in sanatatea ta, iar o copie ieftina poate fi periculoasa.</p>
         <p><strong>Calitatea materialelor</strong></p>
         <p>Asta e diferenta numarul 1. La un TRX original, curelele sunt dintr-un material textil dens, rezistent la frecare si la greutatea corpului. Cusaturile sunt ranforsate, de zeci de ori.</p>
-        <p>Carabinele sunt din metal de inalta calitate, testate pentru greutati enorme. La imitatia aia ieftina, curelele pot fi din nylon subtire, care se poate rupe. Cusaturile pot fi proaste, iar carabinele pot fi din plastic sau metal slab, care cedeaza sub presiune.</p>
+        <p>Carabinele sunt din metal de inalta calitate, testate pentru <a href="/greutati-glezne-reglabile/" class="interlink">greutati</a> enorme. La imitatia aia ieftina, curelele pot fi din nylon subtire, care se poate rupe. Cusaturile pot fi proaste, iar carabinele pot fi din plastic sau metal slab, care cedeaza sub presiune.</p>
         <p>Am vazut odata un sistem de genul asta la un prieten, si in timp ce facea o flotare la suspensie, s-a rupt o maneca. Noroc ca era pe o saltea moale.</p>
         <p><strong>Siguranta si fiabilitate</strong></p>
         <p>Asta e cea mai mare problema. Un <strong>trx suspension original</strong> e testat si certificat pentru siguranta. Nu exista riscul sa se rupa in timpul unui exercitiu. La imitatia ieftina, riscul e real. Gandeste-te ca executi un exercitiu complex, te lasa sistemul si pici. Sau mai rau, te lovesti. Nu merita riscul pentru cateva sute de lei economisite.</p>
@@ -240,7 +253,7 @@ Asta e varianta 'militara'. E construit sa reziste in conditii extreme. Daca vre
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
           </svg>
         </div>
-        <div class="faq-answer">Cu un trx suspension original poti face sute de exercitii pentru tot corpul: flotari, ramat, genuflexiuni, fandari, abdomene, exercitii pentru spate, umeri, brate si picioare. Versatilitatea sa permite adaptarea pentru toate nivelurile de fitness, de la incepatori la avansati.</div>
+        <div class="faq-answer">Cu un trx suspension original poti face sute de exercitii pentru tot corpul: flotari, ramat, genuflexiuni, fandari, abdomene, exercitii pentru spate, umeri, brate si picioare. Versatilitatea sa permite adaptarea pentru toate nivelurile de <a href="/stepper-fitness-hidraulic/">fitness</a>, de la incepatori la avansati.</div>
       </div>
         </section>
 
@@ -249,11 +262,17 @@ Asta e varianta 'militara'. E construit sa reziste in conditii extreme. Daca vre
           <div class="author-box-info">
             <h4>Dan Iordan</h4>
             <p>Antrenor Fitness Certificat</p>
-            <p class="author-box-bio">Antrenor personal cu certificari internationale, Dan testeaza echipamente fitness si recomanda doar cele care ofera rezultate reale pentru antrenamente de acasa.</p>
+            <p class="author-box-bio">Antrenor personal cu certificari internationale, Dan testeaza echipamente <a href="/minge-fitness-antiburst/">fitness</a> si recomanda doar cele care ofera rezultate reale pentru antrenamente de acasa.</p>
           </div>
         </div>
 
         <SimilarArticles currentSlug="trx-suspension-original" categorySlug="fitness-sport" />
+
+    <PrevNextNav
+      currentSlug="trx-suspension-original"
+      currentCategory="fitness-sport"
+      articles={allArticles}
+    />
       </article>
     </div>
   </main>

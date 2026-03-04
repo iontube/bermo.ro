@@ -4,6 +4,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SimilarArticles from '../components/SimilarArticles.astro';
 import CookieBanner from '../components/CookieBanner.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import keywordsData from '../../keywords.json';
 
 export const frontmatter = {
   title: "Bicicleta eliptica magnetica",
@@ -18,6 +20,17 @@ export const frontmatter = {
 };
 
 const faq = [{"question":"Cat de zgomotoasa este o bicicleta eliptica magnetica?","answer":"In general, sunt foarte silentioase. Zgomotul apare de obicei la modelele ieftine, cu piese de proasta calitate sau daca nu sunt montate corect. Modelele cu volanta mai grea si sistem magnetic bun sunt aproape inaudibile."},{"question":"Pot slabi doar folosind bicicleta eliptica?","answer":"Da, poti slabi, dar nu peste noapte. Combinatia dintre antrenamentul pe eliptica (care arde calorii) si o dieta echilibrata este cheia. Consecventa e mai importanta decat intensitatea ocazionala."},{"question":"Ce inseamna greutatea volantei la o eliptica?","answer":"Volanta e greutatea rotativa care ofera rezistenta. Cu cat e mai grea, cu atat miscarea este mai fluida, mai naturala si mai silentioasa. Pentru un antrenament bun, cauta modele cu volanta de minim 7-8 kg."},{"question":"Este dificil de montat o bicicleta eliptica?","answer":"Majoritatea vin cu instructiuni detaliate si chei incluse. Daca ai un pic de indemanare, se monteaza in 1-2 ore. Daca nu te simti confortabil, poti apela la serviciul de montaj al magazinului."},{"question":"Ce diferenta este intre rezistenta magnetica manuala si electronica?","answer":"La cea manuala, rasucesti un buton pentru a creste sau scadea rezistenta, si trebuie sa te opresti. La cea electronica, ajustezi rezistenta din butoanele de pe consola, fara sa te opresti, si multe modele au si programe de antrenament predefinite."}];
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
 ---
 
 <Layout
@@ -92,21 +105,21 @@ const faq = [{"question":"Cat de zgomotoasa este o bicicleta eliptica magnetica?
         <div class="prose-article">
           
 <h2 id="de-ce-o-bicicleta-eliptica-magnetica">De ce o bicicleta eliptica magnetica?</h2>
-<p>Dupa 15 ani de testat gadgeturi si echipamente pentru casa, pot sa va spun un lucru clar: daca vreti un antrenament bun, fara sa va distrugeti genunchii sau spatele, bicicleta eliptica magnetica e o alegere buna. Am inceput sa le folosesc acum vreo 10 ani, cand lumea era mai reticenta. Acum, toata lumea vrea sa se antreneze acasa, si pe buna dreptate.</p>
+<p>Dupa 15 ani de testat gadgeturi si echipamente pentru casa, pot sa va spun un lucru clar: daca vreti un antrenament bun, fara sa va distrugeti genunchii sau spatele, <a href="/bicicleta-spinning-profesionala/" class="interlink">bicicleta</a> eliptica magnetica e o alegere buna. Am inceput sa le folosesc acum vreo 10 ani, cand lumea era mai reticenta. Acum, toata lumea vrea sa se antreneze acasa, si pe buna dreptate.</p>
         <p>Avantajul principal la cele magnetice e ca nu au piese care se freaca zgomotos, cum au cele cu banda. E o miscare fluida, silentioasa. Si mai ales, lucreaza si partea superioara a corpului, nu doar picioarele.</p>
-        <p>Nu stiu cati dintre voi aveti spatiu pentru banda, gantere, gantere, banda de alergare si inca o groaza de alte chestii. Eliptica le cam combina pe toate, intr-un fel. Si partea buna e ca nu baga praf in casa, ca banda de alergare.</p>
+        <p>Nu stiu cati dintre voi aveti spatiu pentru banda, <a href="/gantere-reglabile-bowflex/">gantere</a>, gantere, banda de alergare si inca o groaza de alte chestii. Eliptica le cam combina pe toate, intr-un fel. Si partea buna e ca nu baga praf in casa, ca banda de alergare.</p>
         <p>In experienta mea, e cel mai prietenos aparat pentru incepatori, dar si pentru cei mai avansati, daca alegi un model cu rezistenta mai mare.</p>
 
 <p>Am observat ca multi se feresc de ele pentru ca par prea complicate sau prea scumpe. Dar adevarul e ca gasesti modele decente si la preturi accesibile. Important e sa stii ce cauti.</p>
         <p>Nu va aruncati pe prima oferta. Eu am testat destule incat sa stiu ca diferenta intre un model de 300 de lei si unul de 1500 de lei e uriasa. Nu vorbim doar de finisaje, ci de stabilitate, de confort, de durabilitate.</p>
-        <p>O bicicleta eliptica magnetica de calitate te tine ani de zile, una ieftina... probabil o vei vinde dupa cateva saptamani pe OLX.</p>
+        <p>O <a href="/bicicleta-spinning-profesionala/">bicicleta</a> eliptica magnetica de calitate te tine ani de zile, una ieftina... probabil o vei vinde dupa cateva saptamani pe OLX.</p>
 
 <p>Deci, daca va ganditi serios la sanatate si la miscare, si vreti sa economisiti timp si bani pe abonamente la sala, un eliptic magnetic e o solutie. Am văzut că acum pe eMAG sunt o grămadă de oferte. De exemplu, am testat un model de la Gymtek, SportsFit, cam pe la 800-1000 de lei, care mi s-a parut decent pentru acasa. Nu asteptati sa fie ca cele din sala, dar pentru un antrenament zilnic, e ok.</p>
 <h2 id="cum-aleg-bicicleta-eliptica-potrivita-experienta-mea-cu-rezistenta-magnetica">Cum aleg bicicleta eliptica potrivita? Experienta mea cu rezistenta magnetica</h2>
 <p>Asta e partea cea mai importanta. Nu va luati dupa design sau culori. Cautati urmatoarele: greutatea maxima suportata.</p>
         <p>Daca scrie 100 kg, si voi aveti 95, nu va recomand. Mai bine luati una cu 120 kg. Asta tine de stabilitate si siguranta.</p>
         <p>Apoi, greutatea volantei. Asta e cruciala pentru o miscare fluida. Sub 5 kg e cam slab.</p>
-        <p>Ideal ar fi peste 7-8 kg. Cu cat e mai grea, cu atat miscarea e mai linistita si mai naturala. Am testat un model ieftin, cu o volanta de 3 kg, si era ca si cum ai pedala pe un scaun cu rotile stricat.</p>
+        <p>Ideal ar fi peste 7-8 kg. Cu cat e mai grea, cu atat miscarea e mai linistita si mai <a href="/pilota-puf-gasca-naturala/" class="interlink">naturala</a>. Am testat un model ieftin, cu o volanta de 3 kg, si era ca si cum ai pedala pe un scaun cu rotile stricat.</p>
         <p>Zgomot, vibratii, tot tacamul.</p>
 
 <p>La rezistenta magnetica, sunt doua tipuri principale: manuala si electronica. La cea manuala, rasucesti un buton si schimbi rezistenta. Simplu, ieftin, dar trebuie sa te opresti sa o faci. La cea electronica, ai butoane pe consola, si poti schimba din mers. Unele modele au si programe predefinite: coline, dealuri, etc. Asta e mai comod, mai ales daca vreti varietate in antrenament. In experienta mea, daca bugetul permite, mergeti pe cea electronica. E o diferenta mare in confort.</p>
@@ -114,13 +127,13 @@ const faq = [{"question":"Cat de zgomotoasa este o bicicleta eliptica magnetica?
 <p>Am testat un model de la Kettler, destul de scump, vreo 3000 de lei, cu rezistenta electronica, si era o placere sa lucrezi pe el. Si am testat si un model de la FitTronic, pe la 1200 de lei, tot cu rezistenta electronica, si a fost o surpriza placuta. Deci, nu intotdeauna pretul e cel mai relevant.</p>
         <p>Uita-te la specificatii. Am observat ca multe modele de pe Altex sau PCGarage au specificatii clare, nu se joaca cu vorbe. De exemplu, la un model de la NordicTrack, care e mai scump, vreo 4000 de lei, volanta era de 12 kg, si rezistenta era magnetica cu control electronic.</p>
 
-<p>Cea mai mare diferenta o face consola. Nu va asteptati la minuni la modelele ieftine. Afiseaza viteza, distanta, calorii, puls (de obicei prin senzori pe manere). Modelele mai scumpe au ecrane mai mari, mai multe informatii, conectivitate bluetooth, posibilitatea de a te conecta la aplicatii de fitness. Eu personal nu am nevoie de atatea chestii, dar daca va place sa va monitorizati totul la minut, cautati un model cu optiuni avansate.</p>
+<p>Cea mai mare diferenta o face consola. Nu va asteptati la minuni la modelele ieftine. Afiseaza viteza, distanta, calorii, puls (de obicei prin senzori pe manere). Modelele mai scumpe au ecrane mai mari, mai multe informatii, conectivitate bluetooth, posibilitatea de a te conecta la aplicatii de <a href="/stepper-fitness-hidraulic/" class="interlink">fitness</a>. Eu personal nu am nevoie de atatea chestii, dar daca va place sa va monitorizati totul la minut, cautati un model cu optiuni avansate.</p>
 <h2 id="modele-concrete-si-preturi-ce-am-gasit-pe-piata-romaneasca">Modele concrete si preturi: Ce am gasit pe piata romaneasca</h2>
 <p>Ok, hai sa dam si niste nume si cifre, ca sa nu ramaneti in ceata. Am stat cu ochii pe eMAG, Altex si PCGarage, ca acolo gasiti cele mai multe oferte. Si am vazut ca preturile fluctueaza destul de mult, mai ales la reduceri. Deci, daca aveti rabdare, puteti prinde oferte bune.</p>
 
 <p>La categoria "buget decent" (sub 1000 lei), am gasit cateva modele de la inSPORTline, cum ar fi inSPORTline Kevlar. Nu e cine stie ce, dar pentru cineva care vrea sa faca 20 de minute de miscare pe zi, e ok. Volanta e mica, cam 4-5 kg, rezistenta manuala. E simplu de folosit, dar nu te astepta la cine stie ce performanta. Am testat unul asemanator acum 2 ani, si a tinut vreo 6 luni pana a inceput sa zdrangane.</p>
 
-<p>Un pas mai sus, intre 1000 si 2000 de lei, gasiti modele mult mai serioase. Aici am vazut multe de la Gorilla Sports, SportsFit, si chiar si unele modele de la Kettler sau Horizon Fitness, dar la reduceri. De exemplu, am testat un SportsFit SX300, pe la 1400 de lei, cu volanta de 8 kg, rezistenta magnetica controlata manual. A fost mult mai stabil, mai silentios. Manerele erau confortabile, consola afisa informatii de baza. E o alegere buna pentru un antrenament regulat.</p>
+<p>Un pas mai sus, intre 1000 si 2000 de lei, gasiti modele mult mai serioase. Aici am vazut multe de la Gorilla Sports, SportsFit, si chiar si unele modele de la Kettler sau Horizon <a href="/minge-fitness-antiburst/" class="interlink">Fitness</a>, dar la reduceri. De exemplu, am testat un SportsFit SX300, pe la 1400 de lei, cu volanta de 8 kg, rezistenta magnetica controlata manual. A fost mult mai stabil, mai silentios. Manerele erau confortabile, consola afisa informatii de baza. E o alegere buna pentru un antrenament regulat.</p>
 
 <p>Am ramas placut impresionat de un model de la FitTronic, Fytter, pe la 1800 de lei, cu rezistenta electronica. Aici deja vorbim de altceva. Poti schimba rezistenta din mers, ai cateva programe predefinite. Miscarea e mult mai fina. E genul de aparat pe care il poti folosi zilnic fara sa te plictisesti. Am vazut ca si pe Altex au adus modele similare de la alte branduri, dar trebuie sa cititi specificatiile.</p>
 
@@ -144,7 +157,7 @@ const faq = [{"question":"Cat de zgomotoasa este o bicicleta eliptica magnetica?
 
 <p>1. Antrenament complet: Cum am zis, lucreaza cam tot corpul. Nu e doar pentru picioare. E un antrenament cardiovascular excelent, care te ajuta sa arzi calorii si sa iti imbunatatesti rezistenta.</p>
 
-<p>2. Blând cu articulațiile: Miscaarea e fluida, nu exista impact. Asta e un mare plus fata de alergatul pe banda sau alte sporturi cu impact. Daca ai probleme cu genunchii sau gleznele, eliptica e o solutie.</p>
+<p>2. Blând cu articulațiile: Miscaarea e fluida, nu exista impact. Asta e un mare plus fata de <a href="/banda-alergat-pliabila/">alergat</a>ul pe banda sau alte sporturi cu impact. Daca ai probleme cu genunchii sau gleznele, eliptica e o solutie.</p>
 
 <p>3. Silentioasa: Modelele magnetice sunt mult mai silentioase decat cele cu banda sau alte mecanisme. Poti sa te antrenezi dimineata devreme sau seara tarziu fara sa deranjezi pe nimeni.</p>
 
@@ -243,6 +256,12 @@ const faq = [{"question":"Cat de zgomotoasa este o bicicleta eliptica magnetica?
         </div>
 
         <SimilarArticles currentSlug="bicicleta-eliptica-magnetica" categorySlug="fitness-sport" />
+
+    <PrevNextNav
+      currentSlug="bicicleta-eliptica-magnetica"
+      currentCategory="fitness-sport"
+      articles={allArticles}
+    />
       </article>
     </div>
   </main>

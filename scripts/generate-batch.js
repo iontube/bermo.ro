@@ -404,92 +404,139 @@ function cleanJsonText(text) {
   return text;
 }
 
-async function generateArticleContent(keyword, category, maxRetries = 10) {
-  const prompt = `Esti un expert in produse pentru casa si gradina care scrie pe un blog romanesc. Scrii intr-un stil direct, conversational, ca un prieten care se pricepe si iti da sfaturi concrete. NU esti un AI. Esti un om real cu experienta reala.
+async function generateArticleContent(keyword, category, completedArticles = [], maxRetries = 10) {
+  // Build interlink list from completed articles
+  const interlinkCandidates = completedArticles
+    .filter(a => a.keyword !== keyword)
+    .map(a => {
+      const aSlug = a.keyword.toLowerCase()
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+      return { title: a.keyword.charAt(0).toUpperCase() + a.keyword.slice(1), slug: aSlug, category: a.category, categorySlug: a.categorySlug };
+    });
+  const sameCat = interlinkCandidates.filter(a => a.categorySlug === completedArticles.find(c => c.keyword === keyword)?.categorySlug);
+  const otherCat = interlinkCandidates.filter(a => !sameCat.includes(a));
+  const interlinkList = [...sameCat, ...otherCat].slice(0, 15)
+    .map(a => `- <a href="/${a.slug}/">${a.title}</a> (categorie: ${a.category})`)
+    .join('\n');
+
+  const prompt = `Scrii articole pe un site romanesc despre scule, unelte si echipamente pentru casa si gradina. Stilul e informativ dar directionat spre conversie - ajuti cititorul sa ia o decizie de cumparare. NU esti un AI.
 
 Keyword: "${keyword}"
 Categorie: "${category}"
 
-GENEREAZA un articol complet in format JSON cu structura de mai jos. Articolul trebuie sa fie informativ, natural, scris de un om care chiar stie domeniul. Fara diacritice. Intre 1500-2500 de cuvinte.
+GENEREAZA un articol complet in format JSON. Fara diacritice. Minim 2000 cuvinte.
 
-=== 1. SEARCH INTENT MAPPING (CRITIC) ===
-Structura articolului urmeaza EXACT ce cauta userul cand tasteaza "${keyword}" in Google:
-- PRIMA sectiune = raspunsul direct, concret, fara introducere, fara "bun venit", fara preambul. Userul vrea raspunsul ACUM.
-- Dupa raspunsul direct, vin detaliile, comparatiile, criteriile de alegere.
-- Fiecare sectiune raspunde la o sub-intrebare pe care userul o are in minte.
-- NU incepe NICIODATA cu o introducere generica. Prima propozitie = recomandarea ta directa sau raspunsul la intentia de cautare.
-- Excerptul = primele 2-3 propozitii din articol care dau raspunsul direct. Asta apare in Google ca snippet.
+=== TONUL SI STILUL (CRITIC) ===
+Tonul e informativ-conversional, NU personal/jurnal. Scopul e sa raspunzi la intentia de cautare si sa ghidezi spre cumparare.
 
-=== 2. ANTI-AI FOOTPRINT (FOARTE IMPORTANT) ===
-Articolul TREBUIE sa para scris de un om real, nu de AI. Reguli concrete:
-- FARA tranzitii generice: NU folosi "Asadar", "In primul rand", "De asemenea", "Cu toate acestea", "Este important de mentionat", "Trebuie sa tinem cont", "Nu in ultimul rand"
-- FARA structura predictibila: nu toate paragrafele sa aiba aceeasi lungime. Amesteca: un paragraf de 2 propozitii, urmat de unul de 4, apoi unul de 1 propozitie.
-- IMPERFECTIUNI NATURALE: include formulari imperfecte dar naturale: "bon, stai", "cum sa zic", "pana la urma", "na, asta e", "ma rog", "zic si eu"
-- Amesteca propozitii FOARTE scurte (3-5 cuvinte: "Merita. Punct." / "Nu-i rau." / "Depinde de buget.") cu propozitii lungi (18-22 cuvinte)
-- Foloseste MULT limbaj conversational romanesc: "na", "uite", "stai putin", "pe bune", "sincer", "daca ma intrebi pe mine", "am sa fiu direct", "uite care-i treaba"
-- INTERZIS TOTAL: "in era actuala", "descopera", "fara indoiala", "ghid complet", "in concluzie", "in acest articol", "hai sa exploram", "sa aprofundam", "merita mentionat", "este esential", "este crucial", "o alegere excelenta"
-- INTERZIS: liste de 3 adjective consecutive, inceperea a doua propozitii la rand cu acelasi cuvant, folosirea aceluiasi pattern de inceput de paragraf
-- Include anecdote personale CONCRETE: "am avut un X care a tinut 4 ani", "un prieten si-a luat un Y si dupa 2 luni...", "am testat personal modelul asta vreo 3 saptamani"
-- Include critici ONESTE: fiecare produs sa aiba minim 1-2 minusuri reale, nu critici false gen "singurul minus e ca e prea bun"
-- Recunoaste incertitudine: "n-am testat personal, dar din ce am auzit...", "pe asta nu pun mana in foc, dar..."
-- Vorbeste ca pe un forum romanesc, nu ca o enciclopedie
+INTRO:
+- Primul paragraf RASPUNDE DIRECT la intentia din keyword. Daca cineva cauta "${keyword}", ce vrea sa afle? Raspunde-i imediat.
+- Nu incepe cu anecdote, nu incepe cu "tu" sau "daca vrei". Incepe cu RASPUNSUL.
 
-=== 3. FAQ OPTIMIZAT PEOPLE ALSO ASK ===
-8 intrebari formatate EXACT cum le tasteaza oamenii in Google Romania:
-- Foloseste formulari naturale de cautare: "cat costa...", "care e diferenta intre...", "merita sa...", "ce ... e mai bun", "de ce...", "cum sa...", "unde gasesc..."
-- FARA intrebari artificiale sau formale. Gandeste-te: ce ar tasta un roman in Google?
-- Raspunsurile au structura de FEATURED SNIPPET: prima propozitie = raspunsul direct si clar, apoi 1-2 propozitii cu detalii si cifre concrete
-- Raspuns = 40-70 cuvinte, auto-suficient (sa poata fi afisat singur ca snippet fara context)
-- Include cifre concrete: preturi in lei, procente, durate, dimensiuni
-- Acoperiti: pret, comparatie, durabilitate, alegere, probleme frecvente, intretinere, autenticitate, unde sa cumperi
+REVIEW-URI PRODUSE:
+- Ton obiectiv dar accesibil - ca un review pe un site de specialitate, nu ca o poveste personala
+- Translatezi specs in beneficii practice: "puterea de 2000W inseamna ca taie lemn uscat pana la 20cm grosime fara efort"
+- Compari cu alternative directe
+- Preturi concrete in lei
+- Review-ul include pentru cine e potrivit si se incheie cu o recomandare clara
+- Maximum 1-2 referinte personale ("am testat") in tot articolul
+- Tonul e de expert care informeaza, nu de prieten care povesteste
 
-=== 4. LIZIBILITATE PERFECTA PARAGRAFE ===
-- MAXIM 3-4 propozitii per paragraf. Niciodata mai mult.
-- Paragrafele lungi sunt INTERZISE. Daca un paragraf are mai mult de 4 propozitii, sparge-l.
-- Alterna paragrafele: unul mai lung (3-4 prop), unul scurt (1-2 prop), unul mediu (2-3 prop)
-- Intre sectiuni lasa "aer" - nu pune paragraf dupa paragraf fara pauza
-- Foloseste bullet points (<ul><li>) pentru liste de criterii, avantaje, dezavantaje - nu le pune in text continuu
-- Subtitlurile (H3) sparg monotonia - foloseste-le in cadrul sectiunilor pentru a crea sub-puncte
+CONVERSIE:
+- Ghideaza spre decizie: "daca ai nevoie de forta, alege X; daca vrei versatilitate, alege Y"
+- Mentioneaza pretul si unde se gaseste
+- Concluzia fiecarui review sa fie actionabila
 
-=== 5. CUVINTE CHEIE IN STRONG ===
-- Pune keyword-ul principal si variatiile lui in <strong> tags de fiecare data cand apar natural in text
-- Keyword principal: "${keyword}" - trebuie sa apara de 4-6 ori in tot articolul, in <strong>
-- Variatii naturale ale keyword-ului: pune si ele in <strong>
-- NU pune in strong cuvinte random sau irelevante. Doar keyword-urile si variatiile lor.
-- Nu forta keyword density. Trebuie sa sune natural, ca si cum ai sublinia ce e important.
-- NICIODATA nu pune <strong> in titluri de sectiuni (heading), in intrebarile FAQ, sau in textul din cuprins/TOC. Strong se foloseste DOAR in paragrafe de text (<p>), nu in <h2>, <h3>, "question", sau "heading".
+=== ANTI-AI ===
+- CUVINTE INTERZISE: "Asadar", "De asemenea", "Cu toate acestea", "Este important de mentionat", "Nu in ultimul rand", "in era actuala", "descopera", "fara indoiala", "in concluzie", "este esential", "este crucial", "o alegere excelenta", "ghid", "ghiduri", "exploreaza", "aprofundam", "remarcabil", "exceptional", "revolutionar", "inovativ", "vom detalia", "vom analiza", "vom explora", "vom prezenta", "in cele ce urmeaza", "in continuare vom", "sa aruncam o privire", "buget optimizat", "alegerea editorului", "editor's choice"
+- TAG-URI INTERZISE IN PRODUSE: "Buget Optimizat", "Alegerea Editorului" - suna a cliseu. Foloseste: "Alegerea Noastra", "Pentru Buget Mic", "Best Buy 2026", "Raport Calitate-Pret", "Premium"
+- Amesteca paragrafe scurte (1-2 prop) cu medii (3-4 prop)
+- Critici oneste: fiecare produs minim 3-4 dezavantaje reale
+- Limbaj natural dar nu excesiv informal
 
-=== REGULI SUPLIMENTARE ===
-- Scrie FARA diacritice (fara ă, î, ș, ț, â - foloseste a, i, s, t)
-- Preturile sa fie in LEI si realiste pentru piata din Romania
-- Fiecare sectiune minim 250 cuvinte
+=== PARAGRAFE CU INTREBARI (IMPORTANT PENTRU AI SEARCH) ===
+Multe paragrafe trebuie sa inceapa cu o INTREBARE directa urmata de raspuns. Asta permite AI-ului (Google AI Overview, ChatGPT, Perplexity) sa citeze textul tau.
+- In intro: minim 1 paragraf care incepe cu intrebare
+- In review-urile de produse: minim 1 paragraf per review care incepe cu intrebare
+- In sectiunea de sfaturi: fiecare h4 sa fie intrebare, iar paragraful de sub el sa inceapa cu raspunsul direct
+- Exemplu bun: "Merita un bormasina cu acumulator? Da, modelul X are autonomie de 4 ore si cuplu de 80Nm, suficient pentru orice lucrare casnica."
 
-STRUCTURA JSON (returneaza DOAR JSON valid, fara markdown, fara \`\`\`):
+=== STRUCTURA JSON ===
+
+IMPORTANT: Returneaza DOAR JSON valid. Fara markdown, fara backticks.
+In valorile string din JSON, foloseste \\n pentru newline si escaped quotes \\".
+
 {
-  "excerpt": "Primele 2-3 propozitii care dau raspunsul direct la ce cauta userul. Recomandarea concreta + context scurt. FARA introducere.",
-  "sections": [
+  "intro": "2-3 paragrafe HTML (<p>). PRIMUL PARAGRAF raspunde direct la intentia de cautare - ce produs e cel mai bun si de ce, cu date concrete. Din el se extrage automat descrierea.",
+  "items": [
     {
-      "title": "Titlu sectiune cu keyword integrat natural",
-      "content": "HTML formatat cu <p>, <strong>, <ul>/<li>. Minim 250 cuvinte per sectiune. Paragrafele separate cu </p><p>. Maxim 3-4 propozitii per paragraf."
+      "name": "Numele complet al produsului",
+      "tag": "Best Buy 2026",
+      "specs": {
+        "putere": "ex: 2000W / 80Nm cuplu",
+        "material": "ex: otel carbon, maner ergonomic cauciucat",
+        "capacitate": "ex: 50L / taiere max 30cm",
+        "functii": "ex: 3 viteze, LED, reverse",
+        "dimensiuni": "ex: 45x30x25 cm, 3.2 kg"
+      },
+      "review": "4-6 paragrafe HTML (<p>). Review obiectiv: ce face bine, ce face prost, comparat cu ce, pentru cine, la ce pret. Ultimul paragraf = recomandare actionabila.",
+      "avantaje": ["avantaj 1", "avantaj 2", "avantaj 3", "avantaj 4"],
+      "dezavantaje": ["dezavantaj 1", "dezavantaj 2", "dezavantaj 3"]
     }
   ],
+  "comparison": {
+    "intro": "1 paragraf introductiv pentru tabelul comparativ",
+    "rows": [
+      {
+        "model": "Numele modelului",
+        "putere": "watt/Nm",
+        "capacitate": "scurt",
+        "greutate": "kg",
+        "functii": "principalele",
+        "potrivitPentru": "scurt, 3-5 cuvinte"
+      }
+    ]
+  },
+  "guide": {
+    "title": "Titlu ca intrebare (ex: Cum alegi cea mai buna unealta pentru proiectul tau?)",
+    "content": "3-5 paragrafe HTML (<p>, <h4>, <p>) cu sfaturi de cumparare orientate spre decizie. Sub-intrebari ca <h4>. Fiecare sfat directioneaza spre un tip de produs."
+  },
   "faq": [
     {
-      "question": "Intrebare EXACT cum ar tasta-o un roman in Google",
-      "answer": "Prima propozitie = raspuns direct (featured snippet). Apoi 1-2 propozitii cu detalii si cifre. Total 40-70 cuvinte."
+      "question": "Intrebare naturala de cautare Google",
+      "answer": "Raspuns direct 40-70 cuvinte cu cifre concrete."
     }
   ]
 }
 
-SECTIUNI OBLIGATORII (6 sectiuni, titluri creative, NU generice):
-1. [Raspuns direct] - recomandarea ta principala cu explicatie, fara preambul (titlu creativ legat de keyword, NU "raspunsul direct")
-2. [Top recomandari] - 4-5 produse cu preturi reale in lei, avantaje si dezavantaje oneste (cu minusuri reale)
-3. [Criterii de alegere] - pe ce sa te uiti cand alegi, explicat pe intelesul tuturor, cu exemple concrete
-4. [Comparatie] - head-to-head intre 2-3 optiuni populare, cu preturi si diferente clare
-5. [Greseli si tips] - ce sa eviti, sfaturi de insider, greseli pe care le fac toti
-6. [Verdict pe buget] - recomandare finala pe 3 categorii de buget: mic, mediu, mare (NU folosi cuvantul "concluzie")
+=== CERINTE PRODUSE ===
+- 5-7 produse relevante pentru "${keyword}", ordonate dupa relevanta
+- Specs REALE si CORECTE
+- Preturi realiste in lei, Romania 2026
+- Review minim 200 cuvinte per produs
+- Avantaje: 4-6 | Dezavantaje: 3-5 (oneste, nu cosmetice)
+- Tag-uri: "Best Buy 2026", "Raport Calitate-Pret", "Premium", "Pentru Buget Mic", "Alegerea Noastra"
 
-FAQ: 8 intrebari naturale, formulari de cautare Google reale, raspunsuri cu structura featured snippet.`;
+=== CERINTE FAQ ===
+- 5 intrebari formulari naturale: "cat costa...", "care e diferenta intre...", "merita sa..."
+- Raspunsuri cu cifre concrete, auto-suficiente, fara diacritice
+
+=== REGULI ===
+- FARA diacritice (fara ă, î, ș, ț, â)
+- Preturile in LEI, realiste
+- Keyword "${keyword}" in <strong> de 4-6 ori in articol
+- NICIODATA <strong> in titluri/headings
+- Total minim 2000 cuvinte
+
+${interlinkList.length > 0 ? `
+=== INTERLINK-URI INTERNE (SEO) ===
+Mentioneaza NATURAL in text 2-4 articole de pe site, cu link-uri <a href="/{slug}/">{titlu}</a>.
+Integreaza in propozitii, NU ca lista separata. Max 4 link-uri. Doar unde are sens contextual.
+NU forta link-uri daca nu au legatura cu subiectul. Mai bine 0 link-uri decat link-uri fortate.
+
+Articole disponibile:
+${interlinkList}` : ''}`;
 
   for (let attempt = 0; attempt < maxRetries; attempt++) {
     const apiKey = getNextGeminiKey();
@@ -515,7 +562,7 @@ FAQ: 8 intrebari naturale, formulari de cautare Google reale, raspunsuri cu stru
         try {
           const parsed = JSON.parse(text);
           // Validate structure
-          if (parsed.excerpt && parsed.sections && parsed.faq) {
+          if (parsed.intro && parsed.items && parsed.faq) {
             return parsed;
           }
           log(`  Invalid JSON structure (attempt ${attempt + 1})`);
@@ -574,28 +621,101 @@ function createArticlePage(keyword, category, categorySlug, content, imagePath, 
     year: 'numeric'
   });
 
+  // Process intro HTML and extract excerpt from first <p>
+  const introHtml = processContentToHtml(content.intro);
+  const firstPMatch = (content.intro || '').match(/<p>([\s\S]*?)<\/p>/);
+  const excerpt = firstPMatch ? firstPMatch[1].replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim().substring(0, 160) : extractExcerpt(content.intro || '');
+
+  // Build items HTML
+  let itemsHtml = '';
+  (content.items || []).forEach((item) => {
+    const specsGrid = item.specs ? Object.entries(item.specs).map(([key, val]) => {
+      return `<div class="product-review__spec"><strong>${capitalizeFirst(key.replace(/_/g, ' '))}</strong>${escapeSpecialChars(val)}</div>`;
+    }).join('\n              ') : '';
+
+    const prosHtml = (item.avantaje || []).map(a => `<li>${escapeSpecialChars(a)}</li>`).join('\n                  ');
+    const consHtml = (item.dezavantaje || []).map(d => `<li>${escapeSpecialChars(d)}</li>`).join('\n                  ');
+
+    itemsHtml += `
+          <article class="product-review" id="${slugify(stripStrong(item.name))}">
+            <div class="product-review__header">
+              ${item.tag ? `<span class="section-tag">${escapeSpecialChars(item.tag)}</span>` : ''}
+              <h3>${stripStrong(escapeSpecialChars(item.name))}</h3>
+              ${specsGrid ? `<div class="product-review__specs-grid">\n              ${specsGrid}\n            </div>` : ''}
+            </div>
+            <div class="product-review__content">
+              ${processContentToHtml(item.review)}
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+                  ${prosHtml}
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+                  ${consHtml}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>`;
+  });
+
+  // Build comparison table HTML
+  let comparisonHtml = '';
+  if (content.comparison && content.comparison.rows && content.comparison.rows.length > 0) {
+    const cols = Object.keys(content.comparison.rows[0]);
+    const headerCells = cols.map(c => `<th>${capitalizeFirst(c.replace(/_/g, ' '))}</th>`).join('');
+    const bodyRows = content.comparison.rows.map(row => {
+      const cells = cols.map(c => `<td>${escapeSpecialChars(row[c] || '')}</td>`).join('');
+      return `<tr>${cells}</tr>`;
+    }).join('\n            ');
+
+    comparisonHtml = `
+        <section id="comparatie">
+          <h2>Comparatie rapida</h2>
+          ${content.comparison.intro ? `<p>${escapeSpecialChars(content.comparison.intro)}</p>` : ''}
+          <div class="comparison-outer">
+            <div class="comparison-hint"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg> Scroll pentru mai multe coloane</div>
+            <div class="comparison-wrap">
+              <table class="comparison-table">
+                <thead><tr>${headerCells}</tr></thead>
+                <tbody>
+            ${bodyRows}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>`;
+  }
+
+  // Build guide HTML
+  let guideHtml = '';
+  if (content.guide) {
+    const guideTitle = stripStrong(escapeSpecialChars(content.guide.title || 'Cum alegi cel mai bun produs?'));
+    guideHtml = `
+        <section class="guide" id="ghid-cumparare">
+          <h2>${guideTitle}</h2>
+          ${processContentToHtml(content.guide.content)}
+        </section>`;
+  }
+
   // Build TOC HTML
   let tocHtml = '';
-  content.sections.forEach((section) => {
-    const sectionId = slugify(stripStrong(section.title));
-    tocHtml += `            <li><a href="#${sectionId}">${stripStrong(escapeSpecialChars(section.title))}</a></li>\n`;
+  (content.items || []).forEach((item) => {
+    const itemId = slugify(stripStrong(item.name));
+    tocHtml += `            <li><a href="#${itemId}">${stripStrong(escapeSpecialChars(item.name))}</a></li>\n`;
   });
+  if (comparisonHtml) {
+    tocHtml += `            <li><a href="#comparatie">Comparatie rapida</a></li>\n`;
+  }
+  if (guideHtml) {
+    const guideTocTitle = stripStrong(escapeSpecialChars(content.guide.title || 'Ghid de cumparare'));
+    tocHtml += `            <li><a href="#ghid-cumparare">${guideTocTitle}</a></li>\n`;
+  }
   tocHtml += '            <li><a href="#faq">Intrebari Frecvente</a></li>';
-
-  // Build article content HTML
-  let sectionsHtml = '';
-  content.sections.forEach((section) => {
-    const sectionId = slugify(stripStrong(section.title));
-    sectionsHtml += `\n<h2 id="${sectionId}">${stripStrong(escapeSpecialChars(section.title))}</h2>\n`;
-    sectionsHtml += processContentToHtml(section.content);
-
-    if (section.subsections) {
-      section.subsections.forEach(sub => {
-        sectionsHtml += `\n<h3>${escapeSpecialChars(sub.title)}</h3>\n`;
-        sectionsHtml += processContentToHtml(sub.content);
-      });
-    }
-  });
 
   // Build FAQ HTML
   let faqHtml = '';
@@ -612,17 +732,24 @@ function createArticlePage(keyword, category, categorySlug, content, imagePath, 
       </div>`;
   });
 
-  // Extract excerpt from first section content
-  const rawExcerpt = content.excerpt || extractExcerpt(content.sections[0]?.content || '');
-  const excerpt = rawExcerpt.replace(/<[^>]*>/g, '');  // Strip HTML tags
   const faqJson = JSON.stringify((content.faq || []).map(item => ({ question: stripStrong(item.question), answer: stripStrong(item.answer) })));
 
   const pageContent = `---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import SimilarArticles from '../components/SimilarArticles.astro';
-import CookieBanner from '../components/CookieBanner.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import keywordsData from '../../keywords.json';
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
 
 export const frontmatter = {
   title: "${title}",
@@ -640,7 +767,7 @@ const faq = ${faqJson};
 ---
 
 <Layout
-  title="${escapeForHtml(title)}"
+  title="${escapeForHtml(title)} - Bermo"
   description="${escapeForHtml(excerpt)}"
   image="${imagePath || '/images/articles/placeholder.webp'}"
   type="article"
@@ -651,7 +778,6 @@ const faq = ${faqJson};
   author="${escapeForHtml(author.name)}"
   faq={faq}
 >
-  <Header />
 
   <main class="article-page">
     <div class="container">
@@ -703,7 +829,13 @@ ${tocHtml}
         </div>
 
         <div class="prose-article">
-          ${sectionsHtml}
+          ${introHtml}
+
+          ${itemsHtml}
+
+          ${comparisonHtml}
+
+          ${guideHtml}
         </div>
 
         <section class="faq-section" id="faq">
@@ -721,19 +853,67 @@ ${tocHtml}
         </div>
 
         <SimilarArticles currentSlug="${slug}" categorySlug="${categorySlug}" />
+
+        <PrevNextNav
+          currentSlug="${slug}"
+          currentCategory="${categorySlug}"
+          articles={allArticles}
+        />
       </article>
     </div>
   </main>
 
-  <Footer />
-  <CookieBanner />
+  <script>
+    // Comparison table scroll fade
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.comparison-outer').forEach(outer => {
+        const wrap = outer.querySelector('.comparison-wrap');
+        if (!wrap) return;
+        const check = () => {
+          if (wrap.scrollWidth > wrap.clientWidth) {
+            outer.classList.add('can-scroll');
+          } else {
+            outer.classList.remove('can-scroll');
+          }
+        };
+        check();
+        window.addEventListener('resize', check);
+        wrap.addEventListener('scroll', () => {
+          if (wrap.scrollLeft + wrap.clientWidth >= wrap.scrollWidth - 10) {
+            outer.classList.remove('can-scroll');
+          } else if (wrap.scrollWidth > wrap.clientWidth) {
+            outer.classList.add('can-scroll');
+          }
+        });
+      });
+
+      // TOC active section tracking
+      const tocLinks = document.querySelectorAll('.toc-list a');
+      if (tocLinks.length > 0) {
+        const ids = Array.from(tocLinks).map(a => a.getAttribute('href').replace('#', '')).filter(Boolean);
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              tocLinks.forEach(l => l.classList.remove('active'));
+              const active = document.querySelector('.toc-list a[href="#' + entry.target.id + '"]');
+              if (active) active.classList.add('active');
+            }
+          });
+        }, { rootMargin: '-80px 0px -60% 0px', threshold: 0 });
+        ids.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) observer.observe(el);
+        });
+      }
+    });
+  </script>
 </Layout>`;
 
   const filePath = path.join(ROOT_DIR, 'src', 'pages', `${slug}.astro`);
   fs.writeFileSync(filePath, pageContent);
   log(`  Article saved: ${slug}.astro`);
 
-  return { title, slug, success: true };
+  return { title, slug, excerpt, success: true };
 }
 
 async function main() {
@@ -775,7 +955,7 @@ async function main() {
 
       // Generate content
       log('  Generating content with Gemini...');
-      const content = await generateArticleContent(item.keyword, item.category);
+      const content = await generateArticleContent(item.keyword, item.category, keywordsData?.completed || []);
       log('  Content generated successfully');
 
       // Generate image

@@ -4,6 +4,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SimilarArticles from '../components/SimilarArticles.astro';
 import CookieBanner from '../components/CookieBanner.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import keywordsData from '../../keywords.json';
 
 export const frontmatter = {
   title: "Saltea ortopedica latex",
@@ -18,6 +20,17 @@ export const frontmatter = {
 };
 
 const faq = [{"question":"Salteaua din latex natural este prea tare pentru mine?","answer":"Nu neaparat. Fermitatea variaza in functie de densitate si structura. Multe modele sunt \"medium-firm\", o optiune echilibrata. Daca dormiti pe o parte, poate e mai potrivita o fermitate medie spre moale, dar tot din latex. Verificati specificatiile producatorului."},{"question":"Pot face alergie la latex?","answer":"Alergiile la latexul natural sunt rare, dar posibile. Daca aveti sensibilitate cunoscuta la latex, consultati un medic si evitati produsele din acest material. Producatorii ofera, de obicei, specificatii clare despre compozitie."},{"question":"Cat timp dureaza pana ma obisnuiesc cu o saltea din latex?","answer":"In general, corpul are nevoie de cateva zile pana la 2-3 saptamani pentru a se adapta la o saltea noua, mai ales daca ati folosit anterior o saltea mult mai moale. Dati-i timp si incercati sa dormiti pe ea consecvent."},{"question":"Este adevarat ca saltelele din latex sunt hipoalergenice?","answer":"Da, latexul natural are proprietati hipoalergenice intrinseci, rezistand la acarieni, mucegai si bacterii. Acest lucru il face o optiune buna pentru persoanele cu alergii sau astm."},{"question":"Am gasit o saltea \"din latex\" la un pret foarte mic. Este de calitate?","answer":"Preturile foarte mici pot indica un amestec de latex natural cu sintetic, sau chiar doar spuma poliuretanica. Latexul natural de calitate are costuri de productie mai ridicate. Verificati intotdeauna specificatiile si cautati certificari daca doriti sa fiti sigur."}];
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
 ---
 
 <Layout
@@ -96,23 +109,23 @@ const faq = [{"question":"Salteaua din latex natural este prea tare pentru mine?
         <p>Nu e pentru oricine, recunosc. Daca preferati senzatia de "scufundare" totala a spumei cu memorie, s-ar putea sa vi se para prea ferma la inceput. Dar pentru mine, si pentru multi dintre cititorii mei care se confrunta cu dureri de spate sau pur si simplu cauta un somn odihnitor, latexul e un campion.</p>
         <p>Incepeti prin a va gandi la ce anume cautati de la o saltea. Daca raspunsul e "suport ferm, adaptabilitate fara a incapsula corpul si durabilitate", atunci latexul e pe lista scurta. Am observat ca multi romani ezita din cauza pretului, dar ganditi-va la asta ca la o investitie in sanatatea coloanei vertebrale.</p>
 
-<p>Ce inseamna "ortopedic" in contextul unei saltele din latex? Nu e un termen magic. Inseamna ca salteaua a fost proiectata sa ofere un grad de sustinere care sa mentina coloana vertebrala intr-o pozitie neutra, naturala, in timpul somnului. Latexul, prin structura sa celulara, are o elasticitate unica.</p>
+<p>Ce inseamna "ortopedic" in contextul unei saltele din latex? Nu e un termen magic. Inseamna ca salteaua a fost proiectata sa ofere un grad de sustinere care sa mentina coloana vertebrala intr-o pozitie neutra, <a href="/pilota-puf-gasca-naturala/" class="interlink">naturala</a>, in timpul somnului. Latexul, prin structura sa celulara, are o elasticitate unica.</p>
         <p>Se muleaza pe contururile corpului, dar revine imediat la forma initiala, oferind un suport activ. Nu lasa corpul sa "afundeze" prea mult, ceea ce e crucial pentru alinarea presiunii pe punctele sensibile, cum ar fi umerii si soldurile. Am avut ocazia sa testez saltele cu diverse densitati de latex, si am observat ca densitatea joaca un rol important in fermitatea perceputa.</p>
         <p>O densitate mai mare (peste 70 kg/m³) inseamna, de obicei, un suport mai bun si o durata de viata mai lunga.</p>
 
 <p>Un alt aspect pe care l-am notat in experienta mea e respirabilitatea. Latexul natural, mai ales cel cu celule deschise sau perforat, permite aerului sa circule. Asta inseamna ca nu veti transpira excesiv pe timpul noptii, chiar si vara.</p>
-        <p>Spre deosebire de spuma cu memorie, care uneori poate retine caldura, latexul "respira". Acest lucru contribuie la un mediu de somn mai igienic si mai confortabil. Am recomandat in trecut saltele din latex pentru persoanele care sufera de alergii, deoarece latexul natural are proprietati hipoalergenice si antibacteriene, rezistand la acarieni si mucegai.</p>
+        <p>Spre deosebire de spuma cu memorie, care uneori poate retine <a href="/uscator-rufe-pompa-caldura/" class="interlink">caldura</a>, latexul "respira". Acest lucru contribuie la un mediu de somn mai igienic si mai confortabil. Am recomandat in trecut saltele din latex pentru persoanele care sufera de alergii, deoarece latexul natural are proprietati hipoalergenice si antibacteriene, rezistand la acarieni si mucegai.</p>
         <p>Bineinteles, verificati intotdeauna specificatiile producatorului, caci exista si latex sintetic pe piata, care nu ofera aceleasi beneficii.</p>
 
 <p>Cand vine vorba de preturi, saltelele din latex natural sunt, intr-adevar, mai scumpe decat cele din spuma poliuretanica sau arcuri clasice. Dar, din experienta mea, longevitatea lor compenseaza. O saltea de calitate din latex poate dura 10-15 ani, uneori chiar mai mult, fara sa-si piarda proprietatile de sustinere.</p>
-        <p>Comparativ cu o saltea mai ieftina pe care ar trebui sa o inlocuiesti la 5-7 ani, investitia initiala se justifica. In Romania, am gasit modele decente la preturi incepand de la aproximativ 1500-2000 RON pentru dimensiuni standard (90x200 cm) si ajungand pana la 4000-6000 RON sau chiar mai mult pentru dimensiuni mari (180x200 cm) si modele premium cu diverse zone de confort.</p>
+        <p>Comparativ cu o saltea mai ieftina pe care ar trebui sa o inlocuiesti la 5-7 ani, investitia initiala se justifica. In Romania, am gasit modele decente la preturi incepand de la aproximativ 1500-2000 RON pentru dimensiuni standard (90x200 cm) si ajungand pana la 4000-6000 RON sau chiar mai mult pentru dimensiuni mari (180x200 cm) si modele <a href="/saltea-memory-foam-premium/">premium</a> cu diverse zone de confort.</p>
 <h2 id="cum-alegi-salteaua-ortopedica-din-latex-potrivita-ghid-practic">Cum alegi salteaua ortopedica din latex potrivita: ghid practic</h2>
 <p>Alegerea unei saltele ortopedice din latex poate parea complicata, dar cu cateva sfaturi practice, procesul devine mult mai simplu. In primul rand, fermitatea. "Ortopedic" nu inseamna neaparat "piatra de tare". Daca dormiti pe spate, probabil veti aprecia o fermitate medie spre ridicata.</p>
         <p>Daca dormiti pe o parte, o fermitate medie, care permite umerilor si soldurilor sa se "scufunde" putin, dar fara sa pierdeti suportul coloanei, este ideala. Am observat ca producatorii folosesc adesea termeni ca "medium", "firm", "extra-firm". In experienta mea, "medium-firm" este o alegere sigura pentru majoritatea.</p>
         <p>Daca aveti peste 90-100 kg, probabil veti avea nevoie de o saltea mai ferma.</p>
 
 <p>Un alt aspect esential este compozitia. Cautati "latex natural" sau "latex 100% natural" in descriere. Multe saltele "din latex" de pe piata contin un amestec de latex natural si sintetic sau chiar doar spuma poliuretanica cu aspect de latex.</p>
-        <p>Latexul natural e obtinut din seva arborelui de cauciuc si are acele proprietati elastice si de respirabilitate pe care le cautam. Daca nu sunteti sigur, intrebati vanzatorul sau cautati certificari precum "ECO-INSTITUT" sau "LGA", care atesta calitatea si provenienta latexului.</p>
+        <p>Latexul natural e obtinut din seva arborelui de cauciuc si are acele proprietati <a href="/benzi-elastice-set-latex/" class="interlink">elastice</a> si de respirabilitate pe care le cautam. Daca nu sunteti sigur, intrebati vanzatorul sau cautati certificari precum "ECO-INSTITUT" sau "LGA", care atesta calitatea si provenienta latexului.</p>
 
 <p>Dimensiunea e, evident, importanta. Masurati-va patul cu atentie. Pentru o persoana, 90x200 cm sau 100x200 cm sunt standard. Pentru cupluri, 160x200 cm, 180x200 cm sau chiar 200x200 cm sunt optiuni. Nu uitati sa verificati si inaltimea saltelei. Modelele din latex pot avea intre 15 cm si 25 cm sau chiar mai mult. O inaltime mai mare poate insemna o durabilitate sporita si un confort mai bun, dar si un pret pe masura.</p>
 
@@ -127,7 +140,7 @@ const faq = [{"question":"Salteaua din latex natural este prea tare pentru mine?
         <p>Asta inseamna ca investitia initiala, desi mai mare, se amortizeaza pe termen lung.</p>
 
 <p><strong>Suportul pentru coloana vertebrala</strong> e un alt punct forte major. Asta e si motivul pentru care le numim "ortopedice". Latexul are o elasticitate reactiva.</p>
-        <p>Cand va asezati pe saltea, aceasta se muleaza pe corpul dumneavoastra, dar in acelasi timp ofera o contra-presiune care sustine curbura naturala a spatelui. Nu permite coloanei sa se "afunde" sau sa se "indoaie" in pozitii nefiresti. Am observat ca persoanele cu probleme de spate, cum ar fi discopatia sau sciatica, au raportat o ameliorare semnificativa a simptomelor dupa ce au trecut pe o saltea din latex.</p>
+        <p>Cand va asezati pe saltea, aceasta se muleaza pe corpul dumneavoastra, dar in acelasi timp ofera o contra-presiune care sustine curbura <a href="/covor-living-lana-naturala/" class="interlink">naturala</a> a spatelui. Nu permite coloanei sa se "afunde" sau sa se "indoaie" in pozitii nefiresti. Am observat ca persoanele cu probleme de spate, cum ar fi discopatia sau sciatica, au raportat o ameliorare semnificativa a simptomelor dupa ce au trecut pe o saltea din latex.</p>
         <p>E ca si cum ai avea un suport personalizat, care se adapteaza constant miscarilor tale din timpul somnului.</p>
 
 <p><strong>Respirabilitatea si reglarea temperaturii</strong> sunt cruciale pentru un somn de calitate. Latexul natural, in special cel cu structura celulara deschisa sau perforat (cum sunt cele cu tehnologia "open-cell" sau "aerated"), permite aerului sa circule liber. Asta inseamna ca excesul de caldura si umiditate sunt evacuate, mentinand o temperatura constanta si confortabila pe toata durata noptii.</p>
@@ -153,7 +166,7 @@ const faq = [{"question":"Salteaua din latex natural este prea tare pentru mine?
 <p>Investitia intr-o saltea din latex este una pe termen lung, dar pentru a te bucura de ea cat mai multi ani, intretinerea corecta este esentiala. Nu e complicat, insa necesita putina atentie. In primul rand, <strong>rotirea saltelei</strong>.</p>
         <p>Chiar daca multe saltele din latex nu necesita intoarcere pe dos (deoarece au un singur strat superior confortabil), rotirea lor pe lungime (de la cap la picioare si invers) este recomandata o data la 3-6 luni. Acest lucru asigura o uzura uniforma a materialului si previne aplatizarea in zonele de presiune constanta. Am observat ca producatorii recomanda aceasta operatiune in manualele de utilizare, deci cititi-le cu atentie.</p>
 
-<p><strong>Aspirarea regulata</strong> este o alta masura simpla, dar eficienta. Folositi aspiratorul cu o perie moale pentru a indeparta praful si alergenii de pe suprafata saltelei. Faceti asta o data la cateva luni sau ori de cate ori curatati camera. Acest lucru mentine salteaua igienica si imbunatateste calitatea aerului din dormitor. Am testat pe saltele de la <strong>Mobexpert</strong> si am observat ca aspirarea regulata le pastreaza aspectul curat si proaspat.</p>
+<p><strong>Aspirarea regulata</strong> este o alta masura simpla, dar eficienta. Folositi aspiratorul cu o perie moale pentru a indeparta praful si alergenii de pe suprafata saltelei. Faceti asta o data la cateva luni sau ori de cate ori curatati camera. Acest lucru mentine salteaua igienica si imbunatateste calitatea aerului din <a href="/comoda-dormitor-stejar/">dormitor</a>. Am testat pe saltele de la <strong>Mobexpert</strong> si am observat ca aspirarea regulata le pastreaza aspectul curat si proaspat.</p>
 
 <p><strong>Ventilarea saltelei</strong> este cruciala, mai ales pentru latex. Daca aveti posibilitatea, scoateti lenjeria de pat si lasati salteaua sa "respire" pentru cateva ore, poate o data pe luna sau ori de cate ori aerisiti camera. Evitati sa o expuneti direct la soare pentru perioade lungi, deoarece razele UV puternice pot degrada materialul.</p>
         <p>Am observat ca pe site-urile de profil, precum cele ale producatorilor de saltele, se recomanda aerisirea periodica pentru a mentine proprietatile materialului.</p>
@@ -241,6 +254,12 @@ const faq = [{"question":"Salteaua din latex natural este prea tare pentru mine?
         </div>
 
         <SimilarArticles currentSlug="saltea-ortopedica-latex" categorySlug="mobilier-dormitor" />
+
+    <PrevNextNav
+      currentSlug="saltea-ortopedica-latex"
+      currentCategory="mobilier-dormitor"
+      articles={allArticles}
+    />
       </article>
     </div>
   </main>

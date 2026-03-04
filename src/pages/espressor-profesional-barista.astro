@@ -4,6 +4,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SimilarArticles from '../components/SimilarArticles.astro';
 import CookieBanner from '../components/CookieBanner.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import keywordsData from '../../keywords.json';
 
 export const frontmatter = {
   title: "Espressor profesional barista",
@@ -18,6 +20,17 @@ export const frontmatter = {
 };
 
 const faq = [{"question":"Am nevoie de un espressor profesional barista daca beau doar o cafea pe zi?","answer":"Nu neaparat. Daca bei o singura cafea si vrei ceva rapid si bun, un espressor semi-automat de calitate sau chiar un automat super-performant ar putea fi suficient. Un espressor profesional barista e pentru cei care vor sa experimenteze, sa controleze tot procesul si sa obtina cea mai buna calitate posibila, si sunt dispusi sa depuna si putin efort."},{"question":"Pot folosi orice tip de cafea boabe?","answer":"Teoretic, da. Dar pentru espresso, boabele prajite special pentru espresso sunt recomandate. Asta inseamna, de obicei, o prajire mai inchisa. Cele prajite foarte deschis pot sa nu extraga corect la presiunea si temperatura unui espressor profesional. Si, cel mai important, boabele proaspat prajite (in ultimele 2-4 saptamani) fac o diferenta enorma."},{"question":"Cat de greu e sa inveti sa folosesti un astfel de aparat?","answer":"La inceput, poate parea intimidant. Dar cu putina rabdare si studiu (sunt o gramada de tutoriale online), vei invata rapid. Cele mai importante sunt macinatura, tasarea si timpul de extractie. Dupa cateva incercari, vei incepe sa simti cum reactioneaza cafeaua si cum sa ajustezi setarile."},{"question":"Macinatorul e obligatoriu? Nu pot folosi cafea gata macinata?","answer":"Poti folosi, dar rezultatele vor fi mult sub asteptari. Cafeaua macinata isi pierde rapid aromele si prospețimea. Pentru un espresso bun, macinatura trebuie facuta pe loc, chiar inainte de preparare. Un macinator de calitate e o investitie la fel de importanta ca espressorul."},{"question":"Merita sa cumpar un espressor profesional barista de pe piata second-hand?","answer":"Poate fi o optiune, dar cu riscuri. Verifica atent starea aparatului, istoricul de intretinere, si ideal, testeaza-l inainte de a cumpara. Un aparat second-hand poate fi o afacere buna, dar si o sursa de probleme daca nu e verificat corespunzator. Cauta vanzatori de incredere si cere poze/video clare."}];
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
 ---
 
 <Layout
@@ -92,11 +105,11 @@ const faq = [{"question":"Am nevoie de un espressor profesional barista daca bea
         <div class="prose-article">
           
 <h2 id="ce-inseamna-cu-adevarat-un-espressor-profesional-barista">Ce inseamna cu adevarat un Espressor Profesional Barista?</h2>
-<p>Dupa 15 ani de testat tot felul de aparate de cafea, de la cele de plita la cele super-automate cu mii de functii, am ajuns la concluzia ca un espressor "profesional barista" e altceva. Nu vorbim aici de niste plastice si niste butoane "smart". Vorbim de metal, de forta, de control.</p>
-        <p>E un aparat care te obliga sa te implici, sa inveti, sa simti boaba de cafea. E pentru cei pentru care cafeaua nu e doar un combustibil, ci o pasiune. Un astfel de espressor vine, de obicei, cu o pompa puternica (peste 9 bari, standardul pentru un espresso adevarat), un boiler de calitate (ideal din cupru sau otel inoxidabil, pentru o temperatura stabila) si, cel mai important, un portafiltru robust, care permite o presiune uniforma pe pucul de cafea.</p>
-        <p>Am observat ca diferenta majora fata de un espressor semi-profesional se vede in consistenta. Fiecare shot de espresso e la fel, daca folosesti aceeasi cafea si aceleasi setari. E adevarata arta, nu doar apasarea unui buton.</p>
+<p>Dupa 15 ani de testat tot felul de aparate de cafea, de la cele de plita la cele super-automate cu mii de functii, am ajuns la concluzia ca un espressor "<a href="/aparat-sous-vide-profesional/" class="interlink">profesional</a> barista" e altceva. Nu vorbim aici de niste plastice si niste butoane "smart". Vorbim de metal, de forta, de control.</p>
+        <p>E un aparat care te obliga sa te implici, sa inveti, sa simti boaba de cafea. E pentru cei pentru care cafeaua nu e doar un combustibil, ci o pasiune. Un astfel de <a href="/espressor-automat-de-lux/">espressor</a> vine, de obicei, cu o pompa puternica (peste 9 bari, standardul pentru un espresso adevarat), un boiler de calitate (ideal din cupru sau otel inoxidabil, pentru o temperatura stabila) si, cel mai important, un portafiltru robust, care permite o presiune uniforma pe pucul de cafea.</p>
+        <p>Am observat ca diferenta majora fata de un espressor semi-<a href="/aparat-sous-vide-profesional/">profesional</a> se vede in consistenta. Fiecare shot de espresso e la fel, daca folosesti aceeasi cafea si aceleasi setari. E adevarata arta, nu doar apasarea unui buton.</p>
 
-<p>In experienta mea, un espressor profesional barista te invata multe despre cafea. De la macinatura, la tasare, la temperatura apei, la presiune. Nu mai poti da vina pe aparat daca un espresso nu iese cum trebuie. E vina ta, si asta e partea cea mai misto. Iti ofera libertatea de a experimenta si de a-ti rafina tehnica. Si cand iese un shot perfect, satisfactia e uriasa.</p>
+<p>In experienta mea, un espressor <a href="/blender-profesional-vitamix/" class="interlink">profesional</a> barista te invata multe despre cafea. De la macinatura, la tasare, la temperatura apei, la presiune. Nu mai poti da vina pe aparat daca un espresso nu iese cum trebuie. E vina ta, si asta e partea cea mai misto. Iti ofera libertatea de a experimenta si de a-ti rafina tehnica. Si cand iese un shot perfect, satisfactia e uriasa.</p>
 
 <p>Ca sa fie clar, nu vorbim de aparatele alea de la birou, cu capsule. Alea fac cafea, dar nu espresso. Aici vorbim de espresso, de crema aia aurie, de arome complexe. Si de lapte spumat perfect pentru un cappuccino sau latte. E un salt de la "bun" la "extraordinar".</p>
 <h2 id="de-ce-ai-avea-nevoie-de-un-astfel-de-monstru-acasa">De Ce Ai Avea Nevoie de Un Astfel de "Monstru" Acasa?</h2>
@@ -110,9 +123,9 @@ const faq = [{"question":"Am nevoie de un espressor profesional barista daca bea
 <h2 id="ce-sa-cauti-cand-alegi-un-espressor-profesional-barista">Ce Sa Cauti Cand Alegi Un Espressor Profesional Barista</h2>
 <p>Primul lucru pe care l-am invatat in cei 15 ani e sa nu te lasi pacalit de brand. Sunt multe nume mari, dar si producatori mai mici, dar excelenti. Cauta un boiler de cupru sau otel inoxidabil, de preferat cu PID (controler PID). Asta inseamna ca temperatura apei e mult mai precisa. Am observat ca aparatele cu PID fac o diferenta uriasa in consistenta shot-urilor. Un PID mentine temperatura apei in intervalul +/- 1 grad Celsius, fata de +/- 5 grade la aparatele fara.</p>
 
-<p>Pompa e si ea importanta. Majoritatea aparatelor profesionale folosesc pompe vibrante, dar cele mai bune au pompe rotative. Sunt mai silentioase, mai durabile si ofera o presiune mai stabila. Totusi, pentru acasa, o pompa vibranta de calitate e mai mult decat suficienta. Important e sa depaseasca 9 bari.</p>
+<p>Pompa e si ea importanta. Majoritatea aparatelor <a href="/manusi-sala-profesionale/" class="interlink">profesionale</a> folosesc pompe vibrante, dar cele mai bune au pompe rotative. Sunt mai silentioase, mai durabile si ofera o presiune mai stabila. Totusi, pentru acasa, o pompa vibranta de calitate e mai mult decat suficienta. Important e sa depaseasca 9 bari.</p>
 
-<p>Porta-filtrul trebuie sa fie greu, din alamă cromată, de 58mm. Asta e dimensiunea standard profesionala. Va permite o distributie mai buna a apei prin cafea si o extragere uniforma. Un portafiltru de 54mm sau mai mic nu va oferi aceleasi rezultate. Si nu uita de duza de abur! Cauta una cu mai multe gauri mici, pentru un abur mai fin si mai controlabil. Am testat duze cu o singura gaura mare si sunt groaznice pentru spumat lapte.</p>
+<p>Porta-filtrul trebuie sa fie greu, din alamă cromată, de 58mm. Asta e dimensiunea standard <a href="/bicicleta-spinning-profesionala/" class="interlink">profesionala</a>. Va permite o distributie mai buna a apei prin cafea si o extragere uniforma. Un portafiltru de 54mm sau mai mic nu va oferi aceleasi rezultate. Si nu uita de duza de abur! Cauta una cu mai multe gauri mici, pentru un abur mai fin si mai controlabil. Am testat duze cu o singura gaura mare si sunt groaznice pentru spumat lapte.</p>
 
 <p>Materialele conteaza. Carcasa din otel inoxidabil e un plus pentru durabilitate si estetica. Si nu uita de rezervorul de apa. Sa fie usor de scos si de umplut. Unele aparate au rezervorul in spate, greu accesibil. Am dat de astfel de "surprize" si nu e deloc placut.</p>
 
@@ -139,7 +152,7 @@ const faq = [{"question":"Am nevoie de un espressor profesional barista daca bea
 <p>Materialul bavurilor conteaza. Otelul inoxidabil e standard, dar exista si bavuri din ceramica. Durabilitatea e buna la ambele. Mai important e sa fie usor de curatat. Un macinator murdar va contamina gustul cafelei. Si sa fie usor de calibrat.</p>
 
 <p>Am testat multe macinatoare, si va spun sincer, cele cu "stepped adjustment" (setari cu trepte clare) sunt mai usor de folosit la inceput. Dar cele "stepless" (fara trepte, ajustare continua) ofera un control infinit mai mare. Pentru espresso, ma orientez spre cele "stepless" sau cele cu multe trepte.</p>
-        <p>Modelele de la Eureka, cum ar fi seria Mignon (Mignon Manuale, Mignon Perfetto, Mignon Specialita), sunt fantastice. Sau macinatoarele de la Baratza, cum ar fi Sette 270 (aprox. 1800-2200 RON) sau Preciso (daca mai gasiti). La eMAG am vazut si macinatoare de la Philips sau DeLonghi, dar alea sunt mai mult pentru filtre, nu pentru espresso fin.</p>
+        <p>Modelele de la Eureka, cum ar fi seria Mignon (Mignon Manuale, Mignon Perfetto, Mignon Specialita), sunt fantastice. Sau macinatoarele de la Baratza, cum ar fi Sette 270 (aprox. 1800-2200 RON) sau Preciso (daca mai gasiti). La eMAG am vazut si macinatoare de la Philips sau <a href="/masina-de-cafea-delonghi/">DeLonghi</a>, dar alea sunt mai mult pentru filtre, nu pentru espresso fin.</p>
 
 <p>Nu va zgârciti la macinator. E jumatate din lupta pentru un espresso bun. Un macinator bun, impreuna cu un espressor de calitate, va va deschide o lume noua de arome si gusturi. Si va va salva multi bani pe termen lung, comparativ cu a bea cafea de la cafenele.</p>
 <h2 id="intretinerea-secretul-longevitaatii-si-gustului">Intretinerea: Secretul Longevitaatii si Gustului</h2>
@@ -216,6 +229,12 @@ const faq = [{"question":"Am nevoie de un espressor profesional barista daca bea
         </div>
 
         <SimilarArticles currentSlug="espressor-profesional-barista" categorySlug="electrocasnice-premium" />
+
+    <PrevNextNav
+      currentSlug="espressor-profesional-barista"
+      currentCategory="electrocasnice-premium"
+      articles={allArticles}
+    />
       </article>
     </div>
   </main>

@@ -4,6 +4,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SimilarArticles from '../components/SimilarArticles.astro';
 import CookieBanner from '../components/CookieBanner.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import keywordsData from '../../keywords.json';
 
 export const frontmatter = {
   title: "Masina de cafea delonghi",
@@ -18,6 +20,17 @@ export const frontmatter = {
 };
 
 const faq = [{"question":"Ce diferenta e intre un espressor automat DeLonghi si unul manual?","answer":"Un espressor automat face toata treaba pentru tine: macina boabele, dozeaza, preseaza, extrage. Unul manual sau semi-automat iti cere mai multa implicare: tu dozezi si presezi cafeaua, iar aparatul extrage. Automatele sunt mai comode, manualele ofera mai mult control."},{"question":"Merita sa cumpar un filtru de apa pentru aparatul meu DeLonghi?","answer":"Absolut. Un filtru de apa reduce cantitatea de calcar, prelungeste durata de viata a aparatului si imbunatateste gustul cafelei. E o investitie mica, cu beneficii mari."},{"question":"Cat de des trebuie sa decalcifiez aparatul DeLonghi?","answer":"Depinde de cat de calcaroasa e apa de la tine. In general, o data la 1-2 luni este suficient. Aparatul te anunta cand e momentul, dar e bine sa fii proactiv."},{"question":"Pot folosi orice tip de boabe de cafea intr-un DeLonghi automat?","answer":"Da, poti folosi orice tip de boabe de cafea prajite, dar pentru rezultate optime, recomandam boabe proaspete, prajite pentru espresso. Evita boabele prea uleioase sau cele care contin arome adaugate, pot infunda rasnita."},{"question":"Care e cel mai bun model DeLonghi pentru un buget de 2000 RON?","answer":"In acest buget, te poti uita la modele din seria Magnifica, cum ar fi DeLonghi Magnifica S ECAM 22.110.B. Acesta ofera functiile de baza pentru un espresso bun, cu rasnita integrata si posibilitatea de a face si spuma de lapte manual."}];
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
 ---
 
 <Layout
@@ -92,13 +105,13 @@ const faq = [{"question":"Ce diferenta e intre un espressor automat DeLonghi si 
         <div class="prose-article">
           
 <h2 id="delonghi-fiecare-dimineata-o-experienta-premium">DeLonghi: Fiecare dimineata, o experienta premium</h2>
-<p>Dupa 15 ani de testat electrocasnice, am vazut multe aparate de cafea. Dar DeLonghi... DeLonghi are ceva special. Nu e doar despre cafea, e despre ritual. E despre cum incepe ziua ta, despre mirosul ala care te trezeste mai bine decat orice alarma. Am pus mana pe cateva modele de top si va spun sincer, am ramas impresionat. Vorbim de materiale de calitate, de design care arata bine in orice bucatarie, de functii care fac diferenta intre o cafea buna si o cafea... wow.</p>
+<p>Dupa 15 ani de testat electrocasnice, am vazut multe aparate de cafea. Dar DeLonghi... DeLonghi are ceva special. Nu e doar despre cafea, e despre ritual. E despre cum incepe ziua ta, despre mirosul ala care te trezeste mai bine decat orice alarma. Am pus mana pe cateva modele de top si va spun sincer, am ramas impresionat. Vorbim de materiale de calitate, de design care arata bine in orice <a href="/robot-de-bucatarie-bosch/" class="interlink">bucatarie</a>, de functii care fac diferenta intre o cafea buna si o cafea... wow.</p>
 
 <p>Am inceput cu un model mai accesibil, dar tot din gama lor premium, sa zicem, ca sa vad cum se descurca. Vorbesc despre DeLonghi Magnifica S ECAM 22.110.B. L-am gasit pe eMAG la vreo 1800 RON.</p>
         <p>Simplu, la obiect, face o treaba buna. Poti sa-ti macini boabele pe loc, poti sa-ti ajustezi tarile, poti sa faci si un cappuccino decent, desi spuma nu e chiar ca la cafenelele de specialitate. Dar pentru acasa, e mai mult decat suficient.</p>
         <p>E robust, pare construit sa tina si e usor de curatat, asta e un mare plus pentru mine.</p>
 
-<p>Ce am observat la DeLonghi, in general, e atentia la detalii. Fiecare buton, fiecare finisaj, se simte ca e gandit. Nu sunt plastice ieftine care scartaie. Si asta se vede si in rezultatul final: o cafea cu adevarat buna. Daca vrei sa faci un upgrade de la o simpla cafetiera sau un espressor automat mai basic, un DeLonghi e o alegere pe care nu o vei regreta.</p>
+<p>Ce am observat la DeLonghi, in general, e atentia la detalii. Fiecare buton, fiecare finisaj, se simte ca e gandit. Nu sunt plastice ieftine care scartaie. Si asta se vede si in rezultatul final: o cafea cu adevarat buna. Daca vrei sa faci un upgrade de la o simpla cafetiera sau un <a href="/espressor-automat-de-lux/">espressor automat</a> mai basic, un DeLonghi e o alegere pe care nu o vei regreta.</p>
 <h2 id="delonghi-dinamica-espressorul-care-ti-citeste-gandurile">DeLonghi Dinamica: Espressorul care-ti citeste gandurile</h2>
 <p>Acum, sa trecem la ceva mai serios. Dinamica. Am testat modelul DeLonghi Dinamica Plus ECAM 370.95.T, pe care l-am gasit pe Altex la aproximativ 3500 RON. Aici deja vorbim de alt nivel. Ecranul tactil, meniurile intuitive, posibilitatea de a personaliza aproape orice aspect al cafelei tale - de la temperatura, la cantitatea de lapte, pana la intensitatea aromei. E ca si cum ai avea un barman personal in bucatarie.</p>
 
@@ -107,7 +120,7 @@ const faq = [{"question":"Ce diferenta e intre un espressor automat DeLonghi si 
 <p>Am observat ca setarile prestabilite sunt bune, dar adevarata magie apare cand incepi sa te joci cu ele. Poti sa salvezi retetele tale preferate si sa le accesezi direct din meniu. E genial pentru zilele cand vrei cafeaua ta, exact cum ti-o doresti, fara sa mai pierzi timp cu setarile.</p>
         <p>Si curatarea e mult simplificata fata de modelele mai vechi. Aparatul te anunta cand are nevoie de atentie si te ghideaza pas cu pas. Pentru mine, asta inseamna mai mult timp savurand cafeaua si mai putin timp curatand aparatul.</p>
 <h2 id="delonghi-la-specialista-pentru-puristi-si-amatori-de-performanta">DeLonghi La Specialista: Pentru puristi si amatori de performanta</h2>
-<p>Pentru cei care vor sa simta ca sunt intr-o cafenea de specialitate, La Specialista e raspunsul. Am pus mana pe DeLonghi La Specialista Arte EC9155.MB, gasit pe PCGarage la vreo 2800 RON. Aici vorbim de un espressor manual, dar cu o gramada de tehnologie integrata care-ti usureaza munca. Nu e pentru oricine, trebuie sa vrei sa te implici putin in procesul de preparare a cafelei.</p>
+<p>Pentru cei care vor sa simta ca sunt intr-o cafenea de specialitate, La Specialista e raspunsul. Am pus mana pe DeLonghi La Specialista Arte EC9155.MB, gasit pe PCGarage la vreo 2800 RON. Aici vorbim de un <a href="/espressor-profesional-barista/" class="interlink">espressor</a> manual, dar cu o gramada de tehnologie integrata care-ti usureaza munca. Nu e pentru oricine, trebuie sa vrei sa te implici putin in procesul de preparare a cafelei.</p>
 
 <p>Ce mi-a atras atentia imediat e sistemul de dozare si tasare. Ai un portafiltru inteligent care te ajuta sa dozezi si sa presezi cafeaua uniform. Asta e crucial pentru un espresso bun. Daca nu presezi corect, apa trece prea repede sau prea incet prin cafea si rezultatul e un espresso slab sau amar. Cu La Specialista, procesul e mult mai simplu si mai consistent. Ai si un sistem de incalzire rapida, deci nu trebuie sa astepti mult pana cand aparatul e gata de actiune.</p>
 
@@ -120,7 +133,7 @@ const faq = [{"question":"Ce diferenta e intre un espressor automat DeLonghi si 
 <p>Am testat diverse tipuri de boabe in aparatele DeLonghi, de la cele mai delicate, cu note florale, pana la cele mai intense, cu accente de ciocolata amara. Si rezultatele au fost mereu peste asteptari. Aparatul reuseste sa extraga aromele complexe si sa le puna in valoare. Nu macina cafeaua prea mult, nu o arde. E un echilibru fin pe care putine aparate il ating.</p>
 
 <p>Un alt aspect important e presiunea. Majoritatea aparatelor DeLonghi functioneaza la 15 bari, ceea ce este standardul pentru un espresso autentic. Aceasta presiune asigura o extractie corecta a aromelor si o crema bogata, specifica unui espresso de calitate.</p>
-        <p>Am observat ca si sistemele de incalzire sunt rapide, deci nu vei astepta mult pana cand te poti bucura de cafeaua ta. Daca vrei sa te bucuri de o cafea de calitate acasa, fara batai de cap, un espressor automat DeLonghi este o solutie excelenta. Simplu, eficient si cu rezultate garantate.</p>
+        <p>Am observat ca si sistemele de incalzire sunt rapide, deci nu vei astepta mult pana cand te poti bucura de cafeaua ta. Daca vrei sa te bucuri de o cafea de calitate acasa, fara batai de cap, un <a href="/espressor-automat-de-lux/" class="interlink">espressor automat</a> DeLonghi este o solutie excelenta. Simplu, eficient si cu rezultate garantate.</p>
 <h2 id="intretinerea-unui-delonghi-cheia-pentru-longevitate">Intretinerea unui DeLonghi: Cheia pentru longevitate</h2>
 <p>Am invatat din greu ca si cele mai bune electrocasnice au nevoie de ingrijire. Un aparat de cafea DeLonghi, mai ales daca e folosit zilnic, are nevoie de putina atentie. Nu e complicat, dar e esential pentru a te bucura de el cat mai mult timp si pentru a avea mereu o cafea buna.</p>
 
@@ -134,7 +147,7 @@ const faq = [{"question":"Ce diferenta e intre un espressor automat DeLonghi si 
 <p>Daca te gandesti sa cumperi un DeLonghi, dar nu stii exact ce model sa alegi, iata cateva sfaturi bazate pe experienta mea:</p>
 
 <ol>
-<li><strong>Tipul de aparat:</strong> Vrei un espressor automat (apesi un buton si gata) sau un espressor manual (necesita mai multa implicare)? Daca vrei comoditate si rapiditate, mergi pe automat. Daca vrei sa te joci cu cafeaua si sa obtii rezultate de barist, alege un manual sau semi-automat.</li>
+<li><strong>Tipul de aparat:</strong> Vrei un <a href="/espressor-philips-series-5000/" class="interlink">espressor</a> automat (apesi un buton si gata) sau un espressor manual (necesita mai multa implicare)? Daca vrei comoditate si rapiditate, mergi pe automat. Daca vrei sa te joci cu cafeaua si sa obtii rezultate de barist, alege un manual sau semi-automat.</li>
 </ol>
 
 <ol>
@@ -216,6 +229,12 @@ const faq = [{"question":"Ce diferenta e intre un espressor automat DeLonghi si 
         </div>
 
         <SimilarArticles currentSlug="masina-de-cafea-delonghi" categorySlug="electrocasnice-premium" />
+
+    <PrevNextNav
+      currentSlug="masina-de-cafea-delonghi"
+      currentCategory="electrocasnice-premium"
+      articles={allArticles}
+    />
       </article>
     </div>
   </main>

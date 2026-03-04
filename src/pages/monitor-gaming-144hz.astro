@@ -4,6 +4,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SimilarArticles from '../components/SimilarArticles.astro';
 import CookieBanner from '../components/CookieBanner.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import keywordsData from '../../keywords.json';
 
 export const frontmatter = {
   title: "Monitor gaming 144hz",
@@ -18,6 +20,17 @@ export const frontmatter = {
 };
 
 const faq = [{"question":"Am nevoie de o placa video scumpa pentru 144Hz?","answer":"Depinde de rezolutia monitorului si de jocurile pe care le joci. Pentru Full HD 144Hz, o placa video mid-range din ultimii 3-4 ani ar trebui sa fie suficienta pentru multe titluri. Pentru QHD 144Hz sau 4K 144Hz, da, vei avea nevoie de o placa video mai performanta, de top. Verifica cerintele de FPS ale jocurilor tale preferate la rezolutia monitorului dorit."},{"question":"Ce inseamna 1ms GtG?","answer":"GtG (Grey-to-Grey) este o masura a timpului necesar unui pixel sa treaca de la o nuanta de gri la alta. Este cel mai relevant indicator pentru ghosting sau smearing in imagini. Cu cat valoarea e mai mica, cu atat miscarile rapide vor fi mai clare."},{"question":"Pot folosi un monitor de 144Hz cu o consola (PS5, Xbox Series X)?","answer":"Da, majoritatea consolelor moderne suporta rate de refresh mai mari de 60Hz pe monitoarele compatibile HDMI 2.0 sau 2.1. Va trebui sa verifici specificatiile consolei si ale monitorului pentru a te asigura ca se potrivesc (de exemplu, anumite console suporta 120Hz in anumite rezolutii)."},{"question":"Ce e mai important: 144Hz sau IPS panel?","answer":"Depinde de ce prioritezi. Daca joci predominant jocuri competitive unde reaction time-ul este crucial, 144Hz cu un panel TN rapid poate fi mai bun. Daca vrei culori vibrante, unghiuri bune de vizualizare si o experienta vizuala generala mai placuta, un panel IPS la 144Hz este o alegere excelenta. Multe monitoare moderne IPS ofera timpi de raspuns suficient de mici pentru majoritatea jocurilor."},{"question":"Am un monitor de 144Hz dar jocul merge cu 70 FPS. Mai am vreun beneficiu?","answer":"Da, chiar si cu 70 FPS, un monitor de 144Hz cu G-Sync sau FreeSync activat va oferi o experienta mult mai fluida si fara tearing decat un monitor de 60Hz. Tehnologia de sincronizare adaptiva compenseaza fluctuatiile de FPS, facand jocul sa para mai lin."}];
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
 ---
 
 <Layout
@@ -92,7 +105,7 @@ const faq = [{"question":"Am nevoie de o placa video scumpa pentru 144Hz?","answ
         <div class="prose-article">
           
 <h2 id="de-ce-144hz-nu-e-doar-un-numar">De ce 144Hz NU e doar un numar</h2>
-<p>Am petrecut ani buni in fata monitoarelor, testând tot felul de paneluri, de la cele de birou, la cele pentru editare foto-video, si, bineinteles, cele pentru gaming. Si pot sa va spun din experienta mea ca trecerea de la un monitor standard de 60Hz la unul de 144Hz este, pur si simplu, un game-changer. Nu e vorba doar de cifre pe hartie, e o diferenta pe care o simti cu fiecare miscare a mouse-ului, cu fiecare salt al personajului pe ecran.</p>
+<p>Am petrecut ani buni in fata monitoarelor, testând tot felul de paneluri, de la cele de birou, la cele pentru editare foto-video, si, bineinteles, cele <a href="/ups-apc-pentru-gaming/" class="interlink">pentru gaming</a>. Si pot sa va spun din experienta mea ca trecerea de la un monitor standard de 60Hz la unul de 144Hz este, pur si simplu, un game-changer. Nu e vorba doar de cifre pe hartie, e o diferenta pe care o simti cu fiecare miscare a mouse-ului, cu fiecare salt al personajului pe ecran.</p>
         <p>Imaginile sunt mult mai fluide, mai clare, mai reactive. In jocurile rapide, gen FPS-uri (Call of Duty, Valorant, CS:GO) sau racing simulatoare, aceasta fluiditate te ajuta sa reactionezi mai rapid, sa vezi inamicul mai de sus, sa anticipezi traiectoria masinii. Am avut momente cand am simtit ca am un avantaj clar doar pentru ca vedeam actiunea mai lin.</p>
         <p>In jocurile mai lente, diferenta e mai subtila, dar totusi prezenta, facând experienta vizuala mult mai placuta si mai putin obositoare pentru ochi pe termen lung.</p>
 
@@ -119,23 +132,23 @@ const faq = [{"question":"Am nevoie de o placa video scumpa pentru 144Hz?","answ
 <p>Full HD (1920x1080 pixeli) este cea mai comună rezoluție și, în general, cea mai ușor de rulat pentru plăcile video. Pentru un monitor de 24-27 inch, Full HD oferă o densitate de pixeli suficientă pentru o imagine clară, mai ales dacă joci titluri competitive unde viteza este esențială. Am testat multe monitoare Full HD de 144Hz, cum ar fi BenQ ZOWIE XL2546K (deși acesta e mai mult axat pe performanță brută, cu TN panel), și pe un sistem decent, poți atinge și depăși 144 FPS în multe jocuri.</p>
         <p>Prețurile pentru aceste monitoare sunt, de obicei, cele mai accesibile. Un exemplu bun ar fi monitorul ASUS TUF Gaming VG259QM, pe eMAG îl găsești pe la 1200-1400 RON, oferind un panel IPS rapid și 144Hz (chiar și 280Hz pe anumite modele din serie).</p>
 
-<p>QHD (2560x1440 pixeli), cunoscută și ca 2K, este un "sweet spot" pentru mulți gameri. Oferă o imagine semnificativ mai detaliată decât Full HD, pe monitoare de 27 inch sau mai mari, fără a solicita placa video la fel de mult ca 4K. Pentru a rula QHD la 144Hz, ai nevoie de o placă video destul de puternică (un RTX 3070/4070 sau echivalent AMD în sus).</p>
-        <p>Am testat un Dell S2721DGF, un monitor QHD de 165Hz, și diferența de claritate față de Full HD era notabilă. Jocurile arată mult mai bine, cu detalii fine vizibile. Prețurile pentru monitoarele QHD 144Hz (sau mai mult) încep de la aproximativ 1500-1800 RON pentru modele entry-level și pot ajunge la 3000+ RON pentru modele premium cu tehnologii avansate.</p>
+<p>QHD (2560x1440 pixeli), cunoscută și ca 2K, este un "sweet spot" pentru mulți gameri. Oferă o imagine semnificativ mai detaliată decât Full HD, pe monitoare de 27 inch sau mai mari, fără a solicita <a href="/placa-video-rtx-4070/">placa video</a> la fel de mult ca 4K. Pentru a rula QHD la 144Hz, ai nevoie de o placă video destul de puternică (un RTX 3070/4070 sau echivalent AMD în sus).</p>
+        <p>Am testat un Dell S2721DGF, un monitor QHD de 165Hz, și diferența de claritate față de Full HD era notabilă. Jocurile arată mult mai bine, cu detalii fine vizibile. Prețurile pentru monitoarele QHD 144Hz (sau mai mult) încep de la aproximativ 1500-1800 RON pentru modele entry-level și pot ajunge la 3000+ RON pentru modele <a href="/saltea-memory-foam-premium/">premium</a> cu tehnologii avansate.</p>
         <p>Un exemplu popular este Gigabyte M27Q, pe PCGarage îl găsești pe la 1500-1700 RON.</p>
 
-<p>4K (3840x2160 pixeli) la 144Hz este, sincer, pentru entuziaști cu buget și hardware pe măsură. Atingerea a 144 FPS în 4K necesită, de obicei, cele mai performante plăci video disponibile pe piață (RTX 4090, 4080, RX 7900 XTX) și chiar și atunci, în jocurile cele mai solicitante, s-ar putea să fie nevoie de DLSS sau FSR. Am testat monitoare 4K de 144Hz, cum ar fi LG 27GP950-B, și imaginea este absolut spectaculoasă, incredibil de clară și detaliată.</p>
+<p>4K (3840x2160 pixeli) la 144Hz este, sincer, pentru entuziaști cu buget și hardware pe măsură. Atingerea a 144 FPS în 4K necesită, de obicei, cele mai <a href="/laptop-gaming-performant/">performant</a>e plăci video disponibile pe piață (RTX 4090, 4080, RX 7900 XTX) și chiar și atunci, în jocurile cele mai solicitante, s-ar putea să fie nevoie de DLSS sau FSR. Am testat monitoare 4K de 144Hz, cum ar fi LG 27GP950-B, și imaginea este absolut spectaculoasă, incredibil de clară și detaliată.</p>
         <p>Dar prețul este pe măsură. Aceste monitoare costă de obicei peste 3000-4000 RON și chiar mai mult. Dacă vrei cea mai bună calitate vizuală posibilă și ai bugetul necesar, 4K 144Hz este alegerea, dar fii conștient de cerințele hardware.</p>
 <h2 id="tehnologii-care-fac-diferenta-g-sync-freesync-si-hdr">Tehnologii care fac diferenta: G-Sync, FreeSync si HDR</h2>
 <p>Pe lângă refresh rate și rezoluție, alte tehnologii pot îmbunătăți semnificativ experiența ta de gaming. Am observat că mulți utilizatori ignoră aceste aspecte, dar ele pot face o diferență reală.</p>
 
 <p>G-Sync și FreeSync sunt tehnologii de sincronizare adaptivă. Ce fac ele, pe scurt, este să sincronizeze rata de refresh a monitorului cu numărul de FPS generat de placa ta video. De ce e asta important? Pentru că, altfel, poți avea "screen tearing" (imaginea pare ruptă pe orizontală) sau "stuttering" (imagini sacadate).</p>
-        <p>Am avut momente frustrante cu screen tearing pe monitoare fără sincronizare adaptivă, mai ales în jocuri rapide. G-Sync este tehnologia proprietară de la NVIDIA, iar FreeSync este cea de la AMD. În general, G-Sync este considerată un pic mai performantă, dar necesită o placă video NVIDIA și un monitor compatibil G-Sync. FreeSync este mai des întâlnit, fiind compatibil și cu plăcile video NVIDIA (sub denumirea de "G-Sync Compatible"), dar funcționează nativ cu plăcile AMD.</p>
+        <p>Am avut momente frustrante cu screen tearing pe monitoare fără sincronizare adaptivă, mai ales în jocuri rapide. G-Sync este tehnologia proprietară de la NVIDIA, iar FreeSync este cea de la AMD. În general, G-Sync este considerată un pic mai performantă, dar necesită o <a href="/placa-video-rtx-4070/" class="interlink">placă video</a> NVIDIA și un monitor compatibil G-Sync. FreeSync este mai des întâlnit, fiind compatibil și cu plăcile video NVIDIA (sub denumirea de "G-Sync Compatible"), dar funcționează nativ cu plăcile AMD.</p>
         <p>Majoritatea monitoarelor de gaming noi de 144Hz vin cu suport FreeSync, și multe dintre ele sunt și "G-Sync Compatible". Verificați lista de compatibilitate dacă aveți o placă NVIDIA. Am testat un monitor cu FreeSync activat și diferența a fost enormă, eliminând complet screen tearing-ul în jocuri.</p>
 
 <p>HDR (High Dynamic Range) este o altă tehnologie care devine tot mai populară. În esență, HDR-ul permite monitorului să afișeze o gamă mult mai largă de culori și luminozitate, rezultând imagini mai vibrante, cu detalii mai bune în zonele luminoase și întunecate. Când spui HDR, gândește-te la detalii mai fine în nori, la lumini mai intense de la soare sau de la explozii, și la umbre mai profunde. Am văzut jocuri care arată spectaculos cu HDR activat, cum ar fi Cyberpunk 2077 sau Red Dead Redemption 2.</p>
         <p>Totuși, este important de menționat că nu toate monitoarele HDR sunt la fel. Există certificări precum DisplayHDR 400, 600, 1000, care indică nivelul de performanță. Un monitor cu DisplayHDR 400 va oferi o experiență HDR mai modestă decât unul cu DisplayHDR 1000.</p>
         <p>De asemenea, pentru a te bucura de HDR, ai nevoie și de conținut care îl suportă (jocuri, filme). Unele monitoare de 144Hz, mai ales cele IPS, încep să ofere suport HDR decent. De exemplu, monitorul Acer Nitro XV272UXbmiiprzp, pe Altex îl găsești pe la 2000-2300 RON, oferă 144Hz, QHD și suport HDR400.</p>
-        <p>Nu vă așteptați la performanțe de top HDR de la monitoarele de gaming mai ieftine, dar chiar și un HDR decent poate îmbunătăți experiența vizuală.</p>
+        <p>Nu vă așteptați la <a href="/laptop-gaming-performant/" class="interlink">performanț</a>e de top HDR de la monitoarele de gaming mai ieftine, dar chiar și un HDR decent poate îmbunătăți experiența vizuală.</p>
 <h2 id="dimensiunea-si-curbura-ecranului-ce-se-potriveste">Dimensiunea si curbura ecranului: ce se potriveste?</h2>
 <p>Când vine vorba de monitoarele de gaming 144Hz, dimensiunea ecranului și dacă este curbat sau plat poate influența destul de mult imersiunea. Am testat diverse configurații și pot să spun că nu există o rețetă universală, depinde de preferințele personale și de tipul de jocuri jucate.</p>
 
@@ -176,7 +189,7 @@ const faq = [{"question":"Am nevoie de o placa video scumpa pentru 144Hz?","answ
 </ol>
 
 <ol>
-<li><strong>Recenzii de la utilizatori și experți</strong>: Nu te baza doar pe specificații. Citește recenzii de la utilizatori pe site-uri ca eMAG, PCGarage, Altex și caută review-uri video sau scrise de pe site-uri specializate în tehnologie. Acestea îți pot oferi o perspectivă mult mai realistă asupra performanței reale a monitorului. De exemplu, un monitor precum Samsung Odyssey G7 (care e mai scump, pe la 2500-3000 RON pe eMAG), a fost lăudat pentru performanța sa VA, dar unii utilizatori au raportat probleme cu "backlight bleed" mai pronunțat. E bine să fii informat.</li>
+<li><strong>Recenzii de la utilizatori și experți</strong>: Nu te baza doar pe specificații. Citește recenzii de la utilizatori pe site-uri ca eMAG, PCGarage, Altex și caută review-uri video sau scrise de pe site-uri specializate în tehnologie. Acestea îți pot oferi o perspectivă mult mai realistă asupra <a href="/laptop-ryzen-7-performant/" class="interlink">performanț</a>ei reale a monitorului. De exemplu, un monitor precum Samsung Odyssey G7 (care e mai scump, pe la 2500-3000 RON pe eMAG), a fost lăudat pentru performanța sa VA, dar unii utilizatori au raportat probleme cu "backlight bleed" mai pronunțat. E bine să fii informat.</li>
 </ol>
         </div>
 
@@ -240,6 +253,12 @@ const faq = [{"question":"Am nevoie de o placa video scumpa pentru 144Hz?","answ
         </div>
 
         <SimilarArticles currentSlug="monitor-gaming-144hz" categorySlug="it-electronice" />
+
+    <PrevNextNav
+      currentSlug="monitor-gaming-144hz"
+      currentCategory="it-electronice"
+      articles={allArticles}
+    />
       </article>
     </div>
   </main>

@@ -4,6 +4,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SimilarArticles from '../components/SimilarArticles.astro';
 import CookieBanner from '../components/CookieBanner.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import keywordsData from '../../keywords.json';
 
 export const frontmatter = {
   title: "Aparat multifunctional forta",
@@ -18,6 +20,17 @@ export const frontmatter = {
 };
 
 const faq = [{"question":"Cat de dificil este montajul unui aparat multifunctional?","answer":"Depinde mult de model. Cele mai simple, care se bazează pe greutatea corpului, se montează în maxim o oră. Aparatele \"home gym\" cu scripeti si cabluri pot dura între 2 și 4 ore, uneori chiar mai mult dacă instrucțiunile nu sunt clare. Recomandarea mea e să ai la îndemână o șurubelniță electrică și să fii răbdător."},{"question":"Am nevoie de spatiu mare pentru un aparat multifunctional?","answer":"Nu neapărat. Multe modele sunt concepute pentru a fi compacte. Un aparat \"all-in-one\" poate încăpea într-un colț de cameră. Totuși, trebuie să iei în calcul și spațiul necesar pentru a executa mișcările confortabil, fără să te lovești de pereți sau mobilă."},{"question":"Sunt aparatele multifunctionale sigure pentru incepatori?","answer":"Da, sunt, cu condiția să le folosești corect. Multe au ghiduri de exerciții. E important să începi cu greutăți mici, să înveți forma corectă a mișcărilor și să crești greutatea treptat."},{"question":"Pot inlocui complet sala de forta cu un aparat multifunctional?","answer":"Pentru majoritatea oamenilor, da. Un aparat multifunctional bine ales poate acoperi 80-90% din exercițiile pe care le-ai face într-o sală. Dacă ești un culturist avansat care caută să ridice greutăți extreme, s-ar putea să simți limitări, dar pentru fitness general, tonifiere și forță, e mai mult decât suficient."},{"question":"Ce se intampla daca un cablu se rupe?","answer":"Producătorii serioși oferă piese de schimb. Un cablu de oțel nu se rupe brusc, de obicei se deteriorează vizibil în timp (fire desfăcute, uzură). Verifică-le periodic și înlocuiește-le la prima urmă de deteriorare. Este o operațiune relativ simplă, dar necesită atenție."}];
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
 ---
 
 <Layout
@@ -96,13 +109,13 @@ const faq = [{"question":"Cat de dificil este montajul unui aparat multifunction
         <p>Azi, realitatea e alta. Daca vrei sa te antrenezi serios, fara sa pierzi timp in trafic pana la sala, un aparat multifunctional de forta e o optiune serioasa. Si nu, nu vorbim de aparatele alea mari si ingrozitoare de prin anii '80.</p>
         <p>Vorbim de echipamente compacte, inteligente, care te ajuta sa lucrezi aproape tot corpul. Am testat personal cateva modele, ca sa va dau o parere bazata pe experienta, nu pe ce scrie pe cutie.</p>
 
-<p>In primul rand, ganditi-va la eficienta. Cu un astfel de aparat, puteti face o rutina completa, de la piept si spate, la picioare si brate, totul intr-un singur loc. Asta inseamna ca nu mai trebuie sa va ganditi la combinatii de gantere, bara, banci. Totul e integrat. Pentru mine, asta a fost un avantaj urias, mai ales cand timpul e scurt. Nu mai am nevoie sa car echipament dintr-un colt in altul al camerei de antrenament. Totul e la indemana.</p>
+<p>In primul rand, ganditi-va la eficienta. Cu un astfel de aparat, puteti face o rutina completa, de la piept si spate, la picioare si brate, totul intr-un singur loc. Asta inseamna ca nu mai trebuie sa va ganditi la combinatii de <a href="/gantere-reglabile-bowflex/">gantere</a>, bara, banci. Totul e integrat. Pentru mine, asta a fost un avantaj urias, mai ales cand timpul e scurt. Nu mai am nevoie sa car echipament dintr-un colt in altul al camerei de antrenament. Totul e la indemana.</p>
 
 <p>Un alt aspect, poate chiar mai important, este constistenta. Cand ai aparatul acasa, scuza ca 'nu am timp sa ajung la sala' cade. Si stiu din experienta ca, atunci cand vrei sa obtii rezultate, constistenta e cheia.</p>
         <p>Sa poti trage o sesiune de antrenament dimineata, inainte de cafea, sau seara, dupa ce copiii au adormit, face o diferenta enorma. Am observat ca, de cand am un aparat multifunctional, frecventa antrenamentelor mele a crescut considerabil. Nu mai depind de programul salii sau de aglomeratie.</p>
 <h2 id="ce-tipuri-de-aparate-multifunctionale-am-testat-si-ce-am-gasit">Ce tipuri de aparate multifunctionale am testat si ce am gasit</h2>
 <p>Am pus mana pe cateva modele cunoscute pe piata din Romania, incercand sa acopar diferite game de pret si functionalitati. Unul dintre primele pe care l-am incercat a fost un model de la FitTrek, sa zicem "FitTrek Home Gym 3000" (un nume generic, desigur, dar va dau ideea). Acesta venea cu o gramada de accesorii si teoretic acoperea peste 50 de exercitii.</p>
-        <p>A fost impresionant la prima vedere, cu multe cabluri, scripeti si placi de greutati. Montajul a fost o provocare, recunosc. Instrucțiunile nu erau cele mai clare, dar cu putina rabdare si o surubelnita electrica, am reusit.</p>
+        <p>A fost impresionant la prima vedere, cu multe cabluri, scripeti si placi de greutati. Montajul a fost o provocare, recunosc. Instrucțiunile nu erau cele mai clare, dar cu putina rabdare si o surubelnita <a href="/oala-electrica-multicooker/" class="interlink">electrica</a>, am reusit.</p>
         <p>Dupa ce l-am pus la punct, am inceput sa testez. Exercitiile pentru piept si umeri au fost solide. Tractiunile la scripete pentru spate au mers bine.</p>
         <p>Insa am observat ca, la unele exercitii pentru picioare, cum ar fi "leg press" pe scripete, nu aveam aceeasi senzatie de greutate ca la un aparat dedicat. Totusi, pentru un antrenament general, a fost mult peste asteptari. Pretul pentru un astfel de model se invarte pe la 2500-3500 RON, in functie de promotii, gasiti pe eMAG sau Altex.</p>
 
@@ -146,7 +159,7 @@ const faq = [{"question":"Cat de dificil este montajul unui aparat multifunction
 </ol>
 
 <ol>
-<li><strong>Calitatea construcției:</strong> Acesta e un aspect pe care nu-l poți ignora. Caută aparate cu cadre solide, din oțel gros, cu suduri bine făcute. Cablurile trebuie să fie din oțel, acoperite cu un strat protector, și să se miște lin pe scripeti. Scaunele și spătarele ar trebui să fie confortabile și reglabile. Am observat că aparatele mai ieftine folosesc materiale mai subțiri, care se pot îndoi sau uza mai repede.</li>
+<li><strong>Calitatea construcției:</strong> Acesta e un aspect pe care nu-l poți ignora. Caută aparate cu cadre solide, din oțel gros, cu suduri bine făcute. Cablurile trebuie să fie din oțel, acoperite cu un strat protector, și să se miște lin pe scripeti. Scaunele și spătarele ar trebui să fie confortabile și <a href="/gantere-reglabile-bowflex/" class="interlink">reglabile</a>. Am observat că aparatele mai ieftine folosesc materiale mai subțiri, care se pot îndoi sau uza mai repede.</li>
 </ol>
 
 <ol>
@@ -176,13 +189,13 @@ const faq = [{"question":"Cat de dificil este montajul unui aparat multifunction
 
 <p><strong>Pentru buget redus (sub 1500 RON):</strong></p>
 
-<p>Aici vorbim de aparate "all-in-one" mai simple, care se bazează pe greutatea corpului sau au o stație mică de greutăți. Un exemplu ar fi modelele generice de la <strong>Klarfit</strong> sau <strong>Gorilla Sports</strong> (disponibile pe eMAG, Altex). Acestea sunt bune pentru exerciții de bază: tracțiuni, flotări, "dips", "ab crunches".</p>
+<p>Aici vorbim de aparate "all-in-one" mai simple, care se bazează pe greutatea corpului sau au o stație mică de greutăți. Un exemplu ar fi modelele generice de la <strong>Klarfit</strong> sau <strong>Gorilla Sports</strong> (disponibile pe eMAG, Altex). Acestea sunt bune pentru exerciții de bază: <a href="/bara-tractiuni-multifunctionala/" class="interlink">tracțiuni</a>, flotări, "dips", "ab crunches".</p>
         <p>Nu te aștepta la o gamă largă de exerciții pentru piept sau picioare, dar pentru a începe să te miști și a lucra musculatura superioară, sunt o opțiune. Am observat că stabilitatea poate fi o problemă la modelele mai ieftine, deci verificați recenziile pentru a vedea dacă se "joacă" prea mult.</p>
 
 <p><strong>Gama medie (1500 - 4000 RON):</strong></p>
 
 <p>În această categorie găsești aparate "home gym" mai serioase, cu sistem de greutăți prin scripeti și cabluri. Un exemplu bun ar fi seria <strong>Body Sculpture Home Gym</strong> (disponibilă pe eMAG, GymCompany). Acestea oferă o varietate bună de exerciții pentru majoritatea grupelor musculare.</p>
-        <p>Am testat un model similar și am fost mulțumit de fluiditatea mișcării și de numărul de exerciții posibile. Un alt brand de luat în calcul este <strong>Hammer Strength</strong> (dar astea pot sări ușor peste bugetul mediu, găsite pe site-uri de echipamente profesionale). Aparatele lor sunt robuste și fiabile.</p>
+        <p>Am testat un model similar și am fost mulțumit de fluiditatea mișcării și de numărul de exerciții posibile. Un alt brand de luat în calcul este <strong>Hammer Strength</strong> (dar astea pot sări ușor peste bugetul mediu, găsite pe site-uri de echipamente <a href="/manusi-sala-profesionale/" class="interlink">profesionale</a>). Aparatele lor sunt robuste și fiabile.</p>
         <p>Căutați modele cu cel puțin 70-80 kg greutăți incluse în "weight stack".</p>
 
 <p><strong>Gama premium (peste 4000 RON):</strong></p>
@@ -229,7 +242,7 @@ const faq = [{"question":"Cat de dificil este montajul unui aparat multifunction
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
           </svg>
         </div>
-        <div class="faq-answer">Pentru majoritatea oamenilor, da. Un aparat multifunctional bine ales poate acoperi 80-90% din exercițiile pe care le-ai face într-o sală. Dacă ești un culturist avansat care caută să ridice greutăți extreme, s-ar putea să simți limitări, dar pentru fitness general, tonifiere și forță, e mai mult decât suficient.</div>
+        <div class="faq-answer">Pentru majoritatea oamenilor, da. Un aparat multifunctional bine ales poate acoperi 80-90% din exercițiile pe care le-ai face într-o sală. Dacă ești un culturist avansat care caută să ridice greutăți extreme, s-ar putea să simți limitări, dar pentru <a href="/stepper-fitness-hidraulic/">fitness</a> general, tonifiere și forță, e mai mult decât suficient.</div>
       </div>
       <div class="faq-item">
         <div class="faq-question">
@@ -247,11 +260,17 @@ const faq = [{"question":"Cat de dificil este montajul unui aparat multifunction
           <div class="author-box-info">
             <h4>Dan Iordan</h4>
             <p>Antrenor Fitness Certificat</p>
-            <p class="author-box-bio">Antrenor personal cu certificari internationale, Dan testeaza echipamente fitness si recomanda doar cele care ofera rezultate reale pentru antrenamente de acasa.</p>
+            <p class="author-box-bio">Antrenor personal cu certificari internationale, Dan testeaza echipamente <a href="/minge-fitness-antiburst/">fitness</a> si recomanda doar cele care ofera rezultate reale pentru antrenamente de acasa.</p>
           </div>
         </div>
 
         <SimilarArticles currentSlug="aparat-multifunctional-forta" categorySlug="fitness-sport" />
+
+    <PrevNextNav
+      currentSlug="aparat-multifunctional-forta"
+      currentCategory="fitness-sport"
+      articles={allArticles}
+    />
       </article>
     </div>
   </main>

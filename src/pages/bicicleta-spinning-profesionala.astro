@@ -4,6 +4,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SimilarArticles from '../components/SimilarArticles.astro';
 import CookieBanner from '../components/CookieBanner.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import keywordsData from '../../keywords.json';
 
 export const frontmatter = {
   title: "Bicicleta spinning profesionala",
@@ -18,6 +20,17 @@ export const frontmatter = {
 };
 
 const faq = [{"question":"Ce greutate ar trebui sa aiba volanta la o bicicleta de spinning profesionala?","answer":"Pentru o experienta profesionala, recomandam o volanta de minim 18-20 kg. Cele peste 20 kg ofera o inertia si mai buna pentru un pedalat fluid."},{"question":"Este mai buna rezistenta magnetica sau cea prin frictiune?","answer":"Ambele au avantaje. Frictiunea ofera rezistenta maxima, dar necesita inlocuirea placutelor. Magnetica e mai silentioasa si fara intretinere, dar rezistenta maxima poate fi mai mica."},{"question":"Pot folosi o bicicleta de spinning profesionala daca am probleme cu spatele?","answer":"Da, daca alegi o bicicleta cu reglaje bune (inaltime sa, distanta sa, inaltime ghidon) si iti gasesti o pozitie corecta. Consultarea unui fizioterapeut e mereu recomandata."},{"question":"Cat de importanta e consola \"smart\" la o bicicleta de spinning?","answer":"Depinde de nevoile tale. Daca vrei date detaliate si antrenamente virtuale integrate, da. Altfel, poti folosi aplicatii pe telefon/tableta conectate prin Bluetooth."},{"question":"Ce garantie au de obicei bicicletele de spinning profesionale?","answer":"Garantia variaza, dar pentru componentele principale (cadru) asteapta-te la minim 5 ani. Pentru piese si console, garantia e de obicei 2 ani, ca la orice produs de electronica."}];
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
 ---
 
 <Layout
@@ -94,12 +107,12 @@ const faq = [{"question":"Ce greutate ar trebui sa aiba volanta la o bicicleta d
           
 <h2 id="de-ce-ai-nevoie-de-o-bicicleta-spinning-profesionala-nu-de-una-de-apartament">De ce ai nevoie de o bicicleta spinning profesionala, nu de una de apartament</h2>
 <p>Dupa 15 ani de testat tot felul de aparate de fitness, pot spune cu mana pe inima ca diferenta dintre o bicicleta de spinning "de casa" si una profesionala e ca intre o Dacie si un Mercedes. Am trecut prin fazele alea cand iti iei ceva ieftin ca "sa vezi daca te tii", dar sfatul meu e direct: daca vrei rezultate, daca vrei sa simti ca faci miscare, mergi pe una profesionala. Nu te pacali cu alea de sub 1500 de lei.</p>
-        <p>Alea sunt jucarii. O bicicleta profesionala e facuta sa reziste la antrenamente intense, zi de zi, ore in sir. Am observat ca cele ieftine au cadre firave, volanta mica, pedale care se strica repede si reglaje care cedeaza.</p>
+        <p>Alea sunt jucarii. O <a href="/bicicleta-eliptica-magnetica/">bicicleta</a> profesionala e facuta sa reziste la antrenamente intense, zi de zi, ore in sir. Am observat ca cele ieftine au cadre firave, volanta mica, pedale care se strica repede si reglaje care cedeaza.</p>
         <p>Nu vrei sa ajungi in mijlocul unui antrenament si sa-ti cada pedala. Nu, multumesc. O bicicleta profesionala are o constructie solida, de obicei din otel, o volanta grea (minim 18-20 kg) care iti ofera o inertia buna pentru un pedalat lin si o rezistenta variata.</p>
         <p>Si reglajele, alea sunt cheia. La cele bune, poti ajusta inaltimea si distanta sa-ului, ghidonul, totul se misca fin si ramane fix unde l-ai pus. Eu personal, cand am inceput cu spinningul serios, am investit intr-una profesionala si nu am regretat niciun leu.</p>
         <p>Am salvat timp, m-am antrenat mai eficient si am evitat frustrarea. Gandeste-te la asta ca la o unealta, nu ca la un moft. Daca vrei sa te antrenezi serios, ai nevoie de o unealta serioasa.</p>
 
-<p>Am testat personal modele de la Kettler, Technogym, Life Fitness si chiar si cateva modele mai accesibile dar totusi profesionale de la Hammer sau Bodytone. Diferenta e uriasa. La cele profesionale, chiar si dupa ani de utilizare intensiva, totul functioneaza ca uns.</p>
+<p>Am testat personal modele de la Kettler, Technogym, Life <a href="/stepper-fitness-hidraulic/">Fitness</a> si chiar si cateva modele mai accesibile dar totusi profesionale de la Hammer sau Bodytone. Diferenta e uriasa. La cele profesionale, chiar si dupa ani de utilizare intensiva, totul functioneaza ca uns.</p>
         <p>Nu scartaie, nu se clatina, nu apar jocuri. Si asta conteaza enorm cand esti in "zona", transpirat, cu pulsul la maxim. Nu vrei sa fii distras de o bicicleta prost construita.</p>
         <p>Pe eMAG, de exemplu, gasesti modele de la branduri "serioase" dar si variante mai "de buget" pentru acasa, dar acolo trebuie sa fii atent la specificatii. Nu te lua doar dupa poza. Citeste recenziile, vezi greutatea volantei, tipul de rezistenta.</p>
 <h2 id="volanta-grea-secretul-unui-pedalat-fluid-si-eficient">Volanta grea: secretul unui pedalat fluid si eficient</h2>
@@ -110,12 +123,12 @@ const faq = [{"question":"Ce greutate ar trebui sa aiba volanta la o bicicleta d
         <p>Branduri ca Schwinn IC PRO, Keiser M3i (desi e pe rezistenta magnetica, e tot "greu" in senzatie), sau chiar si modelele mai "pro" de la Bodytone au volante generoase. Am testat o bicicleta cu volanta de 25 kg si diferenta fata de una de 18 kg e sesizabila, mai ales la urcari simulate sau sprinturi. Iti da o senzatie de stabilitate si forta incredibila.</p>
         <p>Pe site-urile romanesti, cauta la "greutate volanta". E un detaliu care face diferenta.</p>
 
-<p>In experienta mea, o volanta de peste 20 kg este ideală pentru majoritatea utilizatorilor care caută o experiență profesională acasă. Cele sub 18 kg sunt acceptabile dacă bugetul e limitat, dar fii conștient de compromis. Am văzut și biciclete spinning cu volanta de 30 kg, dar acestea sunt adesea modele de top, cu prețuri pe măsură.</p>
+<p>In experienta mea, o volanta de peste 20 kg este ideală pentru majoritatea utilizatorilor care caută o experiență <a href="/kettlebell-set-profesional/" class="interlink">profesional</a>ă acasă. Cele sub 18 kg sunt acceptabile dacă bugetul e limitat, dar fii conștient de compromis. Am văzut și biciclete spinning cu volanta de 30 kg, dar acestea sunt adesea modele de top, cu prețuri pe măsură.</p>
 <h2 id="sistemul-de-rezistenta-magnetic-vs-frictiune">Sistemul de rezistenta: magnetic vs. frictiune</h2>
 <p>Acesta e un punct in care parerile sunt impartite, dar eu am o preferinta clara bazata pe experienta. Avem doua tipuri principale de rezistenta: frictiune (cu placute) si magnetica. Sistemul cu frictiune, cel mai comun la bicicletele de spinning "clasice", folosește o placheta (de obicei din pasla sau piele) care apasa pe volanta.</p>
         <p>Ajustarea rezistentei se face prin tensionarea acestei placute. Avantajul e ca ofera o rezistenta foarte mare, aproape "infinita", ceea ce e grozav pentru cei care vor sa se antreneze la intensitate maximă. Dezavantajul? Placutele se uzeaza in timp si trebuie inlocuite.</p>
         <p>Si, sincer, pot fi un pic mai zgomotoase decat cele magnetice. Am observat ca la modelele mai ieftine, placutele de proasta calitate se uzeaza foarte repede, uneori in cateva luni. Pe de alta parte, sistemul magnetic, fie el manual sau electromagnetic (cu reglaj electronic), este mult mai silentios si nu necesita intretinere.</p>
-        <p>Rezistenta e creata de magneti care se apropie sau se indeparteaza de volanta. Cele electromagnetice ofera si posibilitatea de a fi integrate cu aplicatii de fitness, ajustand automat rezistenta in functie de traseu sau puls. Eu am testat modelele electromagnetice de la Technogym si Life Fitness si pot spune ca experienta e de top.</p>
+        <p>Rezistenta e creata de magneti care se apropie sau se indeparteaza de volanta. Cele electromagnetice ofera si posibilitatea de a fi integrate cu aplicatii de <a href="/minge-fitness-antiburst/">fitness</a>, ajustand automat rezistenta in functie de traseu sau puls. Eu am testat modelele electromagnetice de la Technogym si Life Fitness si pot spune ca experienta e de top.</p>
         <p>Insa, un sistem magnetic bun, chiar si manual, e o alegere excelenta. Ambele tipuri, daca sunt de calitate, iti vor oferi un antrenament excelent. Ce conteaza e ca reglajul sa fie fin si sa simti o diferenta clara intre trepte.</p>
         <p>La cele magnetice, uneori, range-ul de rezistenta e mai mic decat la cele cu frictiune, dar pentru 95% din utilizatori, e mai mult decat suficient. Daca vrei sa economisesti si sa ai o rezistenta "bruta", mergi pe frictiune de calitate (cu placute bune). Daca vrei silentiozitate, intretinere zero si posibilitate de conectare, cauta magnetic.</p>
 
@@ -124,7 +137,7 @@ const faq = [{"question":"Ce greutate ar trebui sa aiba volanta la o bicicleta d
 <h2 id="confortul-conteaza-saua-pedalele-si-pozitia-de-pedalat">Confortul conteaza: saua, pedalele si pozitia de pedalat</h2>
 <p>Nu pot sa subliniez suficient cat de important este confortul. O bicicleta profesionala nu e doar despre forta bruta si greutatea volantei. E si despre cum te simti pe ea.</p>
         <p>Saua e un subiect sensibil. Multe biciclete de spinning vin cu sa de tip "racing", inguste si tari. Astea sunt bune pentru sprinturi scurte, dar pentru un antrenament lung de 45-60 minute, pot deveni un calvar.</p>
-        <p>In experienta mea, cel mai bine e sa ai posibilitatea sa-ti montezi propria sa, una mai confortabila, daca e cazul. Multe modele profesionale au un sistem standard de prindere a seii, deci nu e o problema. Dar daca nu vrei sa schimbi saua, cauta una care sa ti se para confortabila din prima.</p>
+        <p>In experienta mea, cel mai bine e sa ai posibilitatea sa-ti montezi propria sa, una mai confortabila, daca e cazul. Multe modele <a href="/manusi-sala-profesionale/" class="interlink">profesionale</a> au un sistem standard de prindere a seii, deci nu e o problema. Dar daca nu vrei sa schimbi saua, cauta una care sa ti se para confortabila din prima.</p>
         <p>Eu personal am pus o sa de gel pe bicicleta mea de acasa. Pedalele sunt un alt aspect. Cele "de fabrica" sunt de obicei "cage pedals" (cu curele), bune pentru a-ti tine piciorul fix.</p>
         <p>Dar daca ai pantofi de ciclism cu prindere SPD, cauta o bicicleta cu pedale SPD sau cu adaptoare. Asta iti permite sa transmiti forta mult mai eficient. Am observat ca la modelele mai ieftine, pedalele sunt din plastic si se pot rupe.</p>
         <p>La cele profesionale, sunt din metal si mult mai robuste. Pozitia de pedalat e cruciala pentru a evita accidentarile. Aici intervine reglajul.</p>
@@ -148,14 +161,14 @@ const faq = [{"question":"Ce greutate ar trebui sa aiba volanta la o bicicleta d
 <h2 id="unde-cumperi-o-bicicleta-spinning-profesionala-in-romania-si-ce-preturi-sa-astepti">Unde cumperi o bicicleta spinning profesionala in Romania si ce preturi sa astepti</h2>
 <p>Cum spuneam, piata din Romania a evoluat mult. Nu mai esti limitat la magazinul de la colt. Poti gasi biciclete de spinning profesionale pe site-uri mari precum eMAG, Altex, PC Garage, dar si pe site-uri specializate in echipamente fitness.</p>
         <p>E important sa stii ce vrei inainte sa cumperi. Eu personal, am cumparat online de pe eMAG si PC Garage, si experienta a fost in general buna. Daca vrei sa economisesti, cauta ofertele "Black Friday" sau "Cyber Monday".</p>
-        <p>Am prins reduceri consistente la biciclete de spinning. Pretul pentru o bicicleta de spinning profesionala decenta, cu volanta grea (peste 18kg), rezistenta buna (magnetic sau frictiune de calitate) si constructie solida, incepe de la aproximativ 1500-1800 RON. Asta ar fi pentru modele "entry-level" spre profesional.</p>
+        <p>Am prins reduceri consistente la biciclete de spinning. Pretul pentru o bicicleta de spinning profesionala decenta, cu volanta grea (peste 18kg), rezistenta buna (magnetic sau frictiune de calitate) si constructie solida, incepe de la aproximativ 1500-1800 RON. Asta ar fi pentru modele "entry-level" spre <a href="/aparat-abdomene-profesional/" class="interlink">profesional</a>.</p>
         <p>Pentru modele cu volante de 20-25 kg, rezistenta magnetica mai buna, si poate chiar niste functii smart de baza, te poti astepta la preturi intre 2000 si 3500 RON. Branduri pe care le-am vazut des si care ofera un bun raport calitate-pret in aceasta zona sunt Bodytone, Hammer, Horizon Fitness, Xterra. Daca vrei ceva "de top", cu tehnologie de ultima generatie, console mari, electromagnetice, atunci preturile sar de 4000-5000 RON si pot ajunge chiar si la 10.000 RON sau mai mult pentru modelele de la Technogym, Life Fitness, Schwinn.</p>
         <p>Am vazut o bicicleta Technogym Mycycling pe eMAG la peste 7000 RON. Merita sa te uiti si la sectiunea "reconditionate" sau "produse desigilate" pe eMAG. Am prins si acolo oferte bune la echipamente de top.</p>
         <p>Citeste cu atentie descrierile si parerile altor cumparatori. Cand cumperi de la Altex sau eMAG, ai avantajul livrarii rapide si a posibilitatii de retur usor, daca produsul nu corespunde. PC Garage e o optiune buna pentru componente, dar si pentru echipamente fitness, uneori cu preturi mai competitive decat la alti retaileri.</p>
         <p>Nu uita sa verifici si costurile de transport, uneori pot fi semnificative pentru produse grele. Eu cand am cumparat, am ales livrare prin curier rapid, si a ajuns in 2 zile. Am avut si o experienta mai putin placuta cu o bicicleta unde s-a zgariat cadrul la transport, dar returul a fost rapid.</p>
         <p>Deci, cauta, compara si nu te grabi. O bicicleta profesionala e o achizitie importanta.</p>
 
-<p>In concluzie, pentru un buget cuprins intre 1800 si 3000 RON, poti gasi o bicicleta de spinning profesionala excelenta pentru acasa. Peste 3000 RON incepi sa intri in zona "premium" cu functii smart si materiale de top. Sub 1500 RON, sincer, nu recomand pentru uz profesional. Am vazut modele de la branduri necunoscute pe emag sub 1000 RON, dar alea sunt fix ce ziceam, jucarii. Uita-te la greutatea volantei, tipul de rezistenta si recenziile utilizatorilor.</p>
+<p>In concluzie, pentru un buget cuprins intre 1800 si 3000 RON, poti gasi o bicicleta de spinning profesionala excelenta pentru acasa. Peste 3000 RON incepi sa intri in zona "premium" cu functii smart si materiale de top. Sub 1500 RON, sincer, nu recomand pentru uz <a href="/step-aerobic-profesional/" class="interlink">profesional</a>. Am vazut modele de la branduri necunoscute pe emag sub 1000 RON, dar alea sunt fix ce ziceam, jucarii. Uita-te la greutatea volantei, tipul de rezistenta si recenziile utilizatorilor.</p>
 <h2 id="intretinerea-bicicletei-de-spinning-cum-sa-o-pastrezi-ca-noua">Intretinerea bicicletei de spinning: cum sa o pastrezi ca noua</h2>
 <p>Chiar si cea mai buna bicicleta de spinning profesionala are nevoie de putina grija ca sa te tina ani buni. E simplu, nu te complica. Dupa fiecare antrenament, cel mai important lucru e sa stergi bicicleta de transpiratie.</p>
         <p>Transpiratia aia e acida si poate coroda metalul sau deteriora finisajele in timp. Ia un prosop, ia o carpa umeda si da pe cadru, pe ghidon, pe sa. Nu uita de volanta, mai ales daca e cu rezistenta prin frictiune.</p>
@@ -230,6 +243,12 @@ const faq = [{"question":"Ce greutate ar trebui sa aiba volanta la o bicicleta d
         </div>
 
         <SimilarArticles currentSlug="bicicleta-spinning-profesionala" categorySlug="fitness-sport" />
+
+    <PrevNextNav
+      currentSlug="bicicleta-spinning-profesionala"
+      currentCategory="fitness-sport"
+      articles={allArticles}
+    />
       </article>
     </div>
   </main>

@@ -4,6 +4,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SimilarArticles from '../components/SimilarArticles.astro';
 import CookieBanner from '../components/CookieBanner.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import keywordsData from '../../keywords.json';
 
 export const frontmatter = {
   title: "Comoda dormitor stejar",
@@ -18,6 +20,17 @@ export const frontmatter = {
 };
 
 const faq = [{"question":"cat costa o comoda dormitor stejar masiv","answer":"O comoda dormitor stejar masiv, de calitate, incepe de la aproximativ 1500-1800 lei pentru modele mai mici si simple. Pretul poate urca usor peste 3000-4000 lei pentru piese mai mari, cu design complex sau finisaje premium."},{"question":"care e diferenta intre comoda stejar masiv si comoda stejar furniruit","answer":"Comoda din stejar masiv este facuta integral din bucati solide de lemn de stejar. Cea furniruita are un miez din PAL sau MDF, peste care se aplica un strat subtire de lemn de stejar. Masivul e mult mai durabil si rezistent in timp."},{"question":"merita sa cumpar o comoda dormitor din stejar","answer":"Absolut. O comoda dormitor stejar masiv este o investitie pe termen lung, datorita durabilitatii si esteticii sale naturale. Arata bine, rezista in timp si poate deveni o piesa de mobilier de familie."},{"question":"ce tip de finisaj e mai bun pentru comoda din stejar","answer":"Finisajele naturale (ulei, ceara) sunt ideale pentru a pastra senzatia tactila si aspectul autentic al lemnului, dar necesita intretinere. Finisajele lacuite sunt mai rezistente la pete si mai usor de curatat, dar pot ascunde textura lemnului."},{"question":"cum ingrijesc o comoda de stejar","answer":"Curata comoda cu o carpa moale, usor umeda, fara detergenti abrazivi. Evita expunerea la lumina directa a soarelui si la umiditate excesiva. Finisajele ceruite sau uleiate pot necesita reaplicarea periodica a tratamentului specific."},{"question":"unde gasesc comoda dormitor stejar de calitate","answer":"Poti gasi comode de calitate in magazinele specializate in mobilier din lemn masiv, la producatori locali de mobilier sau in showroom-uri de mobilier cu o gama variata. Verifica specificatiile si cauta pareri de la alti clienti."},{"question":"ce dimensiuni ar trebui sa aiba o comoda de dormitor","answer":"Dimensiunile depind de spatiul disponibil si de nevoile tale. O comoda medie are intre 80-120 cm latime, 40-50 cm adancime si 70-90 cm inaltime. Masoara spatiul si gandeste-te la ce vei depozita in ea."},{"question":"pot sa vopsesc sau sa renovez o comoda din stejar veche","answer":"Da, lemnul de stejar este foarte potrivit pentru renovare. O poti slefui si revopsi, revizui finisajul sau chiar schimba manerele pentru a-i da un aspect nou, adaptat stilului tau."}];
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
 ---
 
 <Layout
@@ -92,9 +105,9 @@ const faq = [{"question":"cat costa o comoda dormitor stejar masiv","answer":"O 
         <div class="prose-article">
           
 <h2 id="comoda-dormitor-stejar-ghidul-tau-direct-de-la-un-cunoscator">Comoda dormitor stejar: Ghidul tau direct de la un cunoscator</h2>
-<p>Uite care-i treaba cu <strong>comoda dormitor stejar</strong>: daca vrei ceva ce sa tina o viata si sa arate bine mereu, asta e. Dar nu toate comodele din stejar sunt la fel, pe bune. Am vazut multe variante de-a lungul timpului, si cele mai reusite sunt cele din lemn masiv, nu cele placate sau aglomerate cu furnir de stejar. De ce? Pentru ca stejarul masiv are o fibra frumoasa, e rezistent la lovituri si, daca ai grija de el, prinde o patina superba in timp.</p>
+<p>Uite care-i treaba cu <strong>comoda dormitor stejar</strong>: daca vrei ceva ce sa tina o viata si sa arate bine mereu, asta e. Dar nu toate comodele din stejar sunt la fel, pe bune. Am vazut multe variante de-a lungul timpului, si cele mai reusite sunt cele din <a href="/raft-biblioteca-lemn-masiv/" class="interlink">lemn masiv</a>, nu cele placate sau aglomerate cu furnir de stejar. De ce? Pentru ca stejarul masiv are o fibra frumoasa, e rezistent la lovituri si, daca ai grija de el, prinde o patina superba in timp.</p>
         <p>Cand zic finisaj, ma refer la cum e tratat lemnul. Eu personal prefer finisajele naturale sau cele ceruite. Astea lasa lemnul sa respire si sa-si pastreze textura aia misto.</p>
-        <p>Lacurile prea groase pot sa-i dea un aspect prea lucios, artificial, si-ti cam ascund frumusetea fibrei de stejar. Daca te uiti la o <strong>comoda dormitor stejar</strong>, verifica cum sunt imbinate piesele, daca sertarele culiseaza fin, fara sa agate. Astea sunt detaliile care fac diferenta intre o piesa de mobilier buna si una mediocra.</p>
+        <p>Lacurile prea groase pot sa-i dea un aspect prea lucios, artificial, si-ti cam ascund frumusetea fibrei de stejar. Daca te uiti la o <strong>comoda <a href="/oglinda-dormitor-led/" class="interlink">dormitor</a> stejar</strong>, verifica cum sunt imbinate piesele, daca sertarele culiseaza fin, fara sa agate. Astea sunt detaliile care fac diferenta intre o piesa de mobilier buna si una mediocra.</p>
         <p>Nu te lua doar dupa poze. Daca poti, mergi si vezi comoda in realitate. Simte lemnul, vezi cum bate lumina pe el. O <strong>comoda dormitor stejar</strong> buna e o investitie, nu o cheltuiala de moment. Si pe partea de functionalitate, sertarele adanci si bine compartimentate sunt un plus. Gandeste-te la ce ai de depozitat. Lenjerie? Haine mai groase? Obiecte mici? Asta te ajuta sa alegi un model cu un numar potrivit de sertare si o adancime pe masura.</p>
         <p>Am avut un client care si-a luat o comoda din PAL cu furnir de stejar, crezand ca face economie. Dupa vreo doi ani, a inceput sa se dezlipeasca furnirul pe la colturi, iar sertarele se cam blocau. Pana la urma, a trebuit sa o schimbe. Deci, daca bugetul permite, merita sa mergi pe varianta masiv. E o diferenta uriasa pe termen lung.</p>
 <h2 id="top-4-comode-din-stejar-pe-care-le-as-recomanda-cu-bune-si-rele">Top 4 comode din stejar pe care le-as recomanda (cu bune si rele)</h2>
@@ -102,11 +115,11 @@ const faq = [{"question":"cat costa o comoda dormitor stejar masiv","answer":"O 
         <ul><li><strong>Comoda "Stejar Rustic" (aprox. 1800 - 2500 lei):</strong> Asta e genul de piesa care arata impozant. De obicei, e din stejar masiv, cu un finisaj natur care ii scoate in evidenta fibra. Sertarele sunt adanci si incapatoare.</li>
         <ul><li><strong>Avantaje:</strong> Aspect masiv, lemn 100% stejar, durabilitate mare, se integreaza usor in decoruri traditionale sau rustice.</li><li><strong>Dezavantaje:</strong> Poate fi destul de grea, deci mutatul ei prin casa e o provocare. Finisajul ceruit, desi frumos, necesita o intretinere mai atenta - nu poti varsa lichide direct pe ea.</li></ul>
         <p><li><strong>Comoda "Stejar Modern" (aprox. 2200 - 3000 lei):</strong> Asta e pentru cei care vor un design mai curat, linii simple. De multe ori, combină stejarul masiv cu elemente metalice negre sau cu sertare cu deschidere fara manere (tip push-to-open).</li></p>
-        <ul><li><strong>Avantaje:</strong> Design minimalist, se potriveste in dormitoare moderne, finisaj lacuit (mai usor de curatat decat cel ceruit).</li><li><strong>Dezavantaje:</strong> Sistemul push-to-open poate fi mai pretentios la reglaje daca nu e de calitate. Unele modele "moderne" folosesc mai putin stejar masiv si mai mult PAL furniruit, deci atentie la specificatii.</li></ul>
+        <ul><li><strong>Avantaje:</strong> Design <a href="/noptiera-moderna-minimalist/" class="interlink">minimalist</a>, se potriveste in dormitoare moderne, finisaj lacuit (mai usor de curatat decat cel ceruit).</li><li><strong>Dezavantaje:</strong> Sistemul push-to-open poate fi mai pretentios la reglaje daca nu e de calitate. Unele modele "moderne" folosesc mai putin stejar masiv si mai mult PAL furniruit, deci atentie la specificatii.</li></ul>
         <p><li><strong>Comoda "Stejar Compact" (aprox. 1200 - 1800 lei):</strong> Asta e o optiune mai accesibila, care de obicei e din stejar masiv doar pe partea frontala a sertarelor si pe rama, restul fiind PAL de calitate. E buna pentru spatii mai mici sau daca bugetul e mai restrans.</li></p>
         <ul><li><strong>Avantaje:</strong> Pret mai bun, dimensiuni mai compacte, inca ofera un aspect de stejar.</li><li><strong>Dezavantaje:</strong> Nu e 100% masiv, deci durabilitatea pe termen foarte lung (peste 10-15 ani) s-ar putea sa nu fie la fel ca la una complet masiva. Poate fi mai usor de zgariat.</li></ul>
         <p><li><strong>Comoda "Stejar Natur cu Rafturi" (aprox. 1500 - 2200 lei):</strong> Asta e o varianta mai putin comuna, unde pe langa sertare, ai si spatii deschise cu rafturi. Poate fi folosita si ca un mic bufet sau pentru a expune cateva obiecte decorative.</li></p>
-        <ul><li><strong>Avantaje:</strong> Versatila, ofera spatii de depozitare variate, aspect natural si primitor.</li><li><strong>Dezavantaje:</strong> Spatiile deschise acumuleaza praf mai usor. Daca nu e bine asamblata, poate parea mai putin solida decat o comoda doar cu sertare.</li></ul>
+        <ul><li><strong>Avantaje:</strong> Versatila, ofera spatii de <a href="/pat-cu-lada-depozitare/" class="interlink">depozitare</a> variate, aspect natural si primitor.</li><li><strong>Dezavantaje:</strong> Spatiile deschise acumuleaza praf mai usor. Daca nu e bine asamblata, poate parea mai putin solida decat o comoda doar cu sertare.</li></ul>
         <p></ul></p>
         <p>Stai putin, am uitat sa zic ceva important. La comoda "Stejar Compact", sa te uiti atent la cum sunt imbinate piesele. Unele pot sa para solide, dar dupa cateva luni sa inceapa sa scartaie sau sa se clatine usor. Am vazut si din astea, pe viu.</p>
 <h2 id="cum-alegi-comoda-dormitor-stejar-potrivita-ghid-pas-cu-pas">Cum alegi comoda dormitor stejar potrivita: Ghid pas cu pas</h2>
@@ -149,7 +162,7 @@ Uite cateva chestii pe care nu ti le zice vanzatorul neaparat:</p>
         <p>Finisajul poate fi natural sau lacuit.
 <strong>Recomandare:</strong> Acesta e "sweet spot" pentru multi. Cauta modele care specifica "stejar masiv" pentru partile vizibile si importante. Verifica specificatiile feroneriei.</p>
         <p>O <strong>comoda dormitor stejar</strong> din aceasta categorie, daca e bine aleasa, te poate tine 10-15 ani fara probleme. E un echilibru bun intre pret si calitate.
-<strong>Minusuri:</strong> Nu e 100% masiv, deci nu are aceeasi longevitate ca o piesa premium. Designul poate fi mai putin "premium" decat la cele scumpe.</p>
+<strong>Minusuri:</strong> Nu e 100% masiv, deci nu are aceeasi longevitate ca o piesa <a href="/saltea-memory-foam-premium/">premium</a>. Designul poate fi mai putin "premium" decat la cele scumpe.</p>
         <h3>Buget Mare (peste 2500 lei)</h3>
         <p>Aici vorbim de piese "statement". Comode din stejar masiv 100%, cu finisaje de exceptie (ceruite, uleiate, lacuite de calitate superioara), feronerie de top (glisiere cu amortizor, deschidere push-to-open), designuri mai elaborate sau chiar piese de designer. Acestea sunt facute sa reziste o viata si sa devina piese de mobilier de familie.
 <strong>Recomandare:</strong> Investeste in calitate si design.</p>
@@ -168,7 +181,7 @@ Uite cateva chestii pe care nu ti le zice vanzatorul neaparat:</p>
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
           </svg>
         </div>
-        <div class="faq-answer">O comoda dormitor stejar masiv, de calitate, incepe de la aproximativ 1500-1800 lei pentru modele mai mici si simple. Pretul poate urca usor peste 3000-4000 lei pentru piese mai mari, cu design complex sau finisaje premium.</div>
+        <div class="faq-answer">O comoda dormitor stejar masiv, de calitate, incepe de la aproximativ 1500-1800 lei pentru modele mai mici si simple. Pretul poate urca usor peste 3000-4000 lei pentru piese mai mari, cu design complex sau finisaje <a href="/masina-de-paine-premium/">premium</a>.</div>
       </div>
       <div class="faq-item">
         <div class="faq-question">
@@ -245,6 +258,12 @@ Uite cateva chestii pe care nu ti le zice vanzatorul neaparat:</p>
         </div>
 
         <SimilarArticles currentSlug="comoda-dormitor-stejar" categorySlug="mobilier-dormitor" />
+
+    <PrevNextNav
+      currentSlug="comoda-dormitor-stejar"
+      currentCategory="mobilier-dormitor"
+      articles={allArticles}
+    />
       </article>
     </div>
   </main>

@@ -4,6 +4,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SimilarArticles from '../components/SimilarArticles.astro';
 import CookieBanner from '../components/CookieBanner.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import keywordsData from '../../keywords.json';
 
 export const frontmatter = {
   title: "Canapea extensibila living",
@@ -18,6 +20,17 @@ export const frontmatter = {
 };
 
 const faq = [{"question":"Pot sa dorm zilnic pe o canapea extensibila?","answer":"In general, da, dar depinde mult de calitatea saltelei si a mecanismului. Modelele mai scumpe, cu saltele mai groase si mecanisme solide, sunt mult mai confortabile pentru uz zilnic. Cele ieftine te pot lasa cu dureri de spate."},{"question":"Cum aleg dimensiunea corecta?","answer":"Masori spatiul disponibil in living, inclusiv holul si usile pe unde trebuie sa o cari. Nu uita sa tii cont si de spatiul necesar cand e extinsa."},{"question":"Ce material e cel mai rezistent?","answer":"Stofa densa, microfibra de calitate sau pielea ecologica groasa sunt optiuni bune. Evita materialele sintetice subtiri care se pot rupe usor. Curata materialul conform instructiunilor producatorului."},{"question":"E greu de montat o canapea extensibila?","answer":"Majoritatea vin partial asamblate. De obicei, trebuie doar sa montezi picioarele. Unele modele mai complexe pot necesita putina atentie, dar de obicei instructiunile sunt clare."},{"question":"Unde gasesc cele mai bune oferte?","answer":"Magazinele online mari precum eMAG, Altex, PCGarage au oferte frecvente. Urmareste sectiunile de reduceri si inscrie-te la newslettere pentru a fi anuntat. Uneori, si magazinele fizice precum Kika sau Mobexpert au reduceri bune la modelele de expozitie."}];
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
 ---
 
 <Layout
@@ -92,10 +105,10 @@ const faq = [{"question":"Pot sa dorm zilnic pe o canapea extensibila?","answer"
         <div class="prose-article">
           
 <h2 id="canapeaua-extensibila-de-ce-e-salvatoare-pentru-apartamentele-noastre">Canapeaua extensibila: De ce e salvatoare pentru apartamentele noastre</h2>
-<p>Am petrecut ani buni testand mobilier pentru romani si pot spune cu mana pe inima ca, daca ai un apartament mai mic sau pur si simplu vrei sa maximizezi spatiul din living, o canapea extensibila e o investitie inteligenta. Nu, nu ma refer la acele canapele vechi si incomode de pe vremea bunicilor. Vorbim de modele moderne, confortabile si, pe alocuri, chiar aratoase.</p>
+<p>Am petrecut ani buni testand mobilier pentru romani si pot spune cu mana pe inima ca, daca ai un apartament mai mic sau pur si simplu vrei sa maximizezi spatiul din living, o canapea <a href="/masa-dining-extensibila/" class="interlink">extensibila</a> e o investitie inteligenta. Nu, nu ma refer la acele canapele vechi si incomode de pe vremea bunicilor. Vorbim de modele moderne, confortabile si, pe alocuri, chiar aratoase.</p>
         <p>Ganditi-va la asta: ziua e canapeaua voastra preferata pentru seriale, iar seara, cu o miscare simpla, devine un pat confortabil pentru prietenii care raman peste noapte sau pentru un membru al familiei. Am vazut cum se adapteaza familii tinere, dar si cupluri mai in varsta care vor sa aiba o optiune suplimentara de dormit fara a investi intr-o camera separata.</p>
 
-<p>Unul dintre primele lucruri pe care le-am observat e ca piata s-a miscat enorm. Nu mai suntem limitati la cateva modele generice. Acum gasesti de la cele mai simple, cu un mecanism de pliere clasic, la cele cu spatii de depozitare integrate, perfecte pentru lenjerie sau alte lucruri. In experienta mea, cel mai mare avantaj e versatilitatea. Un living care e si dormitor, si spatiu de socializare, totul intr-un singur obiect. Si sincer, cand vine vorba de spatiul din Romania, asta e aur curat.</p>
+<p>Unul dintre primele lucruri pe care le-am observat e ca piata s-a miscat enorm. Nu mai suntem limitati la cateva modele generice. Acum gasesti de la cele mai simple, cu un mecanism de pliere clasic, la cele cu spatii de depozitare integrate, perfecte pentru lenjerie sau alte lucruri. In experienta mea, cel mai mare avantaj e versatilitatea. Un living care e si <a href="/comoda-dormitor-stejar/">dormitor</a>, si spatiu de socializare, totul intr-un singur obiect. Si sincer, cand vine vorba de spatiul din Romania, asta e aur curat.</p>
 
 <p>Am testat personal cateva modele din magazine precum eMAG si Altex. De exemplu, am avut ocazia sa ma "așez" pe o canapea extensibila de la Cattini, modelul "Milano", care se găsește pe eMAG în jur de 2500 RON. Mecanismul era fluid, materialul plăcut la atingere, iar când am desfăcut-o, suprafața de dormit era destul de generoasă pentru o persoană.</p>
         <p>Sau alta, de la MobilaDelta, pe Altex, undeva pe la 1800 RON, mai simpla, dar funcțională. Nu te aștepta la minuni la prețuri sub 1500 RON, acolo e clar un compromis mare la materiale sau la mecanism.</p>
@@ -104,13 +117,13 @@ const faq = [{"question":"Pot sa dorm zilnic pe o canapea extensibila?","answer"
 
 <p>In experienta mea, cele cu "extensie frontala" sunt, in general, mai solide si ofera o suprafata de dormit mai uniforma. Am testat un model de la vidaXL, pe PCGarage, undeva la 3000 RON, cu acest tip de mecanism, si a fost o surpriza placuta. Se simtea robust, nu scârțâia, si transformarea din canapea in pat era destul de rapida. Insa, atentie, unele modele "extensie frontala" pot fi mai grele si necesita putina forta.</p>
 
-<p>Cele "click-clack" sunt mai rapide, dar uneori pot lasa un mic "gol" intre sezut si spatar cand le transformi in pat, ceea ce poate fi incomod. Am vazut si "canapele cu sertar", unde tragi o parte din sezut si se ridica o saltea suplimentara. Acestea sunt excelente pentru depozitare, dar pot fi mai voluminoase.</p>
+<p>Cele "click-clack" sunt mai rapide, dar uneori pot lasa un mic "gol" intre sezut si spatar cand le transformi in pat, ceea ce poate fi incomod. Am vazut si "canapele cu sertar", unde tragi o parte din sezut si se ridica o saltea suplimentara. Acestea sunt excelente pentru <a href="/pat-cu-lada-depozitare/" class="interlink">depozitare</a>, dar pot fi mai voluminoase.</p>
         <p>Cauta mecanisme din otel, nu din plastic, si verifica daca piesele se imbina bine. Daca ai posibilitatea, mergi in magazin si testeaza-l. Simte cum culiseaza, cat e de usor de manevrat.</p>
         <p>E mai bine sa platesti cu 100-200 RON in plus pentru un mecanism de calitate decat sa te chinui in fiecare seara.</p>
 <h2 id="materiale-si-confort-nu-e-doar-un-pat-de-ocazie">Materiale si confort: Nu e doar un pat de ocazie</h2>
 <p>Stiu, tentatia e mare sa alegi cea mai ieftina varianta, dar daca vrei sa folosesti canapeaua asta zilnic, confortul e esential. Nu uita, dimineata te trezesti pe ea, seara te pravalesti pe ea. Am testat canapele cu tapiterii din stofa, piele ecologica si chiar microfibra. Fiecare are avantaje si dezavantaje.</p>
 
-<p>Stofa e cea mai comuna si ofera o varietate mare de texturi si culori. Am gasit modele de la Vivre, pe eMAG, cu stofa "velur" care arata si se simte premium, dar atentie la curatare. Petele pot fi o problema. Preturile pentru genul asta, undeva la 2000-3000 RON, sunt destul de comune.</p>
+<p>Stofa e cea mai comuna si ofera o varietate mare de texturi si culori. Am gasit modele de la Vivre, pe eMAG, cu stofa "velur" care arata si se simte <a href="/saltea-memory-foam-premium/">premium</a>, dar atentie la curatare. Petele pot fi o problema. Preturile pentru genul asta, undeva la 2000-3000 RON, sunt destul de comune.</p>
 
 <p>Pielea ecologica e mai usor de curatat, un plus major daca ai copii sau animale de companie. Am vazut canapele extensibile din piele ecologica de la Kring, pe eMAG, in jur de 2200 RON, care aratau modern si erau relativ rezistente la zgarieturi usoare. Dezavantajul e ca uneori poate fi rece la atingere iarna si lipicioasa vara. Am observat ca modelele de calitate au un strat mai gros de piele ecologica, nu acel "plastic" ieftin.</p>
 
@@ -118,13 +131,13 @@ const faq = [{"question":"Pot sa dorm zilnic pe o canapea extensibila?","answer"
         <p>Cand alegi, simte materialul. E prea aspru? E prea sintetic? Cauta densitate mare a tesaturii, asta inseamna rezistenta mai buna la uzura. Si nu uita de umplutura.</p>
         <p>Spuma poliuretanica de inalta densitate e ideala pentru sezut, iar pentru pat, o saltea mai ferma, cu o grosime de cel putin 10-12 cm, e un minim acceptabil.</p>
 <h2 id="dimensiuni-si-spatiu-cum-sa-nu-cumperi-o-bestie-pe-care-nu-o-poti-cara">Dimensiuni si spatiu: Cum sa nu cumperi o bestie pe care nu o poti cara</h2>
-<p>Asta e o greseala clasica. Te indragostesti de o canapea online, vezi poza, te imaginezi pe ea, si apoi realizezi ca nu incape pe scara sau prin usa. E frustrant. Inainte sa te uiti la modele, ia o ruleta si masoara-ti spatiul disponibil. Nu uita sa masori si holul, scarile, si usile prin care trebuie sa treci. Am patit-o si eu, am adus o biblioteca masiva pe care a trebuit sa o demontez pe bucati in fata blocului.</p>
+<p>Asta e o greseala clasica. Te indragostesti de o canapea online, vezi poza, te imaginezi pe ea, si apoi realizezi ca nu incape pe scara sau prin usa. E frustrant. Inainte sa te uiti la modele, ia o ruleta si masoara-ti spatiul disponibil. Nu uita sa masori si holul, scarile, si usile prin care trebuie sa treci. Am patit-o si eu, am adus o <a href="/biblioteca-living-modulara/" class="interlink">biblioteca</a> masiva pe care a trebuit sa o demontez pe bucati in fata blocului.</p>
 
 <p>Gandeste-te si la dimensiunea canapelei cand e stransa si cand e extinsa. O canapea de 3 locuri, stransa, poate avea cam 220-240 cm lungime si 90-100 cm adancime. Extinsa, poate ajunge la 260-280 cm lungime. Ai loc sa o desfaci complet? Ai loc sa te plimbi in jurul ei? Am vazut pe eMAG modele compacte, de 2 locuri, de la Zefir, sub 2000 RON, care se potrivesc in spatii mai mici, dar suprafata de dormit e, evident, mai mica.</p>
 
 <p>Un alt aspect e inaltimea. Unele canapele sunt joase, altele mai inalte. Daca ai probleme cu spatele, o canapea mai inalta e mai usor de folosit. Am testat modele de la Kika, unde au o gama variata, si am remarcat ca cele cu picioare mai inalte sunt mai practice pentru curatenie sub canapea. Si, apropo de curatenie, verifica daca picioarele sunt detasabile, asta poate ajuta la transport. Nu te baza doar pe specificatiile din descrierea produsului, uneori sunt aproximative.</p>
 <h2 id="design-si-stil-eleganta-sau-functionalitate-pura">Design si stil: Eleganta sau functionalitate pura?</h2>
-<p>Nu trebuie sa sacrifici stilul pentru functionalitate. Astazi, producatorii inteleg asta. Am vazut canapele extensibile in stil modern, minimalist, clasic, chiar si vintage. Alegerea depinde de restul decorului din livingul tau.</p>
+<p>Nu trebuie sa sacrifici stilul pentru functionalitate. Astazi, producatorii inteleg asta. Am vazut canapele extensibile in stil modern, <a href="/noptiera-moderna-minimalist/" class="interlink">minimalist</a>, clasic, chiar si vintage. Alegerea depinde de restul decorului din livingul tau.</p>
 
 <p>Pentru un living modern, cauta linii curate, forme geometrice simple, culori neutre (gri, bej, negru) sau accente de culoare vibranta. Am gasit pe Altex modele de la Casa Rusu, cu un design angular, care arata foarte bine si sunt destul de solide, in jur de 2800 RON. Acestea se potrivesc perfect in apartamentele cu un decor contemporan.</p>
 
@@ -138,7 +151,7 @@ const faq = [{"question":"Pot sa dorm zilnic pe o canapea extensibila?","answer"
 
 <p>1500 - 2500 RON: Acesta e "zona de mijloc" unde gasesti cele mai multe optiuni. Aici poti gasi canapele cu mecanisme decente, materiale bune (stofă de calitate, piele ecologica rezistenta) si un confort mult mai bun. Acestea sunt potrivite pentru uz zilnic in living. Am testat modele de la Cattini, Kring, Various, care se incadreaza in acest buget si ofera un echilibru bun. De exemplu, o canapea de la Stofa Design, pe Altex, undeva la 2000 RON.</p>
 
-<p>Peste 2500 RON: Aici intri in segmentul de calitate superioara. Materiale premium, mecanisme foarte solide, design deosebit, si confort sporit. Daca vrei o canapea extensibila care sa arate si sa se simta ca o piesa de mobilier de lux si sa reziste ani buni, asta e zona ta. Am vazut modele de la Mobexpert, Vivre, dar si de la producatori straini, care pot ajunge si la 4000-5000 RON. De exemplu, o canapea de la Naturlich, pe eMAG, cu un design modern, poate depasi 3500 RON.</p>
+<p>Peste 2500 RON: Aici intri in segmentul de calitate superioara. Materiale <a href="/masina-de-paine-premium/">premium</a>, mecanisme foarte solide, design deosebit, si confort sporit. Daca vrei o canapea extensibila care sa arate si sa se simta ca o piesa de mobilier de lux si sa reziste ani buni, asta e zona ta. Am vazut modele de la Mobexpert, Vivre, dar si de la producatori straini, care pot ajunge si la 4000-5000 RON. De exemplu, o canapea de la Naturlich, pe eMAG, cu un design modern, poate depasi 3500 RON.</p>
 
 <p>Sfatul meu, bazat pe experienta: incearca sa nu cobori sub 1500 RON daca vrei sa o folosesti des. E mai bine sa strangi putin mai mult si sa iei ceva mai bun, decat sa cumperi doua canapele ieftine in aceiasi perioada.</p>
         </div>
@@ -203,6 +216,12 @@ const faq = [{"question":"Pot sa dorm zilnic pe o canapea extensibila?","answer"
         </div>
 
         <SimilarArticles currentSlug="canapea-extensibila-living" categorySlug="mobilier-dormitor" />
+
+    <PrevNextNav
+      currentSlug="canapea-extensibila-living"
+      currentCategory="mobilier-dormitor"
+      articles={allArticles}
+    />
       </article>
     </div>
   </main>

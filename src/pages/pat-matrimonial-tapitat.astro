@@ -4,6 +4,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SimilarArticles from '../components/SimilarArticles.astro';
 import CookieBanner from '../components/CookieBanner.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import keywordsData from '../../keywords.json';
 
 export const frontmatter = {
   title: "Pat matrimonial tapitat",
@@ -18,6 +20,17 @@ export const frontmatter = {
 };
 
 const faq = [{"question":"Ce înseamnă un pat \"tapitat\"?","answer":"Un pat tapițat este un pat a cărui structură (cadru și, de obicei, tăblie) este acoperită cu material textil, piele ecologică sau piele naturală. Acest material adaugă confort, stil și o senzație de căldură camerei."},{"question":"Este dificil de curățat un pat tapițat?","answer":"Depinde de material. Pielea ecologică și textilele netede sunt ușor de curățat cu o cârpă umedă și soluții specifice. Catifeaua și textilele cu texturi mai pronunțate necesită o atenție sporită și aspirare regulată. Petele trebuie tratate rapid."},{"question":"Ce dimensiune de pat tapițat e potrivită pentru un cuplu?","answer":"Pentru un cuplu, un pat de 160x200 cm (regina) este standardul. Dacă spațiul și bugetul permit, un pat de 180x200 cm (king size) oferă un confort superior."},{"question":"Pot să pun orice saltea pe un pat tapițat?","answer":"De obicei, da. Majoritatea paturilor tapițate sunt compatibile cu majoritatea tipurilor de saltele (arc sau spumă). Verifică dacă patul are o somieră inclusă și dacă este potrivită pentru tipul tău de saltea. Unele paturi cu ladă de depozitare pot avea cerințe specifice legate de greutatea saltelei."},{"question":"Merită să cumpăr un pat tapițat cu spațiu de depozitare?","answer":"Absolut, dacă spațiul din dormitor este limitat. Un pat cu ladă de depozitare sau cu sertare poate oferi un spațiu valoros pentru lenjerie, pături sau alte obiecte, ajutând la organizarea camerei."}];
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
 ---
 
 <Layout
@@ -92,9 +105,9 @@ const faq = [{"question":"Ce înseamnă un pat \"tapitat\"?","answer":"Un pat ta
         <div class="prose-article">
           
 <h2 id="de-ce-un-pat-tapitat-experienta-mea-pe-scurt">De ce un pat tapițat? Experiența mea pe scurt.</h2>
-<p>Am văzut și testat zeci de paturi în ultimii 15 ani, iar patul matrimonial tapițat rămâne un favorit. Nu e doar un trend, ci o alegere practică și estetică pentru dormitorul românesc. Prima dată când am intrat într-un dormitor cu un pat tapițat, am fost cucerit de senzația de căldură și confort pe care o emana.</p>
-        <p>Nu e vorba doar de saltea, ci de ansamblul patului. Tapițeria adaugă o notă de eleganță și, sincer, face patul mult mai primitor. Am observat că oamenii caută un refugiu în dormitor, un loc unde să se relaxeze cu adevărat, iar un pat tapițat contribuie enorm la asta.</p>
-        <p>E ca un îmbrățișare pentru somn. E o piesă centrală care poate transforma complet aspectul unei camere, de la cea mai minimalistă la cea mai opulentă. Și nu vă gândiți că e doar pentru cei cu bugete mari; găsești opțiuni bune la prețuri accesibile.</p>
+<p>Am văzut și testat zeci de paturi în ultimii 15 ani, iar patul matrimonial tapițat rămâne un favorit. Nu e doar un trend, ci o alegere practică și estetică pentru dormitorul românesc. Prima dată când am intrat într-un <a href="/comoda-dormitor-stejar/" class="interlink">dormitor</a> cu un pat tapițat, am fost cucerit de senzația de căldură și confort pe care o emana.</p>
+        <p>Nu e vorba doar de saltea, ci de ansamblul patului. Tapițeria adaugă o notă de eleganță și, sincer, face patul mult mai primitor. Am observat că oamenii caută un refugiu în <a href="/comoda-dormitor-stejar/">dormitor</a>, un loc unde să se relaxeze cu adevărat, iar un pat tapițat contribuie enorm la asta.</p>
+        <p>E ca un îmbrățișare pentru somn. E o piesă centrală care poate transforma complet aspectul unei camere, de la cea mai <a href="/noptiera-moderna-minimalist/" class="interlink">minimalist</a>ă la cea mai opulentă. Și nu vă gândiți că e doar pentru cei cu bugete mari; găsești opțiuni bune la prețuri accesibile.</p>
 
 <p>Partea cea mai bună este versatilitatea. Materialele variază enorm: de la piele ecologică, care e ușor de curățat, la catifea, pentru un plus de lux, sau textile rezistente, perfecte pentru familiile cu copii sau animale de companie. Am testat modele unde tapițeria era impecabilă după luni de utilizare intensă, iar altele unde materialul a început să se uzeze rapid. Asta ne duce la un punct crucial: calitatea materialului și a construcției.</p>
 
@@ -123,15 +136,15 @@ const faq = [{"question":"Ce înseamnă un pat \"tapitat\"?","answer":"Un pat ta
 <p>Culorile joacă un rol la fel de important. Nuanțele neutre (gri, bej, crem, alb) sunt mereu sigure și se potrivesc cu orice decor. Ele creează o atmosferă calmă și relaxantă.</p>
         <p>Dacă vrei să adaugi o pată de culoare, alege nuanțe mai profunde, cum ar fi albastru marin, verde smarald sau chiar un roșu burgund, mai ales dacă patul este piesa centrală. Am testat un pat tapițat în nuanță de albastru petrol de la SomProduct și a adus un plus de personalitate dormitorului instantaneu. Reține că paturile tapițate în culori deschise necesită o atenție sporită la curățenie.</p>
 <h2 id="functionalitate-spatiu-de-depozitare-si-somiere">Funcționalitate: spațiu de depozitare și somiere.</h2>
-<p>Unul dintre motivele pentru care paturile tapițate au câștigat teren este funcționalitatea lor. Multe modele vin cu spațiu de depozitare integrat, o binecuvântare pentru dormitoarele mici. Cele mai comune sunt paturile cu ladă de depozitare, unde salteaua se ridică pe un mecanism hidraulic (sau cu arc).</p>
-        <p>Am testat astfel de paturi și am fost surprins de cât de mult spațiu oferă pentru lenjerie de pat, pături extra sau alte obiecte. Un model bun, cu mecanism hidraulic solid, de pe eMAG (adesea sub 2000 RON), poate fi o investiție excelentă. Atenție la calitatea mecanismului - unul slab se poate deteriora rapid.</p>
+<p>Unul dintre motivele pentru care paturile tapițate au câștigat teren este funcționalitatea lor. Multe modele vin cu spațiu de <a href="/pat-cu-lada-depozitare/" class="interlink">depozitare</a> integrat, o binecuvântare pentru dormitoarele mici. Cele mai comune sunt paturile cu ladă de depozitare, unde salteaua se ridică pe un mecanism hidraulic (sau cu arc).</p>
+        <p>Am testat astfel de paturi și am fost surprins de cât de mult spațiu oferă pentru lenjerie de pat, pături extra sau alte obiecte. Un model bun, cu mecanism <a href="/stepper-fitness-hidraulic/" class="interlink">hidraulic</a> solid, de pe eMAG (adesea sub 2000 RON), poate fi o investiție excelentă. Atenție la calitatea mecanismului - unul slab se poate deteriora rapid.</p>
         <p>Asigură-te că ridicarea saltelei este ușoară și că mecanismul nu "zgârie" tapițeria.</p>
 
 <p>Am văzut și paturi cu sertare integrate sub cadru. Acestea sunt mai puțin spațioase decât lada, dar mai ușor de accesat zilnic. Sunt ideale pentru depozitarea hainelor pe care le porți frecvent sau a obiectelor mai mici.</p>
         <p>Dezavantajul este că sertarele pot fi limitate de spațiul din jur și pot face curățenia sub pat mai dificilă. Un pat cu sertare de la Mobexpert, de exemplu, poate fi mai scump, dar adesea vine cu o construcție mai robustă. Prețurile pentru paturi cu spațiu de depozitare variază mult, de la 800-1000 RON pentru modele simple cu sertare, până la 2500-3500 RON pentru paturi cu ladă generoasă și mecanism de înaltă calitate.</p>
 
 <p>Somiera este alta componentă vitală. Majoritatea paturilor tapițate vin cu somiere din lamele de lemn (fag sau mesteacăn, de obicei). Acestea oferă elasticitate și permit saltelei să respire, contribuind la confortul general și la prelungirea duratei de viață a saltelei.</p>
-        <p>Am observat că somierele cu lamele late și bine spațiate sunt mai rezistente. Unele paturi de lux pot avea somiere reglabile, dar acestea sunt mai rare și mult mai scumpe. Când cumperi, verifică dacă somiera este inclusă în preț sau trebuie achiziționată separat.</p>
+        <p>Am observat că somierele cu lamele late și bine spațiate sunt mai rezistente. Unele paturi de lux pot avea somiere <a href="/gantere-reglabile-bowflex/">reglabile</a>, dar acestea sunt mai rare și mult mai scumpe. Când cumperi, verifică dacă somiera este inclusă în preț sau trebuie achiziționată separat.</p>
         <p>La modelele mai ieftine de pe eMAG sau Altex, uneori somiera este o componentă adițională, adăugând la costul final. Un pat bun ar trebui să aibă o somieră solidă, care să susțină uniform greutatea saltelei și a utilizatorilor.</p>
 <h2 id="intretinere-si-curatare-sfaturi-practice">Întreținere și curățare: sfaturi practice.</h2>
 <p>Un pat tapițat arată spectaculos, dar necesită puțină grijă pentru a-și păstra frumusețea. În experiența mea, curățarea regulată este cheia. Pentru tapițeriile textile, aspirarea săptămânală cu o perie moale este esențială pentru a îndepărta praful, scamele și părul de animale. Dacă apar pete, acționează rapid.</p>
@@ -147,7 +160,7 @@ const faq = [{"question":"Ce înseamnă un pat \"tapitat\"?","answer":"Un pat ta
 <p>În România, ai o mulțime de opțiuni pentru a cumpăra un pat matrimonial tapițat. eMAG este, fără îndoială, cel mai mare retailer online, cu o selecție vastă de paturi de la zeci de producători și distribuitori. Poți găsi de la modele economice, sub 1000 RON, până la paturi de lux, din piele naturală, care depășesc 5000 RON. Avantajul eMAG este diversitatea și posibilitatea de a citi recenzii de la alți clienți, ceea ce mi-a fost de mare ajutor în multe ocazii.</p>
         <p>Am cumpărat și eu de pe eMAG și am fost mulțumit, deși uneori calitatea poate varia de la un vânzător la altul, așa că atenția la detalii și la recenzii este esențială.</p>
 
-<p>Mobexpert este un alt jucător important pe piața de mobilier, cu magazine fizice și o prezență online solidă. Paturile lor sunt, în general, de o calitate mai bună, cu o construcție mai robustă și materiale mai atent selecționate. Prețurile sunt, de obicei, mai ridicate, începând de la 1500-2000 RON pentru modelele de bază și ajungând la 5000-7000 RON sau chiar mai mult pentru colecțiile premium. Dacă bugetul îți permite și cauți ceva cu adevărat durabil și elegant, Mobexpert merită o vizită.</p>
+<p>Mobexpert este un alt jucător important pe piața de mobilier, cu magazine fizice și o prezență online solidă. Paturile lor sunt, în general, de o calitate mai bună, cu o construcție mai robustă și materiale mai atent selecționate. Prețurile sunt, de obicei, mai ridicate, începând de la 1500-2000 RON pentru modelele de bază și ajungând la 5000-7000 RON sau chiar mai mult pentru colecțiile <a href="/saltea-memory-foam-premium/">premium</a>. Dacă bugetul îți permite și cauți ceva cu adevărat durabil și elegant, Mobexpert merită o vizită.</p>
 
 <p>SomProduct este un alt retailer online popular, specializat în saltele și paturi. Au o gamă largă de paturi tapițate, cu un accent pe design. Prețurile sunt competitive, adesea în zona 1000-2500 RON pentru modele de calitate medie. Am testat câteva paturi de la ei și mi-au plăcut finisajele și atenția la detalii. Site-ul lor este bine organizat, permițând o filtrare ușoară a produselor.</p>
 
@@ -217,6 +230,12 @@ const faq = [{"question":"Ce înseamnă un pat \"tapitat\"?","answer":"Un pat ta
         </div>
 
         <SimilarArticles currentSlug="pat-matrimonial-tapitat" categorySlug="mobilier-dormitor" />
+
+    <PrevNextNav
+      currentSlug="pat-matrimonial-tapitat"
+      currentCategory="mobilier-dormitor"
+      articles={allArticles}
+    />
       </article>
     </div>
   </main>

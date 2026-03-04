@@ -4,6 +4,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SimilarArticles from '../components/SimilarArticles.astro';
 import CookieBanner from '../components/CookieBanner.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import keywordsData from '../../keywords.json';
 
 export const frontmatter = {
   title: "Espressor automat de lux",
@@ -18,6 +20,17 @@ export const frontmatter = {
 };
 
 const faq = [{"question":"Merita sa cumpar un espressor automat de lux daca beau doar espresso?","answer":"Daca bei exclusiv espresso si nu te intereseaza bauturile cu lapte sau alte optiuni, un espressor automat de lux s-ar putea sa fie un overkill. Totusi, chiar si pentru espresso, aparatele premium ofera o calitate superioara a macinarii, control mai bun al temperaturii si presiunii, si o constructie mai robusta, care se traduce printr-o cafea mai buna si o durata de viata mai mare. Totusi, ai putea gasi optiuni mai accesibile care iti satisfac nevoile de baza."},{"question":"Cat de zgomotoase sunt aceste aparate?","answer":"In general, aparatele de lux sunt mai silentioase decat cele ieftine, mai ales la capitolul rasnire. Producatorii investesc in tehnologii de izolare fonica si rasnite de calitate. Totusi, orice aparat care macina boabe de cafea va produce un anumit zgomot. Daca zgomotul e un factor critic pentru tine, cauta recenzii specifice pe acest subiect sau modele care se lauda cu functionare silentioasa."},{"question":"Ce garantie au, in general, aceste aparate de lux?","answer":"Garantia standard in Romania este de 2 ani pentru persoane fizice. Unii producatori pot oferi garantie extinsa pentru anumite modele sau pentru piese, dar trebuie verificat specific la fiecare produs. Brandurile premium pun accent pe fiabilitate, deci te poti astepta la o durata de viata buna daca aparatul e intretinut corespunzator."},{"question":"Pot folosi cafea premacinata in aceste aparate?","answer":"Majoritatea aparatelor automate de lux au un compartiment dedicat pentru cafea premacinata, in special pentru situatiile in care ramai fara boabe. Totusi, calitatea cafelei va fi inferioara celei obtinute din boabe proaspat macinate, deoarece cafeaua premacinata se oxideaza mult mai repede. E mai mult o solutie de urgenta decat o optiune de utilizare zilnica."},{"question":"Sunt aceste aparate greu de utilizat pentru un incepator?","answer":"Nu neaparat. Producatorii de aparate de lux pun mare accent pe intuitivitate. Ecranele tactile color, meniurile clare si programele automate de curatare fac utilizarea mult mai simpla decat te-ai astepta. In plus, manualele de utilizare sunt, de obicei, bine scrise. Daca esti dispus sa investesti putin timp la inceput pentru a invata functiile, vei fi rasplatit cu o cafea excelenta."}];
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
 ---
 
 <Layout
@@ -92,9 +105,9 @@ const faq = [{"question":"Merita sa cumpar un espressor automat de lux daca beau
         <div class="prose-article">
           
 <h2 id="deci-ce-face-un-espressor-automat-sa-fie-de-lux">Deci, ce face un espressor automat sa fie de 'lux'?</h2>
-<p>Am tot auzit termenul asta, 'lux', si sincer, uneori pare aruncat cu usurinta. Dar cand vine vorba de un espressor automat, diferenta e clara. Nu vorbim doar de a apasa un buton si a iesi o cafea.</p>
+<p>Am tot auzit termenul asta, 'lux', si sincer, uneori pare aruncat cu usurinta. Dar cand vine vorba de un <a href="/espressor-profesional-barista/" class="interlink">espressor</a> automat, diferenta e clara. Nu vorbim doar de a apasa un buton si a iesi o cafea.</p>
         <p>Vorbim de finisaje premium - otel inoxidabil de calitate, display-uri intuitive, materiale alese cu grija. Apoi, vine partea de functionalitate. Un aparat de lux nu doar ca face o cafea buna, ci iti permite sa personalizezi fiecare detaliu: temperatura, tarie, cantitate, chiar si textura spumei de lapte.</p>
-        <p>Am testat cateva modele in ultimul an si pot spune ca se simte diferenta. Un exemplu ar fi DeLonghi PrimaDonna Soul. L-am avut pe birou vreo doua luni si, pe langa designul elegant, mi-a placut enorm ecranul tactil color si aplicatia mobila care iti permite sa creezi si sa salvezi propriile retete.</p>
+        <p>Am testat cateva modele in ultimul an si pot spune ca se simte diferenta. Un exemplu ar fi <a href="/masina-de-cafea-delonghi/">DeLonghi</a> PrimaDonna Soul. L-am avut pe birou vreo doua luni si, pe langa designul elegant, mi-a placut enorm ecranul tactil color si aplicatia mobila care iti permite sa creezi si sa salvezi propriile retete.</p>
         <p>E genul de aparat care te face sa te simti ca un barista acasa, fara batai de cap. Pretul lui, undeva pe la 5000-5500 RON la eMAG sau Altex, reflecta aceasta experienta imbunatatita.</p>
 
 <p>Alt aspect important e fiabilitatea si sistemul de curatare. Aparatele premium au adesea programe automate de curatare mult mai complexe, care prelungesc durata de viata a aparatului si mentin calitatea cafelei. Nu vrei sa dai o caruta de bani pe un aparat care se strica dupa doi ani sau care iti face cafeaua cu gust de vechi pentru ca nu se curata bine.</p>
@@ -102,7 +115,7 @@ const faq = [{"question":"Merita sa cumpar un espressor automat de lux daca beau
 
 <p>Nu in ultimul rand, e vorba de experienta per ansamblu. Zgomotul la macinare, viteza cu care prepara bautura, usurinta de a umple rezervorul de apa sau de boabe. Totul contribuie la sentimentul de 'premium'. La aparatele mai ieftine, poti simti uneori ca faci compromisuri la capitolul asta. La cele de lux, fiecare actiune e gandita sa fie cat mai fluida si placuta.</p>
 <h2 id="ce-bauturi-poti-face-cu-un-espressor-de-top">Ce bauturi poti face cu un espressor de top?</h2>
-<p>Aici e marea diferenta fata de un aparat entry-level. Un espressor automat de lux nu se rezuma doar la espresso sau cafea lunga. Partea de lapte e unde stralucesc cu adevarat.</p>
+<p>Aici e marea diferenta fata de un aparat entry-level. Un <a href="/espressor-profesional-barista/">espressor</a> automat de lux nu se rezuma doar la espresso sau cafea lunga. Partea de lapte e unde stralucesc cu adevarat.</p>
         <p>Am testat modele care au sisteme de lapte integrate, cu recipiente detasabile care se conecteaza direct la aparat. Vorbim de cappuccino, latte macchiato, flat white, si chiar bauturi mai complexe, totul la o atingere de buton. Si nu ma refer la acea spuma de lapte apoasa pe care o obtii uneori la aparatele mai vechi.</p>
         <p>Spuma e fina, cremoasa, cu o textura perfecta, exact cum ai cere la o cafenea de specialitate. Am fost impresionat de sistemul LatteGo de la Philips, pe care l-am gasit pe modele precum seria 5400. E genial de simplu: doua piese, fara tuburi, care se curata sub jet de apa.</p>
         <p>Un Philips Seria 5400, cu tot cu sistemul LatteGo, te duce undeva pe la 4000-4500 RON la eMAG.</p>
@@ -111,9 +124,9 @@ const faq = [{"question":"Merita sa cumpar un espressor automat de lux daca beau
         <p>Unele modele au chiar si functii de pre-infuzie, care umezesc cafeaua inainte de extragere pentru a elibera mai multe arome. Am observat asta la modelele de la Sage, cum ar fi Sage Barista Touch Impress. Desi e mai mult un semi-automat, are multe functii automate si control manual fin, plus un ecran tactil.</p>
         <p>Pretul lui e mai ridicat, in jur de 7000-8000 RON, dar ofera un control incredibil asupra procesului de preparare. E pentru cei care vor sa experimenteze cu adevarat.</p>
 
-<p>Nu uita de cafeaua americana (lunga), dar si de optiuni precum apa fierbinte pentru ceai sau chiar cacao, daca aparatul are aceasta functie. Unii producatori, cum ar fi Miele, cu modelele lor de built-in, iti ofera chiar si posibilitatea de a prepara bauturi pe baza de cafea pudra, daca ramai fara boabe. Un espressor Miele CVA 7845, de exemplu, e o investitie serioasa, peste 15.000 RON, dar e varful de gama, integrat in bucatarie si cu o multitudine de optiuni.</p>
+<p>Nu uita de cafeaua americana (lunga), dar si de optiuni precum apa fierbinte pentru ceai sau chiar cacao, daca aparatul are aceasta functie. Unii producatori, cum ar fi Miele, cu modelele lor de built-in, iti ofera chiar si posibilitatea de a prepara bauturi pe baza de cafea pudra, daca ramai fara boabe. Un espressor Miele CVA 7845, de exemplu, e o investitie serioasa, peste 15.000 RON, dar e varful de gama, integrat in <a href="/robot-de-bucatarie-bosch/">bucatarie</a> si cu o multitudine de optiuni.</p>
 <h2 id="calitatea-boabelor-de-cafea-conteaza-si-macinarea">Calitatea boabelor de cafea conteaza. Si macinarea.</h2>
-<p>Poti avea cel mai scump espressor din lume, dar daca folosesti boabe de cafea vechi sau de proasta calitate, rezultatul va fi mediocru. In experienta mea, asta e primul pas. Am testat cu aceleasi boabe pe un aparat de 1000 RON si pe unul de 8000 RON.</p>
+<p>Poti avea cel mai scump <a href="/espressor-philips-series-5000/" class="interlink">espressor</a> din lume, dar daca folosesti boabe de cafea vechi sau de proasta calitate, rezultatul va fi mediocru. In experienta mea, asta e primul pas. Am testat cu aceleasi boabe pe un aparat de 1000 RON si pe unul de 8000 RON.</p>
         <p>Diferenta a fost uriasa, dar si cu cel scump, daca boabele nu erau proaspete, cafeaua nu iesea cum trebuie. Recomand sa cumperi boabe de cafea prajite recent, ideal din prajitorii locale sau de la branduri care specifica data prajirii. Cauta boabe 100% Arabica pentru o aroma mai complexa, sau un blend Arabica-Robusta daca vrei mai multa tarie si o crema mai bogata.</p>
 
 <p>La capitolul macinare, aparatele de lux au, de obicei, rasnite ceramice sau de otel de foarte buna calitate. Acestea macina uniform, fara sa supraincalzeasca boabele, ceea ce pastreaza aromele. Am observat ca poti ajusta gradul de macinare la majoritatea aparatelor premium.</p>
@@ -128,13 +141,13 @@ const faq = [{"question":"Merita sa cumpar un espressor automat de lux daca beau
         <p>Acestea sunt, de asemenea, destul de eficiente, dar necesita o curatare mai atenta a tubului. Am testat un model Siemens EQ.6 plus s700, care are un astfel de sistem. E bun, face spuma de calitate, dar curatarea tubului in sine e un pas in plus pe care nu il apreciez la fel de mult ca la sistemul Philips.</p>
         <p>Pretul lui Siemens EQ.6 plus s700 e in jur de 3500-4000 RON.</p>
 
-<p>Exista si aparate cu sisteme de lapte complet automate, integrate in unitatea de preparare, care fac spuma direct in cana. Acestea sunt cele mai complexe si, de obicei, cele mai scumpe. Un exemplu ar fi aparatele profesionale sau cele de tip 'superautomat' de la branduri precum Schaerer sau WMF.</p>
+<p>Exista si aparate cu sisteme de lapte complet automate, integrate in unitatea de preparare, care fac spuma direct in cana. Acestea sunt cele mai complexe si, de obicei, cele mai scumpe. Un exemplu ar fi aparatele <a href="/manusi-sala-profesionale/" class="interlink">profesionale</a> sau cele de tip 'superautomat' de la branduri precum Schaerer sau WMF.</p>
         <p>Acestea depasesc cu mult segmentul de 'lux pentru acasa' si ajung la preturi de mii, chiar zeci de mii de euro. Pentru acasa, optiunile cu recipient detasabil sau tub de aspiratie sunt cele mai comune si practice.</p>
 
 <p>Indiferent de sistem, cel mai important e sa il cureti regulat. Laptele sticla rapid si poate duce la dezvoltarea bacteriilor, afectand gustul cafelei si igiena aparatului. Daca aparatul tau are program automat de clatire a sistemului de lapte, foloseste-l de fiecare data cand termini de preparat o bautura cu lapte.</p>
         <p>Daca nu, ia-ti 2 minute sa clatesti manual piesele. E o chestiune de igiena si de calitate a cafelei pe termen lung. Am observat ca aparatele cu recipiente de lapte din sticla, detasabile, sunt cele mai usor de curatat si de depozitat in frigider, pastrand laptele proaspat.</p>
 <h2 id="intretinerea-cheia-longevitatatii-unui-espressor-premium">Intretinerea: cheia longevitatatii unui espressor premium</h2>
-<p>Asta e partea pe care multi o sar. Si e o greseala majora. Un espressor automat de lux, la fel ca orice masina complexa, necesita intretinere periodica pentru a functiona optim.</p>
+<p>Asta e partea pe care multi o sar. Si e o greseala majora. Un <a href="/espressor-jura-e8/" class="interlink">espressor</a> automat de lux, la fel ca orice masina complexa, necesita intretinere periodica pentru a functiona optim.</p>
         <p>In primul rand, decalcifierea. Apa de la robinet, chiar si filtrata, contine minerale care se depun pe elementele de incalzire si pe tevile aparatului. Daca nu faci decalcifiere regulat, performanta scade, consumul de energie creste, si in cel mai rau caz, aparatul se poate defecta.</p>
         <p>Foloseste solutii de decalcifiere dedicate, fie de la producatorul aparatului tau, fie universale de buna calitate. Pretul unei solutii bune e undeva intre 30-50 RON si iti ajunge pentru cateva utilizari.</p>
 
@@ -216,6 +229,12 @@ const faq = [{"question":"Merita sa cumpar un espressor automat de lux daca beau
         </div>
 
         <SimilarArticles currentSlug="espressor-automat-de-lux" categorySlug="electrocasnice-premium" />
+
+    <PrevNextNav
+      currentSlug="espressor-automat-de-lux"
+      currentCategory="electrocasnice-premium"
+      articles={allArticles}
+    />
       </article>
     </div>
   </main>

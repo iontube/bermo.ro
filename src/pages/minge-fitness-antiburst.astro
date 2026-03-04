@@ -4,6 +4,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SimilarArticles from '../components/SimilarArticles.astro';
 import CookieBanner from '../components/CookieBanner.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import keywordsData from '../../keywords.json';
 
 export const frontmatter = {
   title: "Minge fitness antiburst",
@@ -18,6 +20,17 @@ export const frontmatter = {
 };
 
 const faq = [{"question":"cat costa o minge fitness antiburst","answer":"Preturile pentru o minge fitness antiburst variaza intre 80 lei pentru modelele de baza si pana la 300 lei pentru cele profesionale. Modelele de la branduri cunoscute precum Gymstick sau Reebok se invart in jur de 150-220 lei, oferind un echilibru bun intre calitate si pret."},{"question":"care e diferenta intre minge fitness normala si antiburst","answer":"O minge fitness antiburst este conceputa sa se dezumfle lent, controlat, in caz de perforare, printr-un fel de 'fâs'. O minge normala, fara tehnologie antiburst, poate pocni brusc, cauzand accidente. Tehnologia antiburst adauga un strat de siguranta esential."},{"question":"cat de rezistenta este o minge fitness antiburst","answer":"Rezistenta unei mingi fitness antiburst este specificata prin greutatea maxima suportata, care variaza de obicei intre 150 kg si peste 300 kg. Modelele de calitate de la branduri de top pot suporta peste 200 kg, fiind potrivite pentru uz intens si utilizatori mai grei."},{"question":"ce marime de minge fitness sa aleg","answer":"Marimea corecta a mingii depinde de inaltimea ta: sub 1.60m - 55cm, 1.60m-1.75m - 65cm, peste 1.75m - 75cm. Cand stai pe minge, genunchii ar trebui sa fie la un unghi de 90 de grade."},{"question":"merita sa cumpar o minge fitness antiburst ieftina","answer":"O minge fitness antiburst foarte ieftina (sub 100 lei) poate fi o optiune pentru utilizare ocazionala, dar nu garanteaza aceeasi durabilitate si siguranta ca modelele de la branduri consacrate. Riscul de deteriorare rapida sau de performanta scazuta e mai mare."},{"question":"cum sa umfli corect o minge fitness","answer":"Foloseste pompa inclusa sau una compatibila. Umfla mingea pana cand se simte ferma, dar nu excesiv de tare. Verifica presiunea testand pozitia corpului tau: cand stai pe minge, genunchii ar trebui sa fie la 90 de grade. O umflare incorecta poate afecta stabilitatea si durabilitatea."},{"question":"unde gasesc minge fitness antiburst de calitate","answer":"Poti gasi mingi fitness antiburst de calitate in magazinele sportive mari, precum Decathlon, sau in magazine online specializate in echipament fitness. Branduri precum Gymstick, TheraBand, Reebok sau Trigger Point sunt optiuni sigure si le gasesti pe site-urile lor sau pe platforme de e-commerce."},{"question":"ce probleme pot aparea la o minge fitness antiburst","answer":"Principalele probleme pot fi dezumflarea lenta in timp (necesitând umflare periodica), deformarea daca greutatea maxima e depasita, sau uzura materialului daca e expusa la soare sau obiecte ascutite. Alegerea unui brand de calitate si respectarea instructiunilor de utilizare minimizeaza aceste riscuri."}];
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
 ---
 
 <Layout
@@ -92,14 +105,14 @@ const faq = [{"question":"cat costa o minge fitness antiburst","answer":"Preturi
         <div class="prose-article">
           
 <h2 id="ce-minge-fitness-antiburst-sa-alegi-ca-sa-nu-ai-surprize">Ce minge fitness antiburst sa alegi ca sa nu ai surprize</h2>
-<p>Hai sa fim directi: cand cauti o <strong>minge fitness antiburst</strong>, vrei sa stii ca e sigura. Nimeni nu vrea ca mingea aia sa pocneasca fix cand faci o flotare mai serioasa sau cand stai pe ea la birou. Am vazut destule povesti de groaza pe forumuri, asa ca stiu la ce sa te uiti. Practic, 'antiburst' nu inseamna ca e indestructibila, ci ca, daca se dezumfla, o face lent, controlat, ca un fel de "fâs" si nu un "POC".</p>
+<p>Hai sa fim directi: cand cauti o <strong>minge <a href="/stepper-fitness-hidraulic/" class="interlink">fitness</a> antiburst</strong>, vrei sa stii ca e sigura. Nimeni nu vrea ca mingea aia sa pocneasca fix cand faci o flotare mai serioasa sau cand stai pe ea la birou. Am vazut destule povesti de groaza pe forumuri, asa ca stiu la ce sa te uiti. Practic, 'antiburst' nu inseamna ca e indestructibila, ci ca, daca se dezumfla, o face lent, controlat, ca un fel de "fâs" si nu un "POC".</p>
         <p>Daca ma intrebi pe mine, branduri precum Gymstick, TheraBand, sau chiar unele modele de la Reebok sau Adidas, au dovezi ca isi tin promisiunea. Nu zic ca astea sunt singurele bune, dar sunt cele mai sigure pariuri. Am avut o minge de la un brand mai obscur, luata la oferta, si dupa vreo 6 luni a inceput sa se deformeze ciudat. Nu a pocnit, dar nu mai era stabila si nu prea mai aveam incredere in ea.</p>
         <p>Cand alegi, te uiti la diametru in primul rand. E simplu: daca ai sub 1.60m, cam 55cm e bun. Intre 1.60m si 1.75m, mergi pe 65cm. Daca esti mai inalt de 1.75m, 75cm e ideal. E important sa stai cu genunchii la 90 de grade, nici mai sus, nici mai jos. Daca stai prea jos, mingea e prea mica. Daca stai prea sus, e prea mare.</p>
         <p>Un alt lucru esential e greutatea maxima suportata. La majoritatea modelelor decente, scrie undeva pe ambalaj sau pe produs. Cauta minim 150kg, ideal 200-300kg pentru a fi sigur ca rezista. Asta iti da si tie o idee despre cat de solida e constructia.</p>
         <p>Materialul e si el important. De obicei sunt din PVC, dar calitatea variaza. Cele mai bune se simt mai dense, mai 'pline', nu ca un balon subtire. Unele au si o textura usor abraziva, care te ajuta sa nu aluneci. Si nu uita, o pompa de calitate e un bonus, ca sa nu te chinui sa umfli mingea.</p>
 <h2 id="top-4-mingi-de-fitness-antiburst-pe-care-le-am-testat-si-ce-nu-mi-place-la-ele">Top 4 mingi de fitness antiburst pe care le-am testat (si ce nu-mi place la ele)</h2>
 <p>Am pus mana pe cateva modele populare si le-am bagat la treaba. Nu doar pentru exercitii, ci si ca scaun la birou, ca sa vad cum se comporta in timp.</p>
-        <ul><li><strong>Gymstick Original Fitness Ball (65cm)</strong>: Asta e un clasic. O am de vreo 3 ani si inca arata si se comporta impecabil. E din PVC gros, se simte solida. Greutatea maxima e 200kg, mai mult decat suficient pentru majoritatea. Umflata corect, e stabila si placuta la atingere. <strong>Minusuri:</strong> Pompa inclusa e cam basic, am folosit-o pe a mea. Si pretul, cam 200 lei, nu e cel mai mic, dar stii ce cumperi.</li><li><strong>TheraBand Pro Series SCP Stability Ball (75cm)</strong>: TheraBand e renumit pentru echipament de recuperare, deci calitatea e garantata. Modelul asta e de top, cu o rezistenta de peste 300kg. Materialul e excelent, nu aluneca, se curata usor. E perfecta daca faci exercitii mai intense sau daca ai nevoie de extra siguranta. <strong>Minusuri:</strong> E mai scumpa, sare de 250 lei. Iar daca nu ai nevoie de rezistenta aia uriasa, poate e overkill.</li><li><strong>Reebok Fitness Ball (55cm)</strong>: Am testat varianta asta pentru prietena mea, care e mai scunda. E o optiune buna, mai accesibila ca pret, undeva pe la 150 lei. Materialul e ok, se simte decent, nu de top, dar bun pentru uz casnic. Suporta 150kg, ceea ce e standard. <strong>Minusuri:</strong> Textura pare un pic mai lucioasa, am senzatia ca ar putea aluneca mai usor daca te transpira mainile. Si pompa e la fel, meh.</li><li><strong>Generic 'Anti-Burst' Ball (65cm)</strong>: Asta am luat-o dintr-un supermarket online, la vreo 80 lei. Arata bine la prima vedere, are si ea specificatia 'antiburst'. Si da, nu a pocnit. Dar se simte mult mai subtire, mai 'goala'. Dupa o luna de folosire moderata, a inceput sa se lase putin, a trebuit sa o mai umflu o data pe saptamana. <strong>Minusuri:</strong> Clar nu e la nivelul celor de firma. Si chiar daca scrie 'antiburst', parca nu am aceeasi incredere ca la cele de la Gymstick sau TheraBand. Te poti juca cu ea, dar pentru exercitii serioase sau ca scaun la birou, nu o recomand pe termen lung.</li></ul>
+        <ul><li><strong>Gymstick <a href="/trx-suspension-original/" class="interlink">Original</a> Fitness Ball (65cm)</strong>: Asta e un clasic. O am de vreo 3 ani si inca arata si se comporta impecabil. E din PVC gros, se simte solida. Greutatea maxima e 200kg, mai mult decat suficient pentru majoritatea. Umflata corect, e stabila si placuta la atingere. <strong>Minusuri:</strong> Pompa inclusa e cam basic, am folosit-o pe a mea. Si pretul, cam 200 lei, nu e cel mai mic, dar stii ce cumperi.</li><li><strong>TheraBand Pro Series SCP Stability Ball (75cm)</strong>: TheraBand e renumit pentru echipament de recuperare, deci calitatea e garantata. Modelul asta e de top, cu o rezistenta de peste 300kg. Materialul e excelent, nu aluneca, se curata usor. E perfecta daca faci exercitii mai intense sau daca ai nevoie de extra siguranta. <strong>Minusuri:</strong> E mai scumpa, sare de 250 lei. Iar daca nu ai nevoie de rezistenta aia uriasa, poate e overkill.</li><li><strong>Reebok Fitness Ball (55cm)</strong>: Am testat varianta asta pentru prietena mea, care e mai scunda. E o optiune buna, mai accesibila ca pret, undeva pe la 150 lei. Materialul e ok, se simte decent, nu de top, dar bun pentru uz casnic. Suporta 150kg, ceea ce e standard. <strong>Minusuri:</strong> Textura pare un pic mai lucioasa, am senzatia ca ar putea aluneca mai usor daca te transpira mainile. Si pompa e la fel, meh.</li><li><strong>Generic 'Anti-Burst' Ball (65cm)</strong>: Asta am luat-o dintr-un supermarket online, la vreo 80 lei. Arata bine la prima vedere, are si ea specificatia 'antiburst'. Si da, nu a pocnit. Dar se simte mult mai subtire, mai 'goala'. Dupa o luna de folosire moderata, a inceput sa se lase putin, a trebuit sa o mai umflu o data pe saptamana. <strong>Minusuri:</strong> Clar nu e la nivelul celor de firma. Si chiar daca scrie 'antiburst', parca nu am aceeasi incredere ca la cele de la Gymstick sau TheraBand. Te poti juca cu ea, dar pentru exercitii serioase sau ca scaun la birou, nu o recomand pe termen lung.</li></ul>
         <p>Deci, daca vrei ceva sigur si durabil, mergi pe branduri consacrate. Daca vrei sa economisesti, fa-o cu grija si accepta ca s-ar putea sa nu tina la fel de mult.</p>
 <h2 id="cum-sa-alegi-mingea-de-fitness-antiburst-potrivita-pentru-tine-ghid-rapid">Cum sa alegi mingea de fitness antiburst potrivita pentru tine: ghid rapid</h2>
 <p>Bun, vrei o <strong>minge fitness antiburst</strong>, dar nu stii exact ce sa cauti. Hai sa-ti zic pe scurt ce conteaza:</p>
@@ -110,7 +123,7 @@ const faq = [{"question":"cat costa o minge fitness antiburst","answer":"Preturi
 <strong>Gymstick Original Fitness Ball</strong>:</p>
         <ul><li><strong>Avantaje</strong>: Pret decent pentru calitate (cam 200 lei pentru 65cm), material solid, rezista bine in timp, vine in multe dimensiuni. E o alegere sigura pentru acasa, pentru birou, pentru exercitii variate. Textura e placuta, nu aluneca.</li><li><strong>Dezavantaje</strong>: Pompa inclusa e cam slabuta. Rezistenta maxima e 200kg, ceea ce e mult, dar TheraBand ofera si mai mult.</li></ul>
         <p><strong>TheraBand Pro Series SCP Stability Ball</strong>:</p>
-        <ul><li><strong>Avantaje</strong>: Rezistenta uriasa, peste 300kg. Material premium, foarte placut la atingere, anti-alunecare garantata. Ideala pentru uz profesional, terapie fizica sau pentru cei care au nevoie de siguranta maxima. Durabilitate excelenta.</li><li><strong>Dezavantaje</strong>: Pretul e mai mare (peste 250 lei). Poate fi overkill daca nu ai nevoie de rezistenta aia uriasa. Unele modele pot fi un pic mai rigide initial.</li></ul>
+        <ul><li><strong>Avantaje</strong>: Rezistenta uriasa, peste 300kg. Material premium, foarte placut la atingere, anti-alunecare garantata. Ideala pentru uz <a href="/kettlebell-set-profesional/" class="interlink">profesional</a>, terapie fizica sau pentru cei care au nevoie de siguranta maxima. Durabilitate excelenta.</li><li><strong>Dezavantaje</strong>: Pretul e mai mare (peste 250 lei). Poate fi overkill daca nu ai nevoie de rezistenta aia uriasa. Unele modele pot fi un pic mai rigide initial.</li></ul>
         <p><strong>Cum alegi intre ele?</strong>
 Daca ai un buget mai restrans si vrei o <strong>minge fitness antiburst</strong> buna pentru uz casnic, Gymstick e alegerea perfecta. O sa te tina ani de zile si nu te lasa la greu. E genul de produs "buy it for life" pentru majoritatea oamenilor.</p>
         <p>Daca esti kinetoterapeut, antrenor, sau pur si simplu vrei ce e mai bun, fara compromisuri, si nu te deranjeaza sa dai un pic mai mult, TheraBand e calea de urmat. E ca si cum ai lua un Mercedes fata de un BMW, ambele sunt excelente, dar unul are un pic de finisaj in plus si o garantie pe viata, cum ar veni. Ambele sunt <strong>mingi fitness antiburst</strong> de incredere.</p>
@@ -118,7 +131,7 @@ Daca ai un buget mai restrans si vrei o <strong>minge fitness antiburst</strong>
 <h2 id="ce-greseli-sa-eviti-cand-cumperi-o-minge-fitness-antiburst">Ce greseli sa eviti cand cumperi o minge fitness antiburst</h2>
 <p>Na, ca am ajuns si la partea cu ce sa NU faci. Am vazut destui prieteni care au dat cu banul pe fereastra din cauza unor prostii.</p>
         <p><strong>1. Sa te iei dupa denumirea 'antiburst' si sa crezi ca e indestructibila.</strong></p>
-        <p>Asta am zis si mai sus, dar merita repetat. 'Antiburst' inseamna ca se dezumfla controlat. Nu inseamna ca rezista la cutite sau la greutati de 500kg daca ea suporta 150kg. Nu o folosi pentru lucruri pentru care nu e facuta. Nu o lasa in soare puternic, ca se poate deteriora materialul in timp.</p>
+        <p>Asta am zis si mai sus, dar merita repetat. 'Antiburst' inseamna ca se dezumfla controlat. Nu inseamna ca rezista la cutite sau la <a href="/greutati-glezne-reglabile/" class="interlink">greutati</a> de 500kg daca ea suporta 150kg. Nu o folosi pentru lucruri pentru care nu e facuta. Nu o lasa in soare puternic, ca se poate deteriora materialul in timp.</p>
         <p><strong>2. Sa nu verifici dimensiunea corecta pentru inaltimea ta.</strong></p>
         <p>Asta e cea mai frecventa greseala. Daca mingea e prea mica, stai cocoțat, nu e confortabil si nu lucrezi corect. Daca e prea mare, stai prea jos, iar e nasol. Uita-te la ghidul de dimensiuni, nu te lua dupa cum arata mingea in poze. O minge de 65cm poate arata mare pe un copil, dar e perfecta pentru un adult de 1.70m.</p>
         <p><strong>3. Sa te zgaraiești la pret si sa iei cea mai ieftina de pe piata.</strong></p>
@@ -136,7 +149,7 @@ Daca ai un buget mai restrans si vrei o <strong>minge fitness antiburst</strong>
         <p><strong>Buget mediu (120 - 220 lei)</strong></p>
         <p>Aici intri in teritoriul bun. Gasesti modele de la Gymstick, Reebok, uneori chiar si TheraBand la oferta. Greutatea maxima suportata e 200kg, materialul e mult mai solid, se simte ca e de calitate. Asta e, zic eu, cea mai buna zona pentru majoritatea oamenilor. O <strong>minge fitness antiburst</strong> din zona asta e perfecta pentru uz casnic, pentru stat la birou, pentru exercitii moderate spre intense. O sa te tina ani buni daca ai grija de ea. Eu aici as investi.</p>
         <p><strong>Buget mare (peste 220 lei)</strong></p>
-        <p>In categoria asta, vorbim de TheraBand Pro Series, sau alte modele profesionale. Greutatea maxima depaseste 250-300kg. Materialul e de cea mai buna calitate, finisaje impecabile, rezistenta maxima. Sunt facute sa reziste la uz intensiv, in sali de fitness, clinici de recuperare. Daca esti antrenor personal, ai o clinica, sau pur si simplu vrei ce e mai bun si nu te deranjeaza pretul, atunci merita. Pentru acasa, s-ar putea sa fie overkill, dar na, daca iti permiti, de ce nu?</p>
+        <p>In categoria asta, vorbim de TheraBand Pro Series, sau alte modele <a href="/espressor-profesional-barista/">profesional</a>e. Greutatea maxima depaseste 250-300kg. Materialul e de cea mai buna calitate, finisaje impecabile, rezistenta maxima. Sunt facute sa reziste la uz intensiv, in sali de <a href="/stepper-fitness-hidraulic/">fitness</a>, clinici de recuperare. Daca esti antrenor personal, ai o clinica, sau pur si simplu vrei ce e mai bun si nu te deranjeaza pretul, atunci merita. Pentru acasa, s-ar putea sa fie overkill, dar na, daca iti permiti, de ce nu?</p>
         <p>Deci, analizeaza-ti nevoile si bugetul. Nu cumpara cea mai ieftina doar ca e ieftina. Si nici cea mai scumpa daca nu ai nevoie de toate functiile alea de top. Zona de mijloc e aurita.</p>
         </div>
 
@@ -186,7 +199,7 @@ Daca ai un buget mai restrans si vrei o <strong>minge fitness antiburst</strong>
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
           </svg>
         </div>
-        <div class="faq-answer">O minge fitness antiburst foarte ieftina (sub 100 lei) poate fi o optiune pentru utilizare ocazionala, dar nu garanteaza aceeasi durabilitate si siguranta ca modelele de la branduri consacrate. Riscul de deteriorare rapida sau de performanta scazuta e mai mare.</div>
+        <div class="faq-answer">O minge fitness antiburst foarte ieftina (sub 100 lei) poate fi o optiune pentru utilizare ocazionala, dar nu garanteaza aceeasi durabilitate si siguranta ca modelele de la branduri consacrate. Riscul de deteriorare rapida sau de <a href="/laptop-gaming-performant/">performant</a>a scazuta e mai mare.</div>
       </div>
       <div class="faq-item">
         <div class="faq-question">
@@ -227,6 +240,12 @@ Daca ai un buget mai restrans si vrei o <strong>minge fitness antiburst</strong>
         </div>
 
         <SimilarArticles currentSlug="minge-fitness-antiburst" categorySlug="fitness-sport" />
+
+    <PrevNextNav
+      currentSlug="minge-fitness-antiburst"
+      currentCategory="fitness-sport"
+      articles={allArticles}
+    />
       </article>
     </div>
   </main>

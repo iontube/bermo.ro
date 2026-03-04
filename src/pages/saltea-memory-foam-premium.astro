@@ -4,6 +4,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SimilarArticles from '../components/SimilarArticles.astro';
 import CookieBanner from '../components/CookieBanner.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import keywordsData from '../../keywords.json';
 
 export const frontmatter = {
   title: "Saltea memory foam premium",
@@ -18,6 +20,17 @@ export const frontmatter = {
 };
 
 const faq = [{"question":"Cat timp dureaza pana o saltea memory foam isi revine complet la forma?","answer":"De obicei, 24-48 de ore. Lasa-o sa se desfaca si sa respire in acest timp, fara a o folosi."},{"question":"Pot folosi o saltea memory foam pe un pat cu somiera flexibila?","answer":"Da, dar verifica ca spatiul dintre lamele sa nu fie mai mare de 5-7 cm pentru a asigura un suport corect si a preveni deformarea."},{"question":"Cum curat o saltea memory foam?","answer":"Majoritatea huselor sunt detasabile si lavabile. Pentru petele de pe saltea, foloseste o carpa umeda cu putin detergent neutru si lasa sa se usuce complet la aer."},{"question":"Am alergii, e memory foam-ul potrivit?","answer":"Da, multe saltele memory foam au huse hipoalergenice si sunt rezistente la acarieni. Verifica specificatiile produsului."},{"question":"Ce diferenta e intre memory foam si spuma poliuretanica?","answer":"Memory foam-ul este un tip de spuma poliuretanica cu o densitate mai mare, care reactioneaza la caldura corpului si se muleaza pe forma acestuia. Spuma poliuretanica standard ofera sustinere, dar nu are aceeasi capacitate de adaptare."}];
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
 ---
 
 <Layout
@@ -92,8 +105,8 @@ const faq = [{"question":"Cat timp dureaza pana o saltea memory foam isi revine 
         <div class="prose-article">
           
 <h2 id="de-ce-o-saltea-memory-foam-premium-chiar-face-diferenta">De ce o saltea memory foam premium chiar face diferenta</h2>
-<p>Dupa 15 ani de testat tot felul de produse pentru casa, de la blendere la aspiratoare robot, ajung la saltele. Si pot sa spun cu mana pe inima, o saltea de calitate, mai ales una din memory foam premium, nu e un lux, e o necesitate. Am trecut prin faze de saltele ieftine, cu arcuri care te intepau dupa cateva luni, la cele cu spuma ieftina care te lasau cu dureri de spate.</p>
-        <p>In momentul in care am facut trecerea la o saltea memory foam de top, am simtit diferenta instant. Corpul meu, care anii de zile a suferit, pur si simplu s-a relaxat. Nu mai aveam nevoie sa ma intorc de 10 ori pe noapte.</p>
+<p>Dupa 15 ani de testat tot felul de produse pentru casa, de la blendere la aspiratoare robot, ajung la saltele. Si pot sa spun cu mana pe inima, o saltea de calitate, mai ales una din memory foam <a href="/masina-de-paine-premium/" class="interlink">premium</a>, nu e un lux, e o necesitate. Am trecut prin faze de saltele ieftine, cu arcuri care te intepau dupa cateva luni, la cele cu spuma ieftina care te lasau cu dureri de spate.</p>
+        <p>In momentul in care am facut trecerea la o saltea memory foam de top, am simtit diferenta <a href="/multicooker-instant-pot/" class="interlink">instant</a>. Corpul meu, care anii de zile a suferit, pur si simplu s-a relaxat. Nu mai aveam nevoie sa ma intorc de 10 ori pe noapte.</p>
         <p>Pur si simplu pluteam. Si asta nu e doar o senzatie, e despre cum corpul tau e sustinut corect. Un memory foam de calitate se muleaza pe forma corpului, distribuind presiunea uniform.</p>
         <p>Asta inseamna ca punctele de presiune, cum ar fi umerii si soldurile, nu mai sunt suprasolicitate. Am observat ca si calitatea somnului a crescut exponential. Ma trezesc mai odihnit, cu mai multa energie.</p>
         <p>Nu mai am acele dureri matinale care ma faceau sa ma tarasc din pat. Pentru mine, asta inseamna ca am facut o investitie buna in sanatatea si starea mea de bine. Si nu, nu vorbim de modele gen "gasesti la orice colt" ci de cele care chiar folosesc spuma de calitate, cu densitate potrivita si cu tehnologii de racire, pentru ca da, memory foam-ul clasic poate fi cam calduros.</p>
@@ -102,13 +115,13 @@ const faq = [{"question":"Cat timp dureaza pana o saltea memory foam isi revine 
 <h2 id="ce-cauti-la-o-saltea-memory-foam-premium-densitate-si-stratificare">Ce cauti la o saltea memory foam premium: densitate si stratificare</h2>
 <p>Primul lucru pe care am invatat sa-l urmaresc la o saltea memory foam de calitate e densitatea spumei. Nu va lasati pacaliti de grosime. O saltea de 10 cm cu memory foam de densitate mare poate fi mult mai buna decat una de 20 cm cu spuma de densitate mica, moale si care te lasa sa "plonjezi" pana la baza.</p>
         <p>Pentru un adult, ideal ar fi o densitate de minim 50-60 kg/m³. Asta inseamna ca spuma e mai rezistenta, ofera un suport mai bun si nu se va deforma repede. Am testat cateva modele mai ieftine, sub 50 kg/m³, si am observat ca dupa cateva luni incepeau sa aiba mici depresiuni acolo unde dormim noi cel mai des.</p>
-        <p>Nu era un dezastru, dar senzatia nu mai era aceeasi. Stratificarea e la fel de importanta. O saltea premium nu are doar un strat de memory foam.</p>
-        <p>De obicei, are un strat superior de memory foam (cel care preia forma corpului), un strat intermediar (pentru a oferi un plus de confort si a distribui greutatea) si un strat de baza (din spuma poliuretanica de inalta densitate, pentru sustinere). Unele modele premium au si straturi suplimentare, cum ar fi gel infuzat in memory foam pentru a reduce retentia de caldura, sau spuma cu celule deschise pentru o mai buna respirabilitate.</p>
+        <p>Nu era un dezastru, dar senzatia nu mai era aceeasi. Stratificarea e la fel de importanta. O saltea <a href="/masina-de-paine-premium/">premium</a> nu are doar un strat de memory foam.</p>
+        <p>De obicei, are un strat superior de memory foam (cel care preia forma corpului), un strat intermediar (pentru a oferi un plus de confort si a distribui greutatea) si un strat de baza (din spuma poliuretanica de inalta densitate, pentru sustinere). Unele modele premium au si straturi suplimentare, cum ar fi gel infuzat in memory foam pentru a reduce retentia de <a href="/uscator-rufe-pompa-caldura/" class="interlink">caldura</a>, sau spuma cu celule deschise pentru o mai buna respirabilitate.</p>
         <p>Am testat saltele cu gel si am observat ca fac o diferenta, mai ales vara. Nu mai transpiri la fel de tare. La capitolul husa, cautati una detasabila si lavabila.</p>
         <p>E un avantaj urias pentru igiena. Materialele husei sunt si ele importante, bumbacul sau fibrele de bambus sunt mai placute pe piele decat poliesterul simplu. Cautati si certificari, cum ar fi CertiPUR-US, care atesta ca spuma e produusa fara substante nocive.</p>
         <p>E un plus de siguranta.</p>
 <h2 id="modele-concrete-si-preturi-pe-piata-din-romania-oferte-recente">Modele concrete si preturi pe piata din Romania (oferte recente)</h2>
-<p>Am rasfoit ofertele pe eMag, Altex si PCGarage, pentru ca acolo gasesti cele mai multe optiuni si, de obicei, preturi competitive. Pentru o saltea memory foam premium, vorbim de preturi care incep de la aproximativ 1500-2000 RON pentru un model de 160x200 cm, si pot urca spre 3000-4000 RON sau chiar mai mult, in functie de brand, tehnologii si grosime. Spre exemplu, am testat recent salteaua <strong>Dormeo Aloe Vera Plus</strong> (aproximativ 1800 RON pentru 160x200).</p>
+<p>Am rasfoit ofertele pe eMag, Altex si PCGarage, pentru ca acolo gasesti cele mai multe optiuni si, de obicei, preturi competitive. Pentru o saltea memory foam <a href="/aspirator-robot-premium/" class="interlink">premium</a>, vorbim de preturi care incep de la aproximativ 1500-2000 RON pentru un model de 160x200 cm, si pot urca spre 3000-4000 RON sau chiar mai mult, in functie de brand, tehnologii si grosime. Spre exemplu, am testat recent salteaua <strong>Dormeo Aloe Vera Plus</strong> (aproximativ 1800 RON pentru 160x200).</p>
         <p>E o optiune buna, cu strat de memory foam si spuma ecocell, plus husa cu extract de aloe vera. A fost confortabila, dar parca mi-a lipsit un pic de fermitate pe termen lung. Am mai avut in teste si <strong>Salteaua Super Comfort Plus</strong> de la SomProduct (in jur de 2200 RON pentru 160x200).</p>
         <p>Asta a fost mai aproape de ce caut eu: un echilibru bun intre moliciune si sustinere, cu straturi bine definite si o senzatie placuta la atingere. Husa era detasabila si lavabila, un mare plus. Pentru cine cauta ceva mai high-end, am auzit pareri bune despre branduri precum <strong>Emma</strong> sau <strong>Tempur</strong>.</p>
         <p>Un model Emma Dynamic 25 (aproximativ 2800 RON pentru 160x200) a fost o experienta interesanta, cu o senzatie de "plutire" si o buna adaptare la corp. Tempur e probabil varful de gama, dar si preturile sunt pe masura, un model de baza depasind 4000 RON pentru aceeasi dimensiune. Important e sa verificati specificatiile: densitatea spumei, numarul de straturi, tehnologiile de racire si materialul husei.</p>
@@ -132,7 +145,7 @@ const faq = [{"question":"Cat timp dureaza pana o saltea memory foam isi revine 
 <h2 id="mituri-si-adevaruri-despre-saltelele-memory-foam">Mituri si adevaruri despre saltelele memory foam</h2>
 <p>Am auzit multe povesti despre saltelele memory foam, unele adevarate, altele complet false. Hai sa demontam cateva dintre cele mai comune mituri. <strong>Mitul 1: Saltelele memory foam sunt prea moi si te inghit.</strong> Asta e valabil doar pentru modelele de proasta calitate. O saltea memory foam premium, cu densitate si structura corecta, ofera un echilibru perfect intre moliciune si sustinere.</p>
         <p>Se muleaza pe corp, dar nu te lasa sa afunzi. Am testat modele care erau ferme, dar tot cu senzatia aia placuta de imbratisare. <strong>Mitul 2: Saltelele memory foam sunt prea calduroase.</strong> Asta era o problema la primele generatii. Acum, majoritatea saltelelor premium au tehnologii de racire: spuma cu celule deschise, infuzii de gel, huse speciale cu materiale respirabile.</p>
-        <p>Am testat cateva modele cu gel si am observat ca fac o diferenta notabila, mai ales in noptile toride de vara. Nu mai simti ca esti intr-o cuptor. <strong>Mitul 3: Saltelele memory foam sunt greu de mutat.</strong> Da, sunt mai grele decat saltelele cu arcuri subtiri, dar nu sunt imposibil de manevrat. Multe modele vin comprimabile si rulate, ceea ce le face mai usor de transportat pana in dormitor.</p>
+        <p>Am testat cateva modele cu gel si am observat ca fac o diferenta notabila, mai ales in noptile toride de vara. Nu mai simti ca esti intr-o cuptor. <strong>Mitul 3: Saltelele memory foam sunt greu de mutat.</strong> Da, sunt mai grele decat saltelele cu arcuri subtiri, dar nu sunt imposibil de manevrat. Multe modele vin comprimabile si rulate, ceea ce le face mai usor de transportat pana in <a href="/comoda-dormitor-stejar/">dormitor</a>.</p>
         <p>Dupa ce si-au revenit, daca ai nevoie sa le muti, e bine sa fii in doi. Dar nu e ca si cum ai muta un frigider. <strong>Mitul 4: Saltelele memory foam isi pierd forma repede.</strong> Din nou, asta se intampla la cele ieftine. O saltea memory foam premium, cu densitate mare, e proiectata sa reziste ani buni.</p>
         <p>Producatorii ofera garantii de 10 ani, uneori chiar mai mult, tocmai pentru a atesta durabilitatea lor. Am experimentat cu modele de la branduri cunoscute si, dupa 2-3 ani de utilizare intensa, inca arata si se simt ca noi. Deci, alege cu grija si informeaza-te bine.</p>
         </div>
@@ -197,6 +210,12 @@ const faq = [{"question":"Cat timp dureaza pana o saltea memory foam isi revine 
         </div>
 
         <SimilarArticles currentSlug="saltea-memory-foam-premium" categorySlug="mobilier-dormitor" />
+
+    <PrevNextNav
+      currentSlug="saltea-memory-foam-premium"
+      currentCategory="mobilier-dormitor"
+      articles={allArticles}
+    />
       </article>
     </div>
   </main>
