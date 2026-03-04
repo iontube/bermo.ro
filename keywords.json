@@ -246,11 +246,6 @@
       "categorySlug": "mobilier-dormitor"
     },
     {
-      "keyword": "trx suspension original",
-      "category": "Fitness si Sport",
-      "categorySlug": "fitness-sport"
-    },
-    {
       "keyword": "kettlebell set profesional",
       "category": "Fitness si Sport",
       "categorySlug": "fitness-sport"
@@ -549,6 +544,11 @@
       "keyword": "comoda dormitor stejar",
       "category": "Mobilier si Dormitor",
       "categorySlug": "mobilier-dormitor"
+    },
+    {
+      "keyword": "trx suspension original",
+      "category": "Fitness si Sport",
+      "categorySlug": "fitness-sport"
     }
   ],
   "authors": [
