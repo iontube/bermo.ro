@@ -1,11 +1,6 @@
 {
   "pending": [
     {
-      "keyword": "blender profesional vitamix",
-      "category": "Electrocasnice Premium",
-      "categorySlug": "electrocasnice-premium"
-    },
-    {
       "keyword": "storcator fructe slow juicer",
       "category": "Electrocasnice Premium",
       "categorySlug": "electrocasnice-premium"
@@ -549,6 +544,11 @@
       "keyword": "trx suspension original",
       "category": "Fitness si Sport",
       "categorySlug": "fitness-sport"
+    },
+    {
+      "keyword": "blender profesional vitamix",
+      "category": "Electrocasnice Premium",
+      "categorySlug": "electrocasnice-premium"
     }
   ],
   "authors": [
