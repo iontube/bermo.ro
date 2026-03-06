@@ -165,6 +165,15 @@ function stripStrong(str) {
   return str.replace(/<\/?strong>/g, '');
 }
 
+function stripFakeLinks(html, pagesDir) {
+  return html.replace(/<a\s+href="\/([^"#][^"]*)"[^>]*>([\s\S]*?)<\/a>/gi, (match, linkPath, text) => {
+    const slug = linkPath.replace(/\/$/, '');
+    if (fs.existsSync(path.join(pagesDir, `${slug}.astro`))) return match;
+    if (fs.existsSync(path.join(pagesDir, slug))) return match;
+    return text;
+  });
+}
+
 async function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -910,6 +919,7 @@ ${tocHtml}
 </Layout>`;
 
   const filePath = path.join(ROOT_DIR, 'src', 'pages', `${slug}.astro`);
+  pageContent = stripFakeLinks(pageContent, path.join(ROOT_DIR, 'src', 'pages'));
   fs.writeFileSync(filePath, pageContent);
   log(`  Article saved: ${slug}.astro`);
 
