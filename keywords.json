@@ -76,11 +76,6 @@
       "categorySlug": "electrocasnice-premium"
     },
     {
-      "keyword": "microfon podcast usb",
-      "category": "IT si Electronice",
-      "categorySlug": "it-electronice"
-    },
-    {
       "keyword": "ssd nvme samsung 2tb",
       "category": "IT si Electronice",
       "categorySlug": "it-electronice"
@@ -549,6 +544,11 @@
       "keyword": "blender profesional vitamix",
       "category": "Electrocasnice Premium",
       "categorySlug": "electrocasnice-premium"
+    },
+    {
+      "keyword": "microfon podcast usb",
+      "category": "IT si Electronice",
+      "categorySlug": "it-electronice"
     }
   ],
   "authors": [
