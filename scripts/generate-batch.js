@@ -743,7 +743,7 @@ function createArticlePage(keyword, category, categorySlug, content, imagePath, 
 
   const faqJson = JSON.stringify((content.faq || []).map(item => ({ question: stripStrong(item.question), answer: stripStrong(item.answer) })));
 
-  const pageContent = `---
+  let pageContent = `---
 import Layout from '../layouts/Layout.astro';
 import SimilarArticles from '../components/SimilarArticles.astro';
 import PrevNextNav from '../components/PrevNextNav.astro';
