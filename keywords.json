@@ -236,11 +236,6 @@
       "categorySlug": "mobilier-dormitor"
     },
     {
-      "keyword": "kettlebell set profesional",
-      "category": "Fitness si Sport",
-      "categorySlug": "fitness-sport"
-    },
-    {
       "keyword": "bara tractiuni multifunctionala",
       "category": "Fitness si Sport",
       "categorySlug": "fitness-sport"
@@ -549,6 +544,11 @@
       "keyword": "microfon podcast usb",
       "category": "IT si Electronice",
       "categorySlug": "it-electronice"
+    },
+    {
+      "keyword": "kettlebell set profesional",
+      "category": "Fitness si Sport",
+      "categorySlug": "fitness-sport"
     }
   ],
   "authors": [
