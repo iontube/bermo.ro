@@ -1,11 +1,6 @@
 {
   "pending": [
     {
-      "keyword": "storcator fructe slow juicer",
-      "category": "Electrocasnice Premium",
-      "categorySlug": "electrocasnice-premium"
-    },
-    {
       "keyword": "aparat vidat alimente profesional",
       "category": "Electrocasnice Premium",
       "categorySlug": "electrocasnice-premium"
@@ -549,6 +544,11 @@
       "keyword": "kettlebell set profesional",
       "category": "Fitness si Sport",
       "categorySlug": "fitness-sport"
+    },
+    {
+      "keyword": "storcator fructe slow juicer",
+      "category": "Electrocasnice Premium",
+      "categorySlug": "electrocasnice-premium"
     }
   ],
   "authors": [
