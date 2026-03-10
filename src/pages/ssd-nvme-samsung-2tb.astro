@@ -1,0 +1,504 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SimilarArticles from '../components/SimilarArticles.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import keywordsData from '../../keywords.json';
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
+
+export const frontmatter = {
+  title: "Ssd nvme samsung 2tb",
+  excerpt: "Daca cautati un SSD NVMe Samsung de 2TB, probabil doriti sa cresteti semnificativ viteza de stocare a PC-ului sau laptopului dumneavoastra. Un ssd nvme samsung ",
+  image: "/images/articles/ssd-nvme-samsung-2tb.webp",
+  category: "IT si Electronice",
+  categorySlug: "it-electronice",
+  date: "2026-03-10T11:37:32.299Z",
+  author: "Radu Petre",
+  authorRole: "Specialist IT & Gaming",
+  authorBio: "Inginer IT si gamer pasionat, Radu analizeaza laptopuri si componente din perspectiva performantei reale in jocuri si aplicatii profesionale."
+};
+
+const faq = [{"question":"Cat costa un SSD NVMe Samsung 2TB in 2026?","answer":"Preturile variaza in functie de model si performanta. Un Samsung 870 EVO 2TB (SATA) poate fi gasit intre 450-600 lei. Modelele NVMe PCIe 3.0 precum 970 EVO Plus 2TB costa intre 550-700 lei. Pentru performanta de top PCIe 4.0, precum 980 PRO 2TB sau 990 PRO 2TB, preturile pot fi intre 800-1100 lei sau chiar mai mult."},{"question":"Care e diferenta intre un SSD SATA si un SSD NVMe?","answer":"Principala diferenta este viteza. SSD-urile SATA (precum 870 EVO) folosesc interfata SATA III si ating viteze maxime de aproximativ 550 MB/s. SSD-urile NVMe (precum 970 EVO Plus, 980 PRO, 990 PRO) folosesc interfata PCIe, mult mai rapida, atingand viteze de la 3.500 MB/s (PCIe 3.0) pana la peste 7.000 MB/s (PCIe 4.0)."},{"question":"Merita sa cumpar un SSD NVMe Samsung 2TB daca am doar PCIe 3.0?","answer":"Da, merita. Un SSD NVMe PCIe 3.0, precum Samsung 970 EVO Plus, va oferi viteze de citire/scriere de pana la 3.500 MB/s, ceea ce este de 5-6 ori mai rapid decat un SSD SATA. Chiar si un SSD PCIe 4.0 va functiona pe o interfata PCIe 3.0, la vitezele acesteia, fiind totusi mult mai rapid decat un SSD SATA."},{"question":"Ce inseamna TBW la un SSD?","answer":"TBW (Total Bytes Written) reprezinta cantitatea totala de date pe care un SSD o poate scrie pe parcursul vietii sale, masurata in terabytes. Un TBW mai mare indica o durabilitate mai mare. De exemplu, un Samsung 970 EVO Plus 2TB are 1200 TBW, ceea ce inseamna ca puteti scrie 1200TB de date pe el inainte ca garantia de durabilitate sa expire."},{"question":"Pot folosi un SSD NVMe Samsung 2TB in laptopul meu?","answer":"Depinde de laptop. Majoritatea laptopurilor moderne au sloturi M.2 care suporta SSD-uri NVMe. Laptopurile mai vechi sau cele din gama de buget s-ar putea sa aiba doar sloturi M.2 SATA sau deloc. Verificati specificatiile tehnice ale laptopului dumneavoastra sau cautati modelul placii de baza pentru a confirma compatibilitatea cu SSD-urile NVMe M.2. Daca nu, un SSD SATA de 2.5 inch poate fi o alternativa."}];
+---
+
+<Layout
+  title="Ssd nvme samsung 2tb - Bermo"
+  description="Daca cautati un SSD NVMe Samsung de 2TB, probabil doriti sa cresteti semnificativ viteza de stocare a PC-ului sau laptopului dumneavoastra. Un ssd nvme samsung "
+  image="/images/articles/ssd-nvme-samsung-2tb.webp"
+  type="article"
+  publishedDate="2026-03-10T11:37:32.299Z"
+  modifiedDate="2026-03-10T11:37:32.299Z"
+  category="IT si Electronice"
+  categorySlug="it-electronice"
+  author="Radu Petre"
+  faq={faq}
+>
+
+  <main class="article-page">
+    <div class="container">
+      <article class="article-container">
+        <nav class="breadcrumb">
+          <a href="/">Acasa</a>
+          <span class="breadcrumb-sep">/</span>
+          IT si Electronice
+          <span class="breadcrumb-sep">/</span>
+          <span>Ssd nvme samsung 2tb</span>
+        </nav>
+
+        <header class="article-header">
+          
+            IT si Electronice
+          
+          <h1 class="article-title">Ssd nvme samsung 2tb</h1>
+          <div class="article-meta">
+            <div class="article-author">
+              <div class="author-avatar">RP</div>
+              <div class="author-info">
+                <span class="author-name">Radu Petre</span>
+                <span class="author-role">Specialist IT & Gaming</span>
+              </div>
+            </div>
+            <div class="article-date">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+              10 martie 2026
+            </div>
+          </div>
+        </header>
+
+        <div class="article-image">
+          <img src="/images/articles/ssd-nvme-samsung-2tb.webp" alt="Ssd nvme samsung 2tb" width="800" height="600" loading="eager" fetchpriority="high" decoding="async">
+        </div>
+
+        <div class="toc">
+          <div class="toc-title">
+            Cuprins
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </div>
+          <ol class="toc-list">
+            <li><a href="#samsung-980-pro-2tb-nvme-ssd">Samsung 980 PRO 2TB NVMe SSD</a></li>
+            <li><a href="#samsung-970-evo-plus-2tb-nvme-ssd">Samsung 970 EVO Plus 2TB NVMe SSD</a></li>
+            <li><a href="#samsung-990-pro-2tb-nvme-ssd">Samsung 990 PRO 2TB NVMe SSD</a></li>
+            <li><a href="#samsung-870-evo-2tb-sata-ssd">Samsung 870 EVO 2TB SATA SSD</a></li>
+            <li><a href="#samsung-980-1tb-nvme-ssd-considerat-ca-alternativa-la-2tb-mai-scump">Samsung 980 1TB NVMe SSD (considerat ca alternativă la 2TB mai scump)</a></li>
+            <li><a href="#samsung-970-evo-plus-1tb-nvme-ssd-alternativa-la-2tb">Samsung 970 EVO Plus 1TB NVMe SSD (alternativă la 2TB)</a></li>
+            <li><a href="#comparatie">Comparatie rapida</a></li>
+            <li><a href="#ghid-cumparare">Cum alegi cel mai bun SSD NVMe Samsung de 2TB pentru tine?</a></li>
+            <li><a href="#faq">Intrebari Frecvente</a></li>
+          </ol>
+        </div>
+
+        <div class="prose-article">
+          <p>Daca cautati un SSD NVMe Samsung de 2TB, probabil doriti sa cresteti semnificativ viteza de stocare a PC-ului sau laptopului dumneavoastra. Un <strong>ssd nvme samsung 2tb</strong> este o componenta cheie pentru oricine lucreaza cu fisiere mari, ruleaza aplicatii solicitante sau doreste timpi de incarcare aproape instantanei in jocuri si sistemul de operare. Samsung ramane un lider in acest domeniu, oferind solutii de stocare fiabile, cu performante de varf.</p>
+        <p>Ce optiuni aveti cand vine vorba de un <strong>ssd nvme samsung 2tb</strong>? In piata veti gasi diverse modele, fiecare cu specificatii si preturi diferite. Alegerea corecta depinde de nevoile dumneavoastra specifice: fie ca aveti nevoie de viteza maxima pentru productivitate extrema, fie de un echilibru bun intre performanta si cost pentru gaming sau uz general.</p>
+        <p>Acest articol va va ghida prin cele mai relevante modele de SSD NVMe Samsung de 2TB disponibile in prezent, analizand performantele, avantajele, dezavantajele si preturile, pentru a va ajuta sa faceti cea mai buna achizitie pentru sistemul dumneavoastra.</p>
+
+          
+          <article class="product-review" id="samsung-980-pro-2tb-nvme-ssd">
+            <div class="product-review__header">
+              <span class="section-tag">Premium</span>
+              <h3>Samsung 980 PRO 2TB NVMe SSD</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec"><strong>Putere</strong>Viteza secventiala citire: pana la 7.000 MB/s, Viteza secventiala scriere: pana la 5.100 MB/s, Viteza aleatorie citire: pana la 1.000K IOPS, Viteza aleatorie scriere: pana la 1.000K IOPS</div>
+              <div class="product-review__spec"><strong>Material</strong>N/A (componenta electronica)</div>
+              <div class="product-review__spec"><strong>Capacitate</strong>2TB</div>
+              <div class="product-review__spec"><strong>Functii</strong>Interfata NVMe PCIe 4.0, Controler Samsung Elpis, Cache DRAM, Suport TRIM, Garbage Collection, Criptare AES 256-bit</div>
+              <div class="product-review__spec"><strong>Dimensiuni</strong>M.2 (2280), 80.25 x 22.15 x 2.38 mm, 8.4g</div>
+            </div>
+            </div>
+            <div class="product-review__content">
+              <p>Samsung 980 PRO 2TB este varful de lance pentru entuziastii de performanta si profesionistii care lucreaza cu aplicatii intensive. Daca va intrebati daca acest <strong>ssd nvme samsung 2tb</strong> este potrivit pentru dumneavoastra, raspunsul este simplu: daca viteza bruta si timpii de raspuns minimi sunt prioritari, atunci 980 PRO este o alegere de top. Cu viteze de citire secventiala ce ating 7.000 MB/s si viteze de scriere de 5.100 MB/s, transferul fisierelor mari, incarcarea jocurilor sau compilarea codului se face intr-un timp record.</p>
+        <p>Controlerul Elpis si suportul pentru PCIe 4.0 maximizeaza potentialul de viteza, facand acest SSD ideal pentru creatorii de continut video 4K/8K, dezvoltatori de jocuri sau oricine editeaza fisiere masive. Cache-ul DRAM integrat asigura performante consistente chiar si sub sarcina grea, mentinand vitezele ridicate pe termen lung. Criptarea hardware AES pe 256 de biti ofera un strat suplimentar de securitate pentru datele dumneavoastra sensibile, fara a compromite performanta.</p>
+        <p>Comparativ cu modelele mai vechi sau cu SSD-uri SATA, diferenta este enorma. Pentru utilizatorii care deja au o placa de baza compatibila cu PCIe 4.0, 980 PRO va exploata la maximum aceasta tehnologie. Totusi, pentru sistemele mai vechi cu PCIe 3.0, vitezele vor fi limitate la generatia anterioara, desi tot vor fi semnificativ mai rapide decat un SSD SATA.</p>
+        <p>Un dezavantaj potential este pretul, care este de obicei mai ridicat decat al altor SSD-uri NVMe de 2TB, inclusiv al altor modele Samsung. De asemenea, pentru utilizarea zilnica standard, cum ar fi navigarea pe internet sau lucrul cu documente, performanta extrema a acestui model s-ar putea sa nu fie complet exploatata, facand ca optiuni mai accesibile sa fie la fel de eficiente.</p>
+        <p>Este potrivit pentru gameri hardcore, editori video, designeri 3D, si oricine are nevoie de cea mai rapida stocare posibila. Pretul acestui model de 2TB se situeaza in jur de 800-950 lei, in functie de promotii.</p>
+        <p>Recomandarea noastra pentru Samsung 980 PRO 2TB este clara: daca bugetul permite si aveti o platforma moderna (preferabil cu PCIe 4.0), acest SSD va oferi o experienta de utilizare de neegalat in termeni de viteza si responsivitate. Achizitionati-l daca productivitatea si timpii de incarcare redusi la minimum sunt critice pentru fluxul dumneavoastra de lucru.</p>
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+                  <li>Performanta de top cu viteze de citire/scriere exceptionale</li>
+                  <li>Ideal pentru sarcini de lucru intensive si gaming de ultima generatie</li>
+                  <li>Controler performant si cache DRAM pentru stabilitate</li>
+                  <li>Criptare hardware AES 256-bit pentru securitate sporita</li>
+                  <li>Optimizat pentru PCIe 4.0</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+                  <li>Pret ridicat comparativ cu alte optiuni de 2TB</li>
+                  <li>Poate fi supradimensionat pentru utilizare generala</li>
+                  <li>Poate necesita un heatsink pentru performante maxime pe termen lung (unele placi de baza au integrat)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="product-review" id="samsung-970-evo-plus-2tb-nvme-ssd">
+            <div class="product-review__header">
+              <span class="section-tag">Raport Calitate-Pret</span>
+              <h3>Samsung 970 EVO Plus 2TB NVMe SSD</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec"><strong>Putere</strong>Viteza secventiala citire: pana la 3.500 MB/s, Viteza secventiala scriere: pana la 3.300 MB/s, Viteza aleatorie citire: pana la 620K IOPS, Viteza aleatorie scriere: pana la 560K IOPS</div>
+              <div class="product-review__spec"><strong>Material</strong>N/A (componenta electronica)</div>
+              <div class="product-review__spec"><strong>Capacitate</strong>2TB</div>
+              <div class="product-review__spec"><strong>Functii</strong>Interfata NVMe PCIe 3.0, Tehnologie V-NAND, Cache DRAM, Suport TRIM, Garbage Collection, Criptare AES 256-bit</div>
+              <div class="product-review__spec"><strong>Dimensiuni</strong>M.2 (2280), 80.15 x 22.15 x 2.38 mm, 8.4g</div>
+            </div>
+            </div>
+            <div class="product-review__content">
+              <p>Samsung 970 EVO Plus 2TB reprezinta un echilibru excelent intre performanta si pret, fiind o optiune populara pentru multi utilizatori. Daca va intrebati daca 970 EVO Plus este cel mai bun <strong>ssd nvme samsung 2tb</strong> pentru nevoile dumneavoastra, raspunsul depinde de sistemul pe care il aveti si de buget. Acest model utilizeaza interfata PCIe 3.0, oferind viteze de citire de pana la 3.500 MB/s si scriere de pana la 3.300 MB/s, performante care sunt inca foarte rapide pentru majoritatea sarcinilor, inclusiv gaming si productivitate moderata.</p>
+        <p>Ce face acest SSD sa iasa in evidenta este tehnologia V-NAND de la Samsung si cache-ul DRAM. Acestea asigura o fiabilitate ridicata si performante consistente. Spre deosebire de SSD-urile fara DRAM (modelele QLC, de exemplu), 970 EVO Plus isi mentine vitezele ridicate chiar si la scrieri prelungite, ceea ce il face o optiune mai buna pentru transferuri de fisiere mari sau instalari de jocuri.</p>
+        <p>Comparativ cu un SSD SATA, 970 EVO Plus este de aproximativ 5-6 ori mai rapid, iar comparativ cu un HDD traditional, diferenta este de zeci de ori mai mare. Chiar daca nu beneficiaza de vitezele maxime ale PCIe 4.0, pentru sistemele echipate cu PCIe 3.0, acest SSD ofera performante optime. Este o actualizare semnificativa pentru orice computer care inca utilizeaza un SSD SATA sau un HDD.</p>
+        <p>Un dezavantaj este ca, fiind un SSD PCIe 3.0, nu va atinge vitezele maxime ale celor mai noi platforme. De asemenea, desi fiabil, Samsung ofera o garantie de 5 ani, dar durata de viata (TBW - Total Bytes Written) de 1200TBW pentru modelul de 2TB, desi mare, este mai mica decat la unele modele de top PCIe 4.0. Pretul, desi competitiv, poate fi uneori depasit de oferte la modele noi PCIe 4.0 mai accesibile.</p>
+        <p>Acest SSD este perfect pentru gameri, utilizatori casnici, studenti si profesionisti care doresc o imbunatatire semnificativa a vitezei sistemului fara a cheltui o suma exorbitanta. Se potriveste excelent si pentru upgrade-ul laptopurilor mai vechi care au un slot M.2 liber. Prețul pentru varianta de 2TB se situeaza, de obicei, intre 550 si 700 lei.</p>
+        <p>Recomandarea pentru Samsung 970 EVO Plus 2TB este ca o optiune 'best-buy' pentru majoritatea utilizatorilor. Daca aveti un sistem cu PCIe 3.0 sau pur si simplu doriti un SSD NVMe rapid, fiabil si la un pret bun, acesta este alegerea potrivita. Achizitionati-l pentru un echilibru optim intre performanta, fiabilitate si cost.</p>
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+                  <li>Performanta excelenta pentru PCIe 3.0</li>
+                  <li>Fiabilitate dovedita cu tehnologie V-NAND</li>
+                  <li>Cache DRAM pentru viteze constante</li>
+                  <li>Pret competitiv pentru capacitatea si performanta oferite</li>
+                  <li>Criptare hardware AES 256-bit</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+                  <li>Viteze limitate de interfata PCIe 3.0</li>
+                  <li>Durata de viata (TBW) mai mica decat la unele modele PCIe 4.0 de top</li>
+                  <li>Nu dispune de tehnologii de ultima generatie precum cele de pe 980 PRO</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="product-review" id="samsung-990-pro-2tb-nvme-ssd">
+            <div class="product-review__header">
+              <span class="section-tag">Alegerea Noastra</span>
+              <h3>Samsung 990 PRO 2TB NVMe SSD</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec"><strong>Putere</strong>Viteza secventiala citire: pana la 7.450 MB/s, Viteza secventiala scriere: pana la 6.900 MB/s, Viteza aleatorie citire: pana la 1.400K IOPS, Viteza aleatorie scriere: pana la 1.550K IOPS</div>
+              <div class="product-review__spec"><strong>Material</strong>N/A (componenta electronica)</div>
+              <div class="product-review__spec"><strong>Capacitate</strong>2TB</div>
+              <div class="product-review__spec"><strong>Functii</strong>Interfata NVMe PCIe 4.0, Controler Samsung Pascal, Cache DRAM, Suport TRIM, Garbage Collection, Criptare AES 256-bit, Management termic inteligent</div>
+              <div class="product-review__spec"><strong>Dimensiuni</strong>M.2 (2280), 80.15 x 22.15 x 2.38 mm, 8.4g</div>
+            </div>
+            </div>
+            <div class="product-review__content">
+              <p>Samsung 990 PRO 2TB este cel mai nou si cel mai performant SSD NVMe de la Samsung, oferind viteze si eficienta de neegalat. Daca va intrebati daca merita sa investiti intr-un <strong>ssd nvme samsung 2tb</strong> de ultimă generație, 990 PRO raspunde afirmativ. Cu viteze de citire secvențiala de pana la 7.450 MB/s si viteze de scriere de pana la 6.900 MB/s, acest SSD este construit pentru a depasi orice sarcina.</p>
+        <p>Performanta sa aleatorie, masurata in IOPS, este, de asemenea, printre cele mai bune de pe piață, ceea ce se traduce prin timpi de raspuns fulgeratori in aplicatii si jocuri.</p>
+        <p>Controlerul Pascal si tehnologia V-NAND de generatie noua lucreaza impreuna pentru a oferi atat viteza, cat si eficienta energetica. Samsung sustine ca 990 PRO este cu pana la 50% mai eficient energetic decat 980 PRO, o caracteristica importanta, mai ales pentru laptopuri sau sisteme unde consumul de energie este un factor.</p>
+        <p>Managementul termic inteligent este un alt punct forte. SSD-ul vine cu un strat de nichel pe controler si o eticheta cu folie de nichel pe spate pentru a disipa caldura eficient, ajutand la mentinerea performantei optime si la prevenirea throttling-ului termic. Pentru utilizatorii de console PlayStation 5, 990 PRO este, de asemenea, o optiune excelenta datorita vitezei si compatibilitatii sale.</p>
+        <p>Comparativ cu 980 PRO, 990 PRO aduce un spor de performanta, in special in operatiunile aleatorii, care sunt critice pentru experienta de utilizare zilnica si gaming. Totusi, pentru utilizatorii de PCIe 3.0, diferentele nu vor fi la fel de spectaculoase ca pe o platforma PCIe 4.0. Un dezavantaj minor a fost o problema raportata initial legata de uzura rapida a firmware-ului, dar Samsung a lansat actualizari pentru a rezolva acest aspect.</p>
+        <p>Acest model este ideal pentru profesionistii care lucreaza cu fluxuri de lucru complexe, gamerii entuziasti care doresc cea mai buna performanta si oricine doreste sa isi echipeze sistemul cu cea mai recenta tehnologie de stocare. Pretul pentru 2TB este, ca de obicei pentru varful de gama, premium, situandu-se in jur de 900-1100 lei.</p>
+        <p>Recomandarea noastra pentru Samsung 990 PRO 2TB este ca fiind cea mai performanta optiune disponibila. Daca aveti o placa de baza cu PCIe 4.0 (sau un PS5) si bugetul va permite, acest SSD va oferi cea mai rapida si eficienta experienta de stocare. Achizitionati-l pentru performanta de varf, eficienta energetica imbunatatita si fiabilitate sporita.</p>
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+                  <li>Viteze de citire/scriere secventiale si aleatorii de top</li>
+                  <li>Eficiență energetică îmbunătățită</li>
+                  <li>Management termic avansat pentru performanță susținută</li>
+                  <li>Ideal pentru cele mai solicitante aplicații și jocuri</li>
+                  <li>Compatibilitate excelentă cu PS5</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+                  <li>Preț premium, cel mai ridicat din gama</li>
+                  <li>Necesită o platformă PCIe 4.0 pentru a beneficia de tot potențialul</li>
+                  <li>Actualizările inițiale de firmware au necesitat atenție</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="product-review" id="samsung-870-evo-2tb-sata-ssd">
+            <div class="product-review__header">
+              <span class="section-tag">Pentru Buget Mic</span>
+              <h3>Samsung 870 EVO 2TB SATA SSD</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec"><strong>Putere</strong>Viteza secventiala citire: pana la 560 MB/s, Viteza secventiala scriere: pana la 530 MB/s</div>
+              <div class="product-review__spec"><strong>Material</strong>N/A (componenta electronica)</div>
+              <div class="product-review__spec"><strong>Capacitate</strong>2TB</div>
+              <div class="product-review__spec"><strong>Functii</strong>Interfata SATA III (6Gb/s), Tehnologie V-NAND, Cache DRAM, Suport TRIM, Garbage Collection, Criptare AES 256-bit</div>
+              <div class="product-review__spec"><strong>Dimensiuni</strong>2.5 inch, 100 x 69.85 x 6.8 mm, 86g</div>
+            </div>
+            </div>
+            <div class="product-review__content">
+              <p>Samsung 870 EVO 2TB este cel mai bun SSD SATA de 2TB de la Samsung, oferind o solutie de stocare fiabila si rapida pentru sistemele care nu suporta NVMe sau unde un upgrade de la HDD este prioritar. Daca cautati un <strong>ssd nvme samsung 2tb</strong> dar sistemul dumneavoastra suporta doar SATA, sau daca doriti o optiune mai accesibila pentru un al doilea drive, 870 EVO este o alegere excelenta. Vitezele sale de citire de 560 MB/s si scriere de 530 MB/s sunt limitate de interfata SATA, dar reprezinta un salt urias fata de orice HDD traditional.</p>
+        <p>Acest SSD folosește tehnologia V-NAND de la Samsung, cache DRAM și vine cu o garanție de 5 ani, oferind o fiabilitate de top în clasa sa. Este perfect pentru a revitaliza un laptop mai vechi, pentru a crește viteza unui PC de birou sau pentru a servi ca unitate secundară de stocare pentru jocuri și aplicații.</p>
+        <p>Comparativ cu HDD-urile, 870 EVO este de 5-10 ori mai rapid în citire/scriere secvențială și de zeci de ori mai rapid în operațiuni aleatorii, ceea ce face o diferență enormă în timpul de boot al sistemului de operare, încărcarea aplicațiilor și transferul fișierelor mici. În comparație cu SSD-urile NVMe, vitezele sunt considerabil mai mici, dar pentru multe utilizări, diferența nu este atât de resimțită pe cât sugerează cifrele brute, mai ales dacă sistemul nu este compatibil cu PCIe 4.0.</p>
+        <p>Un dezavantaj major este limitarea vitezei impusă de interfața SATA III. Dacă aveți un sistem compatibil NVMe, veți obține performanțe mult superioare cu un SSD NVMe. De asemenea, formatul de 2.5 inch necesită un cablu de date SATA și o conexiune de alimentare, spre deosebire de formatul M.2 care se conectează direct pe placa de bază. Durata de viață (TBW) de 1200TBW este bună pentru clasa sa, dar mai mică decât la SSD-urile NVMe de top.</p>
+        <p>Acest SSD este ideal pentru utilizatorii casnici, studenți, upgrade-uri de laptopuri mai vechi, sau ca unitate de stocare secundară. Este o soluție excelentă dacă bugetul este limitat și nu aveți nevoie de vitezele extreme ale NVMe. Prețul pentru varianta de 2TB se menține competitiv, situându-se în general între 450 și 600 lei.</p>
+        <p>Recomandarea pentru Samsung 870 EVO 2TB este clară: dacă aveți nevoie de un upgrade de stocare fiabil și mult mai rapid decât un HDD, dar sistemul dumneavoastră este limitat la SATA sau bugetul este o constrângere, acesta este SSD-ul de ales. Achizitionați-l pentru a oferi un suflu nou unui sistem mai vechi sau pentru a extinde stocarea rapidă la un cost redus.</p>
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+                  <li>Performanță SATA III excelentă</li>
+                  <li>Fiabilitate ridicată cu tehnologie V-NAND și cache DRAM</li>
+                  <li>Preț foarte accesibil pentru 2TB</li>
+                  <li>Upgrade ideal pentru HDD-uri și sisteme mai vechi</li>
+                  <li>Garanție extinsă de 5 ani</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+                  <li>Limitat de viteza interfeței SATA III</li>
+                  <li>Nu se compară cu performanța SSD-urilor NVMe</li>
+                  <li>Necesită cablu SATA și alimentare separată</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="product-review" id="samsung-980-1tb-nvme-ssd-considerat-ca-alternativa-la-2tb-mai-scump">
+            <div class="product-review__header">
+              <span class="section-tag">Best Buy 2026</span>
+              <h3>Samsung 980 1TB NVMe SSD (considerat ca alternativă la 2TB mai scump)</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec"><strong>Putere</strong>Viteza secventiala citire: pana la 3.500 MB/s, Viteza secventiala scriere: pana la 3.000 MB/s</div>
+              <div class="product-review__spec"><strong>Material</strong>N/A (componenta electronica)</div>
+              <div class="product-review__spec"><strong>Capacitate</strong>1TB (alternativa la 2TB mai scump)</div>
+              <div class="product-review__spec"><strong>Functii</strong>Interfata NVMe PCIe 3.0, Fara cache DRAM, Suport TRIM, Criptare AES 256-bit</div>
+              <div class="product-review__spec"><strong>Dimensiuni</strong>M.2 (2280), 80.15 x 22.15 x 2.38 mm, 8.4g</div>
+            </div>
+            </div>
+            <div class="product-review__content">
+              <p>Samsung 980 1TB este o opțiune interesantă în contextul căutării unui <strong>ssd nvme samsung 2tb</strong>, mai ales dacă bugetul este o considerație. Deși nu este un model de 2TB, performanța sa pe interfata PCIe 3.0 este comparabilă cu cea a multor SSD-uri de 2TB din generația anterioară, iar prețul poate face 1TB de stocare Samsung NVMe mai accesibil. Vitezele de citire de până la 3.500 MB/s și scriere de până la 3.000 MB/s sunt excelente pentru majoritatea utilizatorilor.</p>
+        <p>Ce diferențiază acest model de alte SSD-uri Samsung este lipsa cache-ului DRAM. Aceasta decizie de design permite Samsung să ofere un produs NVMe mai accesibil, dar poate afecta performanța în sarcini de scriere intensă și pe termen lung, comparativ cu modelele cu DRAM. Totuși, pentru utilizare generală, gaming și chiar productivitate moderată, performanța este excelentă.</p>
+        <p>Ce presupune lipsa DRAM? În scenarii unde se scriu constant volume mari de date, SSD-urile fără DRAM pot încetini mai mult decât cele cu DRAM. Pentru utilizatorul mediu care instalează jocuri, rulează aplicații și transferă ocazional fișiere mari, această diferență s-ar putea să nu fie sesizabilă. Este totuși un upgrade masiv față de orice HDD sau SSD SATA.</p>
+        <p>Comparativ cu 970 EVO Plus, 980 oferă viteze secvențiale similare, dar performanța aleatorie și stabilitatea pe termen lung pot fi inferioare din cauza lipsei DRAM. Totuși, prețul mai mic al modelului de 1TB (comparativ cu un 970 EVO Plus de 2TB) îl face o opțiune atractivă. Dezavantajul principal rămâne capacitatea mai mică de 1TB, care s-ar putea să nu fie suficientă pentru unii utilizatori care căutau 2TB.</p>
+        <p>Acest SSD este recomandat pentru utilizatorii care doresc performanța NVMe pe PCIe 3.0 la un preț cât mai bun. Este o alegere solidă pentru upgrade-ul unui PC sau laptop, în special dacă aveți nevoie de un singur drive rapid pentru sistemul de operare și aplicații, iar stocarea de date masive nu este prioritară. Prețul pentru varianta de 1TB este de aproximativ 350-450 lei, oferind un punct de intrare excelent în lumea SSD-urilor NVMe Samsung.</p>
+        <p>Recomandarea noastră pentru Samsung 980 1TB este ca o soluție de compromis excelentă. Dacă 2TB este dincolo de bugetul dumneavoastră, dar doriți performanța unui SSD NVMe Samsung pe PCIe 3.0, acest model de 1TB oferă viteze grozave la un preț foarte bun. Achiziționați-l dacă sunteți dispus să sacrificați capacitatea pentru a obține performanța NVMe la un cost redus.</p>
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+                  <li>Performanță NVMe excelentă pe PCIe 3.0</li>
+                  <li>Preț foarte accesibil pentru un SSD Samsung NVMe</li>
+                  <li>Ideal pentru upgrade-uri de buget</li>
+                  <li>Viteze de citire/scriere secvențiale rapide</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+                  <li>Lipsa cache-ului DRAM poate afecta performanța pe termen lung la scrieri intense</li>
+                  <li>Capacitate de doar 1TB (necesar de verificat dacă este suficient)</li>
+                  <li>Performanță inferioară modelelor cu DRAM în teste sintetice riguroase</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="product-review" id="samsung-970-evo-plus-1tb-nvme-ssd-alternativa-la-2tb">
+            <div class="product-review__header">
+              <span class="section-tag">Raport Calitate-Pret</span>
+              <h3>Samsung 970 EVO Plus 1TB NVMe SSD (alternativă la 2TB)</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec"><strong>Putere</strong>Viteza secventiala citire: pana la 3.500 MB/s, Viteza secventiala scriere: pana la 3.300 MB/s, Viteza aleatorie citire: pana la 620K IOPS, Viteza aleatorie scriere: pana la 560K IOPS</div>
+              <div class="product-review__spec"><strong>Material</strong>N/A (componenta electronica)</div>
+              <div class="product-review__spec"><strong>Capacitate</strong>1TB (alternativa la 2TB mai scump)</div>
+              <div class="product-review__spec"><strong>Functii</strong>Interfata NVMe PCIe 3.0, Tehnologie V-NAND, Cache DRAM, Suport TRIM, Garbage Collection, Criptare AES 256-bit</div>
+              <div class="product-review__spec"><strong>Dimensiuni</strong>M.2 (2280), 80.15 x 22.15 x 2.38 mm, 8.4g</div>
+            </div>
+            </div>
+            <div class="product-review__content">
+              <p>Daca scopul este sa gasiti un <strong>ssd nvme samsung 2tb</strong> dar bugetul nu permite, modelul Samsung 970 EVO Plus de 1TB devine o optiune excelenta. Acesta pastreaza toate calitatile fratelui sau mai mare de 2TB, oferind performanta de top pe interfata PCIe 3.0, dar la un pret mai accesibil. Vitezele de citire de 3.500 MB/s si scriere de 3.300 MB/s sunt identice cu cele ale variantei de 2TB, la fel si tehnologia V-NAND si cache-ul DRAM.</p>
+        <p>Aceasta inseamna ca, pentru utilizarea zilnica, gaming si majoritatea sarcinilor de productivitate, experienta va fi practic la fel de buna ca pe modelul de 2TB. Lipsa cache-ului DRAM de pe modelul 980 este corectata aici, asigurand viteze consistente chiar si in scenarii mai solicitante. Fiabilitatea Samsung, impreuna cu garantia de 5 ani, face din 970 EVO Plus o alegere de incredere.</p>
+        <p>Ce inseamna acest lucru pentru dumneavoastra? Ca puteti obtine performanta NVMe Samsung de cea mai buna calitate pe PCIe 3.0, fara compromisuri majore in viteza, la un pret mult mai mic decat varianta de 2TB. Este o solutie ideala pentru a construi un PC nou performant pe un buget, sau pentru a face un upgrade semnificativ unui laptop sau desktop mai vechi.</p>
+        <p>Comparativ cu 980 1TB, 970 EVO Plus este superior datorita prezentei cache-ului DRAM, oferind performante mai stabile pe termen lung si in sarcini de scriere. Daca diferenta de pret intre cele doua modele de 1TB nu este mare, 970 EVO Plus este, de departe, optiunea mai buna. Dezavantajul principal, evident, este capacitatea de 1TB, care poate fi limitativa pentru cei cu colectii mari de jocuri sau fisiere multimedia.</p>
+        <p>Acest SSD este recomandat pentru oricine cauta un SSD NVMe rapid si fiabil, fara a cheltui o suma mare. Este perfect pentru gaming, crearea de continut la nivel de amator, si ca drive principal pentru sistemul de operare si aplicatii. Pretul pentru varianta de 1TB este de obicei intre 400 si 500 lei, oferind un raport calitate-pret excelent.</p>
+        <p>Recomandarea pentru Samsung 970 EVO Plus 1TB este ca o optiune 'best buy' in segmentul de 1TB NVMe. Daca 2TB nu este absolut necesar, acest SSD ofera cea mai buna combinatie de performanta, fiabilitate si pret de la Samsung pe PCIe 3.0. Achizitionati-l pentru a obtine performanta NVMe de top la un pret accesibil, fara a face compromisuri majore.</p>
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+                  <li>Performanță excelentă NVMe PCIe 3.0 cu cache DRAM</li>
+                  <li>Fiabilitate și durabilitate dovedite</li>
+                  <li>Raport calitate-preț excelent pentru 1TB</li>
+                  <li>Viteze secvențiale și aleatorii ridicate</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+                  <li>Capacitate limitată la 1TB</li>
+                  <li>Nu beneficiază de vitezele PCIe 4.0</li>
+                  <li>Prețul poate fi uneori apropiat de modele 2TB mai vechi sau la ofertă</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          
+        <section id="comparatie">
+          <h2>Comparatie rapida</h2>
+          <p>Tabelul comparativ de mai jos va ofera o privire rapida asupra principalelor caracteristici ale SSD-urilor Samsung NVMe discutate, pentru a va ajuta in procesul decizional.</p>
+          <div class="comparison-outer">
+            <div class="comparison-hint"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg> Scroll pentru mai multe coloane</div>
+            <div class="comparison-wrap">
+              <table class="comparison-table">
+                <thead><tr><th>Model</th><th>Putere</th><th>Capacitate</th><th>Greutate</th><th>Functii</th><th>PotrivitPentru</th></tr></thead>
+                <tbody>
+            <tr><td>Samsung 990 PRO 2TB</td><td>7450 MB/s citire / 6900 MB/s scriere</td><td>2TB</td><td>8.4g</td><td>PCIe 4.0, DRAM, Management Termic</td><td>Performanta maxima, PS5</td></tr>
+            <tr><td>Samsung 980 PRO 2TB</td><td>7000 MB/s citire / 5100 MB/s scriere</td><td>2TB</td><td>8.4g</td><td>PCIe 4.0, DRAM</td><td>Entuziasti, Productivitate</td></tr>
+            <tr><td>Samsung 970 EVO Plus 2TB</td><td>3500 MB/s citire / 3300 MB/s scriere</td><td>2TB</td><td>8.4g</td><td>PCIe 3.0, DRAM</td><td>Raport Calitate-Pret</td></tr>
+            <tr><td>Samsung 870 EVO 2TB</td><td>560 MB/s citire / 530 MB/s scriere</td><td>2TB</td><td>86g</td><td>SATA III, DRAM</td><td>Upgrade HDD, Buget Redus</td></tr>
+            <tr><td>Samsung 970 EVO Plus 1TB</td><td>3500 MB/s citire / 3300 MB/s scriere</td><td>1TB</td><td>8.4g</td><td>PCIe 3.0, DRAM</td><td>Buget Optimizat NVMe</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+          
+        <section class="guide" id="ghid-cumparare">
+          <h2>Cum alegi cel mai bun SSD NVMe Samsung de 2TB pentru tine?</h2>
+          <h4>Ce interfata de stocare ai pe placa de baza?</h4>
+        <p>Majoritatea placilor de baza moderne suporta interfata NVMe PCIe 4.0 sau PCIe 3.0. Daca aveti o placa de baza cu PCIe 4.0, puteti beneficia de vitezele maxime oferite de modelele precum Samsung 990 PRO sau 980 PRO. Daca aveti un sistem mai vechi cu PCIe 3.0, modele precum 970 EVO Plus vor oferi performante excelente, limitate doar de interfata. Pentru sisteme si mai vechi sau laptopuri care nu au slot M.2, un SSD SATA de 2.5 inch precum 870 EVO este cea mai buna optiune.</p>
+        <h4>Cat de importante sunt vitezele maxime pentru tine?</h4>
+        <p>Daca lucrati constant cu fisiere video de dimensiuni foarte mari, editati in 8K sau aveti nevoie de timpi de incarcare absolut minimi in jocuri si aplicatii, atunci modelele PCIe 4.0 de top (990 PRO, 980 PRO) sunt cele mai potrivite. Daca utilizarea dumneavoastra este mai generala - gaming, navigare web, office, creatie de continut la nivel mediu - un SSD PCIe 3.0 precum 970 EVO Plus va oferi o experienta excelenta si o imbunatatire masiva fata de un HDD.</p>
+        <h4>Care este bugetul alocat pentru SSD?</h4>
+        <p>Preturile SSD-urilor de 2TB pot varia semnificativ. Modelele de top PCIe 4.0 sunt cele mai scumpe, urmate de cele PCIe 3.0 cu DRAM, apoi de cele PCIe 3.0 fara DRAM, iar la final SSD-urile SATA. Daca bugetul este restrans, un 870 EVO de 2TB este o alegere excelenta pentru a obtine stocare rapida. Daca doriti performanta NVMe pe buget, puteti considera un model de 1TB (precum 970 EVO Plus 1TB sau 980 1TB) sau cautati oferte la modelele PCIe 3.0 de 2TB.</p>
+        <h4>Ai nevoie de stocare pentru gaming sau sarcini de lucru intensive?</h4>
+        <p>Pentru gaming, un SSD NVMe, indiferent de generatie, va reduce semnificativ timpii de incarcare comparativ cu un HDD. Modelele mai rapide, precum 990 PRO sau 980 PRO, pot aduce un mic avantaj in jocurile optimizate pentru viteze mari. Pentru sarcini de lucru intensive (editare video, randare 3D, masini virtuale), viteza maxima a unui SSD PCIe 4.0 este recomandata. Pentru utilizare generala si gaming, 970 EVO Plus este mai mult decat suficient.</p>
+        </section>
+        </div>
+
+        <section class="faq-section" id="faq">
+          <h2 class="faq-title">Intrebari Frecvente</h2>
+          
+      <div class="faq-item">
+        <div class="faq-question">
+          Cat costa un SSD NVMe Samsung 2TB in 2026?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Preturile variaza in functie de model si performanta. Un Samsung 870 EVO 2TB (SATA) poate fi gasit intre 450-600 lei. Modelele NVMe PCIe 3.0 precum 970 EVO Plus 2TB costa intre 550-700 lei. Pentru performanta de top PCIe 4.0, precum 980 PRO 2TB sau 990 PRO 2TB, preturile pot fi intre 800-1100 lei sau chiar mai mult.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Care e diferenta intre un SSD SATA si un SSD NVMe?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Principala diferenta este viteza. SSD-urile SATA (precum 870 EVO) folosesc interfata SATA III si ating viteze maxime de aproximativ 550 MB/s. SSD-urile NVMe (precum 970 EVO Plus, 980 PRO, 990 PRO) folosesc interfata PCIe, mult mai rapida, atingand viteze de la 3.500 MB/s (PCIe 3.0) pana la peste 7.000 MB/s (PCIe 4.0).</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Merita sa cumpar un SSD NVMe Samsung 2TB daca am doar PCIe 3.0?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Da, merita. Un SSD NVMe PCIe 3.0, precum Samsung 970 EVO Plus, va oferi viteze de citire/scriere de pana la 3.500 MB/s, ceea ce este de 5-6 ori mai rapid decat un SSD SATA. Chiar si un SSD PCIe 4.0 va functiona pe o interfata PCIe 3.0, la vitezele acesteia, fiind totusi mult mai rapid decat un SSD SATA.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Ce inseamna TBW la un SSD?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">TBW (Total Bytes Written) reprezinta cantitatea totala de date pe care un SSD o poate scrie pe parcursul vietii sale, masurata in terabytes. Un TBW mai mare indica o durabilitate mai mare. De exemplu, un Samsung 970 EVO Plus 2TB are 1200 TBW, ceea ce inseamna ca puteti scrie 1200TB de date pe el inainte ca garantia de durabilitate sa expire.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Pot folosi un SSD NVMe Samsung 2TB in laptopul meu?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Depinde de laptop. Majoritatea laptopurilor moderne au sloturi M.2 care suporta SSD-uri NVMe. Laptopurile mai vechi sau cele din gama de buget s-ar putea sa aiba doar sloturi M.2 SATA sau deloc. Verificati specificatiile tehnice ale laptopului dumneavoastra sau cautati modelul placii de baza pentru a confirma compatibilitatea cu SSD-urile NVMe M.2. Daca nu, un SSD SATA de 2.5 inch poate fi o alternativa.</div>
+      </div>
+        </section>
+
+        <div class="author-box">
+          <div class="author-box-avatar">RP</div>
+          <div class="author-box-info">
+            <h4>Radu Petre</h4>
+            <p>Specialist IT & Gaming</p>
+            <p class="author-box-bio">Inginer IT si gamer pasionat, Radu analizeaza laptopuri si componente din perspectiva performantei reale in jocuri si aplicatii profesionale.</p>
+          </div>
+        </div>
+
+        <SimilarArticles currentSlug="ssd-nvme-samsung-2tb" categorySlug="it-electronice" />
+
+        <PrevNextNav
+          currentSlug="ssd-nvme-samsung-2tb"
+          currentCategory="it-electronice"
+          articles={allArticles}
+        />
+      </article>
+    </div>
+  </main>
+
+  <script>
+    // Comparison table scroll fade
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.comparison-outer').forEach(outer => {
+        const wrap = outer.querySelector('.comparison-wrap');
+        if (!wrap) return;
+        const check = () => {
+          if (wrap.scrollWidth > wrap.clientWidth) {
+            outer.classList.add('can-scroll');
+          } else {
+            outer.classList.remove('can-scroll');
+          }
+        };
+        check();
+        window.addEventListener('resize', check);
+        wrap.addEventListener('scroll', () => {
+          if (wrap.scrollLeft + wrap.clientWidth >= wrap.scrollWidth - 10) {
+            outer.classList.remove('can-scroll');
+          } else if (wrap.scrollWidth > wrap.clientWidth) {
+            outer.classList.add('can-scroll');
+          }
+        });
+      });
+
+      // TOC active section tracking
+      const tocLinks = document.querySelectorAll('.toc-list a');
+      if (tocLinks.length > 0) {
+        const ids = Array.from(tocLinks).map(a => a.getAttribute('href').replace('#', '')).filter(Boolean);
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              tocLinks.forEach(l => l.classList.remove('active'));
+              const active = document.querySelector('.toc-list a[href="#' + entry.target.id + '"]');
+              if (active) active.classList.add('active');
+            }
+          });
+        }, { rootMargin: '-80px 0px -60% 0px', threshold: 0 });
+        ids.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) observer.observe(el);
+        });
+      }
+    });
+  </script>
+</Layout>

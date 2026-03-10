@@ -71,11 +71,6 @@
       "categorySlug": "electrocasnice-premium"
     },
     {
-      "keyword": "ssd nvme samsung 2tb",
-      "category": "IT si Electronice",
-      "categorySlug": "it-electronice"
-    },
-    {
       "keyword": "router wifi 6 mesh",
       "category": "IT si Electronice",
       "categorySlug": "it-electronice"
@@ -549,6 +544,11 @@
       "keyword": "storcator fructe slow juicer",
       "category": "Electrocasnice Premium",
       "categorySlug": "electrocasnice-premium"
+    },
+    {
+      "keyword": "ssd nvme samsung 2tb",
+      "category": "IT si Electronice",
+      "categorySlug": "it-electronice"
     }
   ],
   "authors": [
