@@ -141,11 +141,6 @@
       "categorySlug": "it-electronice"
     },
     {
-      "keyword": "noptiera moderna minimalist",
-      "category": "Mobilier si Dormitor",
-      "categorySlug": "mobilier-dormitor"
-    },
-    {
       "keyword": "oglinda dormitor led",
       "category": "Mobilier si Dormitor",
       "categorySlug": "mobilier-dormitor"
@@ -549,6 +544,11 @@
       "keyword": "ssd nvme samsung 2tb",
       "category": "IT si Electronice",
       "categorySlug": "it-electronice"
+    },
+    {
+      "keyword": "noptiera moderna minimalist",
+      "category": "Mobilier si Dormitor",
+      "categorySlug": "mobilier-dormitor"
     }
   ],
   "authors": [
