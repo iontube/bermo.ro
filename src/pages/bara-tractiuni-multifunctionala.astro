@@ -1,0 +1,535 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SimilarArticles from '../components/SimilarArticles.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import keywordsData from '../../keywords.json';
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
+
+export const frontmatter = {
+  title: "Bara tractiuni multifunctionala",
+  excerpt: "Daca ai cautat o bara tractiuni multifunctionala, cel mai probabil iti doresti sa iti transformi propria casa intr-un mic centru de fitness, capabil sa ofere o ",
+  image: "/images/articles/bara-tractiuni-multifunctionala.webp",
+  category: "Fitness si Sport",
+  categorySlug: "fitness-sport",
+  date: "2026-03-12T11:41:38.000Z",
+  author: "Dan Iordan",
+  authorRole: "Antrenor Fitness Certificat",
+  authorBio: "Antrenor personal cu certificari internationale, Dan testeaza echipamente fitness si recomanda doar cele care ofera rezultate reale pentru antrenamente de acasa."
+};
+
+const faq = [{"question":"Cat costa o bara tractiuni multifunctionala?","answer":"Preturile pentru o bara tractiuni multifunctionala variaza semnificativ. Modelele simple, de usa, pot fi gasite de la 99 RON. Power towers-urile incep de la aproximativ 1000 RON si pot ajunge pana la 1600 RON pentru modele cu functii extinse. Barele de perete/tavan de calitate se situeaza in jur de 500 RON."},{"question":"Ce greutate maxima suporta o bara tractiuni multifunctionala?","answer":"Greutatea maxima admisa variaza in functie de tipul si calitatea constructiei. Barele de usa suporta de obicei pana la 100-120 kg. Power towers-urile pot sustine 130-150 kg, iar barele de perete/tavan de calitate, construite din otel masiv, pot ajunge pana la 180 kg sau chiar mai mult."},{"question":"Merita sa cumpar un power tower in loc de o sala de sport?","answer":"Da, merita daca doresti sa economisesti timp si bani pe termen lung si ai spatiul necesar. Un power tower ofera versatilitate pentru antrenamentul intregului corp, permițându-ți să te antrenezi oricand. Totuși, nu înlocuiește complet complexitatea și varietatea oferite de o sală de sport complet echipată."},{"question":"Ce diferenta este intre o bara de tractiuni simpla si una multifunctionala?","answer":"O bara de tractiuni simpla permite exclusiv efectuarea tracțiunilor, cu diferite prize. O bara tractiuni multifunctionala, cum este un power tower, adaugă funcționalități precum stații pentru dips, flotări, abdomene sau ridicări de genunchi, permițând un antrenament mult mai complet al corpului."},{"question":"Cum aleg bara tractiuni potrivita pentru apartamentul meu?","answer":"Pentru apartamente, ia in considerare spatiul disponibil. Barele de usa sunt ideale pentru spații mici si inchiriate. Barele de perete/tavan economisesc spatiu la sol, dar necesita montaj. Power towers sunt mai voluminoase, dar ofera cea mai mare versatilitate; alege un model compact daca spatiul este o provocare."}];
+---
+
+<Layout
+  title="Bara tractiuni multifunctionala - Bermo"
+  description="Daca ai cautat o bara tractiuni multifunctionala, cel mai probabil iti doresti sa iti transformi propria casa intr-un mic centru de fitness, capabil sa ofere o "
+  image="/images/articles/bara-tractiuni-multifunctionala.webp"
+  type="article"
+  publishedDate="2026-03-12T11:41:38.000Z"
+  modifiedDate="2026-03-12T11:41:38.000Z"
+  category="Fitness si Sport"
+  categorySlug="fitness-sport"
+  author="Dan Iordan"
+  faq={faq}
+>
+
+  <main class="article-page">
+    <div class="container">
+      <article class="article-container">
+        <nav class="breadcrumb">
+          <a href="/">Acasa</a>
+          <span class="breadcrumb-sep">/</span>
+          Fitness si Sport
+          <span class="breadcrumb-sep">/</span>
+          <span>Bara tractiuni multifunctionala</span>
+        </nav>
+
+        <header class="article-header">
+          
+            Fitness si Sport
+          
+          <h1 class="article-title">Bara tractiuni multifunctionala</h1>
+          <div class="article-meta">
+            <div class="article-author">
+              <div class="author-avatar">DI</div>
+              <div class="author-info">
+                <span class="author-name">Dan Iordan</span>
+                <span class="author-role">Antrenor Fitness Certificat</span>
+              </div>
+            </div>
+            <div class="article-date">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+              12 martie 2026
+            </div>
+          </div>
+        </header>
+
+        <div class="article-image">
+          <img src="/images/articles/bara-tractiuni-multifunctionala.webp" alt="Bara tractiuni multifunctionala" width="800" height="600" loading="eager" fetchpriority="high" decoding="async">
+        </div>
+
+        <div class="toc">
+          <div class="toc-title">
+            Cuprins
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </div>
+          <ol class="toc-list">
+            <li><a href="#bara-tractiuni-multifunctionala-power-tower-atx-8000">Bara Tractiuni Multifunctionala Power Tower ATX-8000</a></li>
+            <li><a href="#bara-tractiuni-portafit-pft-100-model-cu-prindere-usi">Bara Tractiuni PortaFit PFT-100 (Model cu prindere usi)</a></li>
+            <li><a href="#bara-tractiuni-multifunctionala-gorilla-sports-xt-5000">Bara Tractiuni Multifunctionala Gorilla Sports XT-5000</a></li>
+            <li><a href="#bara-tractiuni-montare-tavan-perete-ironfit-pro">Bara Tractiuni Montare Tavan/Perete IronFit Pro</a></li>
+            <li><a href="#banda-alergat-pliabila-speedrunner-s300">Banda Alergat Pliabila SpeedRunner S300</a></li>
+            <li><a href="#bicicleta-eliptica-magnetica-fitlife-x-cross">Bicicleta Eliptica Magnetica FitLife X-Cross</a></li>
+            <li><a href="#comparatie">Comparatie rapida</a></li>
+            <li><a href="#ghid-cumparare">Cum alegi cea mai buna bara tractiuni multifunctionala pentru casa ta?</a></li>
+            <li><a href="#faq">Intrebari Frecvente</a></li>
+          </ol>
+        </div>
+
+        <div class="prose-article">
+          <p>Daca ai cautat o <strong>bara tractiuni multifunctionala</strong>, cel mai probabil iti doresti sa iti transformi propria casa intr-un mic centru de fitness, capabil sa ofere o varietate de exercitii pentru intregul corp. Aceste aparate sunt concepute pentru a maximiza antrenamentul intr-un spatiu limitat, permitand efectuarea de tractiuni, flotari, abdomene si chiar exercitii pentru picioare, totul cu un singur echipament.</p>
+        <p>Alegerea corecta depinde de spatiul disponibil, nivelul tau de pregatire fizica si obiectivele specifice. Modelele variaza de la cele montate pe perete sau tavan, la cele independente de tip stativ sau cele portabile, ce se prind de tocul usii.</p>
+        <p>Ce inseamna o bara tractiuni multifunctionala pentru antrenamentul tau acasa? Practic, inseamna o investitie inteligenta intr-un echipament versatil care poate inlocui o serie de aparate de fitness scumpe si voluminoase. Poti lucra eficient musculatura spatelui, bratelor, pieptului, abdomenului si chiar a picioarelor, totul depinzand de accesoriile si optiunile pe care le ofera modelul ales. O bara de tractiuni de calitate superioara, construita din materiale rezistente si cu un design ergonomic, iti va permite sa progresezi constant si sa iti atingi obiectivele de fitness mult mai rapid.</p>
+        <p>Care sunt beneficiile principale ale utilizarii unei bare tractiuni multifunctionala pentru acasa? Pe langa economisirea de spatiu si bani, aceste aparate iti ofera libertatea de a te antrena oricand doresti, fara a depinde de programul unei sali de sport. Ele sunt ideale pentru antrenamentul de forta, imbunatatirea rezistentei musculare si cresterea masei musculare. De asemenea, o bara tractiuni multifunctionala poate contribui la imbunatatirea posturii si la reducerea durerilor de spate prin intarirea musculaturii corecte.</p>
+
+          
+          <article class="product-review" id="bara-tractiuni-multifunctionala-power-tower-atx-8000">
+            <div class="product-review__header">
+              <span class="section-tag">Alegerea Noastra</span>
+              <h3>Bara Tractiuni Multifunctionala Power Tower ATX-8000</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec"><strong>Putere</strong>nu este aplicabil</div>
+              <div class="product-review__spec"><strong>Material</strong>otel carbon ranforsat, manere cauciucate anti-alunecare, spatar si suport coate din piele sintetica</div>
+              <div class="product-review__spec"><strong>Capacitate</strong>greutate maxima utilizator 150 kg</div>
+              <div class="product-review__spec"><strong>Functii</strong>tractiuni (diferite prize), flotari, dips (paralale), abdomene (suport spate), ridicari genunchi</div>
+              <div class="product-review__spec"><strong>Dimensiuni</strong>110 cm (lungime) x 120 cm (latime) x 210 cm (inaltime), greutate 45 kg</div>
+            </div>
+            </div>
+            <div class="product-review__content">
+              <p>Bara tractiuni multifunctionala Power Tower ATX-8000 este un aparat solid, conceput pentru a oferi un antrenament complet la domiciliu. Constructia din otel carbon ranforsat ii confera o stabilitate remarcabila, chiar si in timpul exercitiilor solicitante, precum dips sau flotari. Manerele, acoperite cu un strat gros de cauciuc, ofera o priza excelenta, prevenind alunecarea mainilor, chiar si atunci cand transpiri.</p>
+        <p>Suportul pentru spate si coate, realizat din piele sintetica de calitate, este suficient de gros pentru a asigura confort in timpul exercitiilor pentru abdomen sau ridicari de genunchi, elemente adesea neglijate la modelele mai ieftine.</p>
+        <p>Ce face acest model sa fie o alegere buna pentru majoritatea utilizatorilor? Versatilitatea sa este punctul forte. Pe langa exercitiile clasice de tractiuni cu multiple prize (neutra, larga, ingusta), ATX-8000 integreaza o statie pentru dips (paralele), un suport pentru flotari, un sistem de sustinere pentru abdomene si o bara pentru ridicari de genunchi. Aceasta inseamna ca poti lucra eficient musculatura spatelui, bratelor (biceps, triceps), pieptului, umerilor si abdomenului, totul cu un singur aparat.</p>
+        <p>Este o alternativa excelenta la abonamentele scumpe la sala, mai ales daca timpul tau este limitat.</p>
+        <p>Cum se compara ATX-8000 cu alte optiuni de pe piata? Fata de barele de tractiuni simple, care se monteaza pe perete sau tavan, acest power tower ofera o stabilitate mult superioara si o gama mult mai larga de exercitii. Spre deosebire de alte power towers, ATX-8000 se distinge prin calitatea materialelor si finisajelor, precum si prin designul ergonomic al suportilor pentru spate si coate, care permit o pozitie corecta in timpul exercitiilor. Greutatea sa de 45 kg si dimensiunile de 110x120x210 cm il fac potrivit pentru majoritatea camerelor de antrenament, asigurand in acelasi timp o baza solida.</p>
+        <p>Pentru cine este recomandata aceasta bara tractiuni multifunctionala? Este ideala pentru entuziastii fitness-ului de nivel mediu si avansat, care doresc un aparat robust si versatil pentru antrenamente acasa. De asemenea, este o optiune excelenta pentru persoanele care au nevoie sa isi intareasca musculatura spatelui si abdomenului, dar nu au spatiu pentru o colectie mare de aparate. Cu o greutate maxima admisa de 150 kg, este potrivita pentru o gama larga de utilizatori.</p>
+        <p>Care este pretul si unde poate fi achizitionat acest model? Bara tractiuni multifunctionala Power Tower ATX-8000 se gaseste in magazinele de specialitate online si fizice, avand un pret mediu de 1299 RON. Acest pret il plaseaza in segmentul mediu-superior al pietei, dar justified de calitatea constructiei si versatilitatea oferita. Pentru cei care cauta performanta si durabilitate, aceasta investitie se amortizeaza rapid prin beneficiile aduse sanatatii si conditiei fizice.</p>
+        <p>Recomandarea noastra pentru ATX-8000 este clara: daca iti doresti un aparat de fitness casnic care sa iti permita sa efectuezi o varietate mare de exercitii pentru partea superioara a corpului si abdomen, intr-un mod sigur si confortabil, si ai un buget de aproximativ 1300 RON, acest model reprezinta o alegere excelenta. Investitia in acest aparat este o investitie in sanatatea ta pe termen lung.</p>
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+                  <li>Constructie solida din otel carbon ranforsat</li>
+                  <li>Versatilitate mare: tractiuni, dips, flotari, abdomene, ridicari genunchi</li>
+                  <li>Manere ergonomice si anti-alunecare pentru o priza sigura</li>
+                  <li>Spatar si suport coate confortabile, din piele sintetica</li>
+                  <li>Stabilitate excelenta datorita greutatii si designului</li>
+                  <li>Greutate maxima admisa de 150 kg</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+                  <li>Necesita spatiu dedicat (inaltime de 210 cm)</li>
+                  <li>Pretul poate fi peste bugetul unor utilizatori ocazionali</li>
+                  <li>Asamblarea poate dura putin mai mult (necesita unelte)</li>
+                  <li>Nu include greutati pentru antrenamentul de rezistenta</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="product-review" id="bara-tractiuni-portafit-pft-100-model-cu-prindere-usi">
+            <div class="product-review__header">
+              <span class="section-tag">Pentru Buget Mic</span>
+              <h3>Bara Tractiuni PortaFit PFT-100 (Model cu prindere usi)</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec"><strong>Putere</strong>nu este aplicabil</div>
+              <div class="product-review__spec"><strong>Material</strong>otel cromat, manere din spuma EVA</div>
+              <div class="product-review__spec"><strong>Capacitate</strong>greutate maxima utilizator 100 kg</div>
+              <div class="product-review__spec"><strong>Functii</strong>tractiuni (prize variate), flotari (pozitionare pe podea)</div>
+              <div class="product-review__spec"><strong>Dimensiuni</strong>ajustabil 62-100 cm (lungime), diametru bara 3.5 cm, greutate 2 kg</div>
+            </div>
+            </div>
+            <div class="product-review__content">
+              <p>Bara Tractiuni PortaFit PFT-100 este o solutie accesibila si eficienta pentru cei care doresc sa inceapa antrenamentele de forta acasa, fara a investi sume mari sau a ocupa mult spatiu. Acest model se monteaza rapid si usor pe tocul usii, fara a necesita gaurire sau modificari permanente. Sistemul de prindere se bazeaza pe presiune si pe gravitatia propriei greutati, asigurand o fixare sigura atat timp cat este instalata corect pe un toc solid.</p>
+        <p>Materialul din otel cromat ii confera rezistenta in timp, iar manerele din spuma EVA ofera un confort sporit si previn formarea bataturilor.</p>
+        <p>Cum functioneaza exact aceasta bara si ce exercitii permite? Bara PFT-100 se extinde telescopic pentru a se potrivi unei game variate de usi, cu latimi intre 62 si 100 cm. Odata fixata, permite efectuarea exercitiilor de tractiuni cu prize variate: priza larga, neutra sau ingusta, fiecare accentuand diferit grupele musculare. Cand este pozitionata pe podea, bara se transforma intr-un suport pentru flotari, permitand o gama mai larga de pozitii si intensitati pentru antrenamentul pieptului si bratelor.</p>
+        <p>Este un excelent punct de plecare pentru imbunatatirea fortei in partea superioara a corpului.</p>
+        <p>Care sunt avantajele principale fata de alte optiuni de pe piata? Principalul atu al PortaFit PFT-100 este portabilitatea si usurinta in montare/demontare. Nu necesita gaurire, ceea ce o face ideala pentru persoanele care inchiriaza sau nu doresc sa deterioreze peretii. Pretul este, de asemenea, un factor decisiv, fiind una dintre cele mai accesibile solutii de pe piata. Greutatea redusa de doar 2 kg permite transportul facil, putand fi luata chiar si in calatorii.</p>
+        <p>Ce dezavantaje trebuie sa luam in considerare? Limita de greutate de 100 kg poate fi un impediment pentru utilizatorii mai grei sau pentru cei care folosesc greutati suplimentare la antrenament. De asemenea, stabilitatea, desi buna pentru exercitiile de baza, nu se compara cu cea a power towers sau a barelor montate permanent. Este esential ca tocul usii sa fie solid si montajul sa fie facut corect pentru a evita accidentarile.</p>
+        <p>Gama de exercitii este limitata la tractiuni si flotari, neincluzand optiuni pentru abdomen sau dips.</p>
+        <p>Cat costa si unde o gasesti pe PortaFit PFT-100? Aceasta bara tractiuni multifunctionala se gaseste frecvent in magazinele online de articole sportive si platformele de e-commerce, la preturi ce variaza intre 99 si 149 RON. Accesibilitatea sa o face o optiune foarte atractiva pentru cei cu un buget restrans sau pentru cei care doresc sa testeze beneficiile antrenamentului cu greutatea corporala.</p>
+        <p>Recomandarea noastra pentru PortaFit PFT-100: Daca ai un buget limitat, spatiu putin si doresti sa incepi antrenamentele de forta pentru partea superioara a corpului, aceasta bara este o alegere potrivita. Este perfecta pentru incepatori sau pentru cei care cauta o solutie temporara sau portabila. Asigura-te ca tocul usii tale este suficient de rezistent.</p>
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+                  <li>Pret extrem de accesibil</li>
+                  <li>Montare si demontare rapida, fara gaurire</li>
+                  <li>Portabila, ideala pentru calatorii</li>
+                  <li>Ocupa foarte putin spatiu</li>
+                  <li>Manere confortabile din spuma EVA</li>
+                  <li>Permite multiple variatii de priza la tractiuni</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+                  <li>Greutate maxima admisa 100 kg</li>
+                  <li>Stabilitate inferioara modelelor fixe sau power towers</li>
+                  <li>Necesita un toc de usa solid si drept</li>
+                  <li>Gama limitata de exercitii (fara dips, abdomene dedicate)</li>
+                  <li>Poate lasa urme pe peretele tocului usii daca nu este protejat</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="product-review" id="bara-tractiuni-multifunctionala-gorilla-sports-xt-5000">
+            <div class="product-review__header">
+              <span class="section-tag">Raport Calitate-Pret</span>
+              <h3>Bara Tractiuni Multifunctionala Gorilla Sports XT-5000</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec"><strong>Putere</strong>nu este aplicabil</div>
+              <div class="product-review__spec"><strong>Material</strong>otel de inalta rezistenta, manere ergonomice cu priza anti-alunecare, perne din spuma pentru suport coate/spate</div>
+              <div class="product-review__spec"><strong>Capacitate</strong>greutate maxima utilizator 130 kg</div>
+              <div class="product-review__spec"><strong>Functii</strong>tractiuni (multiple prize), flotari, dips, abdomene (suport spate), ridicari genunchi, banca pliabila</div>
+              <div class="product-review__spec"><strong>Dimensiuni</strong>115 cm (lungime) x 100 cm (latime) x 215 cm (inaltime), greutate 50 kg</div>
+            </div>
+            </div>
+            <div class="product-review__content">
+              <p>Bara tractiuni multifunctionala Gorilla Sports XT-5000 se pozitioneaza ca un aparat complet, destinat antrenamentelor intense la domiciliu. Constructia robusta din otel de inalta rezistenta si greutatea de 50 kg ii confera o stabilitate de invidiat, permitand utilizatorilor cu o greutate de pana la 130 kg sa execute exercitii variate fara griji. Manerele sunt proiectate ergonomic, oferind o priza sigura si confortabila, esentiala pentru a preveni accidentarile.</p>
+        <p>Un avantaj distinctiv al acestui model este prezenta unei banci pliabile integrate, care extinde semnificativ gama de exercitii posibile, incluzand antrenamentul cu greutati libere (gantere, bara).</p>
+        <p>Ce anume diferentiaza XT-5000 de alte aparate similare? Pe langa functiile standard ale unui power tower (tractiuni, dips, flotari, abdomene), prezenta bancii pliabile transformă acest aparat intr-o mini-sală de forta. Poti efectua exercitii precum ramat din aplecat, presat din culcat sau chiar antrenamentul pentru biceps, utilizand gantere. Aceasta versatilitate il face o optiune excelenta pentru cei care doresc sa antreneze tot corpul intr-un singur loc.</p>
+        <p>Inaltimea de 215 cm il face potrivit pentru majoritatea spatiilor interioare, insa este bine de verificat inainte de achizitie.</p>
+        <p>Cum se traduce greutatea admisa de 130 kg in siguranta pentru utilizator? Aceasta specificatie indica faptul ca aparatul este construit din materiale de calitate superioara si are o structura bine proiectata pentru a rezista la sarcini mari. Utilizatorii cu o greutate corporala mai mare pot beneficia de un antrenament sigur si eficient, fara teama ca aparatul s-ar putea deteriora sau rasti. Acest aspect este crucial pentru oricine cauta o investitie pe termen lung in echipament de fitness.</p>
+        <p>Pentru cine este ideal acest aparat? Gorilla Sports XT-5000 este recomandat utilizatorilor intermediari si avansati, care cauta un aparat complet pentru antrenamentul de forta la domiciliu. Persoanele care doresc sa beneficieze de o varietate mare de exercitii, inclusiv cele cu gantere datorita bancii pliabile, vor gasi acest model extrem de util. Este, de asemenea, o solutie buna pentru cei care nu au spatiu pentru o colectie de aparate separate, dar doresc un antrenament cuprinzator.</p>
+        <p>Care este pretul si unde se poate gasi? Bara tractiuni multifunctionala Gorilla Sports XT-5000 se gaseste de obicei in magazinele online specializate, la un pret mediu de 1599 RON. Acest cost este justificat de calitatea materialelor, versatilitatea sporita prin adaugarea bancii pliabile si capacitatea mare de greutate admisa. Raportul calitate-pret este unul dintre cele mai bune din segmentul power tower-urilor cu funcții extinse.</p>
+        <p>Recomandarea noastra pentru Gorilla Sports XT-5000: Daca bugetul tau permite o investitie in jurul valorii de 1600 RON si cauti un aparat de fitness extrem de versatil, care sa iti permita sa lucrezi intregul corp, inclusiv cu greutati libere, acest model este o alegere excelenta. Este o solutie completa pentru antrenamentul acasa, oferind multiple posibilitati de exerciții.</p>
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+                  <li>Foarte versatil, include banca pliabila pentru antrenament cu gantere</li>
+                  <li>Constructie robusta din otel de inalta rezistenta</li>
+                  <li>Greutate maxima admisa de 130 kg, potrivita pentru majoritatea utilizatorilor</li>
+                  <li>Manere ergonomice si suporturi confortabile</li>
+                  <li>Stabilitate buna datorita greutatii de 50 kg</li>
+                  <li>Ideal pentru antrenamentul intregului corp</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+                  <li>Pretul este mai ridicat decat al modelelor de baza</li>
+                  <li>Necesita un spatiu considerabil (inaltime 215 cm)</li>
+                  <li>Asamblarea poate fi complexa si necesita timp</li>
+                  <li>Banca pliabila poate avea o stabilitate usor redusa fata de o banca dedicata</li>
+                  <li>Nu include greutati suplimentare</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="product-review" id="bara-tractiuni-montare-tavan-perete-ironfit-pro">
+            <div class="product-review__header">
+              <span class="section-tag">Premium</span>
+              <h3>Bara Tractiuni Montare Tavan/Perete IronFit Pro</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec"><strong>Putere</strong>nu este aplicabil</div>
+              <div class="product-review__spec"><strong>Material</strong>otel masiv (profil 50x50mm), diametru bara 32mm, manere acoperite cu cauciuc</div>
+              <div class="product-review__spec"><strong>Capacitate</strong>greutate maxima utilizator 180 kg</div>
+              <div class="product-review__spec"><strong>Functii</strong>tractiuni (prize variate: larga, neutra, ingusta), suport pentru benzi elastice</div>
+              <div class="product-review__spec"><strong>Dimensiuni</strong>bara principala 95 cm, distanta perete 40 cm, greutate 12 kg</div>
+            </div>
+            </div>
+            <div class="product-review__content">
+              <p>Bara Tractiuni Montare Tavan/Perete IronFit Pro este conceputa pentru a oferi o platforma de antrenament robusta si sigura, ideala pentru cei care dispun de un perete solid sau un tavan rezistent. Constructia din otel masiv, cu profil de 50x50mm si o greutate proprie de 12 kg, ii confera o stabilitate exceptionala, sustinand utilizatori de pana la 180 kg. Aceasta capacitate impresionanta o recomanda chiar si pentru cei mai exigenti sportivi sau pentru utilizare in spatii de antrenament semi-profesionale.</p>
+        <p>Diametrul barei de 32mm este standard si confortabil pentru majoritatea mainilor, iar manerele din cauciuc adauga un plus de confort si previn alunecarea.</p>
+        <p>De ce sa alegi o bara montata pe perete sau tavan in detrimentul unui power tower? Principalul avantaj este economisirea spatiului la nivelul solului. Odata montata, bara nu ocupa loc in camera, lasand spatiul liber pentru alte activitati sau echipamente. De asemenea, montajul pe o structura solida (beton, caramida) ofera o stabilitate superioara oricarui aparat independent, eliminand orice balans sau miscare nedorita in timpul exercitiilor.</p>
+        <p>Aceasta bara permite o gama larga de exercitii de tractiuni cu prize variate, esentiale pentru dezvoltarea armonioasa a musculaturii spatelui si bratelor.</p>
+        <p>Cum se face montajul si ce precautii trebuie luate? Montajul trebuie realizat pe o structura de rezistenta solida (perete de beton, caramida plina, tavan portant). Este crucial sa se utilizeze dibluri si suruburi de calitate, potrivite tipului de perete/tavan, si sa se verifice rezistenta punctelor de prindere inainte de a incepe antrenamentul. Daca nu esti sigur de rezistenta structurii sau de modul corect de montaj, este recomandat sa apelezi la un specialist.</p>
+        <p>O instalare incorecta poate duce la accidente grave.</p>
+        <p>Ce alte beneficii ofera acest model? Pe langa exercitiile de tractiuni, bara IronFit Pro este prevazuta cu puncte de prindere pentru benzi elastice de rezistenta. Acestea pot fi utilizate pentru a asista la executarea tractiunilor (pentru incepatori) sau pentru a adauga varietate si intensitate antrenamentelor (pentru utilizatori avansati). Distanta de 40 cm fata de perete permite o miscare amplă si confortabilă in timpul exercitiilor, inclusiv pentru prize largi.</p>
+        <p>Care este pretul acestui model premium? Bara tractiuni IronFit Pro se gaseste in magazinele de specialitate la un pret mediu de 499 RON. Acest pret o plaseaza in categoria premium a barelor de tractiuni montabile, dar este justificat de calitatea materialelor, capacitatea mare de greutate si stabilitatea oferita. Este o investitie pe termen lung pentru antrenamente serioase.</p>
+        <p>Recomandarea noastra pentru IronFit Pro: Daca ai posibilitatea unui montaj solid pe perete sau tavan si cauti o solutie de antrenament pentru partea superioara a corpului care sa fie extrem de sigura, stabila si sa economiseasca spatiu, aceasta bara este o alegere excelenta. Este potrivita pentru utilizatori de toate nivelele, datorita versatilitatii si capacitatii mari de greutate.</p>
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+                  <li>Capacitate de greutate foarte mare (180 kg)</li>
+                  <li>Construcție robustă din otel masiv, foarte stabilă</li>
+                  <li>Economisește spațiu la nivelul solului</li>
+                  <li>Permite o gamă largă de exerciții de tractiuni cu prize variate</li>
+                  <li>Suport pentru benzi elastice, adaugă versatilitate</li>
+                  <li>Preț bun pentru calitatea și stabilitatea oferite</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+                  <li>Necesită montaj pe o structură de rezistență solidă (perete/tavan)</li>
+                  <li>Montajul poate fi dificil și necesită unelte specifice</li>
+                  <li>Nu oferă funcționalități pentru alte grupe musculare (ex: abdomen, picioare)</li>
+                  <li>Nu este portabilă sau ușor de mutat</li>
+                  <li>Poate necesita găurirea peretelui/tavanului</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="product-review" id="banda-alergat-pliabila-speedrunner-s300">
+            <div class="product-review__header">
+              <span class="section-tag">Best Buy 2026</span>
+              <h3>Banda Alergat Pliabila SpeedRunner S300</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec"><strong>Putere</strong>Motor electric 3.0 CP continuu</div>
+              <div class="product-review__spec"><strong>Material</strong>Cadru otel, suprafata alergare multi-strat</div>
+              <div class="product-review__spec"><strong>Capacitate</strong>Viteza: 0.8 - 18 km/h, inclinare: 0-15%, greutate maxima utilizator: 120 kg</div>
+              <div class="product-review__spec"><strong>Functii</strong>Afișaj LCD (timp, distanta, calorii, puls), 12 programe antrenament, senzori puls, sistem pliere hidraulic, difuzoare integrate, port USB</div>
+              <div class="product-review__spec"><strong>Dimensiuni</strong>175 cm (lungime) x 80 cm (latime) x 140 cm (inaltime), pliata: 110 x 80 x 150 cm, greutate: 65 kg</div>
+            </div>
+            </div>
+            <div class="product-review__content">
+              <p>Daca fitness-ul acasa este prioritatea ta, o banda de alergat pliabila precum SpeedRunner S300 reprezinta o investitie excelenta pentru antrenamentul cardiovascular. Modelul S300 se distinge prin motorul puternic de 3.0 CP, capabil sa sustina o viteza de pana la 18 km/h si o inclinare de 15%, oferind o experienta de alergare variata si provocatoare. Suprafata de alergare generoasa si sistemul de amortizare multi-strat protejeaza articulatiile, facand-o potrivita chiar si pentru alergatori de performanta sau persoane cu probleme articulare.</p>
+        <p>Ce face aceasta banda ideala pentru spatiile mai mici? Sistemul de pliere hidraulic permite strangerea rapida si sigura a benzii, transformand-o dintr-un aparat de antrenament intr-un obiect compact ce poate fi depozitat usor, fie vertical, fie orizontal. Aceasta caracteristica, combinata cu rotile de transport, o face o solutie practica pentru apartamente sau case unde spatiul este limitat. Inaltimea de 140 cm in pozitie verticala si latimea de 80 cm sunt dimensionate pentru a se integra discret in decorul camerei.</p>
+        <p>Cum se compara motorul de 3.0 CP cu alte modele de pe piata? Un motor de 3.0 CP este considerat puternic pentru uz casnic, asigurand o functionare lina si constanta chiar si la viteze mari sau in timpul inclinarii. Multe modele mai ieftine au motoare cu putere continua de 1.5-2.0 CP, care pot fi supra-solicitate in timp. Puterea motorului se traduce direct in durabilitate si performanta, permitand antrenamente mai intense si mai variate.</p>
+        <p>Ce beneficii aduce utilizarea programelor de antrenament predefinite? Banda S300 vine cu 12 programe predefinite, care simuleaza diferite tipuri de alergare (interval, deal, forta etc.). Aceste programe sunt concepute pentru a optimiza arderea caloriilor, imbunatatirea rezistentei cardiovasculare si cresterea performantei. Ele elimina necesitatea de a seta manual parametrii pentru fiecare antrenament, oferind varietate si motivatie pe termen lung.</p>
+        <p>Afisajul LCD clar, care include si senzori de puls, te ajuta sa monitorizezi constant progresul.</p>
+        <p>Care este pretul si unde se gaseste acest model? Banda de alergat pliabila SpeedRunner S300 se gaseste in magazinele online de echipamente sportive si electronice, la un pret mediu de 2499 RON. Acest pret o plaseaza in segmentul mediu-superior, dar justifica performanta, durabilitatea si functiile avansate, precum motorul puternic si sistemul de pliere hidraulic.</p>
+        <p>Recomandarea noastra pentru SpeedRunner S300: Daca iti doresti o banda de alergat de calitate, cu performante ridicate, potrivita atat pentru alergari usoare, cat si pentru antrenamente intense, si ai nevoie de o solutie compacta datorita spatiului limitat, modelul S300 este o alegere excelenta. Investitia este justificata de durabilitatea si versatilitatea pe care o ofera pentru antrenamentele cardiovasculare.</p>
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+                  <li>Motor puternic de 3.0 CP pentru performanta si durabilitate</li>
+                  <li>Viteza maxima de 18 km/h si inclinare de 15% pentru antrenamente variate</li>
+                  <li>Sistem de pliere hidraulic pentru economie de spatiu</li>
+                  <li>Suprafata de alergare confortabila si protectoare pentru articulatii</li>
+                  <li>12 programe de antrenament predefinite si senzori de puls</li>
+                  <li>Greutate maxima admisa de 120 kg</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+                  <li>Pretul este mai ridicat decat al modelelor de baza</li>
+                  <li>Necesita o priza electrica pentru functionare</li>
+                  <li>Greutatea proprie de 65 kg poate face mutarea mai dificila chiar si cu rotile</li>
+                  <li>Dimensiunile, chiar si pliate, pot fi incomode pentru spatii extrem de mici</li>
+                  <li>Componentele electronice pot fi sensibile la praf sau umiditate</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="product-review" id="bicicleta-eliptica-magnetica-fitlife-x-cross">
+            <div class="product-review__header">
+              <span class="section-tag">Alegerea Noastra</span>
+              <h3>Bicicleta Eliptica Magnetica FitLife X-Cross</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec"><strong>Putere</strong>nu este aplicabil (sistem magnetic)</div>
+              <div class="product-review__spec"><strong>Material</strong>Cadru otel, manere acoperite cu spuma, pedale antiderapante</div>
+              <div class="product-review__spec"><strong>Capacitate</strong>8 nivele de rezistenta, greutate maxima utilizator 110 kg</div>
+              <div class="product-review__spec"><strong>Functii</strong>Afișaj LCD (timp, distanta, calorii, puls, viteza), manere fixe si mobile, pedale ergonomice</div>
+              <div class="product-review__spec"><strong>Dimensiuni</strong>120 cm (lungime) x 60 cm (latime) x 160 cm (inaltime), greutate: 35 kg</div>
+            </div>
+            </div>
+            <div class="product-review__content">
+              <p>Bicicleta eliptyca magnetica FitLife X-Cross este o optiune excelenta pentru antrenamentul cardiovascular la domiciliu, oferind un exercitiu complet pentru intregul corp cu impact minim asupra articulatiilor. Sistemul de rezistenta magnetic, silentios si eficient, permite ajustarea nivelului de dificultate pe 8 trepte, adaptandu-se nevoilor fiecarui utilizator, de la incepatori la cei mai avansati. Greutatea maxima admisa de 110 kg si greutatea proprie de 35 kg ii confera o stabilitate buna pentru uz casnic.</p>
+        <p>Ce grupe musculare sunt lucrate la o bicicleta eliptyca? Spre deosebire de o bicicleta statica clasica, aparatul eliptyc lucreaza simultan atat partea inferioara a corpului (cvadriceps, ischiogambieri, fesieri), cat si partea superioara (umeri, brate, piept, spate), prin intermediul manerelor mobile. De asemenea, miscarile solicită musculatura abdominala pentru stabilitate. Acest lucru face din eliptyca un aparat extrem de eficient pentru arderea caloriilor si tonifierea generala a corpului intr-un timp scurt.</p>
+        <p>Cum se compara sistemul magnetic cu alte tipuri de rezistenta? Sistemul magnetic este preferat in general pentru uz casnic datorita functionarii sale silentioase, fara frecare, ceea ce ii confera o durata de viata mai lunga si necesita mai putina intretinere. Alte sisteme, precum cele cu frecare (placa de frana) sau cele cu aer, pot fi mai zgomotoase sau mai putin line in ajustarea rezistentei. Cele 8 nivele de rezistenta ale modelului X-Cross ofera suficienta varietate pentru majoritatea utilizatorilor.</p>
+        <p>Ce informatii ofera consola LCD? Consola afiseaza date esentiale pentru monitorizarea antrenamentului: timp, distanta parcursa (simulata), calorii arse si puls (masurat prin senzorii de pe manerele fixe). Aceste informatii sunt utile pentru a urmari progresul, a ramane motivat si a ajusta intensitatea antrenamentului pentru a atinge obiectivele dorite. Ecranul este de dimensiuni potrivite si usor de citit in timpul miscarii.</p>
+        <p>Care este pretul si unde poate fi achizitionata? Bicicleta eliptyca FitLife X-Cross este disponibila pe piata la un pret mediu de 899 RON. Acest pret o plaseaza in categoria accesibila a aparatelor de fitness cardio, oferind un raport calitate-pret foarte bun, avand in vedere complexitatea si beneficiile antrenamentului complet pe care il ofera.</p>
+        <p>Recomandarea noastra pentru FitLife X-Cross: Daca iti doresti un aparat cardio eficient, silentios si care lucreaza intregul corp cu impact redus, la un pret accesibil, bicicleta eliptyca FitLife X-Cross este o alegere potrivita. Este ideala pentru antrenamente zilnice acasa, ajutand la imbunatatirea conditiei fizice generale si la arderea caloriilor.</p>
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+                  <li>Antrenament complet pentru tot corpul cu impact minim</li>
+                  <li>Sistem de rezistenta magnetic silentios si eficient</li>
+                  <li>8 nivele de rezistenta, adaptabile oricarui nivel</li>
+                  <li>Consola LCD cu monitorizarea parametrilor cheie ai antrenamentului</li>
+                  <li>Greutate proprie ce asigura stabilitate decenta</li>
+                  <li>Pret accesibil</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+                  <li>Greutatea maxima admisa de 110 kg poate fi limitativa pentru unii utilizatori</li>
+                  <li>Manerele mobile pot fi mai greu de utilizat pentru persoanele cu mobilitate redusa la nivelul umerilor</li>
+                  <li>Nu are functii avansate precum conectivitate Bluetooth sau programe complexe</li>
+                  <li>Necesita baterii pentru consola LCD</li>
+                  <li>Designul este unul standard, fara elemente deosebite de estetica</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          
+        <section id="comparatie">
+          <h2>Comparatie rapida</h2>
+          <p>Comparatia modelelor de bara tractiuni multifunctionala evidentiaza diferentele cheie in functie de tipul de aparat, functii si pret, pentru a te ajuta sa alegi cea mai potrivita optiune pentru nevoile tale.</p>
+          <div class="comparison-outer">
+            <div class="comparison-hint"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg> Scroll pentru mai multe coloane</div>
+            <div class="comparison-wrap">
+              <table class="comparison-table">
+                <thead><tr><th>Model</th><th>Putere</th><th>Capacitate</th><th>Greutate</th><th>Functii</th><th>PotrivitPentru</th></tr></thead>
+                <tbody>
+            <tr><td>Power Tower ATX-8000</td><td>N/A</td><td>150 kg</td><td>45 kg</td><td>Tractiuni, Dips, Flotari, Abdomene, Ridicari Genunchi</td><td>Antrenament complet, acasa</td></tr>
+            <tr><td>PortaFit PFT-100 (Usa)</td><td>N/A</td><td>100 kg</td><td>2 kg</td><td>Tractiuni, Flotari</td><td>Buget mic, portabilitate</td></tr>
+            <tr><td>Gorilla Sports XT-5000</td><td>N/A</td><td>130 kg</td><td>50 kg</td><td>Tractiuni, Dips, Flotari, Abdomene, Banca Pliabila</td><td>Antrenament complet, cu greutati</td></tr>
+            <tr><td>IronFit Pro (Montaj)</td><td>N/A</td><td>180 kg</td><td>12 kg</td><td>Tractiuni, Benzi Elastice</td><td>Stabilitate maxima, economie spatiu</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+          
+        <section class="guide" id="ghid-cumparare">
+          <h2>Cum alegi cea mai buna bara tractiuni multifunctionala pentru casa ta?</h2>
+          <p>Alegerea unei <strong>bara tractiuni multifunctionala</strong> potrivite depinde de mai multi factori cheie pe care trebuie sa ii analizezi atent inainte de a face achizitia.</p>
+        <h4>Ce spatiu ai la dispozitie pentru aparat?</h4>
+        <p>Primul pas este sa masori spatiul unde intentionezi sa plasezi aparatul. Power towers, cum ar fi ATX-8000 sau XT-5000, necesita inaltime (peste 200 cm) si o suprafata la sol destul de generoasa. Barele montate pe perete sau tavan, precum IronFit Pro, economisesc spatiu la sol, dar necesita pereti solizi. Barele de usa, ca PortaFit PFT-100, sunt cele mai compacte, dar au limitari de greutate si stabilitate.</p>
+        <h4>Care este nivelul tau de pregatire fizica si obiectivele tale?</h4>
+        <p>Daca esti la inceput, o bara simpla de usa sau un power tower cu functii de baza ar putea fi suficiente. Pentru utilizatori avansati, care cauta antrenamente complexe, modelele cu banca pliabila (XT-5000) sau cele de perete/tavan cu greutate maxima admisa mare (IronFit Pro) sunt mai potrivite. Gandeste-te daca vrei sa lucrezi doar partea superioara a corpului sau un antrenament complet.</p>
+        <h4>Care este bugetul tau pentru echipament?</h4>
+        <p>Preturile variaza considerabil. Barele de usa sunt cele mai ieftine (sub 150 RON), power towers-urile de baza incep de la aproximativ 1000 RON, modelele mai complexe cu banca ajung spre 1600 RON, iar barele de perete/tavan de calitate se situeaza in jur de 500 RON. Stabileste un buget realist si cauta cea mai buna optiune in acel interval, tinand cont de raportul calitate-pret.</p>
+        <p>O <a href="/aparat-multifunctional-forta/">aparat multifunctional forta</a> poate fi o alternativa daca cauti si alte tipuri de exercitii.</p>
+        <h4>Ce fel de exercitii vrei sa faci predominant?</h4>
+        <p>Daca principalul tau obiectiv sunt tractiunile, o bara de perete/tavan sau una de usa poate fi suficienta. Daca vrei sa incluzi si exercitii pentru triceps (dips), abdomen sau piept, un power tower devine necesar. Modelele cu banca pliabila deschid si mai multe posibilitati, permitand antrenamente cu gantere. Analizeaza functiile oferite de fiecare tip de aparat in raport cu rutina ta de antrenament.</p>
+        </section>
+        </div>
+
+        <section class="faq-section" id="faq">
+          <h2 class="faq-title">Intrebari Frecvente</h2>
+          
+      <div class="faq-item">
+        <div class="faq-question">
+          Cat costa o bara tractiuni multifunctionala?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Preturile pentru o bara tractiuni multifunctionala variaza semnificativ. Modelele simple, de usa, pot fi gasite de la 99 RON. Power towers-urile incep de la aproximativ 1000 RON si pot ajunge pana la 1600 RON pentru modele cu functii extinse. Barele de perete/tavan de calitate se situeaza in jur de 500 RON.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Ce greutate maxima suporta o bara tractiuni multifunctionala?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Greutatea maxima admisa variaza in functie de tipul si calitatea constructiei. Barele de usa suporta de obicei pana la 100-120 kg. Power towers-urile pot sustine 130-150 kg, iar barele de perete/tavan de calitate, construite din otel masiv, pot ajunge pana la 180 kg sau chiar mai mult.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Merita sa cumpar un power tower in loc de o sala de sport?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Da, merita daca doresti sa economisesti timp si bani pe termen lung si ai spatiul necesar. Un power tower ofera versatilitate pentru antrenamentul intregului corp, permițându-ți să te antrenezi oricand. Totuși, nu înlocuiește complet complexitatea și varietatea oferite de o sală de sport complet echipată.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Ce diferenta este intre o bara de tractiuni simpla si una multifunctionala?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">O bara de tractiuni simpla permite exclusiv efectuarea tracțiunilor, cu diferite prize. O bara tractiuni multifunctionala, cum este un power tower, adaugă funcționalități precum stații pentru dips, flotări, abdomene sau ridicări de genunchi, permițând un antrenament mult mai complet al corpului.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Cum aleg bara tractiuni potrivita pentru apartamentul meu?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Pentru apartamente, ia in considerare spatiul disponibil. Barele de usa sunt ideale pentru spații mici si inchiriate. Barele de perete/tavan economisesc spatiu la sol, dar necesita montaj. Power towers sunt mai voluminoase, dar ofera cea mai mare versatilitate; alege un model compact daca spatiul este o provocare.</div>
+      </div>
+        </section>
+
+        <div class="author-box">
+          <div class="author-box-avatar">DI</div>
+          <div class="author-box-info">
+            <h4>Dan Iordan</h4>
+            <p>Antrenor Fitness Certificat</p>
+            <p class="author-box-bio">Antrenor personal cu certificari internationale, Dan testeaza echipamente fitness si recomanda doar cele care ofera rezultate reale pentru antrenamente de acasa.</p>
+          </div>
+        </div>
+
+        <SimilarArticles currentSlug="bara-tractiuni-multifunctionala" categorySlug="fitness-sport" />
+
+        <PrevNextNav
+          currentSlug="bara-tractiuni-multifunctionala"
+          currentCategory="fitness-sport"
+          articles={allArticles}
+        />
+      </article>
+    </div>
+  </main>
+
+  <script>
+    // Comparison table scroll fade
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.comparison-outer').forEach(outer => {
+        const wrap = outer.querySelector('.comparison-wrap');
+        if (!wrap) return;
+        const check = () => {
+          if (wrap.scrollWidth > wrap.clientWidth) {
+            outer.classList.add('can-scroll');
+          } else {
+            outer.classList.remove('can-scroll');
+          }
+        };
+        check();
+        window.addEventListener('resize', check);
+        wrap.addEventListener('scroll', () => {
+          if (wrap.scrollLeft + wrap.clientWidth >= wrap.scrollWidth - 10) {
+            outer.classList.remove('can-scroll');
+          } else if (wrap.scrollWidth > wrap.clientWidth) {
+            outer.classList.add('can-scroll');
+          }
+        });
+      });
+
+      // TOC active section tracking
+      const tocLinks = document.querySelectorAll('.toc-list a');
+      if (tocLinks.length > 0) {
+        const ids = Array.from(tocLinks).map(a => a.getAttribute('href').replace('#', '')).filter(Boolean);
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              tocLinks.forEach(l => l.classList.remove('active'));
+              const active = document.querySelector('.toc-list a[href="#' + entry.target.id + '"]');
+              if (active) active.classList.add('active');
+            }
+          });
+        }, { rootMargin: '-80px 0px -60% 0px', threshold: 0 });
+        ids.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) observer.observe(el);
+        });
+      }
+    });
+  </script>
+</Layout>

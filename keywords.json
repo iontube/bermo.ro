@@ -221,11 +221,6 @@
       "categorySlug": "mobilier-dormitor"
     },
     {
-      "keyword": "bara tractiuni multifunctionala",
-      "category": "Fitness si Sport",
-      "categorySlug": "fitness-sport"
-    },
-    {
       "keyword": "saltea yoga cauciuc natural",
       "category": "Fitness si Sport",
       "categorySlug": "fitness-sport"
@@ -549,6 +544,11 @@
       "keyword": "noptiera moderna minimalist",
       "category": "Mobilier si Dormitor",
       "categorySlug": "mobilier-dormitor"
+    },
+    {
+      "keyword": "bara tractiuni multifunctionala",
+      "category": "Fitness si Sport",
+      "categorySlug": "fitness-sport"
     }
   ],
   "authors": [
