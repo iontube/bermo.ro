@@ -1,11 +1,6 @@
 {
   "pending": [
     {
-      "keyword": "aparat vidat alimente profesional",
-      "category": "Electrocasnice Premium",
-      "categorySlug": "electrocasnice-premium"
-    },
-    {
       "keyword": "masina tocat carne inox",
       "category": "Electrocasnice Premium",
       "categorySlug": "electrocasnice-premium"
@@ -549,6 +544,11 @@
       "keyword": "bara tractiuni multifunctionala",
       "category": "Fitness si Sport",
       "categorySlug": "fitness-sport"
+    },
+    {
+      "keyword": "aparat vidat alimente profesional",
+      "category": "Electrocasnice Premium",
+      "categorySlug": "electrocasnice-premium"
     }
   ],
   "authors": [
