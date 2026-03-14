@@ -1,0 +1,550 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SimilarArticles from '../components/SimilarArticles.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import keywordsData from '../../keywords.json';
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
+
+export const frontmatter = {
+  title: "Router wifi 6 mesh",
+  excerpt: "Daca cauti performanta si acoperire Wi-Fi fara intreruperi in toata casa, un sistem router wifi 6 mesh este solutia ideala. Aceste sisteme combina un router pri",
+  image: "/images/articles/router-wifi-6-mesh.webp",
+  category: "IT si Electronice",
+  categorySlug: "it-electronice",
+  date: "2026-03-14T11:37:18.911Z",
+  author: "Radu Petre",
+  authorRole: "Specialist IT & Gaming",
+  authorBio: "Inginer IT si gamer pasionat, Radu analizeaza laptopuri si componente din perspectiva performantei reale in jocuri si aplicatii profesionale."
+};
+
+const faq = [{"question":"Cat costa un sistem router wifi 6 mesh bun?","answer":"Preturile pentru un sistem router wifi 6 mesh bun variaza considerabil. Cele mai accesibile, precum TP-Link Deco X20 (3-pack), incep de la aproximativ 700-900 lei. Modelele de performanta medie spre inalta, cum ar fi ASUS ZenWiFi XT8 (2-pack) sau Netgear Nighthawk AX8, pot ajunge la 1500-2500 lei sau chiar mai mult pentru pachete cu mai multe unitati sau specificatii superioare."},{"question":"Care e diferenta intre un router mesh si un range extender?","answer":"Un range extender mareste semnalul unui router existent, dar adesea imparte viteza pe jumatate si creeaza o retea separata. Un sistem mesh, in schimb, creeaza o singura retea unificata cu routerul principal si unitatile satelit, oferind acoperire uniforma, viteze mai mari si comutare automata intre noduri, fara intreruperi."},{"question":"Merita sa upgradez la Wi-Fi 6 mesh daca am deja Wi-Fi 5?","answer":"Merita daca ai multe dispozitive noi compatibile Wi-Fi 6, ai nevoie de viteze mai mari, latenta mai mica pentru jocuri sau streaming 4K/8K, sau daca ai un numar foarte mare de dispozitive conectate simultan. Pentru nevoi moderate, un sistem Wi-Fi 5 mesh performant poate fi inca o optiune buna."},{"question":"Cate unitati mesh am nevoie pentru casa mea?","answer":"Numarul de unitati depinde de suprafata locuintei si de structura acesteia (pereti grosi, etaje multiple). In general, un pachet de 2 unitati este suficient pentru apartamente sau case mici spre medii (pana la 200-250 mp). Pentru case mari (peste 250 mp) sau cu mai multe etaje, un pachet de 3 unitati este recomandat pentru a asigura acoperire completa."},{"question":"Pot folosi un sistem mesh cu routerul meu actual de la ISP?","answer":"Da, majoritatea sistemelor mesh pot fi configurate in modul 'Access Point' (AP Mode). In acest caz, routerul tau actual de la furnizorul de internet ramane activ si gestioneaza conexiunea, iar sistemul mesh se ocupa de distributia semnalului Wi-Fi in toata casa. Asigura-te ca sistemul mesh ales suporta acest mod de operare."}];
+---
+
+<Layout
+  title="Router wifi 6 mesh - Bermo"
+  description="Daca cauti performanta si acoperire Wi-Fi fara intreruperi in toata casa, un sistem router wifi 6 mesh este solutia ideala. Aceste sisteme combina un router pri"
+  image="/images/articles/router-wifi-6-mesh.webp"
+  type="article"
+  publishedDate="2026-03-14T11:37:18.911Z"
+  modifiedDate="2026-03-14T11:37:18.911Z"
+  category="IT si Electronice"
+  categorySlug="it-electronice"
+  author="Radu Petre"
+  faq={faq}
+>
+
+  <main class="article-page">
+    <div class="container">
+      <article class="article-container">
+        <nav class="breadcrumb">
+          <a href="/">Acasa</a>
+          <span class="breadcrumb-sep">/</span>
+          IT si Electronice
+          <span class="breadcrumb-sep">/</span>
+          <span>Router wifi 6 mesh</span>
+        </nav>
+
+        <header class="article-header">
+          
+            IT si Electronice
+          
+          <h1 class="article-title">Router wifi 6 mesh</h1>
+          <div class="article-meta">
+            <div class="article-author">
+              <div class="author-avatar">RP</div>
+              <div class="author-info">
+                <span class="author-name">Radu Petre</span>
+                <span class="author-role">Specialist IT & Gaming</span>
+              </div>
+            </div>
+            <div class="article-date">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+              14 martie 2026
+            </div>
+          </div>
+        </header>
+
+        <div class="article-image">
+          <img src="/images/articles/router-wifi-6-mesh.webp" alt="Router wifi 6 mesh" width="800" height="600" loading="eager" fetchpriority="high" decoding="async">
+        </div>
+
+        <div class="toc">
+          <div class="toc-title">
+            Cuprins
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </div>
+          <ol class="toc-list">
+            <li><a href="#tp-link-deco-x90-2-pack">TP-Link Deco X90 (2-Pack)</a></li>
+            <li><a href="#asus-zenwifi-xt8-2-pack">ASUS ZenWiFi XT8 (2-Pack)</a></li>
+            <li><a href="#netgear-nighthawk-ax8-8-stream-ax6000-rbk852">Netgear Nighthawk AX8 (8-Stream AX6000) RBK852</a></li>
+            <li><a href="#tp-link-deco-x20-3-pack">TP-Link Deco X20 (3-Pack)</a></li>
+            <li><a href="#asus-zenwifi-xt8-model-cu-3-unitati">ASUS ZenWiFi XT8 (Model cu 3 unitati)</a></li>
+            <li><a href="#google-nest-wifi-3-pack">Google Nest Wifi (3-Pack)</a></li>
+            <li><a href="#tp-link-deco-m9-plus-2-pack">TP-Link Deco M9 Plus (2-Pack)</a></li>
+            <li><a href="#comparatie">Comparatie rapida</a></li>
+            <li><a href="#ghid-cumparare">Cum alegi cel mai bun router wifi 6 mesh pentru locuinta ta?</a></li>
+            <li><a href="#faq">Intrebari Frecvente</a></li>
+          </ol>
+        </div>
+
+        <div class="prose-article">
+          <p>Daca cauti performanta si acoperire Wi-Fi fara intreruperi in toata casa, un sistem <strong>router wifi 6 mesh</strong> este solutia ideala. Aceste sisteme combina un router principal cu unul sau mai multe noduri satelit pentru a crea o singura retea Wi-Fi unificata, eliminand zonele moarte si asigurand viteze ridicate pe orice dispozitiv conectat. Fie ca locuiesti intr-un apartament spatios sau o casa cu mai multe etaje, un sistem mesh cu tehnologie Wi-Fi 6 (802.11ax) ofera viteze de pana la 9.6 Gbps, latenta redusa si o capacitate sporita pentru conectarea simultana a zeci de dispozitive inteligente.</p>
+        <p>Ce inseamna un <strong>router wifi 6 mesh</strong> pentru tine? Inseamna streaming 4K/8K fara buffering, jocuri online cu latenta minima, descarcari rapide si o experienta generala de navigare mult imbunatatita, chiar si cand mai multe persoane folosesc internetul in acelasi timp. Spre deosebire de un router traditional, sistemele mesh distribuie semnalul uniform, iar dispozitivele tale se vor conecta automat la nodul cu cel mai bun semnal pe masura ce te deplasezi prin casa, fara intreruperi.</p>
+        <p>Alegerea unui <strong>router wifi 6 mesh</strong> potrivit depinde de suprafata pe care trebuie sa o acopere, numarul de dispozitive pe care le vei conecta si bugetul tau. Vom analiza cele mai bune optiuni disponibile pe piata, de la sisteme performante pentru locuinte mari la solutii mai accesibile pentru apartamente, ajutandu-te sa faci cea mai buna investitie pentru conectivitatea ta.</p>
+
+          
+          <article class="product-review" id="tp-link-deco-x90-2-pack">
+            <div class="product-review__header">
+              <span class="section-tag">Alegerea Noastra</span>
+              <h3>TP-Link Deco X90 (2-Pack)</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec"><strong>Putere</strong>AX6600 Tri-Band Wi-Fi 6</div>
+              <div class="product-review__spec"><strong>Material</strong>Plastic ABS, design modern</div>
+              <div class="product-review__spec"><strong>Capacitate</strong>Acoperire pana la 550 mp (cu 2 unitati)</div>
+              <div class="product-review__spec"><strong>Functii</strong>Tri-Band, MU-MIMO, OFDMA, Beamforming, 2 porturi Gigabit WAN/LAN per unitate, Control Parental Avansat, Antivirus integrat</div>
+              <div class="product-review__spec"><strong>Dimensiuni</strong>190 x 190 x 105 mm per unitate, 1.2 kg per unitate</div>
+            </div>
+            </div>
+            <div class="product-review__content">
+              <p>TP-Link Deco X90 se impune ca o solutie premium pentru cei care doresc performanta de varf si acoperire extinsa. Acest sistem <strong>router wifi 6 mesh</strong> utilizeaza tehnologia Tri-Band AX6600, oferind o banda dedicata pentru comunicarea intre unitatile mesh, ceea ce reduce congestia si maximizeaza vitezele pentru dispozitivele client. Vitezele teoretice de pana la 6600 Mbps (4804 Mbps pe 5GHz-1, 1733 Mbps pe 5GHz-2, 574 Mbps pe 2.4GHz) sunt impresionante si se traduc in performante reale exceptionale, chiar si in medii cu multe dispozitive conectate.</p>
+        <p>Instalarea este simplificata prin aplicatia mobila TP-Link HomeCare, care te ghideaza pas cu pas. Aplicatia ofera si functii avansate precum control parental detaliat, un firewall integrat si un modul antivirus, protejand reteaua de amenintari. Fiecare unitate Deco X90 dispune de doua porturi Gigabit Ethernet, permitand conectarea prin cablu a dispozitivelor care necesita stabilitate maxima, cum ar fi consolele de jocuri sau PC-urile.</p>
+        <p>Ce face Deco X90 sa iasa in evidenta? Este capabilitatea sa de a gestiona un numar foarte mare de dispozitive simultan, datorita tehnologiilor OFDMA si MU-MIMO. Aceasta inseamna ca poti conecta fara griji zeci de smart home devices, telefoane, tablete si laptopuri, fara a simti degradarea performantei. Acoperirea de pana la 550 mp cu un pachet de 2 unitati este generoasa si suficienta pentru majoritatea caselor mari sau apartamentelor pe mai multe niveluri.</p>
+        <p>Totusi, performanta vine cu un pret. Deco X90 este una dintre cele mai scumpe optiuni de pe piata, ceea ce il face mai putin accesibil pentru utilizatorii cu un buget limitat. De asemenea, desi are 2 porturi Gigabit per unitate, pentru retele foarte mari sau cu multe dispozitive conectate prin cablu, ar fi fost util un numar mai mare de porturi. Designul este modern, dar poate nu se integreaza la fel de discret in orice decor ca alte modele.</p>
+        <p>Pentru cine este potrivit acest sistem? Pentru familiile numeroase, pasionatii de tehnologie, gamerii si oricine lucreaza de acasa si are nevoie de o conexiune internet stabila si rapida in fiecare colt al locuintei. Daca bugetul nu este o problema si vrei cea mai buna performanta Wi-Fi 6 mesh, TP-Link Deco X90 este o alegere excelenta.</p>
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+                  <li>Performanta Wi-Fi 6 AX6600 de top</li>
+                  <li>Acoperire extinsa si stabila pentru suprafete mari</li>
+                  <li>Capacitate excelenta pentru gestionarea multor dispozitive</li>
+                  <li>Functii avansate de securitate si control parental</li>
+                  <li>Instalare si configurare usoara prin aplicatia mobila</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+                  <li>Pret ridicat</li>
+                  <li>Doar 2 porturi Gigabit Ethernet per unitate</li>
+                  <li>Designul, desi modern, poate fi prea proeminent in anumite decoruri</li>
+                  <li>Nu include port USB pentru conectarea dispozitivelor externe</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="product-review" id="asus-zenwifi-xt8-2-pack">
+            <div class="product-review__header">
+              <span class="section-tag">Premium</span>
+              <h3>ASUS ZenWiFi XT8 (2-Pack)</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec"><strong>Putere</strong>AX6600 Dual-Band Wi-Fi 6</div>
+              <div class="product-review__spec"><strong>Material</strong>Plastic ABS, design elegant</div>
+              <div class="product-review__spec"><strong>Capacitate</strong>Acoperire pana la 500 mp (cu 2 unitati)</div>
+              <div class="product-review__spec"><strong>Functii</strong>Dual-Band, MU-MIMO, OFDMA, Beamforming, 3 porturi Gigabit WAN/LAN per unitate (unul poate fi configurat ca WAN), AiProtection Pro, AiMesh</div>
+              <div class="product-review__spec"><strong>Dimensiuni</strong>160 x 160 x 50 mm per unitate, 0.7 kg per unitate</div>
+            </div>
+            </div>
+            <div class="product-review__content">
+              <p>ASUS ZenWiFi XT8 aduce tehnologia Wi-Fi 6 in casele moderne, combinand performanta de top cu un design discret si elegant. Acest sistem <strong>router wifi 6 mesh</strong> utilizeaza standardul AX6600 Dual-Band, oferind viteze combinate de pana la 6600 Mbps (4804 Mbps pe 5GHz, 1733 Mbps pe 2.4GHz). Banda de 5GHz este folosita atat pentru clientii Wi-Fi, cat si pentru comunicarea intre unitatile mesh, asigurand o conexiune rapida si stabila.</p>
+        <p>Unul dintre punctele forte ale ZenWiFi XT8 este tehnologia AiMesh de la ASUS, care permite integrarea usoara cu alte routere ASUS compatibile AiMesh, extinzand flexibilitatea retelei. De asemenea, sistemul vine cu AiProtection Pro, o suita completa de securitate de la Trend Micro, care ofera protectie in timp real impotriva amenintarilor online, fara costuri suplimentare. Aceasta functionalitate este un mare plus pentru siguranta datelor tale.</p>
+        <p>Ce avantaje practice ofera XT8? Fiecare unitate dispune de trei porturi Gigabit Ethernet. Unul dintre acestea poate fi configurat ca port WAN, oferind flexibilitate in conectarea modemului tau. Celelalte doua porturi LAN permit conectarea prin cablu a dispozitivelor critice. Pentru cei care lucreaza de acasa, functia de Instant Guard permite crearea unui VPN securizat catre reteaua ta de acasa, chiar si cand esti in calatorie.</p>
+        <p>Care sunt dezavantajele? Desi este Dual-Band, performanta este comparabila cu sistemele Tri-Band mai ieftine in anumite scenarii, datorita optimizarilor ASUS. Totusi, intr-o casa cu foarte multe dispozitive care ruleaza simultan pe banda de 5GHz, un sistem Tri-Band dedicat ar putea oferi un avantaj marginal. De asemenea, pretul este in segmentul premium, facandu-l o investitie considerabila.</p>
+        <p>Sistemul ZenWiFi XT8 este ideal pentru utilizatorii care apreciaza atat performanta, cat si designul. Este perfect pentru case medii spre mari, cu un numar mare de dispozitive smart si pentru cei care cauta o solutie de securitate robusta. Daca esti deja in ecosistemul ASUS sau vrei un sistem mesh performant si elegant, acest model merita atentia ta.</p>
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+                  <li>Performanta Wi-Fi 6 AX6600 de top</li>
+                  <li>Securitate avansata AiProtection Pro inclusa</li>
+                  <li>Trei porturi Gigabit Ethernet per unitate</li>
+                  <li>Design elegant si discret</li>
+                  <li>Compatibilitate cu tehnologia AiMesh pentru extindere flexibila</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+                  <li>Pret ridicat, in segmentul premium</li>
+                  <li>Doar Dual-Band, desi performant</li>
+                  <li>Nu are port USB</li>
+                  <li>Poate fi supradimensionat pentru apartamente mici</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="product-review" id="netgear-nighthawk-ax8-8-stream-ax6000-rbk852">
+            <div class="product-review__header">
+              <span class="section-tag">Raport Calitate-Pret</span>
+              <h3>Netgear Nighthawk AX8 (8-Stream AX6000) RBK852</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec"><strong>Putere</strong>AX6000 Tri-Band Wi-Fi 6</div>
+              <div class="product-review__spec"><strong>Material</strong>Plastic, design specific Nighthawk</div>
+              <div class="product-review__spec"><strong>Capacitate</strong>Acoperire pana la 500 mp (cu 2 unitati)</div>
+              <div class="product-review__spec"><strong>Functii</strong>Tri-Band, MU-MIMO, OFDMA, Beamforming, 1 port Gigabit WAN + 4 porturi Gigabit LAN per unitate, NETGEAR Armor (abonament), instalare usoara</div>
+              <div class="product-review__spec"><strong>Dimensiuni</strong>270 x 190 x 74 mm per unitate, 1.3 kg per unitate</div>
+            </div>
+            </div>
+            <div class="product-review__content">
+              <p>Netgear Nighthawk AX8 (RBK852) este un sistem <strong>router wifi 6 mesh</strong> conceput pentru performanta si acoperire maxima, ideal pentru casele mari si utilizatorii exigenti. Beneficiind de standardul AX6000 Tri-Band, acest sistem livreaza viteze impresionante pe cele trei benzi de frecventa, asigurand ca atat dispozitivele noi compatibile Wi-Fi 6, cat si cele mai vechi vor beneficia de cea mai buna conexiune posibila. Viteza combinata de 6 Gbps este suficienta pentru orice activitate online, de la streaming 8K la jocuri competitive.</p>
+        <p>Ce face acest sistem Nighthawk special? Designul sau agresiv, specific seriei Nighthawk, ascunde tehnologie de ultima generatie. Fiecare unitate (router si satelit) dispune de un port Gigabit WAN si patru porturi Gigabit LAN, oferind conectivitate prin cablu pentru un numar mare de dispozitive. Acest lucru este un avantaj major fata de alte sisteme mesh care au doar 1-2 porturi LAN.</p>
+        <p>Instalarea se face rapid prin aplicatia Nighthawk, care te ghideaza prin tot procesul. Odata configurat, sistemul ofera o acoperire extinsa, eliminand zonele moarte din locuinte de pana la 500 mp. Tehnologiile MU-MIMO si OFDMA optimizeaza traficul, permitand conectarea simultana a zeci de dispozitive fara a compromite viteza.</p>
+        <p>Care sunt dezavantajele? NETGEAR Armor, solutia de securitate a sistemului, necesita un abonament anual dupa o perioada de proba, ceea ce adauga un cost recurent. Designul Nighthawk, desi distinctiv, poate fi prea intimidant pentru cei care prefera un aspect mai discret. De asemenea, pretul de achizitie este destul de ridicat, plasandu-l in segmentul premium.</p>
+        <p>Pentru cine este recomandat? Pentru utilizatorii care au nevoie de multe porturi LAN pentru conectarea prin cablu a dispozitivelor, pentru gameri si entuziasti ai multimedia care doresc cea mai buna performanta Wi-Fi 6. Daca esti dispus sa investesti intr-un sistem robust, cu performante de top si o multitudine de porturi, Netgear Nighthawk AX8 este o optiune solidă.</p>
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+                  <li>Performanta AX6000 Tri-Band excelenta</li>
+                  <li>4 porturi Gigabit LAN pe fiecare unitate</li>
+                  <li>Acoperire extinsa si stabila</li>
+                  <li>Design specific Nighthawk, cu antena integrata</li>
+                  <li>Instalare si gestionare usoara prin aplicatia Nighthawk</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+                  <li>Pret ridicat</li>
+                  <li>Securitatea NETGEAR Armor necesita abonament</li>
+                  <li>Designul poate fi prea agresiv pentru unii utilizatori</li>
+                  <li>Unitatile sunt destul de voluminoase</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="product-review" id="tp-link-deco-x20-3-pack">
+            <div class="product-review__header">
+              <span class="section-tag">Pentru Buget Mic</span>
+              <h3>TP-Link Deco X20 (3-Pack)</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec"><strong>Putere</strong>AX1800 Dual-Band Wi-Fi 6</div>
+              <div class="product-review__spec"><strong>Material</strong>Plastic ABS, design minimalist</div>
+              <div class="product-review__spec"><strong>Capacitate</strong>Acoperire pana la 350 mp (cu 3 unitati)</div>
+              <div class="product-review__spec"><strong>Functii</strong>Dual-Band, MU-MIMO, OFDMA, Beamforming, 2 porturi Gigabit WAN/LAN per unitate, TP-Link HomeCare (gratuit, versiune simplificata), Modele Multiple (Router, Access Point, Range Extender)</div>
+              <div class="product-review__spec"><strong>Dimensiuni</strong>90 x 90 x 40 mm per unitate, 0.2 kg per unitate</div>
+            </div>
+            </div>
+            <div class="product-review__content">
+              <p>TP-Link Deco X20 este o optiune excelenta pentru cei care doresc sa faca upgrade la Wi-Fi 6 fara a sparge banca. Acest sistem <strong>router wifi 6 mesh</strong> ofera standardul AX1800 Dual-Band, suficient pentru majoritatea locuintelor de dimensiuni medii si pentru conectarea unui numar decent de dispozitive. Viteza combinata de 1800 Mbps (1201 Mbps pe 5GHz, 574 Mbps pe 2.4GHz) este o imbunatatire semnificativa fata de routerele Wi-Fi 5 mai vechi.</p>
+        <p>Un mare avantaj al Deco X20 este pachetul cu 3 unitati, care ofera o acoperire extinsa de pana la 350 mp, fiind ideal pentru apartamente sau case cu mai multe etaje. Instalarea este la fel de simpla ca la modelele superioare TP-Link, ghidata prin aplicatia mobila. Aplicatia include si functii de control parental si un firewall de baza, oferite gratuit sub denumirea HomeCare.</p>
+        <p>Ce il recomanda pentru un buget mic? Pretul accesibil, mai ales in pachetul cu 3 unitati, face Wi-Fi 6 mesh mult mai abordabil. Fiecare unitate are doua porturi Gigabit Ethernet, permitand conectarea prin cablu a dispozitivelor esentiale. De asemenea, unitatile Deco X20 pot functiona si ca puncte de acces sau range extendere, oferind flexibilitate in configurarea retelei.</p>
+        <p>Care sunt dezavantajele? Fiind Dual-Band, performanta in scenarii cu un numar extrem de mare de dispozitive conectate simultan pe banda de 5GHz poate fi inferioara sistemelor Tri-Band. Vitezele maxime teoretice de AX1800 sunt, de asemenea, mai mici decat la modelele de top. Nu dispune de functiile avansate de securitate sau de porturi suplimentare.</p>
+        <p>Pentru cine este potrivit? Pentru utilizatorii care cauta o solutie Wi-Fi 6 mesh accesibila pentru apartamente sau case de dimensiuni medii. Este o alegere buna pentru familii care au nevoie de acoperire buna si viteze decente pentru navigare, streaming si jocuri ocazionale. Daca vrei sa intri in lumea Wi-Fi 6 mesh fara o investitie mare, Deco X20 este o optiune inteligenta.</p>
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+                  <li>Pret foarte accesibil pentru un sistem Wi-Fi 6 mesh</li>
+                  <li>Acoperire buna pentru apartamente si case medii</li>
+                  <li>Instalare simpla prin aplicatia mobila</li>
+                  <li>Include functii de baza de control parental si securitate</li>
+                  <li>Flexibilitate in configurare (Router, AP, Extender)</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+                  <li>Doar Dual-Band</li>
+                  <li>Viteze maxime mai mici comparativ cu sistemele de top</li>
+                  <li>Nu dispune de porturi USB</li>
+                  <li>Numarul de porturi LAN este limitat la 2 per unitate</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="product-review" id="asus-zenwifi-xt8-model-cu-3-unitati">
+            <div class="product-review__header">
+              <span class="section-tag">Best Buy 2026</span>
+              <h3>ASUS ZenWiFi XT8 (Model cu 3 unitati)</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec"><strong>Putere</strong>AX6600 Dual-Band Wi-Fi 6</div>
+              <div class="product-review__spec"><strong>Material</strong>Plastic ABS, design elegant</div>
+              <div class="product-review__spec"><strong>Capacitate</strong>Acoperire pana la 700 mp (cu 3 unitati)</div>
+              <div class="product-review__spec"><strong>Functii</strong>Dual-Band, MU-MIMO, OFDMA, Beamforming, 3 porturi Gigabit WAN/LAN per unitate (unul poate fi configurat ca WAN), AiProtection Pro, AiMesh</div>
+              <div class="product-review__spec"><strong>Dimensiuni</strong>160 x 160 x 50 mm per unitate, 0.7 kg per unitate</div>
+            </div>
+            </div>
+            <div class="product-review__content">
+              <p>Daca pachetul cu 2 unitati ASUS ZenWiFi XT8 ti-a atras atentia, dar ai o locuinta si mai generoasa, varianta cu 3 unitati extinde acoperirea la un impresionant 700 mp. Acest sistem <strong>router wifi 6 mesh</strong> pastreaza toate avantajele modelului cu 2 unitati: performanta AX6600 Dual-Band, securitatea AiProtection Pro si flexibilitatea tehnologiei AiMesh. Astfel, obtii viteze de pana la 6600 Mbps si o conectivitate robusta in fiecare colt al casei.</p>
+        <p>Ce inseamna acest pachet pentru o casa mare? Inseamna eliminarea completa a zonelor moarte, chiar si in spatii cu multe obstacole, cum ar fi pereti grosi sau etaje multiple. Cele 3 unitati lucreaza impreuna pentru a crea o retea unificata, iar dispozitivele tale vor comuta inteligent intre noduri pe masura ce te deplasezi, fara a simti intreruperi. Viteza de 5GHz, folosita si pentru backhaul-ul wireless, asigura transferuri rapide intre noduri.</p>
+        <p>Ce alte beneficii aduce? Cele 3 porturi Gigabit Ethernet pe fiecare unitate ofera optiuni excelente pentru conectarea prin cablu a consolelor, PC-urilor sau smart TV-urilor, asigurand cea mai stabila conexiune posibila pentru aceste dispozitive. Functia Instant Guard, mentionata si anterior, permite accesul securizat la reteaua ta de acasa de oriunde din lume.</p>
+        <p>Care sunt dezavantajele aici? Ca si in cazul versiunii cu 2 unitati, pretul este un factor important. Achizitionarea unui pachet cu 3 unitati inseamna o investitie mai mare. De asemenea, sistemul ramane Dual-Band, ceea ce, desi performant, ar putea fi un dezavantaj in medii extrem de aglomerate comparativ cu un sistem Tri-Band dedicat pe backhaul.</p>
+        <p>Acest pachet de 3 unitati ASUS ZenWiFi XT8 este perfect pentru vile, case mari pe mai multe niveluri sau orice locuinta generoasa care se confrunta cu probleme de acoperire Wi-Fi. Daca bugetul permite si vrei o solutie mesh Wi-Fi 6 premium, cu design elegant si functii de securitate avansate, aceasta configuratie este o alegere de top.</p>
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+                  <li>Acoperire extinsa exceptionala pentru locuinte foarte mari (pana la 700 mp)</li>
+                  <li>Performanta AX6600 Dual-Band de top</li>
+                  <li>Securitate avansata AiProtection Pro inclusa</li>
+                  <li>Trei porturi Gigabit Ethernet per unitate</li>
+                  <li>Design elegant si functia AiMesh</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+                  <li>Pret ridicat, mai ales pentru pachetul cu 3 unitati</li>
+                  <li>Doar Dual-Band</li>
+                  <li>Nu are port USB</li>
+                  <li>Poate fi overkill pentru locuinte mai mici</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="product-review" id="google-nest-wifi-3-pack">
+            <div class="product-review__header">
+              <span class="section-tag">Raport Calitate-Pret</span>
+              <h3>Google Nest Wifi (3-Pack)</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec"><strong>Putere</strong>AC2200 Dual-Band Wi-Fi 5 (802.11ac)</div>
+              <div class="product-review__spec"><strong>Material</strong>Plastic, design minimalist, discret</div>
+              <div class="product-review__spec"><strong>Capacitate</strong>Acoperire pana la 500 mp (cu 3 unitati)</div>
+              <div class="product-review__spec"><strong>Functii</strong>Dual-Band, MU-MIMO, Beamforming, 1 port Gigabit LAN per unitate (router-ul are si WAN), Google Assistant integrat, gestionare prin aplicatia Google Home</div>
+              <div class="product-review__spec"><strong>Dimensiuni</strong>110 x 110 x 90 mm per unitate, 0.4 kg per unitate</div>
+            </div>
+            </div>
+            <div class="product-review__content">
+              <p>Google Nest Wifi este o optiune populara pentru cei care cauta o solutie mesh simpla, eficienta si integrata cu ecosistemul Google. Desi utilizeaza standardul Wi-Fi 5 (AC2200) si nu Wi-Fi 6, ramane o alegere excelenta pentru multe gospodarii, oferind viteze de pana la 2200 Mbps si o acoperire extinsa de pana la 500 mp cu un pachet de 3 unitati (un router si doua puncte de acces).</p>
+        <p>Ce face acest sistem unic? Integrarea cu Google Assistant. Fiecare punct de acces poate functiona ca un difuzor inteligent Google Home, permitandu-ti sa controlezi reteaua, sa verifici viteza internetului sau sa gestionezi alte dispozitive smart home folosind comenzi vocale. Gestionarea retelei se face exclusiv prin aplicatia Google Home, care este intuitiva si usor de utilizat, chiar si pentru incepatori.</p>
+        <p>Acoperirea este solida, iar cele 3 unitati asigura un semnal bun in majoritatea locuintelor medii spre mari. Performanta este suficienta pentru navigare web, streaming video si jocuri online ocazionale. Fiecare punct de acces are un port LAN Gigabit, util pentru conectarea unui PC sau a unei console.</p>
+        <p>Care sunt dezavantajele? Principalul dezavantaj este lipsa standardului Wi-Fi 6. Pentru utilizatorii cu cele mai noi dispozitive si nevoi de viteza extrema, acest sistem ar putea fi o limitare. De asemenea, numarul de porturi LAN este limitat (unul singur per unitate, cu exceptia routerului principal). Functiile de configurare avansata sunt limitate, fiind orientat spre simplitate.</p>
+        <p>Pentru cine este potrivit? Pentru utilizatorii care sunt deja in ecosistemul Google, cauta o solutie mesh usor de utilizat si cu functii de smart speaker integrate. Este ideal pentru apartamente si case de dimensiuni medii, unde vitezele Wi-Fi 5 sunt suficiente. Daca simplitatea si integrarea cu Google Assistant sunt prioritare, Nest Wifi este o alegere buna, chiar daca nu este cel mai recent standard Wi-Fi.</p>
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+                  <li>Integrare excelenta cu Google Assistant si ecosistemul Google</li>
+                  <li>Aplicatie Google Home simpla si intuitiva</li>
+                  <li>Acoperire extinsa cu pachetul de 3 unitati</li>
+                  <li>Design discret si minimalist</li>
+                  <li>Pret relativ accesibil pentru un sistem mesh de 3 unitati</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+                  <li>Utilizeaza standardul Wi-Fi 5 (nu Wi-Fi 6)</li>
+                  <li>Performanta limitata comparativ cu sistemele Wi-Fi 6</li>
+                  <li>Doar un port LAN Gigabit per unitate</li>
+                  <li>Opțiuni de configurare avansată limitate</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="product-review" id="tp-link-deco-m9-plus-2-pack">
+            <div class="product-review__header">
+              <span class="section-tag">Alegerea Noastra</span>
+              <h3>TP-Link Deco M9 Plus (2-Pack)</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec"><strong>Putere</strong>AC2200 Tri-Band Wi-Fi 5 (802.11ac)</div>
+              <div class="product-review__spec"><strong>Material</strong>Plastic ABS, design modern</div>
+              <div class="product-review__spec"><strong>Capacitate</strong>Acoperire pana la 400 mp (cu 2 unitati)</div>
+              <div class="product-review__spec"><strong>Functii</strong>Tri-Band, MU-MIMO, Beamforming, 2 porturi Gigabit WAN/LAN per unitate, hub pentru dispozitive smart home (Bluetooth, Zigbee), TP-Link HomeCare</div>
+              <div class="product-review__spec"><strong>Dimensiuni</strong>190 x 190 x 37 mm per unitate, 0.7 kg per unitate</div>
+            </div>
+            </div>
+            <div class="product-review__content">
+              <p>Chiar daca nu este un sistem Wi-Fi 6, TP-Link Deco M9 Plus ramane o optiune extrem de viabila si performanta pentru multi utilizatori, mai ales daca gasiti o oferta buna. Acest sistem mesh Tri-Band AC2200 ofera viteze excelente pe Wi-Fi 5 si o acoperire extinsa de pana la 400 mp cu un pachet de 2 unitati. Banda suplimentara dedicata comunicarii intre unitati (backhaul) asigura performante consistente.</p>
+        <p>Ce diferentiaza Deco M9 Plus? Functia sa de hub pentru dispozitive smart home. Integrarea Bluetooth si Zigbee permite conectarea si gestionarea multor senzori, becuri sau intrerupatoare smart direct prin sistemul mesh, fara a mai fi nevoie de hub-uri separate. Aceasta simplifica managementul casei inteligente.</p>
+        <p>Performanta Wi-Fi 5 este de top, cu viteze combinate de 2200 Mbps (867 Mbps pe 5GHz-1, 867 Mbps pe 5GHz-2, 400 Mbps pe 2.4GHz). Tehnologia MU-MIMO si OFDMA (in anumite configuratii) ajuta la gestionarea eficienta a unui numar mare de dispozitive. Cele doua porturi Gigabit per unitate ofera conectivitate prin cablu, iar aplicatia mobila TP-Link HomeCare ofera control parental si securitate.</p>
+        <p>Care sunt dezavantajele? Principalul dezavantaj, desigur, este ca nu este Wi-Fi 6. Daca aveti cele mai noi telefoane, laptopuri si aveti nevoie de viteze maxime, un sistem Wi-Fi 6 va fi superior. De asemenea, desi are functii de hub smart home, nu toate dispozitivele sunt compatibile. Pretul, la lansare, a fost in segmentul premium, dar acum poate fi gasit la preturi mai bune.</p>
+        <p>Pentru cine este recomandat? Pentru utilizatorii care au o locuinta de dimensiuni medii spre mari, doresc o acoperire Wi-Fi mesh excelenta si au deja sau planuiesc sa achizitioneze dispozitive smart home compatibile cu Zigbee sau Bluetooth. Daca nu aveti nevoie neaparat de Wi-Fi 6 si apreciati functia de hub integrat, Deco M9 Plus ramane o alegere excelenta, mai ales la un pret redus.</p>
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+                  <li>Performanta Tri-Band AC2200 excelenta</li>
+                  <li>Integrare hub smart home (Bluetooth, Zigbee)</li>
+                  <li>Acoperire extinsa si stabila</li>
+                  <li>Include functii avansate de securitate si control parental (HomeCare)</li>
+                  <li>Doua porturi Gigabit Ethernet per unitate</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+                  <li>Nu este Wi-Fi 6</li>
+                  <li>Suportul pentru dispozitive smart home poate fi limitat</li>
+                  <li>Pretul initial a fost ridicat</li>
+                  <li>Designul unitatilor, desi modern, este destul de mare</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          
+        <section id="comparatie">
+          <h2>Comparatie rapida</h2>
+          <p>Compara rapid optiunile de sisteme router wifi 6 mesh pentru a vedea care se potriveste cel mai bine nevoilor tale in functie de suprafata, performanta si pret.</p>
+          <div class="comparison-outer">
+            <div class="comparison-hint"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg> Scroll pentru mai multe coloane</div>
+            <div class="comparison-wrap">
+              <table class="comparison-table">
+                <thead><tr><th>Model</th><th>Putere</th><th>Capacitate</th><th>Greutate</th><th>Functii</th><th>PotrivitPentru</th></tr></thead>
+                <tbody>
+            <tr><td>TP-Link Deco X90 (2-Pack)</td><td>AX6600 Tri-Band</td><td>550 mp</td><td>1.2 kg/unitate</td><td>Tri-Band, HomeCare, 2xGigabit</td><td>Case mari, performanta top</td></tr>
+            <tr><td>ASUS ZenWiFi XT8 (2-Pack)</td><td>AX6600 Dual-Band</td><td>500 mp</td><td>0.7 kg/unitate</td><td>Dual-Band, AiProtection, 3xGigabit</td><td>Case medii-mari, design elegant</td></tr>
+            <tr><td>Netgear Nighthawk AX8 RBK852</td><td>AX6000 Tri-Band</td><td>500 mp</td><td>1.3 kg/unitate</td><td>Tri-Band, 4xGigabit LAN, Armor (abonament)</td><td>Case mari, multe device-uri cablate</td></tr>
+            <tr><td>TP-Link Deco X20 (3-Pack)</td><td>AX1800 Dual-Band</td><td>350 mp</td><td>0.2 kg/unitate</td><td>Dual-Band, HomeCare, 2xGigabit</td><td>Apartamente, case medii, buget mic</td></tr>
+            <tr><td>ASUS ZenWiFi XT8 (3-Pack)</td><td>AX6600 Dual-Band</td><td>700 mp</td><td>0.7 kg/unitate</td><td>Dual-Band, AiProtection, 3xGigabit</td><td>Vile, case foarte mari</td></tr>
+            <tr><td>Google Nest Wifi (3-Pack)</td><td>AC2200 Dual-Band</td><td>500 mp</td><td>0.4 kg/unitate</td><td>Dual-Band, Google Assistant, 1xGigabit</td><td>Case medii, ecosistem Google</td></tr>
+            <tr><td>TP-Link Deco M9 Plus (2-Pack)</td><td>AC2200 Tri-Band</td><td>400 mp</td><td>0.7 kg/unitate</td><td>Tri-Band, Smart Hub, 2xGigabit</td><td>Case medii, smart home</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+          
+        <section class="guide" id="ghid-cumparare">
+          <h2>Cum alegi cel mai bun router wifi 6 mesh pentru locuinta ta?</h2>
+          <p>Alegerea unui sistem <strong>router wifi 6 mesh</strong> potrivit implică luarea în considerare a câtorva factori cheie pentru a te asigura că obții cea mai bună performanță și acoperire pentru nevoile tale specifice.</p>
+        <h4>Ce suprafata trebuie sa acopere sistemul mesh?</h4>
+        <p>Acesta este cel mai important factor. Producătorii specifică de obicei o suprafață maximă acoperită de un anumit pachet (ex: 2 unități, 3 unități). Alege un sistem care depășește ușor suprafața locuinței tale pentru a te asigura de o acoperire optimă. Pentru apartamente mici, un pachet cu 2 unități este suficient. Pentru case mari sau cu mai multe etaje, un pachet cu 3 unități sau un model cu acoperire extinsă este necesar.</p>
+        <h4>Ai nevoie de Wi-Fi 6 sau Wi-Fi 5 este suficient?</h4>
+        <p>Wi-Fi 6 (802.11ax) oferă viteze mai mari, latență redusă și o capacitate sporită pentru conectarea simultană a multor dispozitive, comparativ cu Wi-Fi 5 (802.11ac). Dacă ai multe dispozitive noi compatibile Wi-Fi 6 și vrei cea mai bună performanță posibilă, investește într-un sistem Wi-Fi 6. Dacă ai un număr moderat de dispozitive, preponderent Wi-Fi 5, și bugetul este o prioritate, un sistem Wi-Fi 5 performant (precum Deco M9 Plus sau Nest Wifi) poate fi o opțiune bună.</p>
+        <h4>Cate dispozitive conectezi simultan la retea?</h4>
+        <p>Dacă locuiești într-o gospodărie numeroasă cu multe telefoane, tablete, laptopuri, console de jocuri, smart TV-uri și alte dispozitive smart home, vei beneficia de tehnologiile Wi-Fi 6 precum OFDMA și MU-MIMO. Acestea optimizează traficul și previn congestia, asigurând o experiență fluidă pentru toți utilizatorii. Sistemele Tri-Band oferă, de asemenea, un avantaj în gestionarea unui număr mare de conexiuni.</p>
+        <h4>Ce functii suplimentare sunt importante pentru tine?</h4>
+        <p>Unele sisteme mesh vin cu funcții suplimentare utile, cum ar fi hub-uri integrate pentru smart home (Zigbee/Bluetooth), porturi LAN suplimentare pentru conectare prin cablu, sau suite avansate de securitate (antivirus, control parental). Evaluează ce funcții sunt esențiale pentru tine. De exemplu, dacă ai multe dispozitive smart home, un sistem cu hub integrat poate simplifica configurația. Dacă ai multe console sau PC-uri, un sistem cu mai multe porturi Gigabit LAN este preferabil.</p>
+        </section>
+        </div>
+
+        <section class="faq-section" id="faq">
+          <h2 class="faq-title">Intrebari Frecvente</h2>
+          
+      <div class="faq-item">
+        <div class="faq-question">
+          Cat costa un sistem router wifi 6 mesh bun?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Preturile pentru un sistem router wifi 6 mesh bun variaza considerabil. Cele mai accesibile, precum TP-Link Deco X20 (3-pack), incep de la aproximativ 700-900 lei. Modelele de performanta medie spre inalta, cum ar fi ASUS ZenWiFi XT8 (2-pack) sau Netgear Nighthawk AX8, pot ajunge la 1500-2500 lei sau chiar mai mult pentru pachete cu mai multe unitati sau specificatii superioare.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Care e diferenta intre un router mesh si un range extender?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Un range extender mareste semnalul unui router existent, dar adesea imparte viteza pe jumatate si creeaza o retea separata. Un sistem mesh, in schimb, creeaza o singura retea unificata cu routerul principal si unitatile satelit, oferind acoperire uniforma, viteze mai mari si comutare automata intre noduri, fara intreruperi.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Merita sa upgradez la Wi-Fi 6 mesh daca am deja Wi-Fi 5?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Merita daca ai multe dispozitive noi compatibile Wi-Fi 6, ai nevoie de viteze mai mari, latenta mai mica pentru jocuri sau streaming 4K/8K, sau daca ai un numar foarte mare de dispozitive conectate simultan. Pentru nevoi moderate, un sistem Wi-Fi 5 mesh performant poate fi inca o optiune buna.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Cate unitati mesh am nevoie pentru casa mea?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Numarul de unitati depinde de suprafata locuintei si de structura acesteia (pereti grosi, etaje multiple). In general, un pachet de 2 unitati este suficient pentru apartamente sau case mici spre medii (pana la 200-250 mp). Pentru case mari (peste 250 mp) sau cu mai multe etaje, un pachet de 3 unitati este recomandat pentru a asigura acoperire completa.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Pot folosi un sistem mesh cu routerul meu actual de la ISP?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">Da, majoritatea sistemelor mesh pot fi configurate in modul 'Access Point' (AP Mode). In acest caz, routerul tau actual de la furnizorul de internet ramane activ si gestioneaza conexiunea, iar sistemul mesh se ocupa de distributia semnalului Wi-Fi in toata casa. Asigura-te ca sistemul mesh ales suporta acest mod de operare.</div>
+      </div>
+        </section>
+
+        <div class="author-box">
+          <div class="author-box-avatar">RP</div>
+          <div class="author-box-info">
+            <h4>Radu Petre</h4>
+            <p>Specialist IT & Gaming</p>
+            <p class="author-box-bio">Inginer IT si gamer pasionat, Radu analizeaza laptopuri si componente din perspectiva performantei reale in jocuri si aplicatii profesionale.</p>
+          </div>
+        </div>
+
+        <SimilarArticles currentSlug="router-wifi-6-mesh" categorySlug="it-electronice" />
+
+        <PrevNextNav
+          currentSlug="router-wifi-6-mesh"
+          currentCategory="it-electronice"
+          articles={allArticles}
+        />
+      </article>
+    </div>
+  </main>
+
+  <script>
+    // Comparison table scroll fade
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.comparison-outer').forEach(outer => {
+        const wrap = outer.querySelector('.comparison-wrap');
+        if (!wrap) return;
+        const check = () => {
+          if (wrap.scrollWidth > wrap.clientWidth) {
+            outer.classList.add('can-scroll');
+          } else {
+            outer.classList.remove('can-scroll');
+          }
+        };
+        check();
+        window.addEventListener('resize', check);
+        wrap.addEventListener('scroll', () => {
+          if (wrap.scrollLeft + wrap.clientWidth >= wrap.scrollWidth - 10) {
+            outer.classList.remove('can-scroll');
+          } else if (wrap.scrollWidth > wrap.clientWidth) {
+            outer.classList.add('can-scroll');
+          }
+        });
+      });
+
+      // TOC active section tracking
+      const tocLinks = document.querySelectorAll('.toc-list a');
+      if (tocLinks.length > 0) {
+        const ids = Array.from(tocLinks).map(a => a.getAttribute('href').replace('#', '')).filter(Boolean);
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              tocLinks.forEach(l => l.classList.remove('active'));
+              const active = document.querySelector('.toc-list a[href="#' + entry.target.id + '"]');
+              if (active) active.classList.add('active');
+            }
+          });
+        }, { rootMargin: '-80px 0px -60% 0px', threshold: 0 });
+        ids.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) observer.observe(el);
+        });
+      }
+    });
+  </script>
+</Layout>

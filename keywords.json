@@ -66,11 +66,6 @@
       "categorySlug": "electrocasnice-premium"
     },
     {
-      "keyword": "router wifi 6 mesh",
-      "category": "IT si Electronice",
-      "categorySlug": "it-electronice"
-    },
-    {
       "keyword": "ups apc pentru gaming",
       "category": "IT si Electronice",
       "categorySlug": "it-electronice"
@@ -549,6 +544,11 @@
       "keyword": "aparat vidat alimente profesional",
       "category": "Electrocasnice Premium",
       "categorySlug": "electrocasnice-premium"
+    },
+    {
+      "keyword": "router wifi 6 mesh",
+      "category": "IT si Electronice",
+      "categorySlug": "it-electronice"
     }
   ],
   "authors": [
