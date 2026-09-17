@@ -7,7 +7,8 @@ import scoruri from '../date/scoruri.json';
 const { nume, imagine, eticheta, cheie, recenzie = [], pros = [], cons = [] } = Astro.props;
 const paragrafe = Array.isArray(recenzie) ? recenzie : [recenzie];
 const b64 = (s) => Buffer.from(String(s)).toString('base64');
-const d = scoruri[cheie];
+// produsele fara nicio recenzie au rating null in scoruri.json: nu afisam stelute pentru ele
+const d = scoruri[cheie] && scoruri[cheie].rating != null ? scoruri[cheie] : null;
 const rating = d ? d.rating.toFixed(2).replace('.', ',') : null;
 const umplere = d ? Math.max(0, Math.min(100, (d.rating / 5) * 100)) : 0;
 const stea = 'M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z';

@@ -45,7 +45,7 @@ export const categorii = [
     slug: 'tv-si-foto', nume: 'TV si Foto', numar: '96 articole', icon: ic.tv,
     inrudite: ['it-si-laptop', 'telefoane'],
     descriere: 'Televizoare, sisteme audio si camere foto, comparate pe imagine, sunet si raport pret-calitate.',
-    subcategorii: [sub('Televizoare', 'televizoare'), sub('Soundbar', 'soundbar'), sub('Camere foto', 'camere-foto'), sub('Proiectoare', 'proiectoare')],
+    subcategorii: [sub('Televizoare', 'televizoare'), sub('Boxe portabile', 'boxe-portabile'), sub('Soundbar', 'soundbar'), sub('Camere foto', 'camere-foto'), sub('Proiectoare', 'proiectoare')],
   },
   {
     slug: 'iluminat', nume: 'Iluminat si electrice', numar: '', icon: ic.iluminat,
