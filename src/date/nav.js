@@ -33,7 +33,7 @@ export const categorii = [
     slug: 'it-si-laptop', nume: 'IT si Laptop', numar: '142 articole', icon: ic.it,
     inrudite: ['telefoane', 'tv-si-foto'],
     descriere: 'Laptopuri, componente si periferice pe intelesul tuturor. Ce conteaza cu adevarat la performanta si ce e doar marketing.',
-    subcategorii: [sub('Laptopuri', 'laptopuri'), sub('Componente', 'componente'), sub('Monitoare', 'monitoare'), sub('Periferice', 'periferice')],
+    subcategorii: [sub('Laptopuri', 'laptopuri'), sub('Imprimante', 'imprimante'), sub('Monitoare', 'monitoare'), sub('Periferice', 'periferice'), sub('Componente', 'componente')],
   },
   {
     slug: 'bucatarie', nume: 'Bucatarie', numar: '88 articole', icon: ic.bucatarie,
