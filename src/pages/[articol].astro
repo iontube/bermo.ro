@@ -1,7 +1,7 @@
 ---
 import Baza from '../sabloane/Baza.astro';
 import { render } from 'astro:content';
-import { getArticole } from '../date/articole.js';
+import { getArticole, similare } from '../date/articole.js';
 import '../stiluri/articol.css';
 
 export async function getStaticPaths() {
@@ -19,7 +19,7 @@ const fmtData = (x) => `${x.getDate()} ${luni[x.getMonth()]} ${x.getFullYear()}`
 const initiale = d.autor.split(' ').map((w) => w[0]).slice(0, 2).join('').toUpperCase();
 
 const toate = await getArticole();
-const related = toate.filter((x) => x.data.categorieSlug === d.categorieSlug && x.id !== a.id).slice(0, 3);
+const related = similare(a, toate);
 const urlArt = (x) => `/${x.id}/`;
 
 // prev / next in aceeasi categorie, ordonate cronologic (anterior = mai vechi, urmator = mai nou)

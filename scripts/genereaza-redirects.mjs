@@ -22,7 +22,7 @@ const articole = {
   'espressor-automat-de-lux': '/cele-mai-bune-espressoare/',
   'espressor-profesional-barista': '/cele-mai-bune-espressoare/',
   'masina-de-cafea-delonghi': '/cele-mai-bune-espressoare/',
-  'robot-de-bucatarie-bosch': '/cele-mai-bune-roboti-de-bucatarie/',
+  'robot-de-bucatarie-bosch': '/cei-mai-buni-roboti-de-bucatarie/',
   'friteuza-fara-ulei-xl': '/cele-mai-bune-friteuze-cu-aer/',
   'blender-profesional-vitamix': '/cele-mai-bune-blendere/',
   'storcator-fructe-slow-juicer': '/bucatarie/',
@@ -87,6 +87,8 @@ const redenumite = {
   // „scris copii" se citea „copii de documente", iar „lampa pentru unghii" inseamna in mod
   // obisnuit lampa UV de uscat gel, alt produs. Reformulat pe „lucru de precizie".
   'lampa-de-birou-pentru-scris-copii-si-unghii': '/lampa-de-birou-pentru-copii-scris-si-precizie/',
+  // acord gramatical: „roboti" e masculin
+  'cele-mai-bune-roboti-de-bucatarie': '/cei-mai-buni-roboti-de-bucatarie/',
 };
 
 const L = [...speciale, ''];

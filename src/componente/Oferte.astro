@@ -1,0 +1,11 @@
+---
+// Buton „vezi toate ofertele” din categorie. Linkul de afiliere nu apare in pagina: data-o = cheia /out codata base64,
+// iar handlerul global din Baza.astro deschide /out/<cheie> (acelasi cloaking ca la butoanele de produs).
+const { oferta, titlu, text = 'Reducerile din acest moment, direct pe eMAG' } = Astro.props;
+const b64 = (s) => Buffer.from(String(s)).toString('base64');
+---
+<div class="oferte-cta" data-o={b64(oferta)} role="button" tabindex="0">
+  <div class="oferte-txt"><strong>{titlu}</strong><span>{text}</span></div>
+  <span class="btn oferte-btn">Vezi ofertele
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+</div>

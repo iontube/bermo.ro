@@ -5,10 +5,12 @@ import { mkdirSync, writeFileSync, existsSync, readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import sharp from 'sharp';
 
-const CHROME = '/root/.cache/ms-playwright/chromium-1223/chrome-linux64/chrome';
-const FONT = 'file:///sites/bermo-work/public/fonturi/geist.woff2';
-const FONT_M = 'file:///sites/bermo-work/public/fonturi/geist-mono.woff2';
-const CACHE = '/sites/bermo-work/tools/imagini/cache';
+const CHROME = process.env.CHROME || `${process.env.HOME}/Library/Caches/ms-playwright/chromium-1223/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing`;
+// caile se calculeaza fata de repo, ca scriptul sa mearga pe orice masina (inainte erau fixe pe server)
+const RADACINA = new URL('../../', import.meta.url).pathname;
+const FONT = `file://${RADACINA}public/fonturi/geist.woff2`;
+const FONT_M = `file://${RADACINA}public/fonturi/geist-mono.woff2`;
+const CACHE = `${RADACINA}tools/imagini/cache`;
 const TMP = '/tmp/bermo-img';
 mkdirSync(CACHE, { recursive: true });
 mkdirSync(TMP, { recursive: true });

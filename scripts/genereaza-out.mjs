@@ -8,6 +8,11 @@ const deeplink = (emagUrl) => `https://l.profitshare.ro/lps/9/ZmA/?redirect=${en
 
 const map = {};
 for (const [id, p] of Object.entries(produse)) map[id] = deeplink(p.url);
+// linkurile de oferte pe categorie (butonul „Vezi toate … la oferta”): cheie oferte-<categorie> -> pagina eMAG filtrata
+try {
+  const oferte = JSON.parse(readFileSync(fileURLToPath(new URL('../src/date/oferte-emag.json', import.meta.url)), 'utf-8'));
+  for (const [cheie, url] of Object.entries(oferte)) map[cheie] = deeplink(url);
+} catch { /* fara fisier de oferte */ }
 
 // GARDA: fiecare cod de produs (cheie=) din articole TREBUIE sa aiba deeplink de afiliere.
 // Altfel /out cade pe homepage si munca la articol e irosita (lectie 2026-07-24).
@@ -16,6 +21,7 @@ const lipsa = [];
 for (const f of readdirSync(artDir).filter((x) => x.endsWith('.mdx'))) {
   const s = readFileSync(`${artDir}/${f}`, 'utf-8');
   for (const m of s.matchAll(/cheie="([A-Z0-9]{6,})"/g)) if (!map[m[1]]) lipsa.push(`${f}: ${m[1]}`);
+  for (const m of s.matchAll(/oferta="(oferte-[a-z0-9-]+)"/g)) if (!map[m[1]]) lipsa.push(`${f}: ${m[1]}`);
 }
 if (lipsa.length) {
   console.error(`\n❌ STOP: ${lipsa.length} coduri de produs din articole NU au deeplink de afiliere (lipsesc din produse-emag.json):`);

@@ -13,34 +13,41 @@ const ic = {
 const sub = (nume, slug) => ({ nume, slug });
 
 // sursa unica de adevar pentru categorii
+// inrudite = categoriile din care completam „Citeste si” cand categoria articolului nu are destule articole
 export const categorii = [
   {
     slug: 'telefoane', nume: 'Telefoane', numar: '168 articole', icon: ic.telefoane,
+    inrudite: ['it-si-laptop', 'tv-si-foto'],
     descriere: 'Articole si comparatii pentru smartphone-uri si accesorii, alese pe recenzii reale si raport pret-calitate.',
     subcategorii: [sub('Smartphone', 'smartphone'), sub('Casti', 'casti'), sub('Huse', 'huse'), sub('Incarcatoare', 'incarcatoare')],
   },
   {
     slug: 'electrocasnice', nume: 'Electrocasnice', numar: '210 articole', icon: ic.electrocasnice,
+    inrudite: ['bucatarie', 'casa-si-gradina'],
     descriere: 'Articole si comparatii pentru masini de spalat, frigidere, aspiratoare si tot ce tine casa in miscare. Alegem pe consum, fiabilitate si raport pret-calitate, pe baza de recenzii reale.',
     subcategorii: [sub('Masini de spalat', 'masini-de-spalat'), sub('Frigidere', 'frigidere'), sub('Aspiratoare robot', 'aspiratoare-robot'), sub('Aspiratoare', 'aspiratoare'), sub('Uscatoare', 'uscatoare'), sub('Plite', 'plite')],
   },
   {
     slug: 'it-si-laptop', nume: 'IT si Laptop', numar: '142 articole', icon: ic.it,
+    inrudite: ['telefoane', 'tv-si-foto'],
     descriere: 'Laptopuri, componente si periferice pe intelesul tuturor. Ce conteaza cu adevarat la performanta si ce e doar marketing.',
     subcategorii: [sub('Laptopuri', 'laptopuri'), sub('Componente', 'componente'), sub('Monitoare', 'monitoare'), sub('Periferice', 'periferice')],
   },
   {
     slug: 'bucatarie', nume: 'Bucatarie', numar: '88 articole', icon: ic.bucatarie,
+    inrudite: ['electrocasnice', 'casa-si-gradina'],
     descriere: 'Mici electrocasnice de bucatarie testate pe ce conteaza: espressoare, friteuze cu aer, roboti si blendere.',
     subcategorii: [sub('Espressoare', 'espressoare'), sub('Friteuze cu aer', 'friteuze-cu-aer'), sub('Roboti de bucatarie', 'roboti-de-bucatarie'), sub('Blendere', 'blendere')],
   },
   {
     slug: 'tv-si-foto', nume: 'TV si Foto', numar: '96 articole', icon: ic.tv,
+    inrudite: ['it-si-laptop', 'telefoane'],
     descriere: 'Televizoare, sisteme audio si camere foto, comparate pe imagine, sunet si raport pret-calitate.',
     subcategorii: [sub('Televizoare', 'televizoare'), sub('Soundbar', 'soundbar'), sub('Camere foto', 'camere-foto'), sub('Proiectoare', 'proiectoare')],
   },
   {
     slug: 'iluminat', nume: 'Iluminat si electrice', numar: '', icon: ic.iluminat,
+    inrudite: ['casa-si-gradina', 'electrocasnice'],
     descriere: 'Corpuri de iluminat, becuri, benzi LED, iluminat de exterior si partea electrica a casei. Calculam consumul real si cat te costa pe an, si comparam pe lumeni si temperatura de culoare, nu pe wati.',
     subcategorii: [
       sub('Corpuri de iluminat', 'corpuri-de-iluminat'),
@@ -52,6 +59,7 @@ export const categorii = [
   },
   {
     slug: 'casa-si-gradina', nume: 'Casa si Gradina', numar: '124 articole', icon: ic.casa,
+    inrudite: ['iluminat', 'electrocasnice'],
     descriere: 'Mobila, saltele si tot ce face casa mai buna, plus unelte si echipamente de gradina.',
     subcategorii: [sub('Mobila', 'mobila'), sub('Saltele', 'saltele'), sub('Decoratiuni', 'decoratiuni'), sub('Gradina', 'gradina')],
   },

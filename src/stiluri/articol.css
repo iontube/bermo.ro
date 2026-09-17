@@ -112,7 +112,8 @@ section.after { border-top:1px solid var(--line); background:var(--surface); mar
 /* card review produs in-content */
 .ppick { border:1px solid var(--line); border-radius:var(--radius); background:var(--card); padding:18px; margin:28px 0; box-shadow:var(--shadow); }
 .ppick .phead { display:flex; flex-direction:column; gap:14px; }
-.ppick .pimg { background:var(--surface); border-radius:10px; height:210px; display:flex; align-items:center; justify-content:center; padding:16px; overflow:hidden; }
+/* caseta pozei creste cu latimea ecranului: pe mobil produsele late (televizoare, monitoare) nu mai ies mici */
+.ppick .pimg { background:#fff; border:1px solid var(--line); border-radius:10px; height:clamp(190px, 58vw, 280px); display:flex; align-items:center; justify-content:center; padding:10px; overflow:hidden; }
 .ppick .pimg img { max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; }
 .ppick .pmeta { display:flex; flex-direction:column; }
 .ppick .ptop { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:9px; }
@@ -156,3 +157,11 @@ section.after { border-top:1px solid var(--line); background:var(--surface); mar
   .ppick .pcta { margin-top:auto; padding-top:4px; }
   .ppick .proscons { grid-template-columns:1fr 1fr; gap:14px 32px; }
 }
+
+/* buton oferte pe categorie (componenta Oferte.astro) */
+.oferte-cta { display:flex; flex-direction:column; gap:12px; border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:var(--radius); background:var(--card); padding:16px 18px; margin:28px 0; cursor:pointer; box-shadow:var(--shadow); }
+.oferte-cta .oferte-txt { display:flex; flex-direction:column; gap:3px; }
+.oferte-cta strong { font-size:16px; }
+.oferte-cta span { color:var(--muted); font-size:14px; }
+.oferte-cta .oferte-btn { color:var(--on-accent); }
+@media (min-width:640px) { .oferte-cta { flex-direction:row; align-items:center; justify-content:space-between; } .oferte-cta .oferte-btn { width:auto; white-space:nowrap; } }
