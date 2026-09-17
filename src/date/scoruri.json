@@ -3858,10 +3858,10 @@
   "categorie": "laptop-office"
  },
  "DP38Q83BM": {
-  "scor": 8.7,
+  "scor": null,
   "rating": 4.55,
   "recenzii": 167,
-  "categorie": "laptop-office"
+  "categorie": "cele-mai-bune-laptopuri"
  },
  "DPTFLF3BM": {
   "scor": 8.9,
@@ -5760,10 +5760,10 @@
   "categorie": "casti"
  },
  "DYQP65MBM": {
-  "scor": 7.4,
-  "rating": 4.72,
-  "recenzii": 925,
-  "categorie": "casti"
+  "scor": null,
+  "rating": 4.71,
+  "recenzii": 936,
+  "categorie": "cele-mai-bune-casti-wireless"
  },
  "DJGWFTYBM": {
   "scor": 7.6,
@@ -8422,5 +8422,173 @@
   "rating": 4.94,
   "recenzii": 115,
   "categorie": "cea-mai-buna-pasta-de-dinti"
+ },
+ "D0ZG8P2BM": {
+  "scor": null,
+  "rating": 4.65,
+  "recenzii": 161,
+  "categorie": "cele-mai-bune-laptopuri"
+ },
+ "D3XZQ92BM": {
+  "scor": null,
+  "rating": 4.42,
+  "recenzii": 266,
+  "categorie": "cele-mai-bune-laptopuri"
+ },
+ "D3RY7T3BM": {
+  "scor": null,
+  "rating": 4.72,
+  "recenzii": 18,
+  "categorie": "cele-mai-bune-laptopuri"
+ },
+ "DV392N3BM": {
+  "scor": null,
+  "rating": 4.64,
+  "recenzii": 11,
+  "categorie": "cele-mai-bune-laptopuri"
+ },
+ "D2392N3BM": {
+  "scor": null,
+  "rating": 4.7,
+  "recenzii": 10,
+  "categorie": "cele-mai-bune-laptopuri"
+ },
+ "DS8QL32BM": {
+  "scor": null,
+  "rating": 4.09,
+  "recenzii": 22,
+  "categorie": "cele-mai-bune-laptopuri"
+ },
+ "DN0B0F3BM": {
+  "scor": null,
+  "rating": 5,
+  "recenzii": 5,
+  "categorie": "cele-mai-bune-laptopuri"
+ },
+ "DHH84HYBM": {
+  "scor": null,
+  "rating": 4.95,
+  "recenzii": 37,
+  "categorie": "cele-mai-bune-laptopuri"
+ },
+ "D8HTY4YBM": {
+  "scor": null,
+  "rating": 4.29,
+  "recenzii": 7,
+  "categorie": "cele-mai-bune-laptopuri"
+ },
+ "D8XGCMYBM": {
+  "scor": null,
+  "rating": 4.77,
+  "recenzii": 407,
+  "categorie": "cele-mai-bune-casti-wireless"
+ },
+ "DW1P65MBM": {
+  "scor": null,
+  "rating": 4.55,
+  "recenzii": 304,
+  "categorie": "cele-mai-bune-casti-wireless"
+ },
+ "DRBGXHYBM": {
+  "scor": null,
+  "rating": 4.45,
+  "recenzii": 143,
+  "categorie": "cele-mai-bune-casti-wireless"
+ },
+ "DQDXG4YBM": {
+  "scor": null,
+  "rating": 4.43,
+  "recenzii": 416,
+  "categorie": "cele-mai-bune-casti-wireless"
+ },
+ "DB27PGYBM": {
+  "scor": null,
+  "rating": 4.71,
+  "recenzii": 170,
+  "categorie": "cele-mai-bune-casti-wireless"
+ },
+ "DM3DHCYBM": {
+  "scor": null,
+  "rating": 4.68,
+  "recenzii": 171,
+  "categorie": "cele-mai-bune-casti-wireless"
+ },
+ "D1LNPJYBM": {
+  "scor": null,
+  "rating": 4.51,
+  "recenzii": 171,
+  "categorie": "cele-mai-bune-casti-wireless"
+ },
+ "DBFC7LYBM": {
+  "scor": null,
+  "rating": 4.68,
+  "recenzii": 426,
+  "categorie": "cele-mai-bune-casti-wireless"
+ },
+ "D26ZZSYBM": {
+  "scor": null,
+  "rating": 4.4,
+  "recenzii": 181,
+  "categorie": "cele-mai-bune-casti-wireless"
+ },
+ "DN4BJX3BM": {
+  "scor": null,
+  "rating": 4.92,
+  "recenzii": 13,
+  "categorie": "cele-mai-bune-anvelope-all-season"
+ },
+ "DCRZV2MBM": {
+  "scor": null,
+  "rating": 5,
+  "recenzii": 16,
+  "categorie": "cele-mai-bune-anvelope-all-season"
+ },
+ "DX9DM3YBM": {
+  "scor": null,
+  "rating": 5,
+  "recenzii": 8,
+  "categorie": "cele-mai-bune-anvelope-all-season"
+ },
+ "DJ1VYCYBM": {
+  "scor": null,
+  "rating": 5,
+  "recenzii": 5,
+  "categorie": "cele-mai-bune-anvelope-all-season"
+ },
+ "DV9FTHMBM": {
+  "scor": null,
+  "rating": 4.97,
+  "recenzii": 39,
+  "categorie": "cele-mai-bune-anvelope-all-season"
+ },
+ "DQZMS0YBM": {
+  "scor": null,
+  "rating": 4.4,
+  "recenzii": 5,
+  "categorie": "cele-mai-bune-anvelope-all-season"
+ },
+ "DX9FTHMBM": {
+  "scor": null,
+  "rating": 4.77,
+  "recenzii": 178,
+  "categorie": "cele-mai-bune-anvelope-all-season"
+ },
+ "DLZWYDMBM": {
+  "scor": null,
+  "rating": 4.47,
+  "recenzii": 144,
+  "categorie": "cele-mai-bune-anvelope-all-season"
+ },
+ "DX0GV2MBM": {
+  "scor": null,
+  "rating": 4.42,
+  "recenzii": 50,
+  "categorie": "cele-mai-bune-anvelope-all-season"
+ },
+ "DC36RHMBM": {
+  "scor": null,
+  "rating": 4.61,
+  "recenzii": 23,
+  "categorie": "cele-mai-bune-anvelope-all-season"
  }
 }
