@@ -137,7 +137,7 @@ export async function inlineBars({ titlu, unitate, data, out, w = 1040, h = 560,
   const rows = data.map((d, i) => {
     const pct = Math.round((d.valoare / max) * 100);
     return `<div style="display:flex;align-items:center;gap:16px">
-      ${imagini ? `<div style="width:60px;height:60px;flex:none;background:#fff;border:1px solid ${P.line};border-radius:12px;display:grid;place-items:center;padding:6px">${img(d.src, 'max-height:100%;max-width:100%;filter:none')}</div>` : ''}
+      ${imagini ? `<div style="width:60px;height:60px;flex:none;background:#fff;border:1px solid ${P.line};border-radius:12px;display:grid;place-items:center;padding:6px">${img(d.src, 'max-height:48px;max-width:48px;object-fit:contain;filter:none')}</div>` : ''}
       <div style="flex:1">
         <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;gap:12px"><span style="font-size:19px;font-weight:600">${d.nume}</span><span style="font-family:GeistMono;font-size:18px;color:${P.ink2};white-space:nowrap">${d.eticheta}</span></div>
         <div style="height:16px;background:#e7ebe4;border-radius:8px;overflow:hidden"><div style="width:${pct}%;height:100%;background:linear-gradient(90deg,${P.accent2},${P.accent});border-radius:8px"></div></div>
@@ -282,7 +282,7 @@ export async function inlineGauge({ titlu, items, max = 10, unitate, caption, ou
 export async function inlineRange({ titlu, unitate, min, max, items, caption, out, w = 1040, h = 480 }) {
   const pct = (v) => Math.max(0, Math.min(100, ((v - min) / (max - min)) * 100));
   const pins = items.map((it) => `<div style="position:absolute;left:${pct(it.valoare)}%;bottom:64px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;width:150px">
-    <div style="width:60px;height:60px;background:#fff;border:1px solid ${P.line};border-radius:12px;display:grid;place-items:center;padding:6px">${img(it.src, 'max-height:100%;max-width:100%;filter:none')}</div>
+    <div style="width:60px;height:60px;background:#fff;border:1px solid ${P.line};border-radius:12px;display:grid;place-items:center;padding:6px">${img(it.src, 'max-height:48px;max-width:48px;object-fit:contain;filter:none')}</div>
     <div style="font-size:14px;font-weight:600;text-align:center;line-height:1.15">${it.nume}</div>
     <div style="font-family:GeistMono;font-size:13px;color:${P.accent}">${it.eticheta}</div>
     <div style="width:2px;height:14px;background:${P.accent}"></div></div>`).join('');
