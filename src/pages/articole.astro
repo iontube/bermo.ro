@@ -1,0 +1,116 @@
+---
+import Baza from '../sabloane/Baza.astro';
+import { getArticole } from '../date/articole.js';
+import '../stiluri/categorie.css';
+
+const toate = (await getArticole()).sort((a, b) => b.data.data - a.data.data);
+const urlArt = (a) => `/${a.id}/`;
+const norm = (s) => (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+
+// sinonime / termeni de cautare per articol (singular + cuvinte-cheie uzuale) pentru relevanta
+const SIN = {
+  'cele-mai-bune-aspiratoare-robot': 'aspirator robot cu spalare',
+  'cele-mai-bune-aspiratoare-verticale': 'aspirator vertical fara fir stick',
+  'cele-mai-bune-casti-wireless': 'casca casti bluetooth wireless in ear over ear',
+  'cele-mai-bune-espressoare': 'cafea espressor aparat de cafea capsule capsula rasnita barista latte',
+  'cele-mai-bune-frigidere': 'frigider combina side by side congelator',
+  'cele-mai-bune-friteuze-cu-aer': 'friteuza air fryer fara ulei',
+  'cele-mai-bune-gratare': 'gratar barbecue bbq gradina carbune gaz electric',
+  'cele-mai-bune-laptopuri-gaming': 'laptop gaming notebook',
+  'cele-mai-bune-laptopuri': 'laptop notebook ultrabook birou office',
+  'cele-mai-bune-masini-de-spalat-rufe': 'masina de spalat rufe',
+  'cele-mai-bune-monitoare': 'monitor display ecran gaming',
+  'cele-mai-bune-saltele': 'saltea somiera memory foam ortopedica arcuri',
+  'cele-mai-bune-telefoane': 'telefon smartphone mobil',
+  'cele-mai-bune-televizoare': 'televizor tv smart 4k qled oled',
+  'cele-mai-bune-blendere': 'blender smoothie tocator vertical',
+  'cele-mai-bune-soundbaruri': 'soundbar bara de sunet audio boxa home cinema',
+  'cele-mai-bune-proiectoare': 'proiector videoproiector',
+  'cele-mai-bune-scaune-de-birou': 'scaun ergonomic birou gaming office',
+  'cele-mai-bune-masini-de-tuns-iarba': 'masina de tuns iarba gazon cositoare',
+  'cele-mai-bune-birouri': 'birou masa de calculator standing desk reglabil',
+  'cele-mai-bune-roboti-de-bucatarie': 'robot de bucatarie mixer planetar food processor',
+  'cele-mai-bune-incarcatoare-telefon': 'incarcator priza auto wireless powerbank baterie externa telefon',
+  'cele-mai-bune-paturi': 'pat matrimonial dublu dormitor tapitat lemn masiv',
+  'cele-mai-bune-seturi-mobilier-gradina': 'mobilier de gradina terasa set masa scaune sezlong',
+  'cele-mai-bune-covoare': 'covor covoare shaggy pufos',
+};
+---
+<Baza titlu="Toate articolele" descriere="Toate articolele si comparatiile de cumparare de pe bermo.ro. Cauta un produs sau o categorie.">
+  <main class="wrap">
+    <nav class="crumb"><a href="/">Acasa</a><span class="sep">/</span><span class="cur">Articole</span></nav>
+    <div class="cathead">
+      <span class="lab">Toate articolele</span>
+      <h1 id="titlu">Articole</h1>
+      <p>Toate articolele si comparatiile noastre de cumparare, cele mai noi primele. Cauta dupa produs sau categorie.</p>
+      <form class="hsearch" id="formCauta" role="search" action="/articole/" method="get" style="display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line-2);border-radius:11px;padding:6px 6px 6px 14px;max-width:460px;box-shadow:var(--shadow);margin-top:16px">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;color:var(--muted);flex:none" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+        <input id="q" name="cauta" type="search" placeholder="Cauta un produs sau articol" aria-label="Cauta" autocomplete="off" style="border:0;background:none;font:inherit;font-size:15px;color:var(--ink);width:100%;outline:none;padding:8px 0" />
+      </form>
+      <div class="cstat"><span id="nrart">{toate.length}</span> articole</div>
+    </div>
+    <section class="listsec">
+      <div class="art-grid" id="grid">
+        {toate.map((a) => (
+          <a class="art" href={urlArt(a)} data-cauta={norm(`${a.data.titlu} ${a.data.descriere} ${a.data.categorie} ${a.data.subcategorie || ''} ${SIN[a.id] || ''}`)}>
+            <div class="ph">{a.data.imagine ? <img src={a.data.imagine} alt={a.data.titlu} loading="lazy" /> : "imagine"}</div>
+            <div class="abody">
+              <span class="akick">{a.data.categorie}</span>
+              <h2>{a.data.titlu}</h2>
+              <p>{a.data.descriere}</p>
+              <div class="ameta"><span>{a.data.autor}</span><span>{a.data.minute} min</span></div>
+            </div>
+          </a>
+        ))}
+      </div>
+      <div class="gol" id="gol" style="display:none">Niciun rezultat pentru cautarea ta. Incearca alt termen sau vezi <a href="/categorii/" style="color:var(--accent)">toate categoriile</a>.</div>
+      <div style="display:flex;justify-content:center;margin-top:28px">
+        <button type="button" id="btnMai" class="btn" style="width:auto;display:none">Incarca mai multe</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const grid = document.getElementById('grid');
+    const carduri = Array.from(grid.querySelectorAll('.art'));
+    const q = document.getElementById('q');
+    const nr = document.getElementById('nrart');
+    const gol = document.getElementById('gol');
+    const titlu = document.getElementById('titlu');
+    const btnMai = document.getElementById('btnMai');
+    const PAS = 12;
+    let vizibile = PAS;
+    const norm = (s) => (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    function aplica() {
+      const cuvinte = norm(q.value.trim()).split(/\s+/).filter(Boolean);
+      const filtrare = cuvinte.length > 0;
+      let potriviri = 0, afisate = 0;
+      for (const c of carduri) {
+        const match = !filtrare || cuvinte.every((w) => c.dataset.cauta.includes(w));
+        const show = filtrare ? match : afisate < vizibile;
+        c.style.display = show ? '' : 'none';
+        if (match) potriviri++;
+        if (show) afisate++;
+      }
+      nr.textContent = filtrare ? potriviri : carduri.length;
+      gol.style.display = (filtrare && potriviri === 0) ? 'block' : 'none';
+      titlu.textContent = q.value.trim() ? `Rezultate pentru „${q.value.trim()}”` : 'Articole';
+      btnMai.style.display = (!filtrare && vizibile < carduri.length) ? '' : 'none';
+    }
+    btnMai.addEventListener('click', () => { vizibile += PAS; aplica(); });
+    // termen din path friendly /cauta/<termen>/ SAU din ?cauta=
+    const mPath = location.pathname.match(/^\/cauta\/([^/]+)\/?$/);
+    const initial = mPath ? decodeURIComponent(mPath[1].replace(/-/g, ' ')) : (new URLSearchParams(location.search).get('cauta') || '');
+    if (initial) q.value = initial;
+    aplica();
+    q.addEventListener('input', () => { vizibile = PAS; aplica(); });
+    // submit -> URL friendly /cauta/<termen>/
+    document.getElementById('formCauta').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const t = q.value.trim();
+      const slug = norm(t).replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+      history.pushState(null, '', slug ? '/cauta/' + slug + '/' : '/articole/');
+      aplica();
+    });
+  </script>
+</Baza>

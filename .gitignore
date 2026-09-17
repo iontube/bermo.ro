@@ -9,3 +9,7 @@ cron.log
 generation.log
 .claude/
 .DS_Store
+deploy.sh
+.wrangler/
+*.log
+tools/imagini/cache/

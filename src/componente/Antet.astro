@@ -1,0 +1,77 @@
+---
+import { megaMeniu, meniuPrincipal } from '../date/nav.js';
+---
+<header class="site">
+  <div class="wrap bar">
+    <a href="/" class="logo">bermo<span class="dot">.</span></a>
+    <nav class="desk">
+      <div class="cat-wrap">
+        <button class="nlink" id="catBtn" aria-expanded="false" aria-haspopup="true">Categorii
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="megapanel" id="megaPanel" role="menu">
+          {megaMeniu.map((col) => (
+            <div class="mcol">
+              <span class="mh">{col.grup}</span>
+              {col.items.map(([nume, href]) => <a href={href}>{nume}</a>)}
+            </div>
+          ))}
+        </div>
+      </div>
+      {meniuPrincipal.map((l) => <a href={l.href} class="nlink">{l.nume}</a>)}
+    </nav>
+    <span class="grow"></span>
+    <button class="iconbtn" id="themeBtn" aria-label="Schimba tema">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+    <button class="iconbtn" id="burger" aria-label="Meniu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <div class="mmenu-backdrop" id="mbackdrop"></div>
+  <div class="mmenu" id="mmenu">
+    <div class="mmenu-head">
+      <a href="/" class="logo">bermo<span class="dot">.</span></a>
+      <button class="iconbtn" id="mclose" aria-label="Inchide meniul">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="mmenu-inner">
+      <a href="/categorii/" class="mrow">Categorii <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></a>
+      {meniuPrincipal.map((l) => <a href={l.href} class="mrow">{l.nume} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></a>)}
+    </div>
+  </div>
+</header>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    var stored = localStorage.getItem('tema');
+    if (stored) root.setAttribute('data-theme', stored);
+    var tb = document.getElementById('themeBtn');
+    tb && tb.addEventListener('click', function () {
+      var cur = root.getAttribute('data-theme');
+      var isDark = cur ? cur === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+      var next = isDark ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('tema', next); } catch (e) {}
+    });
+    var burger = document.getElementById('burger'), mmenu = document.getElementById('mmenu'),
+        mbackdrop = document.getElementById('mbackdrop'), mclose = document.getElementById('mclose');
+    function openMenu() { mmenu.classList.add('open'); mbackdrop.classList.add('open'); document.body.classList.add('no-scroll'); burger.setAttribute('aria-expanded', 'true'); }
+    function closeMenu() { mmenu.classList.remove('open'); mbackdrop.classList.remove('open'); document.body.classList.remove('no-scroll'); burger.setAttribute('aria-expanded', 'false'); }
+    burger && burger.addEventListener('click', openMenu);
+    mclose && mclose.addEventListener('click', closeMenu);
+    mbackdrop && mbackdrop.addEventListener('click', closeMenu);
+    var catBtn = document.getElementById('catBtn'), mega = document.getElementById('megaPanel');
+    catBtn && catBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = mega.classList.toggle('open');
+      catBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('click', function (e) {
+      if (mega && !mega.contains(e.target) && e.target !== catBtn) { mega.classList.remove('open'); catBtn && catBtn.setAttribute('aria-expanded', 'false'); }
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { mega && mega.classList.remove('open'); closeMenu(); } });
+  })();
+</script>

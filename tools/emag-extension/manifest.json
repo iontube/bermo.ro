@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "bermo — eMAG collector",
+  "version": "1.0.0",
+  "description": "Extrage produse de pe eMAG (rating, pret, imagini, specs) si le trimite la colectorul bermo. Filtru pe nr. recenzii.",
+  "permissions": ["storage"],
+  "host_permissions": ["*://www.emag.ro/*", "https://bermo-emag-collector.throbbing-tooth-cb05.workers.dev/*"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [ { "matches": ["*://www.emag.ro/*"], "js": ["content.js"], "run_at": "document_idle" } ],
+  "action": { "default_popup": "popup.html", "default_title": "bermo eMAG collector" }
+}

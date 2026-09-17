@@ -1,0 +1,63 @@
+---
+// Review produs in-content: imagine + evaluare reala + recenzie (paragrafe) + plusuri/minusuri + CTA.
+// ⛔ FARA scor propriu pe /10 (era tastat de mana, deci inventat). Se afiseaza DOAR evaluarea reala
+// de pe eMAG — rating + numar de recenzii, din tools/calc-scoruri.mjs -> src/date/scoruri.json.
+import scoruri from '../date/scoruri.json';
+
+const { nume, imagine, eticheta, cheie, recenzie = [], pros = [], cons = [] } = Astro.props;
+const paragrafe = Array.isArray(recenzie) ? recenzie : [recenzie];
+const b64 = (s) => Buffer.from(String(s)).toString('base64');
+const d = scoruri[cheie];
+const rating = d ? d.rating.toFixed(2).replace('.', ',') : null;
+const umplere = d ? Math.max(0, Math.min(100, (d.rating / 5) * 100)) : 0;
+const stea = 'M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z';
+const cinci = [0, 1, 2, 3, 4];
+---
+<div class="ppick">
+  <div class="phead">
+    <div class="pimg">{imagine && <img src={imagine} alt={nume} loading="lazy" />}</div>
+    <div class="pmeta">
+      <div class="ptop">
+        {eticheta && <span class="pkick">{eticheta}</span>}
+        {d && (
+          <span class="pnota" title={`${rating} din 5 pe eMAG, din ${d.recenzii} recenzii`}>
+            <span class="pstele" aria-hidden="true">
+              <span class="pstele-gol">{cinci.map(() => <svg viewBox="0 0 24 24"><path d={stea} /></svg>)}</span>
+              <span class="pstele-plin" style={`width:${umplere}%`}>{cinci.map(() => <svg viewBox="0 0 24 24"><path d={stea} /></svg>)}</span>
+            </span>
+            <b>{rating}</b>
+            <span class="pnota-sep" aria-hidden="true"></span>
+            <span class="pnota-rec">{d.recenzii.toLocaleString('ro-RO')} {d.recenzii === 1 ? 'recenzie' : 'recenzii'} pe eMAG</span>
+          </span>
+        )}
+      </div>
+      <h3>{nume}</h3>
+      {paragrafe.length > 0 && <div class="preview">{paragrafe.map((p) => <p>{p}</p>)}</div>}
+      <div class="pcta">
+        <button type="button" class="btn" data-o={b64(cheie)}>Vezi pretul pe eMAG
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></button>
+      </div>
+    </div>
+  </div>
+
+  {(pros.length > 0 || cons.length > 0) && (
+    <div class="proscons">
+      {pros.length > 0 && (
+        <div class="pros">
+          <h4>Plusuri</h4>
+          <ul>{pros.map((x) => (
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg>{x}</li>
+          ))}</ul>
+        </div>
+      )}
+      {cons.length > 0 && (
+        <div class="cons">
+          <h4>Minusuri</h4>
+          <ul>{cons.map((x) => (
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M6 12h12"/></svg>{x}</li>
+          ))}</ul>
+        </div>
+      )}
+    </div>
+  )}
+</div>

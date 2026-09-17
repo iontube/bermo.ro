@@ -1,0 +1,115 @@
+# verificare Profitshare: serveste .html cu 200 direct
+/3cd812df2df103f6a79d95a625afe7db.html  /3cd812df2df103f6a79d95a625afe7db  200
+
+# cautare cu URL friendly: /cauta/<termen>/ serveste pagina de articole (filtrare client-side)
+/cauta/*  /articole/  200
+
+# articolul #1 a fost mutat de la path adanc la URL plat
+/electrocasnice/aspiratoare-robot/cele-mai-bune-aspiratoare-robot/  /cele-mai-bune-aspiratoare-robot/  301
+
+# --- ARTICOLE REDENUMITE dupa publicare (301) ---
+/lampa-de-birou-pentru-scris-copii-si-unghii/  /lampa-de-birou-pentru-copii-scris-si-precizie/  301
+/lampa-de-birou-pentru-scris-copii-si-unghii  /lampa-de-birou-pentru-copii-scris-si-precizie/  301
+
+# --- ARTICOLE + PAGINI vechi -> structura noua (301) ---
+/espressor-automat-de-lux/  /cele-mai-bune-espressoare/  301
+/espressor-automat-de-lux  /cele-mai-bune-espressoare/  301
+/espressor-profesional-barista/  /cele-mai-bune-espressoare/  301
+/espressor-profesional-barista  /cele-mai-bune-espressoare/  301
+/masina-de-cafea-delonghi/  /cele-mai-bune-espressoare/  301
+/masina-de-cafea-delonghi  /cele-mai-bune-espressoare/  301
+/robot-de-bucatarie-bosch/  /cele-mai-bune-roboti-de-bucatarie/  301
+/robot-de-bucatarie-bosch  /cele-mai-bune-roboti-de-bucatarie/  301
+/friteuza-fara-ulei-xl/  /cele-mai-bune-friteuze-cu-aer/  301
+/friteuza-fara-ulei-xl  /cele-mai-bune-friteuze-cu-aer/  301
+/blender-profesional-vitamix/  /cele-mai-bune-blendere/  301
+/blender-profesional-vitamix  /cele-mai-bune-blendere/  301
+/storcator-fructe-slow-juicer/  /bucatarie/  301
+/storcator-fructe-slow-juicer  /bucatarie/  301
+/aparat-sous-vide-profesional/  /bucatarie/  301
+/aparat-sous-vide-profesional  /bucatarie/  301
+/masina-de-paine-premium/  /bucatarie/  301
+/masina-de-paine-premium  /bucatarie/  301
+/aparat-vidat-alimente-profesional/  /bucatarie/  301
+/aparat-vidat-alimente-profesional  /bucatarie/  301
+/purificator-aer-camera/  /electrocasnice/  301
+/purificator-aer-camera  /electrocasnice/  301
+/laptop-gaming-performant/  /cele-mai-bune-laptopuri-gaming/  301
+/laptop-gaming-performant  /cele-mai-bune-laptopuri-gaming/  301
+/laptop-ultrabook-business/  /cele-mai-bune-laptopuri/  301
+/laptop-ultrabook-business  /cele-mai-bune-laptopuri/  301
+/monitor-gaming-144hz/  /cele-mai-bune-monitoare/  301
+/monitor-gaming-144hz  /cele-mai-bune-monitoare/  301
+/casti-gaming-hyperx/  /cele-mai-bune-casti-wireless/  301
+/casti-gaming-hyperx  /cele-mai-bune-casti-wireless/  301
+/placa-video-rtx-4070/  /it-si-laptop/  301
+/placa-video-rtx-4070  /it-si-laptop/  301
+/procesor-intel-core-i7/  /it-si-laptop/  301
+/procesor-intel-core-i7  /it-si-laptop/  301
+/ssd-nvme-samsung-2tb/  /it-si-laptop/  301
+/ssd-nvme-samsung-2tb  /it-si-laptop/  301
+/router-wifi-6-mesh/  /it-si-laptop/  301
+/router-wifi-6-mesh  /it-si-laptop/  301
+/mouse-gaming-wireless-logitech/  /it-si-laptop/  301
+/mouse-gaming-wireless-logitech  /it-si-laptop/  301
+/camera-web-4k-streaming/  /it-si-laptop/  301
+/camera-web-4k-streaming  /it-si-laptop/  301
+/microfon-podcast-usb/  /it-si-laptop/  301
+/microfon-podcast-usb  /it-si-laptop/  301
+/saltea-memory-foam-premium/  /cele-mai-bune-saltele/  301
+/saltea-memory-foam-premium  /cele-mai-bune-saltele/  301
+/saltea-ortopedica-latex/  /cele-mai-bune-saltele/  301
+/saltea-ortopedica-latex  /cele-mai-bune-saltele/  301
+/pat-matrimonial-tapitat/  /cele-mai-bune-paturi/  301
+/pat-matrimonial-tapitat  /cele-mai-bune-paturi/  301
+/scaun-ergonomic-herman-miller/  /cele-mai-bune-scaune-de-birou/  301
+/scaun-ergonomic-herman-miller  /cele-mai-bune-scaune-de-birou/  301
+/canapea-extensibila-living/  /casa-si-gradina/mobila/  301
+/canapea-extensibila-living  /casa-si-gradina/mobila/  301
+/fotoliu-relaxare-recliner/  /casa-si-gradina/mobila/  301
+/fotoliu-relaxare-recliner  /casa-si-gradina/mobila/  301
+/comoda-dormitor-stejar/  /casa-si-gradina/mobila/  301
+/comoda-dormitor-stejar  /casa-si-gradina/mobila/  301
+/dulap-usi-glisante/  /casa-si-gradina/mobila/  301
+/dulap-usi-glisante  /casa-si-gradina/mobila/  301
+/noptiera-moderna-minimalist/  /casa-si-gradina/mobila/  301
+/noptiera-moderna-minimalist  /casa-si-gradina/mobila/  301
+/aparat-multifunctional-forta/  /  301
+/aparat-multifunctional-forta  /  301
+/banda-alergat-pliabila/  /  301
+/banda-alergat-pliabila  /  301
+/bara-tractiuni-multifunctionala/  /  301
+/bara-tractiuni-multifunctionala  /  301
+/bicicleta-eliptica-magnetica/  /  301
+/bicicleta-eliptica-magnetica  /  301
+/bicicleta-spinning-profesionala/  /  301
+/bicicleta-spinning-profesionala  /  301
+/gantere-reglabile-bowflex/  /  301
+/gantere-reglabile-bowflex  /  301
+/kettlebell-set-profesional/  /  301
+/kettlebell-set-profesional  /  301
+/minge-fitness-antiburst/  /  301
+/minge-fitness-antiburst  /  301
+/stepper-fitness-hidraulic/  /  301
+/stepper-fitness-hidraulic  /  301
+/trx-suspension-original/  /  301
+/trx-suspension-original  /  301
+/politica-de-confidentialitate/  /confidentialitate/  301
+/politica-de-confidentialitate  /confidentialitate/  301
+/politica-cookies/  /cookies/  301
+/politica-cookies  /cookies/  301
+/sitemap/  /articole/  301
+/sitemap  /articole/  301
+/cautare/  /  301
+/cautare  /  301
+
+# --- CATEGORII vechi -> categorii noi (301) ---
+/electrocasnice-premium/*  /electrocasnice/  301
+/electrocasnice-premium  /electrocasnice/  301
+/it-electronice/*  /it-si-laptop/  301
+/it-electronice  /it-si-laptop/  301
+/mobilier-dormitor/*  /casa-si-gradina/mobila/  301
+/mobilier-dormitor  /casa-si-gradina/mobila/  301
+/fitness-sport/*  /  301
+/fitness-sport  /  301
+

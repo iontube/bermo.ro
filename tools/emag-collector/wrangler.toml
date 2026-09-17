@@ -1,0 +1,8 @@
+name = "bermo-emag-collector"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+account_id = "1041f5ab6426090eccca974df4ef6f9d"
+
+[[kv_namespaces]]
+binding = "EMAG"
+id = "47d997b9d17742619849e2a842744a5c"

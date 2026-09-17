@@ -1,40 +1,56 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import CookieBanner from '../components/CookieBanner.astro';
+import Text from '../sabloane/Text.astro';
+// Inlocuieste cu Site Key din Cloudflare Turnstile (public):
+const TURNSTILE_SITEKEY = '0x4AAAAAAD8_7NfDk8WAXt6-';
 ---
+<Text titlu="Contact" descriere="Scrie-ne o intrebare, o corectie sau o propunere." eticheta="bermo" lead="Ai gasit o greseala, ai o intrebare sau o propunere de articol? Scrie-ne.">
+  <p>Ne poti scrie direct la <a href="mailto:contact@bermo.ro">contact@bermo.ro</a> sau prin formularul de mai jos. Raspundem de obicei in cateva zile.</p>
 
-<Layout
-  title="Contact"
-  description="Contacteaza echipa Bermo.ro - Suntem aici sa raspundem intrebarilor tale despre produse si recenzii."
->
-  <Header />
+  <form class="formular" id="formContact" novalidate>
+    <div><label for="nume">Nume</label><input id="nume" name="nume" type="text" maxlength="120" required /></div>
+    <div><label for="email">Email</label><input id="email" name="email" type="email" maxlength="160" required /></div>
+    <div><label for="mesaj">Mesaj</label><textarea id="mesaj" name="mesaj" maxlength="5000" required></textarea></div>
+    <div class="cf-turnstile" data-sitekey={TURNSTILE_SITEKEY} data-theme="auto" style="margin:4px 0"></div>
+    <button class="btn" type="submit" id="btnTrimite" style="width:auto">Trimite mesajul</button>
+    <p id="stareForm" role="status" aria-live="polite" style="margin:4px 0 0;font-size:14px;display:none"></p>
+  </form>
 
-  <main class="contact-page">
-    <div class="container">
-      <div class="contact-container">
-        <div class="contact-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-          </svg>
-        </div>
+  <p>Pentru detalii despre date, vezi <a href="/confidentialitate/">politica de confidentialitate</a>.</p>
 
-        <h1>Contacteaza-ne</h1>
-        <p>
-          Ai intrebari despre produsele recenzate sau vrei sa ne transmiti un feedback? Suntem aici sa te ajutam. Trimite-ne un email si iti vom raspunde cat mai curand posibil.
-        </p>
-
-        <a href="mailto:contact@bermo.ro" class="contact-email">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-          </svg>
-          contact@bermo.ro
-        </a>
-      </div>
-    </div>
-  </main>
-
-  <Footer />
-  <CookieBanner />
-</Layout>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer is:inline></script>
+  <script is:inline>
+    (function () {
+      var f = document.getElementById('formContact');
+      var stare = document.getElementById('stareForm');
+      var btn = document.getElementById('btnTrimite');
+      function arata(msg, ok) {
+        stare.textContent = msg;
+        stare.style.display = 'block';
+        stare.style.color = ok ? 'var(--accent)' : '#c94a4a';
+      }
+      f.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        var tokenEl = f.querySelector('[name="cf-turnstile-response"]');
+        var token = tokenEl ? tokenEl.value : '';
+        if (!token) { arata('Confirma casuta „nu sunt robot" si reincearca.', false); return; }
+        btn.disabled = true; btn.textContent = 'Se trimite...';
+        try {
+          var res = await fetch('/api/contact', { method: 'POST', body: new FormData(f) });
+          var data = await res.json();
+          if (data.ok) {
+            f.reset();
+            if (window.turnstile) window.turnstile.reset();
+            arata('Mesajul a fost trimis. Multumim, revenim in cateva zile.', true);
+          } else {
+            arata(data.error || 'A aparut o eroare. Reincearca.', false);
+            if (window.turnstile) window.turnstile.reset();
+          }
+        } catch (err) {
+          arata('Nu am putut trimite mesajul. Scrie-ne direct la contact@bermo.ro.', false);
+        } finally {
+          btn.disabled = false; btn.textContent = 'Trimite mesajul';
+        }
+      });
+    })();
+  </script>
+</Text>

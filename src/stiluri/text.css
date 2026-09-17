@@ -1,0 +1,43 @@
+/* bermo.ro — pagini text / legale / redactia */
+.doc { max-width:720px; margin:0 auto; padding:0 0 20px; }
+.pagehead { padding:22px 0 20px; border-bottom:1px solid var(--line); margin-bottom:8px; }
+.pagehead .lab { font-family:var(--mono); font-size:11px; font-weight:500; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); }
+.pagehead h1 { font-size:clamp(28px,5.4vw,42px); line-height:1.1; margin:10px 0 0; }
+.pagehead .lead { font-size:17px; color:var(--ink-2); line-height:1.55; margin-top:14px; }
+.pagehead .upd { font-family:var(--mono); font-size:12px; color:var(--muted); margin-top:14px; }
+
+.prose p { font-size:16.5px; line-height:1.7; color:var(--ink); margin:0 0 16px; }
+.prose h2 { font-size:22px; margin:34px 0 12px; }
+.prose h3 { font-size:17px; margin:22px 0 8px; }
+.prose ul, .prose ol { margin:0 0 16px; padding-left:22px; }
+.prose li { font-size:16px; line-height:1.6; margin-bottom:7px; }
+.prose a { color:var(--accent); text-decoration:underline; text-underline-offset:2px; font-weight:500; }
+.prose strong { font-weight:600; }
+
+.principii { display:grid; grid-template-columns:1fr; gap:14px; margin:22px 0 8px; }
+.principiu { border:1px solid var(--line); border-radius:var(--radius); background:var(--card); padding:18px; }
+.principiu .pn { display:flex; align-items:center; gap:10px; }
+.principiu .pic { width:34px; height:34px; flex:none; border-radius:8px; background:var(--accent-soft); color:var(--accent); display:grid; place-items:center; }
+.principiu .pic svg { width:18px; height:18px; }
+.principiu h3 { font-size:15.5px; }
+.principiu p { font-size:14px; color:var(--ink-2); line-height:1.55; margin-top:10px; }
+
+.team { display:grid; grid-template-columns:1fr; gap:14px; margin:20px 0 8px; }
+.member { display:flex; gap:14px; align-items:center; border:1px solid var(--line); border-radius:var(--radius); background:var(--card); padding:16px; }
+.member .av { width:48px; height:48px; flex:none; border-radius:50%; background:var(--accent); color:var(--on-accent); font-weight:700; font-size:16px; display:grid; place-items:center; }
+.member .nm { font-size:15px; font-weight:600; }
+.member .rl { font-family:var(--mono); font-size:11.5px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; margin-top:2px; }
+.member p { font-size:13.5px; color:var(--ink-2); line-height:1.5; margin-top:6px; }
+
+.doc .disclosure { margin:24px 0 8px; }
+
+.formular { display:grid; gap:14px; margin:22px 0; max-width:520px; }
+.formular label { font-size:13.5px; font-weight:600; color:var(--ink); display:block; margin-bottom:6px; }
+.formular input, .formular textarea { width:100%; font:inherit; font-size:15px; color:var(--ink); background:var(--card); border:1px solid var(--line-2); border-radius:8px; padding:11px 13px; outline:none; }
+.formular input:focus, .formular textarea:focus { border-color:var(--accent); }
+.formular textarea { min-height:130px; resize:vertical; }
+
+@media (min-width:600px) {
+  .principii { grid-template-columns:repeat(3,1fr); }
+  .team { grid-template-columns:1fr 1fr; }
+}

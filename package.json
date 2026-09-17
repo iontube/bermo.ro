@@ -5,11 +5,12 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build && node scripts/generate-sitemaps.js",
+    "build": "node scripts/genereaza-redirects.mjs && astro build && node scripts/genereaza-out.mjs && node scripts/genereaza-sitemap.mjs",
     "preview": "astro preview",
     "generate": "node scripts/generate-batch.js"
   },
   "dependencies": {
+    "@astrojs/mdx": "^4.3.14",
     "@astrojs/sitemap": "^3.3.1",
     "astro": "^5.16.11",
     "sharp": "^0.34.2"

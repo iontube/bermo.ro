@@ -1,0 +1,19 @@
+---
+import Baza from './Baza.astro';
+import '../stiluri/text.css';
+const { titlu, descriere, lead, actualizat, eticheta = 'bermo' } = Astro.props;
+---
+<Baza titlu={titlu} descriere={descriere}>
+  <main class="wrap">
+    <div class="doc">
+      <nav class="crumb"><a href="/">Acasa</a><span class="sep">/</span><span class="cur">{titlu}</span></nav>
+      <div class="pagehead">
+        <span class="lab">{eticheta}</span>
+        <h1>{titlu}</h1>
+        {lead && <p class="lead">{lead}</p>}
+        {actualizat && <div class="upd">Ultima actualizare: {actualizat}</div>}
+      </div>
+      <div class="prose"><slot /></div>
+    </div>
+  </main>
+</Baza>

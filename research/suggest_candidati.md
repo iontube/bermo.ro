@@ -1,0 +1,959 @@
+# bermo — candidati de articol din autosuggest (curatat)
+
+6250 termeni pastrati din 9536 brut. Filtre: contine radacina seedului, <=8 cuvinte,
+fara cod de model / brand, forma de intentie clara. Scorul premiaza intentia, nu lungimea.
+⚠️ Scorul e proxy structural — NU inlocuieste verificarea SERP.
+
+## Electrocasnice — 769 termeni, comision pana la 5.70%
+
+- **72** `informational` cat consuma o friteuza cu aer cald
+- **72** `informational` cat consuma un cuptor electric incorporabil
+- **72** `informational` cat consuma un espressor de cafea
+- **72** `informational` cat consuma un fier de calcat
+- **72** `informational` cat consuma.o masina de cusut electrica
+- **72** `informational` cat consuma masina de spalat rufe
+- **72** `informational` cat consuma masina de spalat vase
+- **70** `informational` cat consuma o plita electrica cu inductie
+- **70** `informational` cat curent consuma o friteuza cu aer cald
+- **70** `informational` cat consuma un fier de calcat pe ora
+- **70** `informational` cat consuma o hota de bucatarie
+- **70** `informational` cat consuma o masina de paine
+- **70** `informational` cat curent consuma masina de spalat rufe
+- **68** `informational` cat curent consuma un fier de calcat
+- **68** `informational` cat curent consuma o masina de paine
+- **68** `informational` cat consuma un aspirator robot
+- **68** `informational` cat consuma masina de paine
+- **68** `informational` cat apa consuma masina de spalat rufe
+- **68** `informational` cat curent consuma masina de spalat vase
+- **68** `informational` cat consuma un uscator de rufe pe ora
+- **68** `informational` cat consuma uscator de rufe
+- **66** `comparatie` friteuza cu aer cald sau air fryer
+- **66** `comparatie` fier de calcat sau statie de calcat
+- **66** `comparatie` masina de cusut singer sau brother
+- **66** `informational` cat consuma o hota pe ora
+- **66** `comparatie` blender sau robot de bucatarie
+- **66** `informational` cat consuma un espressor profesional
+- **66** `informational` cat curent consuma un multicooker
+- **66** `comparatie` uscator de rufe cu pompa sau condensare
+- **66** `informational` cat consuma o masina de spalat vase apa
+- **66** `informational` cat consuma un uscator de rufe clasa e
+- **66** `informational` cat consuma un frigider pe zi
+- **66** `informational` cat consuma frigiderul pe luna
+- **64** `comparatie` friteuza cu aer cald sau cuptor electric
+- **64** `informational` cat consuma becul de la hota
+- **64** `informational` cat consuma o hota electrica
+- **64** `informational` cat consuma plita inductie
+- **64** `informational` cat consuma un multicooker
+- **64** `informational` cat consuma un frigider in 24 de ore
+- **64** `comparatie` uscator de rufe pompa de caldura sau condensare
+- **64** `informational` cat consuma o masina de spalat rufe apa
+- **64** `informational` cat apa consuma masina de spalat vase
+- **64** `informational` cat consuma un uscator de rufe clasa b
+- **64** `informational` cat consuma frigiderul pe zi
+- **62** `comparatie` fier de calcat cu talpa ceramica sau inox
+- **62** `comparatie` friteuza cu aer cald sau multicooker
+- **62** `comparatie` storcator de fructe sau blender
+- **62** `informational` cat consuma o masina de spalat vase curent
+- **62** `informational` cat consuma un uscator de rufe clasa c
+- **62** `informational` cat consuma un frigider pe luna
+
+## Incalzire — 622 termeni, comision pana la 5.80%
+
+- **72** `informational` cat consuma un purificator de aer
+- **70** `informational` cat consuma pompa de caldura aer apa
+- **70** `informational` cat consuma un calorifer electric pe ulei
+- **70** `informational` cat curent consuma un purificator de aer
+- **70** `informational` cat consuma aer conditionat pe caldura
+- **68** `informational` cat consuma o centrala termica electrica
+- **68** `informational` cat consuma pompa de caldura iarna
+- **68** `informational` cat consuma pompa de caldura
+- **68** `informational` cat consuma un calorifer electric pe luna
+- **68** `informational` cat consuma un convector electric pe zi
+- **68** `informational` cat consuma un dezumidificator pe ora
+- **68** `informational` cat consuma un convector electric
+- **66** `comparatie` pompa de caldura sau centrala pe gaz
+- **66** `informational` cat consuma o centrala termica pe gaz
+- **66** `informational` cat consuma un aer conditionat pe zi
+- **66** `comparatie` convector electric sau calorifer pe ulei
+- **66** `informational` cat consuma un dezumidificator alecoair
+- **66** `informational` cat curent consuma un umidificator
+- **64** `informational` cat consuma un boiler electric de 30l
+- **64** `comparatie` pompa de caldura sau centrala pe peleti
+- **64** `informational` cat consuma o centrala termica pe gpl
+- **64** `informational` cat consuma o pompa de caldura aer aer
+- **64** `informational` cat consuma centrala termica
+- **64** `informational` cat consuma boilerul electric
+- **64** `informational` cat consuma un aer conditionat de 9000 btu
+- **64** `comparatie` aer conditionat sau pompa de caldura
+- **64** `informational` cat consuma o aeroterma pe ora
+- **64** `informational` cat consuma un dezumidificator pe zi
+- **64** `informational` cat consuma calorifer electric
+- **64** `informational` cat consuma un dezumidificator
+- **64** `informational` cat consuma un umidificator
+- **64** `informational` cat consuma aer conditionat
+- **63** `comparatie` umidificator sau purificator de aer
+- **62** `informational` cat consuma o pompa de caldura pe zi
+- **62** `comparatie` pompa de caldura sau centrala electrica
+- **62** `informational` cat gpl consuma o centrala termica
+- **62** `informational` cat consuma un calorifer electric pe ora
+- **62** `informational` cat consuma un aer conditionat pe ora
+- **62** `informational` cat consuma un dezumidificator turbionaire
+- **60** `informational` cat consuma un boiler de 80 l
+- **60** `comparatie` pompa de caldura sau centrala pe lemne
+- **60** `informational` cat curent consuma o centrala termica pe gaz
+- **60** `informational` cat curent consuma pompa de caldura
+- **60** `informational` cat consuma un calorifer electric pe zi
+- **60** `informational` cat consuma aeroterma
+- **58** `informational` cat consuma o pompa de caldura pe luna
+- **58** `comparatie` pompa de caldura sau aer conditionat
+- **58** `informational` cat curent consuma o centrala termica
+- **58** `comparatie` panouri solare sau fotovoltaice
+- **58** `comparatie` umidificator sau dezumidificator pentru bebelusi
+
+## IT si TV — 528 termeni, comision pana la 7.30%
+
+- **72** `informational` cat consuma un telefon la incarcat
+- **70** `informational` cat consuma un monitor pe ora
+- **70** `informational` cat consuma un laptop pe ora
+- **70** `informational` cat consuma televizorul in stand by
+- **68** `informational` cat consuma un router wifi
+- **68** `informational` cat consuma o imprimanta 3d
+- **68** `informational` cat consuma un laptop pe zi
+- **68** `informational` cat consuma un televizor pe ora
+- **66** `informational` cat consuma un laptop de gaming
+- **66** `informational` cat consuma un televizor pe zi
+- **66** `informational` cat curent consuma un telefon mobil
+- **64** `informational` cat consuma un monitor
+- **64** `informational` cat consuma un ssd
+- **64** `informational` cat consuma un laptop pe luna
+- **64** `informational` cat consuma un laptop
+- **62** `informational` cat consuma o imprimanta
+- **62** `informational` cat consuma un laptop in 8 ore
+- **62** `informational` cat consuma un televizor pe luna
+- **62** `informational` cat consuma un telefon
+- **60** `comparatie` casti wireless sau cu fir
+- **60** `informational` cat consuma un laptop in priza
+- **60** `informational` cat consuma un televizor vechi
+- **60** `informational` cat consuma televizorul
+- **58** `comparatie` casti wireless sau bluetooth
+- **58** `comparatie` imprimanta fiscala sau casa de marcat
+- **58** `informational` cat consuma un laptop in standby
+- **56** `comparatie` soundbar sau home cinema
+- **56** `comparatie` smartwatch sau ceas clasic
+- **56** `segment` ce imprimanta sa cumpar pentru acasa
+- **56** `comparatie` imprimanta laser sau inkjet forum
+- **56** `comparatie` imprimanta laser sau inkjet
+- **56** `comparatie` ssd sau hdd extern
+- **56** `informational` cat consuma un incarcator de laptop
+- **56** `informational` cat consuma un televizor led pe ora
+- **56** `informational` cat consuma un televizor in stand by
+- **56** `informational` cat consuma un televizor led
+- **56** `comparatie` prajitura televizor sau budapesta
+- **54** `segment` router wifi cu cartela sim digi
+- **54** `pret` casti wireless pana in 100 lei
+- **54** `comparatie` soundbar sau boxa portabila
+- **54** `comparatie` monitor sau tv pentru pc
+- **54** `comparatie` imprimanta sau xerox
+- **54** `comparatie` ssd sau hdd
+- **54** `comparatie` laptop sau leptop
+- **54** `comparatie` televizor oled sau qled
+- **54** `comparatie` televizor sau proiector
+- **52** `segment` router wifi cu cartela sim 5g
+- **52** `segment` router wifi cu cartela sim
+- **52** `informational` cat curent consuma un laptop
+- **52** `comparatie` laptop sau tableta
+
+## Ingrijire — 500 termeni, comision pana la 8.40%
+
+- **72** `informational` cat consuma un uscator de par
+- **66** `comparatie` aparat de masaj facial cu ultrasunete sau fototerapie
+- **66** `comparatie` periuta de dinti electrica sau manuala
+- **62** `comparatie` dus bucal inainte sau dupa periaj
+- **62** `comparatie` uscator de par sau feon
+- **62** `comparatie` dus bucal sau irigator bucal
+- **60** `comparatie` dus bucal sau ata dentara
+- **58** `segment` crema cu protectie solara cu oxid de zinc
+- **58** `segment` crema de fata cu spf 50
+- **58** `segment` crema de fata pentru pete pigmentare
+- **58** `segment` periuta de dinti electrica cu dus bucal
+- **58** `segment` uscator de par pentru par cret
+- **58** `segment` aparat de tuns cu baterii aa
+- **58** `segment` periuta de dinti electrica pentru copii
+- **58** `comparatie` perie rotativa sau placa
+- **56** `segment` crema cu protectie solara pentru fata
+- **56** `segment` crema cu protectie solara pentru copii
+- **56** `segment` crema de fata pentru pete maronii
+- **56** `segment` periuta de dinti electrica pentru aparat dentar
+- **56** `segment` placa de indreptat parul cu aburi
+- **56** `segment` uscator de par cu perie rotativa
+- **56** `segment` aparat de ras cu o lama
+- **56** `segment` periuta de dinti electrica cu stitch
+- **56** `comparatie` perie rotativa sau fixa
+- **54** `segment` pareri sampon johnson baby este bun pentru adulti
+- **54** `segment` crema cu protectie solara pentru ten sensibil
+- **54** `pret` crema de fata ieftina si buna
+- **54** `segment` periuta de dinti electrica cu senzor de presiune
+- **54** `segment` placa de indreptat parul cu aer
+- **54** `segment` aparat de ras pentru zona intima
+- **54** `segment` aparat de masaj pentru spondiloza cervicala
+- **54** `segment` aparat de tuns pentru caini
+- **54** `segment` aparat de ras pentru femei
+- **54** `segment` aparat de ras cu lama
+- **54** `segment` aparat de masaj pentru picioare
+- **54** `segment` aparat de masaj cu infrarosu
+- **54** `comparatie` perie rotativa sau ondulator
+- **54** `comparatie` epilator sau depilator
+- **54** `pret` parfum barbati pana in 100 lei
+- **54** `segment` parfum dama cu miros de tamaie
+- **52** `segment` crema cu protectie solara pentru bebelusi
+- **52** `segment` crema de fata cu extract de melc
+- **52** `segment` crema de fata pentru ten gras
+- **52** `segment` placa de indreptat parul cu aer cald
+- **52** `segment` periuta de dinti electrica pentru gingii sensibile
+- **52** `segment` placa de indreptat parul cu keratina
+- **52** `segment` aparat de tuns pentru zona intima
+- **52** `segment` aparat de ras cu lama clasica
+- **52** `segment` periuta de dinti electrica cu irigator
+- **52** `segment` dus bucal cu apa de gura
+
+## Gradina — 457 termeni, comision pana la 6.30%
+
+- **72** `informational` cat consuma o pompa de piscina
+- **72** `informational` cat consuma un gratar electric
+- **72** `informational` cat consuma masina de tuns iarba
+- **72** `informational` cat consuma o motocoasa pe benzina
+- **70** `informational` cat consuma un hidrofor pe luna
+- **68** `informational` cat consuma un hidrofor pe ora
+- **68** `informational` cat consuma o drujba electrica
+- **66** `comparatie` masina de tuns iarba sau motocoasa
+- **66** `comparatie` motocoasa sau masina de tuns iarba
+- **66** `informational` cat consuma un hidrofor pe zi
+- **64** `comparatie` masina de tuns iarba electrica sau pe benzina
+- **64** `comparatie` hidrofor sau pompa de gradina
+- **62** `comparatie` ghiveci sau tocana de legume
+- **62** `informational` cat consuma o motocoasa
+- **62** `informational` cat consuma o drujba
+- **61** `comparatie` gratar electric sau pe gaz
+- **60** `comparatie` ghiveci sau tocana de legume pentru iarna
+- **60** `informational` cat curent consuma un hidrofor
+- **60** `informational` cat consuma hidroforul
+- **58** `segment` masina de tuns iarba pentru copii
+- **58** `comparatie` drujba electrica sau pe benzina
+- **58** `comparatie` motosapa electrica sau pe benzina
+- **58** `comparatie` hidrofor sau pompa submersibila
+- **56** `segment` set mobilier de gradina cu umbrela
+- **56** `segment` masina de tuns iarba pentru spatii inguste
+- **56** `segment` foarfeca de gradina pentru taiat crengi pomi grunman
+- **56** `segment` masina de tuns iarba cu acumulator
+- **56** `comparatie` motosapa pe curele sau pinioane
+- **56** `comparatie` hidrofor sau pompa submersibila forum
+- **56** `comparatie` motosapa sau motocultor forum
+- **54** `segment` set mobilier de gradina cu perne vidaxl
+- **54** `segment` casuta de gradina pentru copii din lemn
+- **54** `segment` mobilier de gradina pentru copii
+- **54** `segment` mobilier de gradina cu umbrela
+- **54** `segment` casuta de gradina pentru copii
+- **54** `segment` casuta de gradina cu podea
+- **54** `comparatie` gratar sau gratar
+- **54** `comparatie` piscina sau piscina
+- **54** `segment` masina de tuns iarba pentru teren denivelat
+- **54** `comparatie` motocoasa in 2 sau 4 timpi pareri
+- **54** `segment` foarfeca de gradina pentru taiat crengi pomi
+- **54** `segment` masina de tuns iarba cu autopropulsie
+- **54** `segment` pompa de gradina cu panou solar
+- **54** `comparatie` hidrofor sau pompa cu presostat
+- **54** `segment` pompa de apa pentru gradina
+- **54** `segment` foarfeca de gradina pentru iarba
+- **54** `segment` pompa pentru sistem de irigatii
+- **54** `comparatie` motocoasa electrica sau pe benzina
+- **54** `comparatie` drujba sau motofierastrau
+- **54** `comparatie` motosapa sau motocultor
+
+## Vase si ustensile — 418 termeni, comision pana la 9.00%
+
+- **72** `informational` cat consuma o oala sub presiune
+- **72** `informational` cat consuma un termosemineu pe peleti
+- **70** `informational` cat consuma un termosemineu pe lemne
+- **68** `informational` cat curent consuma un termosemineu pe peleti
+- **62** `comparatie` oala sub presiune sau multicooker
+- **62** `comparatie` cana filtranta sau apa imbuteliata
+- **60** `comparatie` cana filtranta brita sau aquaphor
+- **58** `segment` tava de copt pentru friteuza cu aer cald
+- **58** `segment` set oale pentru plita cu inductie
+- **58** `segment` cana filtranta cu ioni de argint
+- **56** `segment` oala sub presiune pentru plita cu inductie
+- **56** `segment` tava de copt pentru air fryer
+- **54** `segment` cos de rufe cu 3 compartimente
+- **54** `segment` tava de copt cu pereti detasabili
+- **54** `segment` cos de rufe pentru dulap baie
+- **54** `segment` filtru de apa cu osmoza inversa
+- **54** `segment` oala sub presiune pentru aragaz
+- **54** `segment` masa de calcat pentru statie
+- **54** `segment` masa de calcat cu priza
+- **54** `segment` cos de rufe pentru copii
+- **54** `segment` cos de rufe cu capac
+- **54** `segment` filtru de apa pentru robinet
+- **54** `comparatie` tocator lemn sau plastic
+- **54** `comparatie` termos sau thermos
+- **54** `comparatie` fund sau tocator
+- **52** `pret` dulap baie cu cos de rufe ieftin
+- **52** `segment` cos de rufe cu 2 compartimente
+- **52** `segment` masa de calcat cu blat de lemn
+- **52** `pret` oala sub presiune ieftina si buna
+- **52** `segment` set cutite cu suport din lemn
+- **52** `segment` tava de copt cu fund detasabil
+- **52** `segment` set oale pentru plita electrica
+- **52** `segment` tigaie pentru plita cu inductie
+- **52** `segment` set cutite cu suport magnetic
+- **52** `segment` cana filtranta cu osmoza inversa
+- **52** `segment` set vase termorezistente cu capac
+- **52** `segment` tava de copt cu gratar
+- **52** `segment` masa de calcat cu oglinda
+- **52** `segment` cos de rufe pentru bebelusi
+- **52** `segment` cos de rufe cu raft
+- **52** `segment` filtru de apa cu autocuratare
+- **52** `pret` masa de calcat ieftina si buna
+- **52** `comparatie` tocator sau blender
+- **50** `segment` cana cu filtru de apa pareri
+- **50** `segment` set tacamuri cu maner de lemn
+- **50** `segment` oala sub presiune pentru conserve
+- **50** `segment` tava de copt pentru baghete
+- **50** `segment` masa de calcat pentru maneci
+- **50** `segment` masa de calcat cu dulap
+- **50** `segment` filtru de apa cu osmoza
+
+## Mobila — 415 termeni, comision pana la 7.10%
+
+- **72** `informational` cat consuma un ventilator de birou
+- **72** `informational` cat consuma un fotoliu de masaj
+- **68** `informational` cat consuma o saltea electrica
+- **68** `informational` cat curent consuma o patura electrica
+- **68** `informational` cat consuma o patura electrica
+- **66** `informational` cat consuma o saltea antiescare
+- **66** `informational` cat consuma un nissan patrol
+- **62** `comparatie` fotoliu masaj komoder sau masatto
+- **58** `comparatie` saltea moale sau tare pentru spate
+- **58** `segment` topper saltea pentru dureri de spate
+- **58** `comparatie` saltea ferma sau extra ferma
+- **58** `comparatie` sef birou sau sef serviciu
+- **56** `comparatie` saltea cu arcuri sau cu spuma
+- **54** `segment` topper saltea cu gel de racire
+- **54** `comparatie` saltea sau topper
+- **54** `comparatie` topper sau saltea
+- **54** `segment` masa de bucatarie cu 6 scaune
+- **54** `segment` scaun de birou cu suport de picioare
+- **54** `segment` canapea extensibila pentru dormit zilnic
+- **54** `segment` scaun de birou pentru copii
+- **54** `segment` masa bucatarie pentru spatii mici
+- **54** `comparatie` pat sau canapea in garsoniera
+- **54** `comparatie` dulap sau sifonier
+- **54** `comparatie` birou sau biroul
+- **54** `comparatie` comoda sau servanta
+- **53** `segment` masa de bucatarie cu scaune
+- **53** `comparatie` biblioteca sau biblioteca
+- **52** `comparatie` saltea spuma sau arcuri
+- **52** `segment` scaun de birou cu masaj si incalzire
+- **52** `segment` canapea extensibila cu lada depozitare
+- **52** `segment` scaun de birou pentru fete
+- **52** `segment` scaun de birou cu rotile
+- **52** `comparatie` dulap sau dulapuri
+- **52** `comparatie` oficiu sau birou
+- **50** `segment` topper saltea cu elastic
+- **50** `comparatie` saltea spuma sau arcuri forum
+- **50** `segment` dulap pentru masina de spalat si uscator
+- **50** `segment` pat cu tablie pana in tavan
+- **50** `segment` scaun de birou cu suport lombar
+- **50** `segment` masa de bucatarie cu scaune jysk
+- **50** `segment` canapea extensibila cu saltea relaxa
+- **50** `segment` scaun de birou pentru coloana
+- **50** `segment` masa de lemn pentru bucatarie
+- **50** `segment` dulap pentru pantofi tip bancheta
+- **50** `pret` scaun de birou ieftin si bun
+- **50** `segment` dulap pantofi pentru exterior
+- **50** `comparatie` pat sau canapea
+- **50** `comparatie` dressing sau dulap
+- **50** `comparatie` biblioteca sau librarie
+- **49** `segment` masa de bucatarie cu 4 scaune
+
+## Scule — 395 termeni, comision pana la 8.00%
+
+- **72** `informational` cat consuma un generator de curent pe benzina
+- **72** `informational` cat consuma un aparat de sudura
+- **72** `informational` cat consuma un compresor de aer
+- **70** `informational` cat consuma un aparat de sudura invertor
+- **70** `informational` cat consuma un generator de curent diesel
+- **70** `informational` cat consuma un compresor de frigider
+- **68** `informational` cat consuma un aparat de sudura pe ora
+- **68** `informational` cat consuma un generator de curent
+- **66** `comparatie` masina de gaurit sau ciocan rotopercutor
+- **66** `informational` cat curent consuma un aparat de sudura
+- **64** `informational` cat consuma o bormasina
+- **64** `comparatie` scara sau scala de la 1 la 10
+- **64** `comparatie` aparat de sudura cu sarma sau electrod
+- **62** `comparatie` aparat de sudura sau invertor
+- **62** `comparatie` pistol de lipit sau letcon
+- **62** `comparatie` nivela laser verde sau rosu
+- **60** `informational` cat consuma un compresor
+- **58** `segment` pistol pentru masina de spalat cu presiune
+- **58** `segment` masina de spalat cu presiune ingco
+- **58** `comparatie` bormasina sau ciocan rotopercutor
+- **58** `comparatie` polizor unghiular sau flex
+- **56** `segment` furtun pentru masina de spalat cu presiune
+- **56** `segment` masina de spalat cu inalta presiune cu acumulator
+- **56** `segment` masina de spalat cu presiune parkside
+- **56** `segment` masina de spalat cu presiune inalta
+- **56** `segment` fierastrau electric cu lant parkside pareri
+- **56** `comparatie` bormasina cu perii sau fara
+- **56** `comparatie` scara sau scala de valori
+- **54** `segment` masina de spalat cu presiune pe benzina
+- **54** `segment` aparat de spalat cu presiune pentru masina
+- **54** `segment` masina de spalat cu presiune industriala
+- **54** `segment` masina de spalat cu presiune
+- **54** `comparatie` bormasina cu percutie sau fara
+- **54** `segment` masina de gaurit pentru banc
+- **54** `segment` surubelnita cu impact cu acumulator
+- **54** `comparatie` compresor aer cu sau fara ulei
+- **54** `segment` aparat de sudura pentru tabla subtire
+- **54** `comparatie` compresor cu sau fara ulei
+- **54** `segment` aparat de sudura pentru aluminiu
+- **54** `segment` pistol de lipit pentru copii
+- **54** `comparatie` compresor rotary sau inverter
+- **54** `comparatie` scara sau scala larga
+- **54** `comparatie` scara sau scala
+- **53** `segment` masina de gaurit cu coloana
+- **53** `segment` aparat de sudura cu sarma
+- **53** `segment` pistol de lipit cu fludor
+- **52** `segment` fierastrau electric cu acumulator pentru pomi
+- **52** `segment` masina de gaurit pentru balamale
+- **52** `segment` aparat de sudura cu sarma fara gaz
+- **52** `pret` pistol de lipit cu silicon ieftin
+
+## Sport — 355 termeni, comision pana la 9.00%
+
+- **72** `informational` cat consuma o bicicleta electrica
+- **70** `informational` cat consuma o trotineta electrica la incarcare
+- **70** `informational` cat consuma o banda de alergat electrica
+- **70** `informational` cat curent consuma o bicicleta electrica
+- **68** `informational` cat curent consuma o trotineta electrica
+- **68** `informational` cat consuma o trotineta electrica
+- **68** `informational` cat curent consuma o banda de alergat
+- **68** `informational` cat consuma banda de alergat
+- **64** `comparatie` banda de alergat sau bicicleta forum
+- **63** `comparatie` bicicleta fitness sau banda de alergat
+- **62** `comparatie` banda de alergat sau bicicleta eliptica
+- **62** `comparatie` banda de alergat sau bicicleta
+- **62** `comparatie` bicicleta sau banda de alergat
+- **58** `segment` aparat multifunctional fitness cu sac de box
+- **58** `comparatie` lanseta telescopica sau din bucati
+- **58** `comparatie` ramat cu gantere sau bara
+- **58** `comparatie` banda de alergat mecanica sau electrica
+- **58** `comparatie` bicicleta sau mers pe jos
+- **58** `comparatie` bicicleta electrica sau scuter
+- **56** `comparatie` bicicleta fitness sau eliptica
+- **56** `segment` trotineta electrica pentru copii de 12 ani
+- **56** `segment` banda de alergat cu inclinatie electrica
+- **56** `comparatie` shrugs cu gantere sau bara
+- **56** `comparatie` banda de alergat electrica sau magnetica
+- **56** `comparatie` banda de alergat sau stepper
+- **56** `comparatie` bicicleta electrica sau nu
+- **54** `segment` aparat multifunctional fitness pentru acasa
+- **54** `segment` bicicleta fitness pentru maini si picioare
+- **54** `segment` trotineta electrica pentru copii de 8 ani
+- **54** `pret` trotineta electrica pana in 1000 lei
+- **54** `segment` sac de dormit cu picioare de vara
+- **54** `segment` sac de dormit pentru copii
+- **54** `segment` sac de dormit cu picioare
+- **54** `comparatie` lanseta 2 sau 3 tronsoane
+- **54** `comparatie` lanseta sau undita
+- **54** `segment` banda de alergat cu inclinatie automata
+- **54** `segment` banda de alergat pentru acasa
+- **54** `comparatie` gantere sau haltere
+- **52** `segment` aparat multifunctional fitness pentru picioare
+- **52** `segment` trotineta electrica cu 3 roti
+- **52** `pret` trotineta electrica pana in 2000 lei
+- **52** `segment` sac de dormit pentru bebelusi
+- **52** `segment` sac de dormit cu incalzire
+- **52** `comparatie` lanseta 3.60 sau 3.90
+- **52** `comparatie` lanseta sau feeder
+- **52** `segment` banda de alergat pentru apartament
+- **52** `pret` banda de alergat ieftina si buna
+- **52** `comparatie` gantere sau gantere
+- **52** `segment` bicicleta cu 3 roti adulti
+- **52** `segment` bicicleta electrica cu 3 roti
+
+## Textile casa — 315 termeni, comision pana la 7.60%
+
+- **68** `informational` cat consuma o perna electrica
+- **68** `informational` cat consuma un covor electric
+- **56** `segment` lenjerie de pat cu elastic 160x200
+- **56** `segment` lenjerie de pat pentru o persoana
+- **56** `comparatie` perna sau perina dex
+- **56** `segment` detergent de rufe cu miros de tei
+- **55** `segment` prosoape de baie cu gluga pentru copii
+- **54** `segment` lenjerie de pat pentru copii
+- **54** `segment` prosoape de baie pentru copii
+- **54** `comparatie` covor poliester sau polipropilena
+- **54** `comparatie` pilota sau plapuma
+- **54** `comparatie` perna sau perina
+- **54** `comparatie` draperii sau jaluzele
+- **54** `comparatie` jaluzele sau perdele
+- **54** `segment` detergent de rufe pentru piele sensibila
+- **54** `segment` detergent de rufe pentru bebelusi
+- **54** `segment` aspirator de mana pentru par de animale
+- **52** `segment` lenjerie de pat cu elastic 140x200
+- **52** `segment` lenjerie de pat cu elastic
+- **52** `segment` pilota cu puf de gasca
+- **52** `segment` perna cu spuma de memorie
+- **52** `segment` prosoape de baie pentru picioare
+- **52** `comparatie` draperii pe sina sau galerie
+- **52** `comparatie` draperii lungi sau scurte
+- **52** `comparatie` covor persan sau persian
+- **52** `comparatie` draperii sau perdele
+- **52** `comparatie` covor sau mocheta
+- **52** `comparatie` jaluzele sau draperii
+- **52** `segment` detergent de rufe pentru bebelusi 1l hygienium
+- **52** `segment` detergent de rufe cu miros de tei dm
+- **52** `segment` detergent de rufe pentru copii
+- **52** `pret` detergent de rufe ieftin si bun
+- **52** `segment` aspirator de mana cu fir
+- **52** `pret` aspirator de mana bun si ieftin
+- **50** `segment` lenjerie de pat cu elastic 200x220
+- **50** `pret` lenjerie de pat ieftine la 30 lei
+- **50** `segment` lenjerie de pat pentru vara
+- **50** `segment` lenjerie de pat cu volanase
+- **50** `segment` pilota cu efect de racire
+- **50** `segment` perna cu samburi de cirese
+- **50** `segment` prosoape de baie pentru bebelusi
+- **50** `comparatie` cu covor sau fara
+- **50** `comparatie` steinteppich sau covor de piatra
+- **50** `comparatie` draperii sau draperi
+- **50** `comparatie` jaluzele sau rolete
+- **50** `segment` detergent de rufe cu parfum de tei
+- **50** `segment` detergent de rufe pentru dermatita atopica
+- **50** `segment` detergent de rufe cu enzime
+- **50** `segment` aspirator de mana cu spalare
+- **48** `roundup` cel mai bun material pentru lenjerie de pat
+
+## Iluminat — 279 termeni, comision pana la 9.10%
+
+- **72** `informational` cat consuma o lustra cu led
+- **72** `informational` cat consuma un bec led pe luna
+- **70** `informational` cat consuma o banda led de 5m
+- **70** `informational` cat consuma un bec led pe ora
+- **68** `informational` cat consuma o banda led de 5 metri
+- **66** `informational` cat consuma un bec led pe zi
+- **66** `informational` cat curent consuma o banda led
+- **64** `comparatie` multimetru universal digital sau analogic cl 1 5
+- **64** `informational` cat consuma un bec led de 5w
+- **64** `informational` cat consuma un bec led
+- **64** `informational` cat consuma o veioza
+- **64** `informational` cat consuma banda led
+- **64** `informational` cat consuma un prelungitor
+- **62** `informational` cat consuma un bec led de 10w
+- **60** `informational` cat curent consuma un bec led
+- **58** `segment` spot led cu senzor de miscare
+- **58** `segment` bec led cu senzor de miscare
+- **58** `segment` prelungitor pentru masina de tuns iarba
+- **58** `segment` multimetru pentru masurare priza de pamant
+- **56** `segment` lampa solara de gradina cu senzor de miscare
+- **56** `segment` banda led cu senzor de miscare
+- **54** `segment` lampa de gradina cu incarcare solara
+- **54** `segment` lampa de birou pentru copii
+- **54** `segment` lampa solara gradina cu senzor
+- **54** `segment` aplica de perete pentru baie
+- **54** `comparatie` lustra sau candelabru
+- **54** `comparatie` veioza sau veioza
+- **54** `comparatie` clampmetru sau multimetru
+- **53** `segment` lampa de birou cu led
+- **52** `segment` pitici de gradina cu lampa solara
+- **52** `segment` proiector led exterior cu panou solar
+- **52** `segment` proiector led exterior cu senzor crepuscular
+- **52** `segment` lampa de birou pentru unghii
+- **52** `segment` prelungitor cu protectie la supratensiune
+- **52** `segment` aplica de perete pentru tablouri
+- **52** `comparatie` veioza sau lampa
+- **51** `segment` aplica de perete cu baterii
+- **50** `segment` sonerie wireless cu 2 receptoare
+- **50** `segment` lampa de birou pentru scris
+- **50** `segment` banda led cu panou solar
+- **50** `segment` bec led cu panou solar
+- **50** `segment` proiector led exterior cu senzor
+- **50** `segment` priza inteligenta pentru aer conditionat
+- **50** `segment` priza inteligenta cu protectie well
+- **50** `segment` aplica de perete pentru hol
+- **50** `segment` banda led pentru riflaje
+- **50** `segment` banda led cu baterii
+- **50** `segment` bec led pentru spoturi
+- **50** `segment` lampa solara pentru gradina
+- **50** `segment` proiector led pentru exterior
+
+## Bebe si copii — 245 termeni, comision pana la 8.10%
+
+- **58** `comparatie` tobogan copii sau topogan
+- **58** `segment` scaun de masa bebe cu roti
+- **56** `segment` trotineta pentru copii de 2 ani
+- **56** `segment` scaun de masa bebe cu suport picioare
+- **56** `segment` perna pentru scaun de masa bebe
+- **55** `segment` bicicleta pentru copii 3 ani
+- **54** `segment` lego pentru copii de 10 ani
+- **54** `segment` puzzle pentru copii de 3 ani
+- **54** `comparatie` trambulina sau trambulina
+- **54** `segment` scaun de masa bebe cu spatar reglabil
+- **54** `segment` husa pentru scaun de masa bebe
+- **54** `segment` scaun de masa pentru bebe
+- **54** `segment` bicicleta copii cu roti ajutatoare
+- **53** `segment` bicicleta pentru copii 2 ani
+- **52** `segment` lego pentru copii de 3 ani
+- **52** `segment` patut bebe cu saltea si lenjerie
+- **52** `segment` trotineta copii cu 3 roti
+- **52** `segment` scaun de masa bebe cu balansoar
+- **52** `segment` carucior copii cu roti mari
+- **51** `segment` bicicleta pentru copii 4 ani
+- **50** `segment` monitor bebe cu aplicatie
+- **50** `pret` lego pana in 100 lei
+- **50** `segment` puzzle pentru copii de 2 ani
+- **50** `segment` trambulina pentru copii cu plasa de protectie
+- **50** `pret` tobogan copii 3 4 ani ieftin
+- **50** `segment` patut bebe pentru pat
+- **50** `segment` tobogan copii pentru casuta
+- **50** `segment` tobogan copii cu leagan
+- **50** `segment` puzzle cu piese mari
+- **50** `segment` trotineta pentru copii de 3 ani
+- **50** `segment` trotineta copii cu lumini si muzica
+- **50** `segment` trotineta copii cu sezut
+- **50** `pret` carucior copii 3 in 1 ieftin
+- **50** `segment` scaun de masa bebe cu jucarii
+- **50** `segment` sterilizator biberoane cu uscare chicco
+- **50** `segment` carucior copii pentru bicicleta
+- **50** `segment` sterilizator biberoane pentru microunde
+- **50** `segment` bicicleta copii cu 3 roti
+- **50** `segment` bicicleta copii pentru echilibru
+- **49** `segment` sterilizator biberoane cu uscare
+- **49** `segment` bicicleta pentru copii
+- **48** `segment` monitor bebe cu camera
+- **48** `segment` lego pentru fete de 10 ani
+- **48** `pret` lego pana in 50 lei
+- **48** `pret` patut bebe ieftin cu saltea
+- **48** `segment` patut pentru bebe din lemn
+- **48** `segment` patut bebe pentru masina
+- **48** `segment` trambulina cu corzi elastice
+- **48** `segment` tobogan copii pentru interior
+- **48** `segment` tobogan copii cu casuta
+
+## Scoala si birou — 245 termeni, comision pana la 8.00%
+
+- **54** `segment` rechizite scolare pentru clasa 5
+- **54** `segment` creioane colorate pentru copii mici
+- **54** `comparatie` stilou sau pix personalizat
+- **54** `comparatie` ghiozdan sau gheozdan
+- **54** `comparatie` penar sau penal
+- **54** `comparatie` caiete sau carte
+- **54** `comparatie` stilou sau pix
+- **52** `segment` caiete pentru copii de 4 ani
+- **52** `segment` tabla magnetica cu litere si cifre noriel
+- **52** `segment` rechizite scolare pentru clasa 1
+- **52** `segment` stilou cu penita de aur
+- **52** `comparatie` ghiozdan sau rucsac
+- **52** `comparatie` caiete sau caiete
+- **52** `comparatie` stilou sau stiloul
+- **50** `segment` rechizite scolare care incep cu litera n
+- **50** `segment` rechizite scolare pentru clasa 4
+- **50** `segment` caiete pentru clasa 0
+- **50** `segment` creioane colorate cu guma de sters
+- **50** `segment` caiete cu coperta de plastic
+- **50** `segment` creioane colorate cu mina
+- **50** `comparatie` ghiozdane sau ghiozdan
+- **48** `roundup` cel mai bun ghiozdan pentru clasa pregatitoare
+- **48** `roundup` cele mai bune ghiozdane pentru copii
+- **48** `segment` tabla magnetica cu litere si cifre jumbo
+- **48** `segment` rechizite scolare pentru clasa 3
+- **48** `segment` penar cu 3 fermoare
+- **48** `segment` caiete pentru clasa 1
+- **48** `segment` caiete cu spirala a4
+- **48** `segment` tabla magnetica cu litere si cifre
+- **48** `segment` laminator cu fibra de sticla job
+- **48** `roundup` cele mai bune caiete clasa pregatitoare
+- **48** `roundup` cel mai bun distrugator de documente
+- **48** `segment` creioane colorate cu mina retractabila
+- **48** `segment` rechizite scolare cu stitch
+- **48** `segment` creioane colorate pentru bebelusi
+- **48** `segment` creioane colorate cu radiera
+- **48** `segment` tabla magnetica pentru frigider
+- **48** `comparatie` toc sau stilou
+- **47** `segment` rechizite scolare cu litera n
+- **47** `segment` tabla magnetica cu suport
+- **46** `roundup` cel mai bun stilou pentru clasa 1
+- **46** `roundup` cel mai bun ghiozdan pentru copii
+- **46** `roundup` cele mai bune stilouri pentru copii
+- **46** `segment` rechizite scolare pentru clasa 6
+- **46** `segment` penar cu 3 compartimente
+- **46** `roundup` cele mai bune creioane colorate profesionale
+- **46** `segment` ghiozdan cu roti fete
+- **46** `segment` caiete pentru clasa pregatitoare
+- **46** `segment` stilou cu penita ascunsa
+- **46** `segment` creioane colorate pentru copii
+
+## Auto — 215 termeni, comision pana la 8.00%
+
+- **68** `informational` cat consuma un redresor auto
+- **68** `informational` cat consuma o camera auto
+- **62** `comparatie` scaun auto copii sau inaltator
+- **58** `segment` compresor auto pentru suv camion microbuz
+- **58** `segment` ce scaun auto pentru copii sa cumpar
+- **58** `segment` scaun auto copii cu pozitie de somn
+- **56** `segment` cutie portbagaj cu prindere pe carligul de remorcare
+- **54** `segment` redresor auto cu functie de reparare
+- **54** `segment` redresor auto pentru baterii agm
+- **54** `segment` navigatie gps auto 1din cu ecran retractabil
+- **54** `segment` baterie auto cu garantie 5 ani
+- **54** `segment` camera auto cu aplicatie pe telefon
+- **54** `segment` baterie auto pentru start stop
+- **54** `segment` baterie auto cu start stop
+- **54** `segment` statie radio cb cu antena
+- **54** `segment` scaun auto copii pentru dormit
+- **52** `roundup` cele mai bune frigidere auto cu compresor
+- **52** `segment` tester baterie auto cu imprimanta
+- **52** `segment` tester baterie auto cu bon
+- **52** `segment` husa auto pentru caini lidl
+- **52** `segment` camera auto cu senzor de miscare
+- **52** `segment` baterie auto cu montaj la domiciliu
+- **52** `segment` camera auto cu acumulator mare
+- **52** `segment` scaun auto pentru copii de 5 ani
+- **52** `pret` scaun auto copii 9 36 kg ieftin
+- **52** `segment` scaun auto copii cu isofix
+- **51** `roundup` cel mai bun tester baterie auto
+- **51** `roundup` cel mai bun redresor baterie auto
+- **50** `segment` husa auto cu bile de lemn
+- **50** `segment` aspirator auto pentru tapiterie
+- **50** `segment` tester pentru baterie auto
+- **50** `segment` redresor auto cu acumulator
+- **50** `segment` cutie portbagaj pentru scuter
+- **50** `segment` navigatie gps pentru camioane
+- **50** `pret` camera auto ieftina si buna
+- **50** `pret` scaun auto copii 0 36 kg ieftine
+- **50** `segment` scaun auto copii cu prindere in centuri
+- **50** `segment` scaun auto pentru copii 999
+- **50** `segment` scaun auto copii cu picior
+- **49** `roundup` cel mai bun compresor auto forum
+- **49** `segment` aspirator auto cu acumulator
+- **48** `segment` compresor auto cu 2 cilindri
+- **48** `roundup` cele mai bune covorase auto
+- **48** `roundup` cel mai bun compresor auto
+- **48** `segment` covorase auto cu lumini
+- **48** `segment` aspirator auto pentru apa
+- **48** `segment` compresor auto pentru vopsit
+- **48** `segment` compresor auto cu baterie
+- **48** `segment` husa auto cu masaj
+- **48** `segment` redresor auto pentru baterie
+
+## Animale — 196 termeni, comision pana la 6.10%
+
+- **68** `informational` cat consuma un incalzitor de acvariu
+- **66** `informational` cat consuma un filtru de acvariu
+- **66** `informational` cat curent consuma un acvariu
+- **64** `informational` cat consuma un acvariu
+- **56** `comparatie` acvariu cu capac sau fara
+- **54** `segment` hrana pisici cu omega 3
+- **54** `segment` hrana pisici pentru caderea parului
+- **54** `comparatie` litiera sau litiera
+- **54** `comparatie` acvariu sau acvariul
+- **52** `pret` hrana caini ieftina 10 kg penny
+- **52** `segment` ham pentru caine de talie mica
+- **52** `segment` hrana caini cu probleme hepatice
+- **52** `segment` hrana pisici cu insuficienta renala
+- **52** `segment` acvariu cu pesti de colorat
+- **52** `comparatie` litiera sau liziera
+- **52** `comparatie` acvariu sau aquarium
+- **50** `pret` hrana caini ieftina 10 kg kaufland
+- **50** `segment` hrana caini cu proteina hidrolizata
+- **50** `segment` cusca caine pentru iarna md
+- **50** `segment` ham pentru caine talie mare
+- **50** `segment` hrana caini pentru slabit
+- **50** `segment` hrana caini cu somon
+- **50** `segment` cusca caine pentru iarna
+- **50** `segment` cusca caine cu incalzire
+- **50** `segment` ham caine cu maner
+- **50** `comparatie` acvariu sau acvariu
+- **48** `segment` litiera pentru pisici automata smart neakasa m1
+- **48** `segment` cusca caine cu incalzire in pardoseala
+- **48** `pret` hrana pisici ieftina 10 kg
+- **48** `segment` hrana pisici cu probleme urinare
+- **48** `segment` hrana caini pentru blana
+- **48** `segment` hrana pisici pentru blana
+- **48** `segment` acvariu pentru broasca testoasa
+- **48** `segment` cusca caine pentru transport
+- **48** `segment` cusca caine cu terasa
+- **46** `roundup` cele mai bune plante pentru acvariu
+- **46** `segment` ham pentru caine ciobanesc german
+- **46** `segment` hrana pisici cu fibre
+- **46** `segment` acvariu pentru broaste testoase
+- **46** `segment` cusca caine cu tarc
+- **46** `segment` litiera pentru caini
+- **46** `segment` litiera cu capac
+- **46** `segment` acvariu pentru pesti
+- **46** `segment` acvariu cu pesti
+- **45** `segment` ham caine pentru masina
+- **44** `roundup` cel mai bun nisip pentru litiera automata
+- **44** `pret` hrana caini ieftina 10 kg lidl
+- **44** `segment` hrana pentru caini cu probleme digestive
+- **44** `roundup` cele mai bune filtre externe acvariu
+- **44** `segment` ham pentru caine talie medie
+
+## Accesorii telefon — 124 termeni, comision pana la 9.00%
+
+- **72** `informational` cat consuma un incarcator de telefon
+- **68** `informational` cat costa o folie de protectie pentru telefon
+- **57** `comparatie` folie protectie telefon sticla sau silicon
+- **56** `segment` cablu de date cu incarcare rapida
+- **56** `segment` suport telefon auto pentru grila ventilatie
+- **54** `segment` card de memorie pentru camera auto
+- **54** `segment` folie de protectie pentru telefon
+- **54** `segment` incarcator telefon cu panou solar
+- **54** `segment` baterie externa cu incarcare solara
+- **54** `segment` card de memorie cu adaptor
+- **54** `segment` cablu de date pentru telefon
+- **54** `segment` cablu de date cu suport
+- **54** `segment` suport telefon auto pentru bord
+- **53** `segment` card de memorie pentru camere de supraveghere
+- **52** `segment` card de memorie pentru camera de bord
+- **52** `segment` husa telefon cu microfon spion
+- **52** `segment` incarcator telefon cu microfon spion
+- **52** `segment` baterie externa cu panou solar
+- **52** `segment` card de memorie pentru telefon
+- **52** `segment` casti cu card de memorie
+- **52** `segment` cablu de date pentru imprimanta
+- **51** `segment` suport telefon auto cu incarcare wireless
+- **50** `segment` card de memorie pentru aparat foto
+- **50** `segment` incarcator telefon cu camera video
+- **50** `segment` telefoane cu card de memorie
+- **50** `segment` cablu de date pentru iphone
+- **50** `segment` husa telefon pentru apa
+- **50** `segment` husa telefon cu snur
+- **50** `segment` incarcator telefon pentru masina
+- **50** `segment` baterie externa pentru laptop
+- **50** `segment` suport telefon auto cu brat lung
+- **50** `segment` suport telefon auto cu incarcare
+- **50** `segment` suport telefon auto pentru copii
+- **48** `roundup` cel mai bun material pentru husa telefon
+- **48** `segment` card de memorie pentru nintendo switch
+- **48** `roundup` cel mai bun card de memorie
+- **48** `roundup` cel mai bun cablu de date
+- **48** `segment` baterie externa pentru trotineta electrica
+- **48** `segment` reportofon cu card de memorie
+- **48** `segment` husa telefon pentru alergat
+- **48** `segment` incarcator telefon pentru motocicleta
+- **48** `segment` baterie externa pentru iphone
+- **48** `pret` baterie externa ieftina si buna
+- **48** `roundup` cel mai bun suport telefon auto
+- **48** `segment` suport telefon auto pentru parbriz
+- **48** `segment` suport telefon auto cu magnet
+- **46** `roundup` cea mai buna folie de protectie pentru telefon
+- **46** `roundup` cel mai bun incarcator solar telefon
+- **46** `roundup` cel mai bun card memorie microsd
+- **46** `segment` incarcator telefon cu cablu retractabil
+
+## Supraveghere — 116 termeni, comision pana la 7.30%
+
+- **72** `informational` cat consuma o camera de supraveghere
+- **72** `informational` cat consuma un senzor de miscare
+- **70** `informational` cat consuma o camera de supraveghere pe luna
+- **68** `informational` cat internet consuma o camera de supraveghere 4g
+- **66** `informational` cat curent consuma o camera de supraveghere
+- **64** `informational` cat internet consuma o camera de supraveghere
+- **60** `informational` cat costa un sistem de alarma pentru casa
+- **57** `segment` camera de supraveghere cu panou solar
+- **56** `segment` camera de supraveghere cu panou solar pareri
+- **56** `segment` kit camere supraveghere cu cartela sim
+- **56** `segment` senzor de miscare pentru banda led
+- **56** `segment` sistem de alarma cu camera video
+- **54** `segment` camera de supraveghere cu cartela sim
+- **54** `segment` kit camere supraveghere cu panou solar
+- **54** `segment` camera de supraveghere pentru bebelusi
+- **54** `segment` yala inteligenta pentru usa termopan
+- **54** `segment` sistem de alarma cu cartela sim
+- **54** `segment` sistem de alarma pentru casa
+- **52** `segment` camera de supraveghere pentru vizor usa
+- **52** `segment` yala inteligenta pentru usa metalica
+- **52** `pret` camera de supraveghere ieftina si buna
+- **52** `segment` senzor de miscare cu alarma la distanta
+- **52** `segment` senzor de miscare pentru bec
+- **52** `segment` sistem de alarma pentru masina
+- **51** `segment` senzor de miscare cu alarma
+- **50** `pret` camera de supraveghere cu panou solar ieftine
+- **50** `segment` camera de supraveghere pentru vizor
+- **50** `segment` kit supraveghere cu nvr
+- **50** `segment` yala inteligenta cu camera
+- **50** `segment` senzor de miscare pentru exterior
+- **50** `segment` senzor de miscare cu microunde
+- **50** `segment` sistem de alarma pentru apartament
+- **48** `segment` yala inteligenta k9 pentru usi termopan
+- **48** `segment` camera de supraveghere cu panou solar si sim
+- **48** `roundup` cel mai bun kit de supraveghere video
+- **48** `roundup` cel mai bun kit automatizare poarta culisanta
+- **48** `roundup` cele mai bune camera de supraveghere
+- **48** `roundup` cel mai bun camera de supraveghere
+- **48** `segment` camera de supraveghere cu baterii
+- **48** `segment` kit camere supraveghere cu dvr
+- **48** `pret` cea mai ieftina camera de supraveghere
+- **48** `segment` yala inteligenta cu amprenta
+- **48** `segment` automatizare pentru poarta culisanta
+- **48** `segment` videointerfon cu control acces
+- **48** `segment` senzor de miscare cu alarma pe telefon
+- **48** `segment` sistem de alarma cu monitorizarea habitaclului
+- **48** `roundup` cel mai bun senzor de miscare
+- **48** `segment` senzor de miscare pentru lumina
+- **48** `segment` senzor de miscare cu sunet
+- **48** `segment` sistem de alarma pentru batrani
+
+## Accesorii TV — 56 termeni, comision pana la 10.90%
+
+- **58** `comparatie` cablu optic sau hdmi arc
+- **58** `comparatie` cablu hdmi sau displayport
+- **57** `segment` suport tv de perete cu brat
+- **56** `segment` suport tv de perete cu brat nexio
+- **56** `comparatie` cablu optic sau hdmi
+- **54** `segment` suport tv de perete cu brat lung
+- **54** `segment` suport de tv pentru perete
+- **54** `segment` cablu hdmi cu usb c
+- **54** `segment` telecomanda universala pentru aer conditionat
+- **52** `segment` suport tv perete pentru colt
+- **50** `segment` cablu hdmi pentru ps4
+- **50** `segment` suport tv pentru perete rigips
+- **50** `segment` cablu hdmi cu tip c
+- **50** `segment` telecomanda universala cu invatare
+- **48** `roundup` cel mai bun suport tv de perete
+- **48** `segment` telecomanda universala cu functie de copiere
+- **48** `segment` suport tv perete cu telecomanda
+- **48** `segment` cablu hdmi pentru telefon
+- **48** `segment` cablu hdmi cu vga
+- **48** `segment` telecomanda universala pentru televizor
+- **48** `segment` telecomanda universala cu tastatura
+- **46** `roundup` cel mai bun cablu hdmi 2.1
+- **46** `segment` suport tv perete cu raft
+- **46** `segment` telecomanda universala pentru masinuta electrica
+- **46** `segment` cablu hdmi pentru televizor
+- **46** `segment` telecomanda universala cu netflix
+- **46** `pret` suport tv perete ieftin
+- **44** `segment` cablu hdmi pentru ps5
+- **44** `segment` suport tv perete cu soundbar
+- **44** `roundup` cel mai bun cablu hdmi
+- **44** `segment` cablu hdmi cu scart
+- **44** `segment` telecomanda universala pentru porti
+- **44** `segment` telecomanda universala cu youtube
+- **42** `segment` cablu hdmi cu rca audio video
+- **42** `segment` suport tv perete cu picior
+- **42** `segment` cablu hdmi cu mufa scart
+- **42** `segment` telecomanda universala pentru tv nei
+- **42** `segment` cablu hdmi pentru soundbar
+- **42** `segment` cablu hdmi cu displayport
+- **42** `segment` telecomanda universala cu display
+- **42** `pret` cablu hdmi ieftin
+- **42** `pret` telecomanda universala ieftina
+- **40** `segment` telecomanda universala tv cu tub
+- **40** `segment` cablu hdmi pentru monitor
+- **40** `segment` cablu hdmi cu usb
+- **38** `segment` suport tv perete cu polita
+- **38** `segment` cablu hdmi cu fibra optica
+- **38** `segment` telecomanda universala pentru toate televizoarele
+- **38** `segment` telecomanda universala compatibila cu vortex
+- **38** `segment` cablu hdmi pentru videoproiector

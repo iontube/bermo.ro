@@ -1,117 +1,132 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import ArticleCard from '../components/ArticleCard.astro';
-import CookieBanner from '../components/CookieBanner.astro';
+import Baza from '../sabloane/Baza.astro';
+import { categorii } from '../date/nav.js';
+import { getArticole } from '../date/articole.js';
+import '../stiluri/acasa.css';
 
-// Get all article pages
-const allPages = await Astro.glob('./*.astro');
+const toate = (await getArticole()).sort((a, b) => b.data.data - a.data.data);
+const urlArt = (a) => `/${a.id}/`;
+const citite = toate.slice(0, 3);
+const nrCat = (slug) => { const n = toate.filter((a) => a.data.categorieSlug === slug).length; return n === 1 ? '1 articol' : `${n} articole`; };
 
-// Filter only articles (exclude index and legal pages)
-const excludedPages = ['index', 'contact', 'politica-de-confidentialitate', 'termeni-si-conditii', 'politica-cookies'];
-const articles = allPages
-  .filter(page => {
-    const url = page.url?.replace(/^\/|\/$/g, '') || '';
-    return page.frontmatter && page.frontmatter.title && !excludedPages.includes(url) && !url.includes('/');
-  })
-  .sort((a, b) => {
-    const dateA = new Date(a.frontmatter?.date || 0);
-    const dateB = new Date(b.frontmatter?.date || 0);
-    return dateB.getTime() - dateA.getTime();
-  })
-  .slice(0, 15);
+// cate o sectiune per categorie, cu cele mai noi 3 articole ale ei; layout rotativ (carduri diferite)
+const layouts = ['feature', 'grid', 'wide'];
+const perCat = categorii
+  .map((c) => ({ nume: c.nume, slug: c.slug, icon: c.icon, arts: toate.filter((a) => a.data.categorieSlug === c.slug).slice(0, 3) }))
+  .filter((c) => c.arts.length > 0);
 
-// Categories with descriptions for SEO
-const categories = [
-  {
-    name: 'Electrocasnice Premium',
-    slug: 'electrocasnice-premium',
-    icon: '☕',
-    description: 'Espressoare automate, aspiratoare robot si alte electrocasnice de top pentru locuinta ta. Recenzii detaliate cu preturi, specificatii tehnice si comparatii intre modelele disponibile pe piata romaneasca de la branduri precum DeLonghi, Philips, Jura si Saeco.'
-  },
-  {
-    name: 'IT si Electronice',
-    slug: 'it-electronice',
-    icon: '💻',
-    description: 'Laptopuri gaming, ultrabook-uri si componente PC de performanta. Analizez procesoare, placi video si configuratii complete pentru gaming, editare video sau munca de birou. Modele de la ASUS, Lenovo, HP si Dell cu preturi din magazinele romanesti.'
-  },
-  {
-    name: 'Mobilier si Dormitor',
-    slug: 'mobilier-dormitor',
-    icon: '🛏️',
-    description: 'Saltele memory foam, paturi tapitate si mobilier premium pentru un somn odihnitor. Testez personal saltele de la Emma, Dormeo si alte branduri, masurand confortul, durabilitatea si raportul calitate-pret pentru investitii pe termen lung.'
-  },
-  {
-    name: 'Fitness si Sport',
-    slug: 'fitness-sport',
-    icon: '🚴',
-    description: 'Biciclete spinning, benzi de alergat si echipamente fitness profesionale pentru antrenamente acasa. Compar modele Schwinn, NordicTrack si Kettler, analizand stabilitatea, programele de antrenament si zgomotul in functionare.'
-  }
-];
+const sageata = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
 ---
-
-<Layout
-  title="Recenzii Produse Premium - Electrocasnice, IT, Mobilier, Fitness"
-  description="Bermo.ro - Recenzii oneste pentru produse premium 500+ lei. Electrocasnice de lux, laptopuri gaming, saltele memory foam si echipamente fitness profesionale."
->
-  <Header />
-
+<Baza titlu="Ce merita cumparat, explicat onest" descriere="Comparam produsele de pe eMAG si iti spunem clar ce sa iei si de ce, pe baza de recenzii reale. Fara pareri inventate.">
   <main>
     <section class="hero">
-      <div class="container">
-        <div class="hero-content">
-          <h1>Recenzii pentru Produse Premium</h1>
-          <p>Te ajutam sa faci investitii inteligente in produse de calitate. Testam si comparam electrocasnice, laptopuri, mobilier si echipamente fitness pentru a-ti oferi cele mai bune recomandari.</p>
-        </div>
+      <div class="wrap">
+        <span class="label">Inteligenta de cumparare, Romania</span>
+        <h1 style="margin-top:14px">Ce merita cumparat, <span class="hl">explicat onest</span>.</h1>
+        <p class="sub">Comparam produsele de pe eMAG si iti spunem clar ce sa iei si de ce, pe baza de recenzii reale. Fara pareri inventate.</p>
       </div>
     </section>
 
-    {articles.length > 0 && (
-      <section class="container" style="padding: var(--space-3xl) 0;">
-        <div class="section-header">
-          <h2 class="section-title">Ultimele Articole</h2>
+    <section class="band" style="padding-top:36px">
+      <div class="wrap">
+        <div class="shead">
+          <span class="label">Articole</span>
+          <div class="toprow">
+            <h2>Cele mai citite articole</h2>
+            <a href="/articole/" class="seemore">Toate articolele <Fragment set:html={sageata} /></a>
+          </div>
+          <p>Fiecare porneste de la specificatii si recenzii reale, nu de la fisa de produs.</p>
         </div>
-        <div class="articles-grid">
-          {articles.map(article => (
-            <ArticleCard
-              title={article.frontmatter.title}
-              slug={article.url?.replace(/^\/|\/$/g, '') || ''}
-              excerpt={article.frontmatter.excerpt}
-              image={article.frontmatter.image}
-              category={article.frontmatter.category}
-              categorySlug={article.frontmatter.categorySlug}
-              date={article.frontmatter.date}
-            />
-          ))}
-        </div>
-      </section>
-    )}
-
-    <section class="categories-section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Exploreaza Categoriile</h2>
-        </div>
-        <div class="categories-grid">
-          {categories.map(cat => (
-            <a href={`/${cat.slug}/`} class="category-card">
-              <div class="category-icon">{cat.icon}</div>
-              <h3 class="category-card-title">{cat.name}</h3>
-              <p class="category-card-desc">{cat.description}</p>
-              <span class="category-card-count">
-                Vezi articolele
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="16" height="16">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                </svg>
-              </span>
+        <div class="art-grid">
+          {citite.map((a) => (
+            <a class="art" href={urlArt(a)}>
+              <div class="ph">{a.data.imagine ? <img src={a.data.imagine} alt={a.data.titlu} loading="lazy" /> : <span>imagine articol</span>}</div>
+              <div class="abody">
+                <span class="akick">{a.data.categorie}</span>
+                <h3>{a.data.titlu}</h3>
+                <div class="ameta"><span>{a.data.autor}</span><span>{a.data.minute} min</span></div>
+              </div>
             </a>
           ))}
         </div>
       </div>
     </section>
-  </main>
 
-  <Footer />
-  <CookieBanner />
-</Layout>
+    {perCat.map((c, i) => {
+      const lay = layouts[i % layouts.length];
+      const a0 = c.arts[0];
+      const minis = c.arts.slice(1, 3);
+      return (
+      <section class="band catsec" style="padding-top:0">
+        <div class="wrap">
+          <div class="catsec-head">
+            <span class="ci" set:html={c.icon} />
+            <div class="cshx"><h2>{c.nume}</h2><span class="cshc">{nrCat(c.slug)}</span></div>
+            <a href={`/${c.slug}/`} class="seemore">Vezi toate <Fragment set:html={sageata} /></a>
+          </div>
+
+          {lay === 'grid' && (
+            <div class="art-grid">
+              {c.arts.map((a) => (
+                <a class="art" href={urlArt(a)}>
+                  <div class="ph">{a.data.imagine ? <img src={a.data.imagine} alt={a.data.titlu} loading="lazy" /> : <span>imagine</span>}</div>
+                  <div class="abody"><span class="akick">{a.data.subcategorie || a.data.categorie}</span><h3>{a.data.titlu}</h3><div class="ameta"><span>{a.data.autor}</span><span>{a.data.minute} min</span></div></div>
+                </a>
+              ))}
+            </div>
+          )}
+
+          {lay === 'feature' && (
+            <div class="lay-feature">
+              <a class="art art-big" href={urlArt(a0)}>
+                <div class="ph">{a0.data.imagine ? <img src={a0.data.imagine} alt={a0.data.titlu} loading="lazy" /> : <span>imagine</span>}</div>
+                <div class="abody"><span class="akick">{a0.data.subcategorie || a0.data.categorie}</span><h3>{a0.data.titlu}</h3><p>{a0.data.descriere}</p><div class="ameta"><span>{a0.data.autor}</span><span>{a0.data.minute} min</span></div></div>
+              </a>
+              <div class="minis">
+                {minis.map((a) => (
+                  <a class="art-mini" href={urlArt(a)}>
+                    <span class="mimg">{a.data.imagine ? <img src={a.data.imagine} alt={a.data.titlu} loading="lazy" /> : null}</span>
+                    <span class="mbody"><span class="mkick">{a.data.subcategorie || a.data.categorie}</span><span class="mtitle">{a.data.titlu}</span></span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {lay === 'wide' && (
+            <div class="lay-wide">
+              <a class="art art-wide" href={urlArt(a0)}>
+                <div class="ph">{a0.data.imagine ? <img src={a0.data.imagine} alt={a0.data.titlu} loading="lazy" /> : <span>imagine</span>}</div>
+                <div class="abody"><span class="akick">{a0.data.subcategorie || a0.data.categorie}</span><h3>{a0.data.titlu}</h3><p>{a0.data.descriere}</p><div class="ameta"><span>{a0.data.autor}</span><span>{a0.data.minute} min</span></div></div>
+              </a>
+              <div class="minis-row">
+                {minis.map((a) => (
+                  <a class="art-mini" href={urlArt(a)}>
+                    <span class="mimg">{a.data.imagine ? <img src={a.data.imagine} alt={a.data.titlu} loading="lazy" /> : null}</span>
+                    <span class="mbody"><span class="mkick">{a.data.subcategorie || a.data.categorie}</span><span class="mtitle">{a.data.titlu}</span></span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+      );
+    })}
+
+    <section class="band cum-alegem">
+      <div class="wrap">
+        <div class="shead"><span class="label">Cum alegem</span><h2 style="margin-top:8px">De ce ne poti crede</h2></div>
+        <div class="trust-grid">
+          <div class="titem"><h3>Research real, nu pareri</h3><p>Fiecare recomandare porneste de la specificatii verificate si de la recenziile reale ale cumparatorilor. Nu inventam ca am testat personal.</p></div>
+          <div class="titem"><h3>Onesti cu compromisurile</h3><p>Spunem clar si ce nu e bun la un produs, nu doar ce se vinde. Un verdict fara minusuri nu e verdict, e reclama.</p></div>
+          <div class="titem"><h3>Independenta editoriala</h3><p>Castigam din comisioane de afiliere cand cumperi prin linkurile noastre, dar recomandarea nu se cumpara. Alegem pe merit.</p></div>
+        </div>
+        <div class="disclosure">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.6-7 8.6-4-1-7-4.1-7-8.6V6z"/><path d="M9 12l2 2 4-4"/></svg>
+          <span><strong>Transparenta afiliere:</strong> bermo.ro contine linkuri de afiliere. Daca cumperi printr-un link, putem primi un comision din partea magazinului, fara cost suplimentar pentru tine. Nu influenteaza ce recomandam.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+</Baza>

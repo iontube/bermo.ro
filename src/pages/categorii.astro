@@ -1,0 +1,47 @@
+---
+import Baza from '../sabloane/Baza.astro';
+import { categorii } from '../date/nav.js';
+import { getArticole } from '../date/articole.js';
+import '../stiluri/acasa.css';
+const toate = (await getArticole()).sort((a, b) => b.data.data - a.data.data);
+const nrCat = (slug) => { const n = toate.filter((a) => a.data.categorieSlug === slug).length; return n === 1 ? '1 articol' : `${n} articole`; };
+const ultimulDin = (slug) => toate.find((a) => a.data.categorieSlug === slug);
+---
+<Baza titlu="Toate categoriile" descriere="Exploreaza toate categoriile de produse de pe bermo.ro, cu subcategoriile lor si cel mai nou articol din fiecare.">
+  <main class="wrap">
+    <nav class="crumb" style="font-family:var(--mono);font-size:12px;color:var(--muted);display:flex;gap:7px;margin:18px 0 0"><a href="/">Acasa</a><span style="opacity:.5">/</span><span style="color:var(--ink-2)">Categorii</span></nav>
+    <section class="band" style="padding-top:20px">
+      <div class="shead">
+        <span class="label">Categorii</span>
+        <h2 style="margin-top:8px">Tot ce se vinde pe eMAG, organizat</h2>
+        <p>Alege un departament si mergi direct la articole, sau intra pe o subcategorie. Sub fiecare gasesti cel mai nou articol.</p>
+      </div>
+      <div class="cat-grid">
+        {categorii.map((c) => {
+          const ultim = ultimulDin(c.slug);
+          return (
+          <div class="cat">
+            <a class="ctop" href={`/${c.slug}/`}>
+              <span class="ci" set:html={c.icon} />
+              <span><span class="cn">{c.nume}</span><span class="cc">{nrCat(c.slug)}</span></span>
+            </a>
+            <div class="subs">
+              {c.subcategorii.map((s, i) => (<>{i > 0 && <span class="sep">·</span>}<a href={`/${c.slug}/${s.slug}/`}>{s.nume}</a></>))}
+            </div>
+            {ultim && (
+              <a class="cat-last" href={`/${ultim.id}/`}>
+                <span class="cl-img">{ultim.data.imagine ? <img src={ultim.data.imagine} alt={ultim.data.titlu} loading="lazy" /> : null}</span>
+                <span class="cl-body">
+                  <span class="cl-kick">Cel mai nou articol</span>
+                  <span class="cl-title">{ultim.data.titlu}</span>
+                </span>
+                <svg class="cl-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+              </a>
+            )}
+          </div>
+          );
+        })}
+      </div>
+    </section>
+  </main>
+</Baza>

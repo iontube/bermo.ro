@@ -1,0 +1,88 @@
+---
+import '../stiluri/global.css';
+import Antet from '../componente/Antet.astro';
+import Subsol from '../componente/Subsol.astro';
+
+const {
+  titlu,
+  descriere,
+  imagine = '/imagini/bermo-og.png',
+  tip = 'website',
+  publicat,
+  modificat,
+  autor,
+  jsonLd = [],
+} = Astro.props;
+
+const site = 'https://bermo.ro';
+const canonical = new URL(Astro.url.pathname, site).href;
+const imgAbs = imagine.startsWith('http') ? imagine : new URL(imagine, site).href;
+
+const schemaSite = {
+  '@context': 'https://schema.org', '@type': 'WebSite', name: 'bermo.ro', url: site,
+  description: 'Inteligenta de cumparare pentru piata din Romania',
+};
+const schemaOrg = {
+  '@context': 'https://schema.org', '@type': 'Organization', name: 'bermo.ro', url: site,
+  logo: `${site}/imagini/bermo-logo.png`,
+};
+const scheme = [schemaSite, schemaOrg, ...jsonLd];
+---
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#0d9f6e" />
+  <title>{titlu} · bermo.ro</title>
+  <meta name="description" content={descriere} />
+  <link rel="canonical" href={canonical} />
+
+  <meta property="og:type" content={tip} />
+  <meta property="og:title" content={titlu} />
+  <meta property="og:description" content={descriere} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={imgAbs} />
+  <meta property="og:locale" content="ro_RO" />
+  <meta property="og:site_name" content="bermo.ro" />
+  {tip === 'article' && publicat && <meta property="article:published_time" content={publicat} />}
+  {tip === 'article' && <meta property="article:modified_time" content={modificat || publicat} />}
+  {tip === 'article' && autor && <meta property="article:author" content={autor} />}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={titlu} />
+  <meta name="twitter:description" content={descriere} />
+  <meta name="twitter:image" content={imgAbs} />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/imagini/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/imagini/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/imagini/apple-touch-icon.png" />
+  <link rel="preload" href="/fonturi/geist.woff2" as="font" type="font/woff2" crossorigin />
+
+  {scheme.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
+</head>
+<body>
+  <Antet />
+  <slot />
+  <Subsol />
+  <button id="scrollTop" class="scroll-top" aria-label="Inapoi sus" title="Inapoi sus">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+  </button>
+  <script>
+    document.addEventListener('click', (e) => {
+      const el = e.target.closest('[data-o]');
+      if (!el) return;
+      try { window.open('/out/' + atob(el.getAttribute('data-o')), '_blank', 'noopener'); } catch {}
+    });
+    // buton inapoi sus
+    (function () {
+      const b = document.getElementById('scrollTop');
+      if (!b) return;
+      const upd = () => b.classList.toggle('show', window.scrollY > 600);
+      window.addEventListener('scroll', upd, { passive: true });
+      upd();
+      b.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    })();
+  </script>
+</body>
+</html>

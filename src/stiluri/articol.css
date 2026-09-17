@@ -1,0 +1,158 @@
+/* bermo.ro — pagina articol */
+.post { max-width:750px; margin:0 auto; padding-bottom:20px; }
+.kick { font-family:var(--mono); font-size:12px; font-weight:500; letter-spacing:.05em; text-transform:uppercase; color:var(--accent); }
+.post h1 { font-size:clamp(27px,5.2vw,40px); line-height:1.13; margin:12px 0 18px; }
+.byline { display:flex; align-items:center; flex-wrap:wrap; gap:14px; padding-bottom:20px; border-bottom:1px solid var(--line); }
+.byline .who { display:flex; align-items:center; gap:10px; }
+.byline .av { width:38px; height:38px; border-radius:50%; background:var(--accent); color:var(--on-accent); font-weight:700; font-size:14px; display:grid; place-items:center; }
+.byline .nm { font-size:14px; font-weight:600; color:var(--ink); }
+.byline .rl { font-size:12.5px; color:var(--muted); }
+.byline .b-dot { width:3px; height:3px; border-radius:50%; background:var(--line-2); }
+.byline .meta { font-family:var(--mono); font-size:12px; color:var(--muted); display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.hero-img { aspect-ratio:16/9; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); margin:22px 0; display:grid; place-items:center; font-family:var(--mono); font-size:12px; color:var(--muted); overflow:hidden; }
+.hero-img img { width:100%; height:100%; object-fit:cover; }
+
+.toc { border:1px solid var(--line); border-radius:8px; background:var(--card); margin:24px 0; }
+.toc > summary { list-style:none; cursor:pointer; padding:15px 18px; display:flex; align-items:center; gap:11px; font-size:14px; font-weight:600; color:var(--ink); }
+.toc > summary::-webkit-details-marker { display:none; }
+.toc > summary .ti { width:18px; height:18px; flex:none; color:var(--accent); }
+.toc > summary .lbl { flex:1; }
+.toc > summary .cnt { font-family:var(--mono); font-size:11px; color:var(--muted); }
+.toc > summary .chev { width:16px; height:16px; color:var(--muted); transition:transform .2s ease; }
+.toc[open] > summary { border-bottom:1px solid var(--line); }
+.toc[open] > summary .chev { transform:rotate(180deg); }
+.toc ol { margin:0; padding:4px 18px 12px; list-style:none; counter-reset:t; }
+.toc li { counter-increment:t; }
+.toc li a { display:flex; gap:13px; align-items:baseline; padding:10px 0; font-size:14.5px; color:var(--ink-2); }
+.toc li + li a { border-top:1px solid var(--line); }
+.toc li a::before { content:counter(t,decimal-leading-zero); font-family:var(--mono); font-size:11px; font-weight:600; color:var(--accent); min-width:22px; }
+.toc li a:hover { color:var(--accent); }
+
+.prose p { font-size:17px; line-height:1.72; color:var(--ink); margin:0 0 18px; }
+.prose h2 { font-size:clamp(21px,3.4vw,26px); line-height:1.2; margin:38px 0 14px; scroll-margin-top:76px; }
+.prose h3 { font-size:18px; margin:26px 0 10px; }
+.prose ul, .prose ol { margin:0 0 18px; padding-left:22px; }
+.prose li { font-size:16.5px; line-height:1.6; color:var(--ink); margin-bottom:8px; }
+.prose a { color:var(--accent); text-decoration:underline; text-underline-offset:2px; font-weight:500; }
+.prose strong { font-weight:600; }
+.prose img { border-radius:var(--radius); border:1px solid var(--line); margin:20px 0; }
+/* Tabelul sta intr-un <div class="tabel"> pus de src/pluginuri/rehype-tabele.mjs.
+   Derularea orizontala e pe container, NU pe <table> — altfel tabelul se stramteaza la continut. */
+.prose .tabel { margin:26px 0; border:1px solid var(--line); border-radius:8px; overflow-x:auto; background:var(--card);
+  /* umbra pe marginea dreapta cat timp mai e de derulat (dispare la capat, prin background-attachment:local) */
+  background-image:linear-gradient(to right, var(--card), var(--card)), linear-gradient(to right, rgba(0,0,0,.10), rgba(0,0,0,0));
+  background-position:right center, right center; background-repeat:no-repeat;
+  background-size:22px 100%, 16px 100%; background-attachment:local, scroll; }
+.prose table { width:100%; border-collapse:collapse; font-size:14.5px; margin:0; font-variant-numeric:tabular-nums; }
+.prose th, .prose td { text-align:left; padding:13px 16px; border-bottom:1px solid var(--line); }
+.prose thead th { font-family:var(--mono); font-size:11px; letter-spacing:.04em; text-transform:uppercase; color:var(--muted); font-weight:500; background:var(--surface); white-space:nowrap; border-bottom-color:var(--line-2); }
+.prose tbody tr:last-child td { border-bottom:0; }
+.prose tbody tr:nth-child(even) td { background:color-mix(in oklab, var(--surface) 55%, transparent); }
+.prose td:first-child { font-weight:500; color:var(--ink); }
+/* coloanele numerice: markdown `|---:|` -> Astro pune style="text-align:right" inline */
+.prose th[style*="right"], .prose td[style*="right"] { white-space:nowrap; }
+.prose td[style*="right"] { font-family:var(--mono); font-size:13.5px; color:var(--ink); }
+/* randul de total: ultimul rand cand primul lui td e bold */
+.prose tbody tr:last-child td:has(strong) { background:var(--surface); }
+.prose tbody tr:last-child:has(td strong) td { background:var(--surface); font-weight:600; color:var(--ink); }
+@media (max-width:520px) {
+  .prose .tabel { margin:22px 0; }
+  .prose th, .prose td { padding:11px 13px; font-size:13.5px; }
+}
+
+.faq { margin:26px 0; display:grid; gap:10px; }
+.faq details { border:1px solid var(--line); border-radius:8px; background:var(--card); transition:border-color .15s ease; }
+.faq details[open] { border-color:var(--line-2); }
+.faq summary { list-style:none; cursor:pointer; padding:16px 18px; font-size:15.5px; font-weight:600; color:var(--ink); display:flex; align-items:center; justify-content:space-between; gap:14px; }
+.faq summary::-webkit-details-marker { display:none; }
+.faq summary .ic { width:26px; height:26px; flex:none; border-radius:50%; border:1px solid var(--line-2); display:grid; place-items:center; color:var(--muted); transition:transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease; }
+.faq summary .ic svg { width:14px; height:14px; }
+.faq details[open] summary { color:var(--accent); }
+.faq details[open] summary .ic { background:var(--accent); border-color:var(--accent); color:var(--on-accent); transform:rotate(45deg); }
+.faq .fa { padding:2px 18px 18px; font-size:15px; color:var(--ink-2); line-height:1.62; }
+
+.authorbox { display:flex; gap:16px; align-items:flex-start; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); padding:18px; margin:30px 0; }
+.authorbox .av { width:52px; height:52px; flex:none; border-radius:50%; background:var(--accent); color:var(--on-accent); font-weight:700; font-size:18px; display:grid; place-items:center; }
+.authorbox .abname { font-size:15px; font-weight:600; margin-bottom:2px; }
+.authorbox .rl { font-family:var(--mono); font-size:11.5px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; }
+.authorbox p { font-size:14px; color:var(--ink-2); line-height:1.55; margin-top:8px; }
+
+.post .disclosure { margin:24px 0; }
+
+section.after { border-top:1px solid var(--line); background:var(--surface); margin-top:20px; padding:36px 0; }
+.after h2 { font-size:20px; margin-bottom:18px; }
+.rel-grid { display:grid; grid-template-columns:1fr; gap:14px; }
+.rel { background:var(--card); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; }
+.rel .rimg { aspect-ratio:16/10; background:var(--surface); border-bottom:1px solid var(--line); display:grid; place-items:center; font-family:var(--mono); font-size:10px; color:var(--muted); }
+.rel .rbody { padding:14px 15px; }
+.rel .rk { font-family:var(--mono); font-size:10.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--accent); }
+.rel h3 { font-size:15px; line-height:1.3; margin-top:6px; }
+.rel:hover h3 { color:var(--accent); }
+
+@media (min-width:600px) {
+  .rel-grid { grid-template-columns:repeat(3,1fr); }
+}
+
+.rel .rimg img { width:100%; height:100%; object-fit:cover; }
+
+/* navigare prev / next in aceeasi categorie */
+.prevnext { padding:22px 0 8px; }
+.prevnext .wrap { display:grid; grid-template-columns:1fr; gap:12px; }
+.pn { display:flex; flex-direction:column; gap:7px; padding:15px 17px; border:1px solid var(--line); border-radius:var(--radius); background:var(--card); box-shadow:var(--shadow); }
+.pn:hover { border-color:var(--accent); }
+.pn-lbl { font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:var(--muted); display:flex; align-items:center; gap:6px; }
+.pn-lbl svg { width:14px; height:14px; }
+.pn-t { font-size:15px; font-weight:600; color:var(--ink); line-height:1.32; display:-webkit-box; -webkit-line-clamp:2; line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+.pn:hover .pn-t { color:var(--accent); }
+@media (min-width:600px) {
+  .prevnext .wrap { grid-template-columns:1fr 1fr; gap:14px; }
+  .pn-next { text-align:right; align-items:flex-end; }
+}
+
+/* card review produs in-content */
+.ppick { border:1px solid var(--line); border-radius:var(--radius); background:var(--card); padding:18px; margin:28px 0; box-shadow:var(--shadow); }
+.ppick .phead { display:flex; flex-direction:column; gap:14px; }
+.ppick .pimg { background:var(--surface); border-radius:10px; height:210px; display:flex; align-items:center; justify-content:center; padding:16px; overflow:hidden; }
+.ppick .pimg img { max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; }
+.ppick .pmeta { display:flex; flex-direction:column; }
+.ppick .ptop { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:9px; }
+/* evaluarea reala de pe eMAG: stele umplute proportional + nota + numar de recenzii.
+   Nu exista scor propriu pe /10 — vezi comentariul din Produs.astro. */
+.ppick .pnota { display:inline-flex; align-items:center; gap:7px; font-size:13px; line-height:1; color:var(--muted); }
+.ppick .pstele { position:relative; display:inline-block; height:14px; flex:none; }
+.ppick .pstele > span { display:flex; gap:1.5px; height:14px; }
+.ppick .pstele svg { width:14px; height:14px; display:block; flex:none; }
+.ppick .pstele-gol svg { fill:var(--line); }
+.ppick .pstele-plin { position:absolute; inset:0 auto 0 0; overflow:hidden; }
+.ppick .pstele-plin svg { fill:#e8a33d; }
+.ppick .pnota b { font-family:var(--mono); font-size:13.5px; font-weight:600; color:var(--ink); letter-spacing:-.01em; }
+.ppick .pnota-sep { width:3px; height:3px; border-radius:50%; background:var(--line); flex:none; }
+.ppick .pnota-rec { white-space:nowrap; }
+@media (max-width:520px) {
+  .ppick .pnota { flex-wrap:wrap; gap:6px; }
+  .ppick .pnota-rec { font-size:12.5px; }
+}
+.ppick .pkick { font-family:var(--mono); font-size:12px; line-height:1; font-weight:600; letter-spacing:.03em; text-transform:uppercase; color:var(--accent); background:var(--accent-soft); padding:5px 8px; border-radius:6px; }
+.ppick h3 { font-size:19px; line-height:1.28; margin:0 0 11px; }
+.ppick .preview { margin-bottom:14px; }
+.ppick .preview p { font-size:15px; line-height:1.62; color:var(--ink-2); margin:0 0 10px; }
+.ppick .preview p:last-child { margin-bottom:0; }
+.ppick .pcta { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+.ppick .btn { color:var(--on-accent); text-decoration:none; cursor:pointer; }
+.ppick .btn:hover { color:var(--on-accent); }
+.ppick .proscons { display:grid; grid-template-columns:1fr; gap:14px 24px; margin-top:16px; padding-top:16px; border-top:1px solid var(--line); }
+.ppick .pros h4, .ppick .cons h4 { font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.05em; margin:0 0 7px; font-weight:600; }
+.ppick .pros h4 { color:var(--accent); }
+.ppick .cons h4 { color:var(--danger); }
+.ppick .proscons ul { list-style:none; padding:0; margin:0; display:grid; gap:5px; }
+.ppick .proscons li { display:flex; gap:8px; font-size:13.5px; color:var(--ink-2); line-height:1.4; }
+.ppick .proscons svg { width:14px; height:14px; flex:none; margin-top:2px; }
+.ppick .pros li svg { color:var(--accent); }
+.ppick .cons li svg { color:var(--danger); }
+@media (min-width:600px) {
+  .ppick .phead { flex-direction:row; align-items:stretch; }
+  .ppick .pimg { width:220px; flex:none; height:auto; align-self:stretch; }
+  .ppick .pmeta { flex:1; min-width:0; }
+  .ppick .pcta { margin-top:auto; padding-top:4px; }
+  .ppick .proscons { grid-template-columns:1fr 1fr; gap:14px 32px; }
+}

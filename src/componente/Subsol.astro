@@ -1,0 +1,53 @@
+---
+import { categoriiGrid } from '../date/nav.js';
+const an = 2026;
+---
+<footer class="site">
+  <div class="wrap">
+    <div class="foot">
+      <div class="fbrand">
+        <a href="/" class="logo">bermo<span class="dot">.</span></a>
+        <p>Portalul de inteligenta de cumparare pentru piata din Romania. Articole, comparatii si unelte pentru fiecare categorie de pe eMAG.</p>
+        <form class="fsearch" id="footSearch" action="/articole/" method="get" role="search" aria-label="Cauta pe bermo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+          <input type="search" name="cauta" placeholder="Cauta pe bermo" aria-label="Cauta pe bermo" required />
+          <button type="submit">Cauta</button>
+        </form>
+        <script is:inline>
+          (function () {
+            var f = document.getElementById('footSearch');
+            if (!f) return;
+            f.addEventListener('submit', function (e) {
+              e.preventDefault();
+              var v = f.querySelector('input[name="cauta"]').value.trim();
+              var slug = v.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+              location.href = slug ? '/cauta/' + slug + '/' : '/articole/';
+            });
+          })();
+        </script>
+      </div>
+      <div class="fcol">
+        <span class="fh">Categorii</span>
+        {categoriiGrid.slice(0, 5).map((c) => <a href={`/${c.slug}/`}>{c.nume}</a>)}
+      </div>
+      <div class="fcol">
+        <span class="fh">bermo</span>
+        <a href="/cum-alegem/">Cum alegem</a>
+        <a href="/redactia/">Redactia</a>
+        <a href="/articole/">Toate articolele</a>
+        <a href="/contact/">Contact</a>
+      </div>
+      <div class="fcol">
+        <span class="fh">Legal</span>
+        <a href="/confidentialitate/">Confidentialitate</a>
+        <a href="/cookies/">Cookies</a>
+        <a href="/termeni-si-conditii/">Termeni si conditii</a>
+        <a href="/transparenta-afiliere/">Transparenta afiliere</a>
+      </div>
+    </div>
+    <div class="fbottom">
+      <span>© {an} bermo.ro</span>
+      <span>Preturile afisate sunt orientative</span>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,64 @@
+---
+import Baza from '../../sabloane/Baza.astro';
+import { categorii } from '../../date/nav.js';
+import { getArticole } from '../../date/articole.js';
+import '../../stiluri/categorie.css';
+
+export async function getStaticPaths() {
+  return categorii.map((c) => ({ params: { categorie: c.slug }, props: { c } }));
+}
+const { c } = Astro.props;
+const toate = (await getArticole())
+  .filter((a) => a.data.categorieSlug === c.slug)
+  .sort((a, b) => b.data.data - a.data.data);
+const urlArt = (a) => `/${a.id}/`;
+const nrText = toate.length === 1 ? '1 articol' : `${toate.length} articole`;
+
+const SITE = 'https://bermo.ro';
+const jsonLd = [{
+  '@context': 'https://schema.org', '@type': 'CollectionPage', name: c.nume, description: c.descriere,
+}, {
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Acasa', item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: c.nume },
+  ],
+}];
+---
+<Baza titlu={c.nume} descriere={c.descriere} jsonLd={jsonLd}>
+  <main class="wrap">
+    <nav class="crumb"><a href="/">Acasa</a><span class="sep">/</span><span class="cur">{c.nume}</span></nav>
+
+    <div class="cathead">
+      <span class="lab">Categorie</span>
+      <h1>{c.nume}</h1>
+      <p>{c.descriere}</p>
+      <div class="cstat">{nrText}{toate.length > 0 ? ' · actualizat saptamanal' : ''}</div>
+    </div>
+
+    <nav class="subnav" aria-label="Subcategorii">
+      <a href={`/${c.slug}/`} class="active">Toate</a>
+      {c.subcategorii.map((s) => <a href={`/${c.slug}/${s.slug}/`}>{s.nume}</a>)}
+    </nav>
+
+    <section class="listsec">
+      {toate.length > 0 ? (
+        <div class="art-grid">
+          {toate.map((a) => (
+            <a class="art" href={urlArt(a)}>
+              <div class="ph">{a.data.imagine ? <img src={a.data.imagine} alt={a.data.titlu} loading="lazy" /> : "imagine"}</div>
+              <div class="abody">
+                <span class="akick">{a.data.subcategorie ?? a.data.categorie}</span>
+                <h2>{a.data.titlu}</h2>
+                <p>{a.data.descriere}</p>
+                <div class="ameta"><span>{a.data.autor}</span><span>{a.data.minute} min</span></div>
+              </div>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <div class="gol">Inca nu avem articole in aceasta categorie. Revino curand.</div>
+      )}
+    </section>
+  </main>
+</Baza>

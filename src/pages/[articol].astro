@@ -1,0 +1,154 @@
+---
+import Baza from '../sabloane/Baza.astro';
+import { render } from 'astro:content';
+import { getArticole } from '../date/articole.js';
+import '../stiluri/articol.css';
+
+export async function getStaticPaths() {
+  const arts = await getArticole();
+  return arts.map((a) => ({ params: { articol: a.id }, props: { a } }));
+}
+
+const { a } = Astro.props;
+const d = a.data;
+const { Content, headings } = await render(a);
+const h2 = headings.filter((h) => h.depth === 2);
+
+const luni = ['ianuarie', 'februarie', 'martie', 'aprilie', 'mai', 'iunie', 'iulie', 'august', 'septembrie', 'octombrie', 'noiembrie', 'decembrie'];
+const fmtData = (x) => `${x.getDate()} ${luni[x.getMonth()]} ${x.getFullYear()}`;
+const initiale = d.autor.split(' ').map((w) => w[0]).slice(0, 2).join('').toUpperCase();
+
+const toate = await getArticole();
+const related = toate.filter((x) => x.data.categorieSlug === d.categorieSlug && x.id !== a.id).slice(0, 3);
+const urlArt = (x) => `/${x.id}/`;
+
+// prev / next in aceeasi categorie, ordonate cronologic (anterior = mai vechi, urmator = mai nou)
+const inCat = toate.filter((x) => x.data.categorieSlug === d.categorieSlug).sort((x, y) => x.data.data - y.data.data);
+const idx = inCat.findIndex((x) => x.id === a.id);
+const prevArt = idx > 0 ? inCat[idx - 1] : null;
+const nextArt = idx >= 0 && idx < inCat.length - 1 ? inCat[idx + 1] : null;
+
+const jsonLd = [{
+  '@context': 'https://schema.org', '@type': 'Article', headline: d.titlu, description: d.descriere,
+  datePublished: d.data.toISOString(), dateModified: (d.modificat ?? d.data).toISOString(),
+  author: { '@type': 'Organization', name: d.autor },
+  publisher: { '@type': 'Organization', name: 'bermo.ro' },
+}];
+if (d.faq?.length) jsonLd.push({
+  '@context': 'https://schema.org', '@type': 'FAQPage',
+  mainEntity: d.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+});
+
+// BreadcrumbList: aceleasi trepte ca breadcrumbul vizibil de mai jos. Fara el, Google afiseaza
+// URL-ul brut in rezultate in loc de calea Acasa > Categorie > Subcategorie.
+// Ultima treapta (articolul curent) se include fara `item`, conform recomandarii Google.
+const SITE = 'https://bermo.ro';
+const trepte = [
+  { name: 'Acasa', url: `${SITE}/` },
+  { name: d.categorie, url: `${SITE}/${d.categorieSlug}/` },
+  ...(d.subcategorie ? [{ name: d.subcategorie, url: `${SITE}/${d.categorieSlug}/${d.subcategorieSlug}/` }] : []),
+  { name: d.h1 ?? d.titlu },
+];
+jsonLd.push({
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+  itemListElement: trepte.map((t, i) => ({
+    '@type': 'ListItem', position: i + 1, name: t.name,
+    ...(t.url ? { item: t.url } : {}),
+  })),
+});
+---
+<Baza titlu={d.titlu} descriere={d.descriere} tip="article" publicat={d.data.toISOString()} modificat={(d.modificat ?? d.data).toISOString()} autor={d.autor} imagine={d.imagine} jsonLd={jsonLd}>
+  <main class="wrap">
+    <article class="post">
+      <nav class="crumb">
+        <a href="/">Acasa</a><span class="sep">/</span>
+        <a href={`/${d.categorieSlug}/`}>{d.categorie}</a><span class="sep">/</span>
+        {d.subcategorie && (<><a href={`/${d.categorieSlug}/${d.subcategorieSlug}/`}>{d.subcategorie}</a><span class="sep">/</span></>)}
+        <span class="cur">{d.h1 ?? d.titlu}</span>
+      </nav>
+
+      <span class="kick">{d.subcategorie ?? d.categorie}</span>
+      <h1>{d.h1 ?? d.titlu}</h1>
+      <div class="byline">
+        <span class="who"><span class="av">{initiale}</span><span><span class="nm">{d.autor}</span><br /><span class="rl">{d.autorRol}</span></span></span>
+        <span class="meta"><span>{fmtData(d.data)}</span><span class="b-dot"></span><span>{d.minute} min citire</span></span>
+      </div>
+
+      <div class="hero-img">{d.imagine ? <img src={d.imagine} alt={d.titlu} /> : 'imagine principala articol'}</div>
+
+      {h2.length > 1 && (
+        <details class="toc">
+          <summary>
+            <svg class="ti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+            <span class="lbl">Cuprins</span>
+            <span class="cnt">{h2.length} sectiuni</span>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <ol>{h2.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol>
+        </details>
+      )}
+
+      <div class="prose"><Content /></div>
+
+      {d.faq?.length && (
+        <div class="faq">
+          {d.faq.map((f) => (
+            <details>
+              <summary>{f.q} <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+              <div class="fa">{f.a}</div>
+            </details>
+          ))}
+        </div>
+      )}
+
+      <div class="authorbox">
+        <span class="av">{initiale}</span>
+        <div>
+          <div class="abname">{d.autor}</div>
+          <span class="rl">{d.autorRol}</span>
+          <p>Selectiile pornesc de la specificatii verificate si de la recenziile reale ale cumparatorilor de pe eMAG. Nu testam fiecare produs in laborator si spunem clar acest lucru; recomandam pe baza datelor si a experientei utilizatorilor, si mentionam mereu compromisurile.</p>
+        </div>
+      </div>
+
+      <div class="disclosure">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.6-7 8.6-4-1-7-4.1-7-8.6V6z"/><path d="M9 12l2 2 4-4"/></svg>
+        <span><strong>Transparenta afiliere:</strong> articolul contine linkuri de afiliere. Daca cumperi printr-un link, putem primi un comision, fara cost suplimentar pentru tine. Nu influenteaza ce recomandam.</span>
+      </div>
+    </article>
+  </main>
+
+  {related.length > 0 && (
+    <section class="after">
+      <div class="wrap" style="max-width:776px">
+        <h2>Citeste si</h2>
+        <div class="rel-grid">
+          {related.map((r) => (
+            <a class="rel" href={urlArt(r)}>
+              <div class="rimg">{r.data.imagine ? <img src={r.data.imagine} alt={r.data.titlu} loading="lazy" /> : "imagine"}</div>
+              <div class="rbody"><span class="rk">{r.data.categorie}</span><h3>{r.data.titlu}</h3></div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {(prevArt || nextArt) && (
+    <nav class="prevnext" aria-label="Navigare articole">
+      <div class="wrap" style="max-width:776px">
+        {prevArt ? (
+          <a class="pn pn-prev" href={urlArt(prevArt)} rel="prev">
+            <span class="pn-lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>Articolul anterior</span>
+            <span class="pn-t">{prevArt.data.h1 ?? prevArt.data.titlu}</span>
+          </a>
+        ) : <span></span>}
+        {nextArt ? (
+          <a class="pn pn-next" href={urlArt(nextArt)} rel="next">
+            <span class="pn-lbl">Articolul urmator<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+            <span class="pn-t">{nextArt.data.h1 ?? nextArt.data.titlu}</span>
+          </a>
+        ) : <span></span>}
+      </div>
+    </nav>
+  )}
+</Baza>
