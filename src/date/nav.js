@@ -62,8 +62,8 @@ export const categorii = [
   {
     slug: 'auto', nume: 'Auto', numar: '', icon: ic.auto,
     inrudite: ['tv-si-foto', 'telefoane'],
-    descriere: 'Camere de bord, accesorii si echipamente pentru masina, comparate pe fise, recenzii reale si ce folosesti efectiv la drum.',
-    subcategorii: [sub('Camere de bord', 'camere-de-bord'), sub('Accesorii auto', 'accesorii-auto'), sub('Anvelope', 'anvelope'), sub('Intretinere auto', 'intretinere-auto')],
+    descriere: 'Camere de bord, trotinete electrice, anvelope si accesorii, comparate pe fise, recenzii reale si ce folosesti efectiv la drum.',
+    subcategorii: [sub('Camere de bord', 'camere-de-bord'), sub('Trotinete electrice', 'trotinete-electrice'), sub('Anvelope', 'anvelope'), sub('Accesorii auto', 'accesorii-auto'), sub('Intretinere auto', 'intretinere-auto')],
   },
   {
     slug: 'ingrijire', nume: 'Ingrijire personala', numar: '', icon: ic.ingrijire,
