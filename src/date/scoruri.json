@@ -3438,10 +3438,10 @@
   "categorie": "smartphone"
  },
  "D8WGTB2BM": {
-  "scor": 7,
-  "rating": 4.66,
-  "recenzii": 103,
-  "categorie": "smartphone"
+  "scor": null,
+  "rating": 4.68,
+  "recenzii": 135,
+  "categorie": "cele-mai-bune-telefoane"
  },
  "DGWGTB2BM": {
   "scor": 7,
@@ -3618,10 +3618,10 @@
   "categorie": "smartphone"
  },
  "DT0QTS3BM": {
-  "scor": 8.8,
-  "rating": 4.75,
-  "recenzii": 92,
-  "categorie": "smartphone"
+  "scor": null,
+  "rating": 4.77,
+  "recenzii": 101,
+  "categorie": "cele-mai-bune-telefoane"
  },
  "DTZDRQYBM": {
   "scor": 8.9,
@@ -8194,5 +8194,113 @@
   "rating": 4.5,
   "recenzii": 1725,
   "categorie": "cele-mai-bune-televizoare"
+ },
+ "DW545M2BM": {
+  "scor": null,
+  "rating": 4.64,
+  "recenzii": 78,
+  "categorie": "cele-mai-bune-telefoane"
+ },
+ "DK57K93BM": {
+  "scor": null,
+  "rating": 4.71,
+  "recenzii": 75,
+  "categorie": "cele-mai-bune-telefoane"
+ },
+ "D5H3DGYBM": {
+  "scor": null,
+  "rating": 4.52,
+  "recenzii": 225,
+  "categorie": "cele-mai-bune-telefoane"
+ },
+ "DF0LV42BM": {
+  "scor": null,
+  "rating": 4.84,
+  "recenzii": 93,
+  "categorie": "cele-mai-bune-telefoane"
+ },
+ "DN23WL3BM": {
+  "scor": null,
+  "rating": 4.76,
+  "recenzii": 46,
+  "categorie": "cele-mai-bune-telefoane"
+ },
+ "DL35JM3BM": {
+  "scor": null,
+  "rating": 4.72,
+  "recenzii": 64,
+  "categorie": "cele-mai-bune-telefoane"
+ },
+ "D4KG0J3BM": {
+  "scor": null,
+  "rating": 4.67,
+  "recenzii": 21,
+  "categorie": "cele-mai-bune-telefoane"
+ },
+ "DCXPCB3BM": {
+  "scor": null,
+  "rating": 4.6,
+  "recenzii": 84,
+  "categorie": "cele-mai-bune-telefoane"
+ },
+ "DM99FV3BM": {
+  "scor": null,
+  "rating": 4.71,
+  "recenzii": 254,
+  "categorie": "cele-mai-bune-telefoane"
+ },
+ "DJYTNY3BM": {
+  "scor": null,
+  "rating": 4.89,
+  "recenzii": 201,
+  "categorie": "cele-mai-bune-camere-de-bord"
+ },
+ "DF4K4ZYBM": {
+  "scor": null,
+  "rating": 4.52,
+  "recenzii": 363,
+  "categorie": "cele-mai-bune-camere-de-bord"
+ },
+ "DM668FMBM": {
+  "scor": null,
+  "rating": 4.73,
+  "recenzii": 1044,
+  "categorie": "cele-mai-bune-camere-de-bord"
+ },
+ "DXRRTRMBM": {
+  "scor": null,
+  "rating": 4.74,
+  "recenzii": 854,
+  "categorie": "cele-mai-bune-camere-de-bord"
+ },
+ "DL2R9HYBM": {
+  "scor": null,
+  "rating": 4.83,
+  "recenzii": 1627,
+  "categorie": "cele-mai-bune-camere-de-bord"
+ },
+ "DFFD162BM": {
+  "scor": null,
+  "rating": 4.9,
+  "recenzii": 402,
+  "categorie": "cele-mai-bune-camere-de-bord"
+ },
+ "D53P493BM": {
+  "scor": null,
+  "rating": 4.73,
+  "recenzii": 215,
+  "categorie": "cele-mai-bune-camere-de-bord"
+ },
+ "DWCZJTMBM": {
+  "scor": null,
+  "rating": 4.24,
+  "recenzii": 515,
+  "categorie": "cele-mai-bune-camere-de-bord"
+ },
+ "DBLZJTMBM": {
+  "scor": null,
+  "rating": 4.07,
+  "recenzii": 135,
+  "categorie": "cele-mai-bune-camere-de-bord"
  }
 }
