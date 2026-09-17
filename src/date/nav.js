@@ -8,6 +8,7 @@ const ic = {
   tv: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8"/></svg>',
   casa: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V9l8-5 8 5v11M9 20v-6h6v6"/></svg>',
   auto: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 17h14M3 17v-4l2.5-5h13L21 13v4"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg>',
+  ingrijire: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3h6v4H9zM8 7h8l1 3v10a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V10z"/><path d="M10 14h4"/></svg>',
   iluminat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.5.4.8 1 .8 1.6v.5h5.4v-.5c0-.6.3-1.2.8-1.6A6 6 0 0 0 12 3Z"/></svg>',
 };
 
@@ -63,6 +64,12 @@ export const categorii = [
     inrudite: ['tv-si-foto', 'telefoane'],
     descriere: 'Camere de bord, accesorii si echipamente pentru masina, comparate pe fise, recenzii reale si ce folosesti efectiv la drum.',
     subcategorii: [sub('Camere de bord', 'camere-de-bord'), sub('Accesorii auto', 'accesorii-auto'), sub('Anvelope', 'anvelope'), sub('Intretinere auto', 'intretinere-auto')],
+  },
+  {
+    slug: 'ingrijire', nume: 'Ingrijire personala', numar: '', icon: ic.ingrijire,
+    inrudite: ['casa-si-gradina', 'electrocasnice'],
+    descriere: 'Creme, igiena orala, ingrijirea parului si aparate de ingrijire, comparate pe ingrediente declarate, fise si recenzii reale, fara promisiuni medicale.',
+    subcategorii: [sub('Ingrijirea tenului', 'ingrijirea-tenului'), sub('Igiena orala', 'igiena-orala'), sub('Ingrijirea parului', 'ingrijirea-parului'), sub('Aparate de ingrijire', 'aparate-de-ingrijire')],
   },
   {
     slug: 'casa-si-gradina', nume: 'Casa si Gradina', numar: '124 articole', icon: ic.casa,
